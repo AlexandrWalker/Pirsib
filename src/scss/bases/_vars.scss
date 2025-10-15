@@ -1,0 +1,24 @@
+@use './../mixins' as *;
+
+:root {
+  --font-family: "Montserrat", Arial, sans-serif;
+  --second-family: "Outfit", Arial, sans-serif;
+
+  --container-padding: 12rem;
+  --container-width: 168rem;
+
+  --white: #ffffff;
+  --pink: #AD32AE;
+  --purple: #6D85F4;
+  --purple-50: rgba(109, 133, 244, 0.5);
+  --purple-80: #6D85F4D6;
+  --blue: #5061FF;
+  --blue-dark-1: #3C49C2;
+  --blue-dark-2: #3B4DA0;
+
+  --page-bg: radial-gradient(45.26% 14.26% at 29.38% 7.82%, rgba(173, 50, 174, 0.2) 0%, rgba(12, 15, 27, 0.2) 100%), #0C0F1B;
+
+  @include md {
+    --container-padding: 2rem;
+  }
+}

@@ -1,0 +1,66 @@
+@use './../mixins' as *;
+
+.header {
+
+  &__inner {}
+
+  &__wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 4rem 0;
+    transition: all 0.5s ease;
+
+    @include md {
+      justify-content: flex-start;
+      padding: 3rem 0;
+    }
+
+    .show & {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      padding: 2.5rem 3.1rem 2.5rem 2.5rem;
+      margin-top: 5.7rem;
+      border-radius: 10rem;
+
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
+      box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+      backdrop-filter: blur(6.35px);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    .show & {
+      justify-content: flex-end;
+    }
+  }
+
+  &__location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 2.3rem;
+
+    @include md {
+      display: none;
+    }
+  }
+
+  &__signup {
+    min-width: 20rem;
+    padding: 0 1rem 0 2rem;
+
+    @include md {
+      display: none;
+    }
+  }
+}

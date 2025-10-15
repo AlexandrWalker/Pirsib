@@ -1,0 +1,17 @@
+@use './../mixins' as *;
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  max-width: calc(var(--container-width) + (var(--container-padding) * 2));
+  width: 100%;
+  flex: 1;
+}
+
+.container--fluid {
+  margin: 0 auto;
+  padding: 0;
+
+  max-width: calc(var(--container-width) + (var(--container-padding) * 2));
+  width: 100%;
+}

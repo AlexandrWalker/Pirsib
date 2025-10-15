@@ -1,0 +1,9 @@
+@use './../mixins' as *;
+
+/* Главный общий блок */
+.general {
+
+  &__head {
+    margin-bottom: 5rem;
+  }
+}

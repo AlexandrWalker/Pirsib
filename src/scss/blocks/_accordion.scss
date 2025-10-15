@@ -1,0 +1,20 @@
+@use './../mixins' as *;
+
+.accordion {
+  cursor: pointer;
+
+  &-active {
+
+    .accordion-body,
+    &+.accordion-body {
+      grid-template-rows: 1fr;
+    }
+  }
+}
+
+.accordion-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}

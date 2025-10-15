@@ -1,0 +1,30 @@
+@use './../mixins' as *;
+
+/* Стили для иконок */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-size: var(--btn-height);
+}
+
+.icon {
+
+  &-telegram {
+    color: #02AEFF;
+  }
+
+  &-whatsapp {
+    color: #38EF7D;
+  }
+
+  &-vk {
+    color: #4680C2;
+  }
+
+  &-play {
+    color: #EB001B;
+  }
+
+  &-2gis {
+    color: #29B24A;
+  }
+}
