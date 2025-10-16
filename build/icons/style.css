@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'PirsibIconFonts';
-  src:  url('fonts/PirsibIconFonts.eot?n2ooyz');
-  src:  url('fonts/PirsibIconFonts.eot?n2ooyz#iefix') format('embedded-opentype'),
-    url('fonts/PirsibIconFonts.ttf?n2ooyz') format('truetype'),
-    url('fonts/PirsibIconFonts.woff?n2ooyz') format('woff'),
-    url('fonts/PirsibIconFonts.svg?n2ooyz#PirsibIconFonts') format('svg');
+  src:  url('fonts/PirsibIconFonts.eot?2og1u8');
+  src:  url('fonts/PirsibIconFonts.eot?2og1u8#iefix') format('embedded-opentype'),
+    url('fonts/PirsibIconFonts.ttf?2og1u8') format('truetype'),
+    url('fonts/PirsibIconFonts.woff?2og1u8') format('woff'),
+    url('fonts/PirsibIconFonts.svg?2og1u8#PirsibIconFonts') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -28,33 +28,50 @@
 .icon-gis:before {
   content: "\e900";
 }
-.icon-chevron:before {
+.icon-book:before {
   content: "\e901";
 }
-.icon-chevron-min:before {
+.icon-chevron:before {
   content: "\e902";
 }
-.icon-location:before {
+.icon-chevron-min:before {
   content: "\e903";
 }
-.icon-mail:before {
+.icon-location:before {
   content: "\e904";
 }
-.icon-phone:before {
+.icon-mail:before {
   content: "\e905";
 }
-.icon-play:before {
+.icon-mail-min:before {
   content: "\e906";
 }
-.icon-telegram:before {
+.icon-phone:before {
   content: "\e907";
 }
-.icon-user:before {
+.icon-phone-min:before {
   content: "\e908";
 }
-.icon-vk:before {
+.icon-play:before {
   content: "\e909";
 }
-.icon-whatsapp:before {
+.icon-telegram:before {
   content: "\e90a";
+}
+.icon-telegram-hover:before {
+  content: "\e90b";
+  color: #02aeff;
+}
+.icon-user:before {
+  content: "\e90c";
+}
+.icon-vk:before {
+  content: "\e90d";
+}
+.icon-whatsapp:before {
+  content: "\e90e";
+}
+.icon-whatsapp-hover:before {
+  content: "\e90f";
+  color: #38ef7d;
 }

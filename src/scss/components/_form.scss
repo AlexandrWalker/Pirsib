@@ -13,6 +13,10 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    @include md {
+      gap: 2rem;
+    }
   }
 
   &__title {
@@ -21,6 +25,10 @@
     font-weight: 700;
     font-size: 3.4rem;
     line-height: 100%;
+
+    @include md {
+      font-size: 2rem;
+    }
   }
 
   &__text {

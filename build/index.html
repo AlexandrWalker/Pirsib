@@ -31,25 +31,22 @@
     <div class="header__inner">
 
       <div class="header__wrap">
-
-        <div class="header__location">
-          <a class="btn btn--icon" href="/">
+        <a class="header__location" href="/">
+          <div class="btn btn--icon">
             <i class="icon-location"></i>
-          </a>
+          </div>
           <p>
-            ОРДЖОНИКИДЗЕ, 35/1, НОВОСИБИРСК
+            Орджоникидхе, 35/1, Новосибирск
           </p>
-        </div>
-
+        </a>
         <a class="logo" href="/">
           <img src="./images/logo/logo.svg" alt="">
         </a>
-
         <div class="header__btns">
-          <a class="btn btn--icon" href="/">
+          <a class="btn btn--icon btn--whatsapp" href="/">
             <i class="icon-whatsapp"></i>
           </a>
-          <a class="btn btn--icon" href="/">
+          <a class="btn btn--icon btn--telegram" href="/">
             <i class="icon-telegram"></i>
           </a>
           <a class="btn header__signup" href="/">
@@ -58,23 +55,187 @@
               <i class="icon-chevron"></i>
             </div>
           </a>
+          <div id="burger-btn" class="burger">
+            <div class="burger__line"></div>
+            <div class="burger__line"></div>
+          </div>
         </div>
       </div>
+
+      <div id="burger-menu" class="burger-menu lenis" data-lenis-prevent>
+  <div class="burger-menu__inner">
+
+    <div class="menu__list">
+      <ul>
+        <li>
+          <a href="/">
+            О студии
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            Мастера
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            Татуировки
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            Пирсинг
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            Каталог
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            Цены
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            Контакты
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            История
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu__content">
+      <div class="menu__item">
+        <p>
+          Телефон:
+        </p>
+        <a href="tel:+79139178500" data-gradient="gradientMove">
+          +7-913-917-8500
+        </a>
+      </div>
+      <div class="menu__item">
+        <p>
+          Телефон:
+        </p>
+        <h5 data-gradient="gradientMove">
+          Орджоникидзе, 35/1, <br> Новосибирск
+        </h5>
+      </div>
+      <div class="menu__item">
+        <p>
+          Наши группы в ВК:
+        </p>
+        <div class="menu__btns">
+          <a class="btn btn--social" href="/">
+            Пирсинг
+            <div class="btn btn--inner-icon">
+              <i class="icon-vk"></i>
+            </div>
+          </a>
+          <a class="btn btn--social" href="/">
+            Татуировки
+            <div class="btn btn--inner-icon">
+              <i class="icon-vk"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="menu__item">
+        <p>
+          Наш канал в Telegram
+        </p>
+        <div class="menu__btns">
+          <a class="btn btn--social" href="/">
+            Подписаться
+            <div class="btn btn--inner-icon">
+              <i class="icon-telegram"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     </div>
   </div>
 </header>
     <!-- Секции страницы -->
     <main class="main">
-      <!-- Главный блок -->
+      <section class="find-us">
+        <div class="container">
+          <div class="find-us__inner">
+
+            <div class="general__head">
+              <div class="general__title">
+                <h2 data-gradient="gradientMove">
+                  Как нас найти
+                </h2>
+              </div>
+            </div>
+
+            <div class="find-us__content">
+              <div class="find-us__items">
+                <div class="find-us__item">
+                  <p>
+                    Телефон:
+                  </p>
+                  <a href="tel:+79139178500">
+                    +7-913-917-8500
+                  </a>
+                </div>
+                <div class="find-us__item">
+                  <p>
+                    Почта:
+                  </p>
+                  <a href="mailto:pochta_companii@mail.ru">
+                    pochta_companii@mail.ru
+                  </a>
+                </div>
+                <div class="find-us__item">
+                  <p>
+                    Адрес:
+                  </p>
+                  <h6>
+                    Новосибирск,<br> Орджоникидзе, 35/1
+                  </h6>
+                </div>
+                <div class="find-us__item">
+                  <p>
+                    Мессенджеры
+                  </p>
+                  <div class="find-us__social">
+                    <a class="btn btn--icon btn--whatsapp" href="/">
+                      <i class="icon-whatsapp"></i>
+                    </a>
+                    <a class="btn btn--icon btn--telegram" href="/">
+                      <i class="icon-telegram"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <section class="faq">
         <div class="container faq__container">
           <div class="faq__inner">
 
-            <div class="general__title">
-              <h2>
-                Ответы на важные вопросы
-              </h2>
+            <div class="general__head">
+              <div class="general__title">
+                <h2 data-gradient="gradientMove">
+                  Ответы на важные вопросы
+                </h2>
+              </div>
             </div>
 
             <div class="faq__body">
@@ -84,6 +245,109 @@
                     <h6>
                       Очень важный вопрос написанный по длине кнопке
                     </h6>
+                    <div class="btn btn--inner-icon">
+                      <i class="icon-chevron"></i>
+                    </div>
+                  </div>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-content">
+                      <p>
+                        Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с
+                        фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его
+                        будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и
+                        закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
+                    <h6>
+                      Очень важный вопрос написанный по длине кнопке
+                    </h6>
+                    <div class="btn btn--inner-icon">
+                      <i class="icon-chevron"></i>
+                    </div>
+                  </div>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-content">
+                      <p>
+                        Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с
+                        фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его
+                        будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и
+                        закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
+                    <h6>
+                      Очень важный вопрос написанный по длине кнопке
+                    </h6>
+                    <div class="btn btn--inner-icon">
+                      <i class="icon-chevron"></i>
+                    </div>
+                  </div>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-content">
+                      <p>
+                        Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с
+                        фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его
+                        будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и
+                        закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
+                    <h6>
+                      Очень важный вопрос написанный по длине кнопке
+                    </h6>
+                    <div class="btn btn--inner-icon">
+                      <i class="icon-chevron"></i>
+                    </div>
+                  </div>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-content">
+                      <p>
+                        Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с
+                        фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его
+                        будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и
+                        закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
+                    <h6>
+                      Очень важный вопрос написанный по длине кнопке
+                    </h6>
+                    <div class="btn btn--inner-icon">
+                      <i class="icon-chevron"></i>
+                    </div>
+                  </div>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-content">
+                      <p>
+                        Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с
+                        фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его
+                        будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и
+                        закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
+                    <h6>
+                      Очень важный вопрос написанный по длине кнопке
+                    </h6>
+                    <div class="btn btn--inner-icon">
+                      <i class="icon-chevron"></i>
+                    </div>
                   </div>
                   <div class="faq__item-body accordion-body">
                     <div class="faq__item-content">
@@ -99,6 +363,8 @@
               </div>
             </div>
 
+
+
           </div>
         </div>
       </section>
@@ -110,7 +376,7 @@
 
       <div class="footer__content">
         <div class="footer__contact">
-          <a id="phone" href="tel:+79139178500">
+          <a href="tel:+79139178500" data-gradient="gradientMove">
             +7-913-917-8500
           </a>
           <h6>
@@ -174,10 +440,10 @@
               </p>
             </div>
             <div class="footer__messengers-btns">
-              <a class="btn btn--icon" href="/">
+              <a class="btn btn--icon btn--whatsapp" href="/">
                 <i class="icon-whatsapp"></i>
               </a>
-              <a class="btn btn--icon" href="/">
+              <a class="btn btn--icon btn--telegram" href="/">
                 <i class="icon-telegram"></i>
               </a>
             </div>

@@ -1,11 +1,20 @@
 @use './../mixins' as *;
 
 .faq {
+  margin-top: -23.6rem;
+
+  @include md {
+    margin-top: 0;
+  }
 
   &__items {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include sm {
+      gap: 0.8rem;
+    }
   }
 
   &__item {
@@ -14,18 +23,63 @@
     gap: 0;
     padding: 2.5rem 5rem 2.6rem;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) padding-box, radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%) border-box;
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
-    border-radius: 5rem;
     transition: all 0.5s ease;
+    overflow: hidden;
+    border-radius: 5rem;
 
-    &.accordion-active {
-      border-radius: 5rem;
-      gap: 3rem;
+    position: relative;
+
+    @include md {
+      padding: 1.7rem 2rem 1.9rem 3rem;
+      border-radius: 2.4rem;
     }
 
-    &-head {}
+    // &::before {
+    //   content: "";
+    //   width: 100%;
+    //   height: 100%;
+    //   border-top: 0.1rem solid;
+    //   border-bottom: 0.1rem solid;
+    //   border-image-source: linear-gradient(61deg, rgba(2, 174, 255, 1) 0%, rgba(60, 73, 194, 1) 28%);
+    //   border-image-slice: 1;
+    //   border-radius: 5rem;
+    //   overflow: hidden;
+
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    // }
+
+    &.accordion-active {
+      gap: 3rem;
+      padding: 2.5rem 5rem 4rem;
+
+      @include md {
+        gap: 2rem;
+        padding: 1.7rem 2rem 1.9rem 3rem;
+      }
+    }
+
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0 2rem;
+
+      .btn {
+        --btn-width: 2.7rem;
+        --btn-height: 2.7rem;
+
+        .accordion-active & {
+          transform: rotate(180deg);
+        }
+      }
+    }
 
     &-body {
       display: grid;

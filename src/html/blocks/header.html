@@ -3,25 +3,22 @@
     <div class="header__inner">
 
       <div class="header__wrap">
-
-        <div class="header__location">
-          <a class="btn btn--icon" href="/">
+        <a class="header__location" href="/">
+          <div class="btn btn--icon">
             <i class="icon-location"></i>
-          </a>
+          </div>
           <p>
-            ОРДЖОНИКИДЗЕ, 35/1, НОВОСИБИРСК
+            Орджоникидхе, 35/1, Новосибирск
           </p>
-        </div>
-
+        </a>
         <a class="logo" href="/">
           <img src="./../../images/logo/logo.svg" alt="">
         </a>
-
         <div class="header__btns">
-          <a class="btn btn--icon" href="/">
+          <a class="btn btn--icon btn--whatsapp" href="/">
             <i class="icon-whatsapp"></i>
           </a>
-          <a class="btn btn--icon" href="/">
+          <a class="btn btn--icon btn--telegram" href="/">
             <i class="icon-telegram"></i>
           </a>
           <a class="btn header__signup" href="/">
@@ -30,8 +27,14 @@
               <i class="icon-chevron"></i>
             </div>
           </a>
+          <div id="burger-btn" class="burger">
+            <div class="burger__line"></div>
+            <div class="burger__line"></div>
+          </div>
         </div>
       </div>
+
+      @@include('./burger-menu.html')
 
     </div>
   </div>

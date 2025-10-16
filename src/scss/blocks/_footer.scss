@@ -16,6 +16,7 @@
     @include md {
       display: flex;
       flex-direction: column-reverse;
+      gap: 3rem;
 
       border-radius: 5rem;
     }
@@ -28,6 +29,11 @@
     gap: 5rem 7.2rem;
 
     padding: 6rem 0 3.7rem 5rem;
+
+    @include md {
+      gap: 3rem;
+      padding: 0 3rem 4rem 3rem;
+    }
   }
 
   &__contact {
@@ -37,7 +43,7 @@
 
     a {
       font-weight: 700;
-      font-size: 80px;
+      font-size: 8rem;
       line-height: 100%;
       text-transform: uppercase;
       background-image: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
@@ -46,16 +52,37 @@
       background-clip: text;
       -webkit-box-decoration-break: clone;
       text-fill-color: transparent;
+
+      @include md {
+        font-size: 3.4rem;
+      }
     }
   }
 
   &__menu {
     width: 15rem;
 
+    @include md {
+      width: 100%;
+    }
+
     ul {
       display: flex;
       flex-direction: column;
       gap: 2rem;
+
+      @include md {
+        display: inline-block;
+        column-count: 2;
+        width: 100%;
+      }
+    }
+
+    li {
+
+      @include md {
+        margin-bottom: 1.5rem;
+      }
     }
 
     a {
@@ -122,6 +149,11 @@
     gap: 12rem;
 
     color: var(--blue-dark-2);
+
+    @include md {
+      flex-direction: column-reverse;
+      gap: 3rem;
+    }
 
     a {
 

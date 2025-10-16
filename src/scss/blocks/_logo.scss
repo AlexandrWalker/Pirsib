@@ -16,8 +16,11 @@
     opacity: 0;
   }
 
-  .header.show & {
-    display: block;
-    opacity: 1;
+  .header.show:not(.menu--open .header.show) & {
+
+    @include domd {
+      display: block;
+      opacity: 1;
+    }
   }
 }

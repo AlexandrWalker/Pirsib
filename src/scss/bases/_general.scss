@@ -5,5 +5,13 @@
 
   &__head {
     margin-bottom: 5rem;
+
+    @include sm {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    max-width: 150rem;
   }
 }

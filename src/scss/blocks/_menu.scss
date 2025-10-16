@@ -1,1 +1,149 @@
 @use './../mixins' as *;
+
+.menu {
+
+  &__list {
+    width: 100%;
+    padding: 8rem 0 0 12rem;
+    overflow: hidden;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
+    backdrop-filter: blur(18.55px);
+    transition: all 0.5s ease;
+
+    @include md {
+      padding: 10rem 2rem 3rem 2rem;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+
+      @include md {
+        gap: 2rem;
+      }
+    }
+
+    a {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 5rem;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: var(--blue-dark-2);
+      white-space: nowrap;
+
+      @include md {
+        font-size: 2.4rem;
+      }
+
+      &:hover {
+        color: var(--pink);
+        margin-left: 9.6rem;
+
+        @include md {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    width: 100%;
+    padding: 18rem 0 0 16rem;
+    overflow: hidden;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
+    backdrop-filter: blur(18.55px);
+    transition: all 0.5s ease;
+
+    position: relative;
+
+    @include md {
+      padding: 3rem 2rem 4rem 2rem;
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 0.1rem;
+      background: var(--blue-dark-1);
+      box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+      backdrop-filter: blur(18.55px);
+
+      position: absolute;
+      top: 13rem;
+      left: 0;
+      right: 0;
+
+      @include md {
+        top: 0;
+      }
+    }
+
+    &::after {
+      content: "";
+      width: 0.1rem;
+      height: 100%;
+      background: var(--blue-dark-1);
+      box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+      backdrop-filter: blur(18.55px);
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+
+      @include md {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    a:not(.btn),
+    h5 {
+      font-family: var(--second-family);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 3.4rem;
+      line-height: 100%;
+      white-space: nowrap;
+
+      background: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      width: fit-content;
+
+      @include sm {
+        font-size: 2.4rem;
+      }
+    }
+
+    p {
+      white-space: nowrap;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .btn--social {
+      max-width: 26.4rem;
+      width: 100%;
+    }
+  }
+}

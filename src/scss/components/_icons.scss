@@ -4,16 +4,39 @@
 [class^="icon-"],
 [class*=" icon-"] {
   font-size: var(--btn-height);
+  transition: all 0.5s ease;
 }
 
 .icon {
 
+  &-chevron {
+
+    .btn:hover & {
+      color: #FE9AFF;
+    }
+  }
+
+  &-location {
+
+    .btn:hover & {
+      color: var(--pink);
+    }
+  }
+
   &-telegram {
     color: #02AEFF;
+
+    .btn:hover & {
+      text-shadow: #02AEFF 0 0 0.8rem;
+    }
   }
 
   &-whatsapp {
     color: #38EF7D;
+
+    .btn:hover & {
+      text-shadow: #38EF7D 0 0 0.6rem;
+    }
   }
 
   &-vk {

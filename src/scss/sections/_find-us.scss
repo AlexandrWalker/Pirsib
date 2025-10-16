@@ -1,0 +1,82 @@
+@use './../mixins' as *;
+
+.find-us {
+  padding: 7rem 0 25rem;
+  margin: 0;
+  background-image: url(./../../images/temp/map.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include md {
+    background-image: none;
+    margin-bottom: 3rem;
+    padding: 0;
+  }
+
+  .general__title {
+    max-width: 51.4rem;
+  }
+
+  &__content {
+    width: fit-content;
+    padding: 5rem 3.6rem 8.7rem 5rem;
+    border-radius: 5rem;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    backdrop-filter: blur(6.35px);
+
+    @include md {
+      width: 100%;
+      padding: 3rem;
+      border-radius: 2.4rem;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+
+    a {
+      font-weight: 400;
+      font-size: 2.4rem;
+      line-height: 140%;
+
+      @include md {
+        font-size: 1.6rem;
+      }
+    }
+
+    p {
+      font-weight: 700;
+    }
+
+    h6 {
+      font-weight: 400;
+
+      br {
+
+        @include md {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    gap: 1.8rem;
+
+    @include md {
+      gap: 1rem;
+    }
+  }
+}

@@ -41,6 +41,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+
+  @include md {
+    padding-top: 11rem;
+  }
 }
 
 .main {
@@ -53,9 +57,18 @@ body {
 
 section {
   display: flex;
+  margin-bottom: 7rem;
+
+  @include md {
+    margin-bottom: 5rem;
+  }
+
+  @include sm {
+    margin-bottom: 3rem;
+  }
 }
 
 a {
   color: inherit;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
