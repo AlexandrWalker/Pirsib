@@ -15,15 +15,25 @@ h2 {
   text-fill-color: transparent;
 
   @include md {
-    font-size: 8rem;
-  }
-
-  @include sm {
     font-size: 3rem;
   }
 }
 
-h3 {}
+h3 {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 100%;
+  background: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  @include md {
+    font-size: 2.4rem;
+  }
+}
 
 h4 {}
 
@@ -35,7 +45,7 @@ h6 {
   font-size: 2.4rem;
   line-height: 140%;
 
-  @include sm {
+  @include md {
     font-size: 1.4rem;
   }
 }
@@ -43,7 +53,7 @@ h6 {
 p {
   font-size: 1.6rem;
 
-  @include sm {
+  @include md {
     font-size: 1.4rem;
   }
 }

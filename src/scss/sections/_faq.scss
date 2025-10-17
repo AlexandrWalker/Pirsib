@@ -12,7 +12,7 @@
     flex-direction: column;
     gap: 2rem;
 
-    @include sm {
+    @include md {
       gap: 0.8rem;
     }
   }

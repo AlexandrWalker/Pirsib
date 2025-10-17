@@ -1,1 +1,75 @@
 @use './../mixins' as *;
+
+.swiper {
+
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  &-slide {
+    height: auto;
+  }
+
+  &-pagination {
+    position: static;
+    margin: 1rem 0 0 0;
+    line-height: 0.5rem;
+
+    &-bullet {
+      width: 0.5rem;
+      height: 0.5rem;
+      margin: 0 0.25rem !important;
+      flex-shrink: 0;
+      background-color: var(--blue-dark-1);
+
+      &-active {
+        background-color: var(--pink);
+      }
+    }
+  }
+}
+
+[class^="swiper-button-"],
+[class*=" swiper-button-"] {
+  width: 5rem;
+  height: 5rem;
+  background-image: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+  box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+  backdrop-filter: blur(6.35px);
+  border-radius: 10rem;
+  transition: all 0.5s ease;
+
+  color: var(--purple-80);
+
+  position: static;
+  margin: 0;
+
+  &:hover {
+    background-image: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
+    color: var(--pink);
+  }
+
+  &::after {
+    display: none;
+  }
+
+  i {
+    font-size: 5rem;
+  }
+}
+
+.swiper-button-prev {
+
+  i {
+    transform: rotate(90deg);
+  }
+}
+
+.swiper-button-next {
+
+  i {
+    transform: rotate(-90deg);
+  }
+}

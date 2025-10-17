@@ -14,7 +14,7 @@
         <div class="footer__menu">
           <ul>
             <li>
-              <a href="/">
+              <a class="is-active" href="/">
                 Главная
               </a>
             </li>
@@ -151,12 +151,23 @@
               <input class="form-input" name="foot_email" type="email" placeholder="Эл. почта">
               <i class="icon-mail"></i>
             </div>
-            <button class="btn form-btn">
-              Отправить заявку
-              <div class="btn btn--inner-icon">
-                <i class="icon-chevron"></i>
+            <div class="form-foot">
+              <button class="btn form-btn">
+                Отправить заявку
+                <div class="btn btn--inner-icon">
+                  <i class="icon-chevron"></i>
+                </div>
+              </button>
+              <div class="form-group">
+                <div class="form-wrap">
+                  <input id="foot_checkbox" class="form-checkbox" type="checkbox">
+                  <label for="foot_checkbox" class="form-checkbox--item"></label>
+                  <p>
+                    Нажимая кнопку, вы даёте согласие на обработку ваших персональных данных
+                  </p>
+                </div>
               </div>
-            </button>
+            </div>
           </div>
         </form>
       </div>

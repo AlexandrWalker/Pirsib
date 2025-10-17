@@ -8,6 +8,88 @@
     @@include('./blocks/header.html')
     <!-- Секции страницы -->
     <main class="main">
+
+      <section class="quiz">
+        <div class="container">
+          <div class="quiz__inner">
+            <div class="quiz__content">
+              <div class="quiz__title">
+                <h3 data-gradient="gradientMove">
+                  Получите скидку 20%
+                </h3>
+              </div>
+              <div class="quiz__text">
+                <p>
+                  В честь двадцатилетия студии дарим скидку каждому новому клиенту на наши услуги
+                </p>
+              </div>
+              <a class="btn btn--inner" href="/">
+                Хочу получить скидку
+                <div class="btn btn--inner-icon">
+                  <i class="icon-chevron"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="certificates">
+        <div class="container">
+          <div class="certificates__inner">
+
+            <div class="general__head">
+              <div class="general__title">
+                <h2 data-gradient="gradientMove">Cертификаты</h2>
+              </div>
+            </div>
+            <div class="certificates__items">
+              @@loop('./elements/certificates-item.html', './data/certificates-items.json')
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="opinion">
+        <div class="container">
+          <div class="opinion__inner">
+
+            <div class="opinion__head">
+              <div class="general__head">
+                <div class="general__title">
+                  <h2 data-gradient="gradientMove">Мнение о нас</h2>
+                </div>
+              </div>
+              <div class="opinion__btns">
+                <a class="btn btn--inner" href="/">
+                  Читать все отзывы
+                  <div class="btn btn--inner-icon">
+                    <i class="icon-chevron"></i>
+                  </div>
+                </a>
+                <div class="swiper__btns">
+                  <div class="swiper-button-prev opinion-button-prev">
+                    <i class="icon-chevron"></i>
+                  </div>
+                  <div class="swiper-button-next opinion-button-next">
+                    <i class="icon-chevron"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper opinion--slider">
+              <div class="swiper-wrapper">
+                @@loop('./elements/opinion-slide-item.html', './data/opinion-items.json')
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <section class="find-us">
         <div class="container">
           <div class="find-us__inner">
@@ -62,6 +144,9 @@
               </div>
             </div>
 
+          </div>
+          <div class="find-us__map">
+            <img src="./../images/temp/map.svg" alt="">
           </div>
         </div>
       </section>

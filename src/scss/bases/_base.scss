@@ -32,7 +32,9 @@ body {
   line-height: 120%;
   color: var(--purple);
 
-  @include sm {
+  cursor: default;
+
+  @include md {
     font-size: 1.4rem;
   }
 }
@@ -42,9 +44,9 @@ body {
   flex-direction: column;
   min-height: 100%;
 
-  @include md {
-    padding-top: 11rem;
-  }
+  // @include md {
+    padding-top: 13rem;
+  // }
 }
 
 .main {
@@ -60,10 +62,6 @@ section {
   margin-bottom: 7rem;
 
   @include md {
-    margin-bottom: 5rem;
-  }
-
-  @include sm {
     margin-bottom: 3rem;
   }
 }

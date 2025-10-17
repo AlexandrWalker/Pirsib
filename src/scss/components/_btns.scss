@@ -47,6 +47,13 @@
     padding: 0;
   }
 
+  &--inner {
+    padding: 0 1.4rem 0 2rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: none;
+  }
+
   &--inner-icon {
     --btn-width: 2.4rem;
     --btn-height: 2.4rem;

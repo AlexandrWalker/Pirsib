@@ -6,7 +6,7 @@
   &__head {
     margin-bottom: 5rem;
 
-    @include sm {
+    @include md {
       margin-bottom: 2rem;
     }
   }

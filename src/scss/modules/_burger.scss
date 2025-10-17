@@ -67,6 +67,10 @@
 
   .menu--open & {
     pointer-events: all;
+
+    @include md {
+      overflow-y: auto;
+    }
   }
 
   &__inner {
@@ -83,6 +87,7 @@
       justify-content: unset;
       transition: all 0.5s ease-in-out;
       clip-path: inset(0 0 100% 0);
+      height: fit-content;
     }
 
     .menu--open & {

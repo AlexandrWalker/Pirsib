@@ -98,9 +98,87 @@
   &__signup {
     min-width: 20rem;
     padding: 0 1rem 0 2rem;
+    overflow: visible;
+
+    position: relative;
 
     @include md {
       display: none;
+    }
+
+    &-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      width: calc(100% + 1rem + 8.4rem);
+
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 0;
+      z-index: 300;
+
+      .header__signup:hover & {
+        grid-template-rows: 1fr;
+      }
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 0 2rem;
+      border-radius: 2.4rem;
+
+      background: radial-gradient(39.27% 41.96% at 50% 53.43%, #e4e9ff12 0%, #ad32ae12 100%);
+      box-shadow: inset 0px 0px 11.4px #020a5169;
+      backdrop-filter: blur(6.35px);
+      transition: all 0.5s ease;
+      overflow: hidden;
+
+      pointer-events: none;
+
+      .header__signup:hover & {
+        padding: 2rem;
+        pointer-events: all;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 100%;
+      text-transform: none;
+
+      &:hover {
+        color: var(--pink);
+        text-decoration: underline;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 18.7rem;
+      text-transform: none;
+
+      p {
+        font-weight: 400;
+        font-size: 1.2rem;
+        white-space: normal;
+
+        &:first-child {
+          font-weight: 700;
+        }
+      }
     }
   }
 }

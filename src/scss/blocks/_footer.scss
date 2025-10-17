@@ -3,15 +3,20 @@
 .footer {
 
   &__inner {
+    --border-w: 0.1rem;
+
     display: grid;
     grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
     gap: 2rem;
     margin-bottom: 4rem;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
-    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-    backdrop-filter: blur(6.35px);
+    // background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    // box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    // backdrop-filter: blur(6.35px);
     border-radius: 10rem;
+
+    position: relative;
+    z-index: 1;
 
     @include md {
       display: flex;
@@ -19,6 +24,44 @@
       gap: 3rem;
 
       border-radius: 5rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: var(--border-w);
+      left: var(--border-w);
+      right: var(--border-w);
+      bottom: var(--border-w);
+      z-index: 2;
+      border-radius: 10rem;
+      padding: 0.1rem;
+      background: linear-gradient(130deg, #02AEFF 0%, #3C49C2 20%);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+
+      @include md {
+        border-radius: 5rem;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: var(--border-w);
+      left: var(--border-w);
+      right: var(--border-w);
+      bottom: var(--border-w);
+      z-index: 3;
+      border-radius: 10rem;
+      padding: 0.1rem;
+      background: radial-gradient(200% 100% at 50% 20%, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 53%);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+
+      @include md {
+        border-radius: 5rem;
+      }
     }
   }
 
@@ -33,6 +76,10 @@
     @include md {
       gap: 3rem;
       padding: 0 3rem 4rem 3rem;
+    }
+
+    h6 {
+      font-weight: 400;
     }
   }
 
@@ -91,9 +138,10 @@
       font-weight: 400;
       color: var(--blue-dark-2);
 
+      &.is-active,
       &:hover {
         font-weight: 700;
-        color: var(purple);
+        color: var(--purple);
       }
     }
   }

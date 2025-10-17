@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (scrollPosition() > firstSection.offsetHeight) {
-      // if (scrollPosition() > marker) {
+        // if (scrollPosition() > marker) {
         header.classList.add('show');
       } else {
         header.classList.remove('show');
@@ -84,6 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   headerFunc();
 
+  /**
+   * Градиент текста по курсору
+   */
   const gradientMoves = document.querySelectorAll('[data-gradient="gradientMove"]');
   gradientMoves.forEach(gradientMove => {
     window.addEventListener('mousemove', e => {
@@ -134,5 +137,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   accordionFunc();
+
+  /**
+   * Инициализация слайдера
+   */
+  const swiper = document.querySelector('.swiper');
+  if (swiper) {
+    const opinionSlider = new Swiper(".opinion--slider", {
+      slidesPerGroup: 1,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      grabCursor: true,
+      simulateTouch: true,
+      watchOverflow: true,
+      speed: 600,
+      freeMode: {
+        enabled: false,
+        momentum: false,
+        momentumBounce: false,
+        sticky: true,
+      },
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+        releaseOnEdges: true
+      },
+      touchEvents: {
+        prevent: true
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: false,
+      breakpoints: {
+        835: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          pagination: false,
+          navigation: {
+            prevEl: ".opinion-button-prev",
+            nextEl: ".opinion-button-next",
+          }
+        },
+      },
+    });
+  }
 
 });
