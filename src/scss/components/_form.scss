@@ -20,14 +20,11 @@
   }
 
   &__title {
-    font-family: var(--second-family);
-    font-style: normal;
-    font-weight: 700;
-    font-size: 3.4rem;
-    line-height: 100%;
 
-    @include md {
-      font-size: 2rem;
+    h5 {
+      @include md {
+        font-size: 2rem;
+      }
     }
   }
 

@@ -40,6 +40,8 @@
       mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       mask-composite: exclude;
 
+      pointer-events: none;
+
       @include md {
         border-radius: 5rem;
       }
@@ -58,6 +60,8 @@
       background: radial-gradient(200% 100% at 50% 20%, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 53%);
       mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       mask-composite: exclude;
+
+      pointer-events: none;
 
       @include md {
         border-radius: 5rem;
@@ -240,10 +244,54 @@
     backdrop-filter: blur(6.35px);
     border-radius: 10rem;
 
+    position: relative;
+
     @include md {
       padding: 4rem 3rem 3rem;
 
       border-radius: 5rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: var(--border-w);
+      left: var(--border-w);
+      right: var(--border-w);
+      bottom: var(--border-w);
+      z-index: 2;
+      border-radius: 10rem;
+      padding: 0.1rem;
+      background: linear-gradient(130deg, #02AEFF 0%, #3C49C2 20%);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+
+      pointer-events: none;
+
+      @include md {
+        border-radius: 5rem;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: var(--border-w);
+      left: var(--border-w);
+      right: var(--border-w);
+      bottom: var(--border-w);
+      z-index: 3;
+      border-radius: 10rem;
+      padding: 0.1rem;
+      background: radial-gradient(200% 100% at 50% 20%, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 53%);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+
+      pointer-events: none;
+
+      @include md {
+        border-radius: 5rem;
+      }
     }
   }
 }

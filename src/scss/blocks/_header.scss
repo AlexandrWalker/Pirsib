@@ -24,15 +24,13 @@
     justify-content: flex-end;
     align-items: center;
     gap: 1rem;
-
     padding: 4rem 0;
     transition: all 0.5s ease;
+    margin-left: auto;
+    width: fit-content;
 
     position: relative;
     z-index: 201;
-
-    margin-left: auto;
-    width: fit-content;
 
     @include md {
       justify-content: flex-start;
@@ -51,10 +49,24 @@
         border-radius: 10rem;
         margin-left: 0;
         width: 100%;
-
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
         box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-        backdrop-filter: blur(6.35px);
+
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          backdrop-filter: blur(6.35px);
+          border-radius: 10rem;
+          transition: all 0.5s ease;
+
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+        }
       }
     }
   }
@@ -97,7 +109,6 @@
 
   &__signup {
     min-width: 20rem;
-    padding: 0 1rem 0 2rem;
     overflow: visible;
 
     position: relative;
@@ -106,12 +117,21 @@
       display: none;
     }
 
+    &-btn {
+      padding: 0 1rem 0 2rem;
+    }
+
     &-content {
       display: grid;
       grid-template-rows: 0fr;
       overflow: hidden;
       transition: all 0.5s ease;
       width: calc(100% + 1rem + 8.4rem);
+
+      border-radius: 2.4rem;
+      background: radial-gradient(39.27% 41.96% at 50% 53.43%, #e4e9ff12 0%, #ad32ae12 100%);
+      box-shadow: inset 0px 0px 11.4px #020a5169;
+      backdrop-filter: blur(6.35px);
 
       position: absolute;
       top: calc(100% + 0.5rem);
@@ -127,15 +147,9 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      padding: 0 2rem;
-      border-radius: 2.4rem;
-
-      background: radial-gradient(39.27% 41.96% at 50% 53.43%, #e4e9ff12 0%, #ad32ae12 100%);
-      box-shadow: inset 0px 0px 11.4px #020a5169;
-      backdrop-filter: blur(6.35px);
       transition: all 0.5s ease;
       overflow: hidden;
-
+      padding: 0 2rem;
       pointer-events: none;
 
       .header__signup:hover & {

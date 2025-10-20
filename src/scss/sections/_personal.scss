@@ -1,0 +1,195 @@
+@use './../mixins' as *;
+
+.personal {
+
+  .general__head {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 85.6rem;
+    margin-bottom: 0;
+
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    @include md {
+      gap: 2rem;
+    }
+  }
+
+  .general__title {
+
+    h2 {
+      line-height: 120%;
+
+      span {
+
+        &:last-child {
+          display: block;
+          margin-top: -3.6rem;
+
+          @include md {
+            margin-top: -1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 53.2rem calc(100% - 53.2rem - 5rem);
+    gap: 6rem 5rem;
+
+    @include md {
+      grid-template-columns: calc(50% - 0.3rem) calc(50% - 0.3rem);
+      gap: 3rem 0.6rem;
+    }
+  }
+
+  &__slider {
+    max-width: 53.2rem;
+    width: 100%;
+    overflow: visible;
+    margin-right: 0;
+    margin-left: -1.6rem;
+
+    position: relative;
+    z-index: -1;
+
+    grid-column: 1/2;
+    grid-row: 1/3;
+
+    @include md {
+      max-width: 100%;
+      margin-left: 0;
+      grid-row: 1/2;
+    }
+  }
+
+  &__slide {
+    opacity: 0 !important;
+    overflow: visible !important;
+
+    &.swiper-slide-active {
+      opacity: 1 !important;
+    }
+
+    &-img {
+      position: absolute;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    width: calc(100%);
+    position: relative;
+    z-index: 2;
+
+    @include md {
+      max-width: calc(50% - 0.3rem);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    @include md {
+      gap: 0.8rem;
+
+      grid-column: 1/3;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    gap: 3.8rem;
+    width: calc(50% - 1rem);
+    min-height: 35.4rem;
+    padding: 4rem 4rem 6rem 9rem;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    backdrop-filter: blur(6.35px);
+    border-radius: 10rem;
+
+    position: relative;
+
+    @include md {
+      justify-content: space-between;
+      width: calc(50% - 0.4rem);
+      min-height: unset;
+      padding: 2rem 2rem 2.5rem;
+      border-radius: 2.4rem;
+      aspect-ratio: 173/187;
+    }
+
+    &:hover {
+
+      .btn::before {
+        opacity: 1;
+      }
+    }
+
+    &:first-child {
+
+      img {
+        top: 4.1rem;
+        left: 8.7rem;
+
+        @include md {
+          top: 2rem;
+          left: 2rem;
+        }
+      }
+    }
+
+    &:last-child {
+
+      img {
+        top: 3.2rem;
+        left: 6.6rem;
+
+        @include md {
+          top: 2rem;
+          left: 2rem;
+        }
+      }
+    }
+
+    .btn {
+      --btn-width: 14.8rem;
+      --btn-height: 14.8rem;
+
+      margin: 0 0 0 auto;
+      padding: 0;
+
+      @include md {
+        --btn-width: 5rem;
+        --btn-height: 5rem;
+      }
+    }
+
+    img {
+      width: auto;
+      height: 15rem;
+      object-fit: contain;
+
+      position: absolute;
+
+      @include md {
+        height: 6.1rem;
+      }
+    }
+
+    &-title {}
+  }
+}

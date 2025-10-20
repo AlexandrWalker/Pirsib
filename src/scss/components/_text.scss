@@ -37,7 +37,16 @@ h3 {
 
 h4 {}
 
-h5 {}
+h5 {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 3.4rem;
+  line-height: 100%;
+
+  @include md {
+    font-size: 1.6rem;
+  }
+}
 
 h6 {
   font-family: var(--second-family);

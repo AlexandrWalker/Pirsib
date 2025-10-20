@@ -82,14 +82,7 @@
       }
 
       span {
-        font-family: var(--second-family);
-        font-weight: 700;
-        font-size: 3.4rem;
         line-height: 120%;
-
-        @include md {
-          font-size: 1.6rem;
-        }
       }
 
       p {

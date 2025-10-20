@@ -1,5 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // function quickDist(deltaX, deltaY) {
+  //   return deltaX ** 2 + deltaY ** 2;
+  // }
+
+  // addEventListener("mousemove", e => {
+  //   const centerX = window.innerWidth / 2;
+  //   const centerY = window.innerHeight / 2;
+  //   const distanceX = e.clientX - centerX
+  //   const distanceY = e.clientY - centerY
+  //   const maxDist = quickDist(centerX, centerY);
+  //   const dist = quickDist(distanceX, distanceY);
+  //   const deg = Math.atan2(distanceY, distanceX) / Math.PI * 180;
+  //   document.body.style.setProperty("--deg", `${deg}deg`);
+  //   document.body.style.setProperty("--distance", `${dist / maxDist}`);
+  // });
+
   const checkEditMode = document.querySelector('.bx-panel-toggle-on') ?? null;
 
   /**
@@ -141,48 +157,108 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Инициализация слайдера
    */
-  const swiper = document.querySelector('.swiper');
-  if (swiper) {
-    const opinionSlider = new Swiper(".opinion--slider", {
-      slidesPerGroup: 1,
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      grabCursor: true,
-      simulateTouch: true,
-      watchOverflow: true,
-      speed: 600,
-      freeMode: {
-        enabled: false,
-        momentum: false,
-        momentumBounce: false,
-        sticky: true,
-      },
-      mousewheel: {
-        forceToAxis: true,
-        sensitivity: 1,
-        releaseOnEdges: true
-      },
-      touchEvents: {
-        prevent: true
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: false,
-      breakpoints: {
-        835: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-          pagination: false,
-          navigation: {
-            prevEl: ".opinion-button-prev",
-            nextEl: ".opinion-button-next",
-          }
+  const opinionSlider = new Swiper('.opinion--slider', {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    grabCursor: true,
+    simulateTouch: true,
+    watchOverflow: true,
+    speed: 600,
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 1,
+      releaseOnEdges: true,
+    },
+    touchEvents: {
+      prevent: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: false,
+    breakpoints: {
+      835: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        pagination: false,
+        navigation: {
+          prevEl: ".opinion-button-prev",
+          nextEl: ".opinion-button-next",
         },
       },
-    });
-  }
+    },
+  });
+
+  const personalSlider = new Swiper('.personal__slider', {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    grabCursor: true,
+    simulateTouch: true,
+    watchOverflow: true,
+    speed: 1000,
+    // effect: "fade",
+    // effect: "flip",
+    effect: "creative",
+    creativeEffect: {
+      prev: {
+        translate: ["-20%", 0, -1],
+      },
+      next: {
+        translate: ["20%", 0, 0],
+      },
+    },
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 1,
+      releaseOnEdges: true
+    },
+    touchEvents: {
+      prevent: true
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+  });
+
+  const worksSlider = new Swiper('.works__slider', {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 8,
+    loop: true,
+    grabCursor: true,
+    simulateTouch: true,
+    watchOverflow: true,
+    speed: 600,
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 1,
+      releaseOnEdges: true,
+    },
+    touchEvents: {
+      prevent: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: false,
+    breakpoints: {
+      835: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        pagination: false,
+        navigation: {
+          prevEl: ".works-button-prev",
+          nextEl: ".works-button-next",
+        },
+      },
+    },
+  });
 
 });

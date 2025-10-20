@@ -1,0 +1,140 @@
+@use './../mixins' as *;
+
+.works {
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 5rem;
+
+    @include md {
+      display: none;
+    }
+
+    .btn--inner {
+
+      i {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &__body {}
+
+  &__slider {
+
+    @include md {
+      display: none;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    @include domd {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 57.5rem;
+    padding: 5rem 5rem 6rem 5rem;
+    background: linear-gradient(90deg, rgba(12, 15, 27, 0.95) 0%, rgba(13, 15, 27, 0) 100%);
+    border-radius: 10rem;
+    border: 0.1rem solid #3C49C2;
+    overflow: hidden;
+
+    position: relative;
+
+    @include md {
+      min-height: unset;
+      padding: 3rem;
+      border-radius: 2.4rem;
+
+      aspect-ratio: 353/371;
+    }
+
+    &:hover {
+
+      .btn::before {
+        opacity: 1;
+      }
+    }
+
+    .btn {
+      --btn-width: 8rem;
+      --btn-height: 8rem;
+
+      padding: 0;
+
+      @include md {
+        --btn-width: 5rem;
+        --btn-height: 5rem;
+
+        margin-left: 1rem;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 20rem;
+
+    @include md {
+      gap: 2rem;
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      color: var(--blue);
+
+      @include md {
+        gap: 1rem;
+      }
+    }
+
+    h5 {
+
+      @include md {
+        font-size: 2.4rem;
+      }
+    }
+
+    h6 {
+
+      @include md {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

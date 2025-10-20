@@ -6,6 +6,8 @@
   max-width: calc(var(--container-width) + (var(--container-padding) * 2));
   width: 100%;
   flex: 1;
+
+  position: relative;
 }
 
 .container--fluid {

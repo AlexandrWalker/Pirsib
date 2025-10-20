@@ -1,0 +1,46 @@
+@use './../mixins' as *;
+
+.mask {
+  object-fit: cover;
+  max-width: none;
+  pointer-events: none;
+
+  position: absolute;
+  z-index: -1;
+
+  @include md {
+    display: none;
+  }
+
+  &.mask--1 {
+    width: 239.8rem;
+    height: 269.6rem;
+
+    top: -17.5rem;
+    left: 50%;
+  }
+
+  &.mask--2 {
+    width: 174.1rem;
+    height: 204rem;
+
+    top: -17.5rem;
+    left: 50%;
+  }
+
+  &.mask--3 {
+    width: 164.7rem;
+    height: 166rem;
+
+    top: -43.5rem;
+    right: -76.6rem;
+  }
+
+  &.mask--4 {
+    width: 335.1rem;
+    height: 392.6rem;
+
+    top: -88.5rem;
+    left: -41.6rem;
+  }
+}
