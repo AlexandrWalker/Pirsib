@@ -33,7 +33,7 @@ body {
   color: var(--purple);
   cursor: default;
 
-  background: radial-gradient(45.26% 14.26% at 29.38% 7.82%, rgba(173, 50, 174, 0.2) 0%, rgba(12, 15, 27, 0.2) 100%), #0C0F1B;
+  background: var(--page-bg);
 
   @include md {
     font-size: 1.4rem;
@@ -49,8 +49,12 @@ body {
 
 
   // @include md {
-  padding-top: 13rem;
+  padding-top: 15.6rem;
   // }
+
+  @include md {
+    padding-top: 9rem;
+  }
 }
 
 .main {

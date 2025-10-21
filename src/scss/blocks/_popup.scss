@@ -1,1 +1,47 @@
 @use './../mixins' as *;
+
+.popup {
+  display: none;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), radial-gradient(38.6% 39.27% at 49.15% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
+  box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+  backdrop-filter: blur(6.35px);
+  border-radius: 5rem;
+  padding: 4rem 4rem 5rem;
+  max-width: 41.2rem;
+
+  color: var(--purple);
+
+  h5 {
+
+    @include md {
+      font-size: 3.4rem;
+    }
+  }
+
+  .is-close-button {
+    top: 3rem;
+    right: 3.3rem;
+
+    svg {
+      stroke: var(--pink-2);
+      stroke-width: 0.06rem;
+      transform: scale(1.16);
+    }
+  }
+
+  .form {
+    gap: 3rem;
+
+    &__head {
+      gap: 3rem;
+    }
+
+    &-wrap {
+      margin-left: 0;
+    }
+  }
+}
+
+#popup-2 {
+  padding: 5.8rem 7.4rem 5.8rem 4.2rem;
+}

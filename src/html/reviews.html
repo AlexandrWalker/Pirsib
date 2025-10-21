@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "Pirsib"})
+
+<body>
+  <div class="wrapper page__inner">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Секции страницы -->
+    <main class="main">
+
+      <section class="reviews">
+        <div class="container">
+          <div class="reviews__inner">
+
+            <div class="general__head">
+              <div class="general__title">
+                <h2>
+                  Мнение о нас 
+                </h2>
+              </div>
+            </div>
+
+            <div class="reviews__items">
+              @@loop('./elements/opinion-item.html', './data/opinion-items.json')
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

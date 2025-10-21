@@ -1,0 +1,27 @@
+@use './../mixins' as *;
+
+.reviews {
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @include sm {
+      gap: 0.8rem;
+    }
+  }
+
+  .opinion__item {
+    width: calc(33.33333% - (4rem/3));
+
+    @include md {
+      width: calc(50% - 1rem);
+    }
+
+    @include sm {
+      width: 100%;
+    }
+  }
+}

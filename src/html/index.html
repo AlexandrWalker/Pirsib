@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('blocks/head.html', {"title": "Основа"})
+@@include('blocks/head.html', {"title": "Pirsib"})
 
 <body>
   <div class="wrapper">
@@ -9,12 +9,84 @@
     <!-- Секции страницы -->
     <main class="main">
 
+      <section class="hero">
+        <div class="container">
+          <div class="hero__inner">
+
+            <div class="hero__content">
+              <div class="hero__logo">
+                <img src="./../images/logo/logo-big.svg" alt="">
+              </div>
+              <div class="hero__text">
+                <h6>
+                  Наша история началась в 2006 году в маленьком кабинете, который был арендован в медицинском центре
+                  университета
+                </h6>
+              </div>
+              <a class="hero__btn btn btn--inner" href="/">
+                Связаться с нами
+                <div class="btn btn--inner-icon">
+                  <i class="icon-chevron"></i>
+                </div>
+              </a>
+            </div>
+
+            <div class="hero__cover">
+              <img src="./../images/temp/hero-girl.svg" alt="">
+            </div>
+
+            <div class="hero__request" data-transform="fadeUp">
+              <form class="hero__request-form" action="">
+                <div class="hero__request-head">
+                  <h6>
+                    Оставьте заявку на консультацию
+                  </h6>
+                </div>
+                <div class="hero__request-body">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <input class="form-input" name="hero_name" type="text" placeholder="Ваше имя*">
+                      <i class="icon-user"></i>
+                    </div>
+                  </div>
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <input class="form-input" name="hero_tel" type="tel" placeholder="Телефон*">
+                      <i class="icon-phone"></i>
+                    </div>
+                  </div>
+                  <button class="btn form-btn">
+                    Отправить заявку
+                    <div class="btn btn--inner-icon">
+                      <i class="icon-chevron"></i>
+                    </div>
+                  </button>
+                </div>
+                <div class="hero__request-foot">
+                  <div class="form-group">
+                    <div class="form-wrap">
+                      <input id="hero_checkbox" class="form-checkbox" type="checkbox">
+                      <label for="hero_checkbox" class="form-checkbox--item"></label>
+                      <p>
+                        Нажимая кнопку, вы даёте согласие на обработку ваших персональных данных
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+          <img class="mask mask--hero" src="./../../images/mask/mask-hero-text.svg" alt="">
+        </div>
+      </section>
+
       <section class="directions">
         <div class="container">
           <div class="directions__inner">
 
             <div class="general__head">
-              <div class="general__title">
+              <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient="gradientMove">
                   <span>
                     Направления
@@ -28,7 +100,7 @@
 
             <div class="directions__body">
               <div class="directions__items">
-                <a class="directions__item" href="/">
+                <a class="directions__item" href="/" data-transform="foreachFadeUp1">
                   <div class="directions__item-title">
                     <h5>
                       Пирсинг
@@ -39,7 +111,7 @@
                   </div>
                   <img src="./../images/temp/directions-1.png" alt="">
                 </a>
-                <a class="directions__item" href="/">
+                <a class="directions__item" href="/" data-transform="foreachFadeUp2">
                   <div class="directions__item-title">
                     <h5>
                       Татуировки
@@ -50,7 +122,7 @@
                   </div>
                   <img src="./../images/temp/directions-2.png" alt="">
                 </a>
-                <a class="directions__item" href="/">
+                <a class="directions__item" href="/" data-transform="foreachFadeUp3">
                   <div class="directions__item-title">
                     <h5>
                       Удаление татуировки
@@ -61,7 +133,7 @@
                   </div>
                   <img src="./../images/temp/directions-3.png" alt="">
                 </a>
-                <a class="directions__item" href="/">
+                <a class="directions__item" href="/" data-transform="foreachFadeUp4">
                   <div class="directions__item-title">
                     <h5>
                       Украшения
@@ -78,6 +150,7 @@
             </div>
 
           </div>
+          <img class="mask mask--1" src="./../../images/mask/mask-1.svg" alt="" data-animation="parallax-box">
         </div>
       </section>
 
@@ -101,7 +174,7 @@
             </div>
 
             <div class="general__head">
-              <div class="general__title">
+              <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient="gradientMove">
                   <span>Мастера</span>
                   <br>
@@ -115,6 +188,7 @@
                 </p>
               </div>
             </div>
+
             <div class="personal__btns">
               <a class="personal__btn" href="/">
                 <img src="./../images/temp/personal-icon-1.svg" alt="">
@@ -141,6 +215,7 @@
             </div>
 
           </div>
+          <img class="mask mask--2" src="./../../images/mask/mask-2.svg" alt="" data-animation="parallax-box">
         </div>
       </section>
 
@@ -150,7 +225,7 @@
 
             <div class="works__head">
               <div class="general__head">
-                <div class="general__title">
+                <div class="general__title" data-transform="titleFadeUp">
                   <h3 data-gradient="gradientMove">
                     Работы наших мастеров
                   </h3>
@@ -444,7 +519,7 @@
 
       <section class="quiz">
         <div class="container">
-          <div class="quiz__inner">
+          <div class="quiz__inner" data-transform="fadeUp">
             <div class="quiz__content">
               <div class="quiz__title">
                 <h3 data-gradient="gradientMove">
@@ -472,7 +547,7 @@
           <div class="certificates__inner">
 
             <div class="general__head">
-              <div class="general__title">
+              <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient="gradientMove">Cертификаты</h2>
               </div>
             </div>
@@ -481,7 +556,7 @@
             </div>
 
           </div>
-          <img class="mask mask--3" src="./../../images/mask/mask-3.svg" alt="">
+          <img class="mask mask--3" src="./../../images/mask/mask-3.svg" alt="" data-animation="parallax-box">
         </div>
       </section>
 
@@ -491,7 +566,7 @@
 
             <div class="opinion__head">
               <div class="general__head">
-                <div class="general__title">
+                <div class="general__title" data-transform="titleFadeUp">
                   <h2 data-gradient="gradientMove">Мнение о нас</h2>
                 </div>
               </div>
@@ -513,12 +588,14 @@
               </div>
             </div>
 
-            <!-- <div class="swiper opinion--slider">
-              <div class="swiper-wrapper">
-                @@loop('./elements/opinion-slide-item.html', './data/opinion-items.json')
+            <div class="opinion__body">
+              <div class="swiper opinion__slider">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/opinion-slide-item.html', './data/opinion-items.json')
+                </div>
+                <div class="swiper-pagination"></div>
               </div>
-              <div class="swiper-pagination"></div>
-            </div> -->
+            </div>
 
           </div>
         </div>
@@ -529,14 +606,14 @@
           <div class="find-us__inner">
 
             <div class="general__head">
-              <div class="general__title">
+              <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient="gradientMove">
                   Как нас найти
                 </h2>
               </div>
             </div>
 
-            <div class="find-us__content">
+            <div class="find-us__content" data-transform="fadeUp">
               <div class="find-us__items">
                 <div class="find-us__item">
                   <p>
@@ -583,7 +660,7 @@
             <img src="./../images/temp/map.svg" alt="">
           </div>
 
-          <img class="mask mask--4" src="./../../images/mask/mask-4.svg" alt="">
+          <img class="mask mask--4" src="./../../images/mask/mask-4.svg" alt="" data-animation="parallax-box">
         </div>
       </section>
 
@@ -592,7 +669,7 @@
           <div class="faq__inner">
 
             <div class="general__head">
-              <div class="general__title">
+              <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient="gradientMove">
                   Ответы на важные вопросы
                 </h2>
@@ -729,6 +806,7 @@
           </div>
         </div>
       </section>
+
     </main>
     <!-- Подвал -->
     @@include('blocks/footer.html')

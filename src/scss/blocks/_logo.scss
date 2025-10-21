@@ -16,6 +16,7 @@
     opacity: 0;
   }
 
+  .page__inner .header:not(.menu--open .header.show) &,
   .header.show:not(.menu--open .header.show) & {
 
     @include domd {

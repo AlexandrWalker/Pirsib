@@ -6,26 +6,43 @@
   pointer-events: none;
 
   position: absolute;
-  z-index: -1;
+  z-index: -2;
 
   @include md {
     display: none;
+  }
+
+  &.mask--hero {
+    width: 127rem;
+    height: 64.1rem;
+
+    top: -0.5rem;
+    right: 10.5rem;
+
+    @include md {
+      display: block;
+      width: 37.9rem;
+      height: 19.1rem;
+
+      top: 0;
+      right: -0.6rem;
+    }
   }
 
   &.mask--1 {
     width: 239.8rem;
     height: 269.6rem;
 
-    top: -17.5rem;
-    left: 50%;
+    top: -123.6rem;
+    right: -82.2rem;
   }
 
   &.mask--2 {
     width: 174.1rem;
     height: 204rem;
 
-    top: -17.5rem;
-    left: 50%;
+    top: -45.6rem;
+    right: -38.8rem;
   }
 
   &.mask--3 {

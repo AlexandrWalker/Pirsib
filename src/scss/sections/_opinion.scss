@@ -3,6 +3,10 @@
 .opinion {
   margin: 0;
 
+  @include md {
+    margin-bottom: 3rem;
+  }
+
   .general__head {
     margin-bottom: -0.2rem;
 
@@ -34,16 +38,9 @@
     @include md {
       display: none;
     }
-
-    .btn--inner {
-
-      i {
-        transform: rotate(-90deg);
-      }
-    }
   }
 
-  &--slider {
+  &__slider {
     border-radius: 10rem;
 
     @include md {
@@ -147,8 +144,7 @@
       }
 
       i {
-        transform: rotate(-90deg);
-
+        
         @include md {
           font-size: 2.7rem;
         }

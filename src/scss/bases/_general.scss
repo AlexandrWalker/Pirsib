@@ -13,5 +13,13 @@
 
   &__title {
     max-width: 150rem;
+    overflow: hidden;
+  }
+}
+
+.page {
+
+  &__inner {
+    padding-top: 24.6rem;
   }
 }
