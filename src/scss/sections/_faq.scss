@@ -23,7 +23,7 @@
     gap: 0;
     padding: 2.5rem 5rem 2.6rem;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) padding-box, radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%) border-box;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) padding-box, radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%) border-box;
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
     transition: all 0.5s ease;
@@ -58,10 +58,30 @@
     &.accordion-active {
       gap: 3rem;
       padding: 2.5rem 5rem 4rem;
+      border-radius: 5rem;
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 37.96% at 50% 48.33%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
 
       @include md {
         gap: 2rem;
         padding: 1.7rem 2rem 1.9rem 3rem;
+        border-radius: 2.4rem;
+      }
+
+      &.border::before {
+        background: linear-gradient(110deg, #FE9AFF, rgba(60, 73, 194, 0.61));
+        border-radius: 5rem;
+
+        @include md {
+          border-radius: 2.4rem;
+        }
+      }
+
+      &.border::after {
+        border-radius: 5rem;
+
+        @include md {
+          border-radius: 2.4rem;
+        }
       }
     }
 
@@ -70,6 +90,11 @@
       justify-content: space-between;
       align-items: center;
       gap: 0 2rem;
+      transition: all 0.5s ease;
+
+      .accordion-active & {
+        color: var(--pink-2);
+      }
 
       .btn {
         --btn-width: 2.7rem;

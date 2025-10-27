@@ -64,9 +64,9 @@
     padding: 24rem 6rem 6rem 6rem;
     overflow: hidden;
     border-radius: 10rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s linear;
 
-    transform: translateY(10rem);
+    transform: translateY(50%);
     opacity: 0;
 
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);

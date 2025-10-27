@@ -48,6 +48,11 @@
       padding: 3rem;
       border-radius: 2.4rem;
     }
+
+    &::before,
+    &::after {
+      border-radius: 5rem;
+    }
   }
 
   &__items {

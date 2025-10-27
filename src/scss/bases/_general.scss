@@ -23,3 +23,72 @@
     padding-top: 24.6rem;
   }
 }
+
+.border {
+  overflow: visible;
+  position: relative;
+
+  &:hover {
+
+    &::before {
+      background: linear-gradient(110deg, #FE9AFF, rgba(60, 73, 194, 0.61));
+    }
+  }
+
+  &::before {
+    --border-w: 0.1rem;
+
+    content: "";
+    position: absolute;
+    z-index: 1;
+    // inset: calc(0rem - var(--border-w));
+    /*
+      если нет поддержки inset:
+    */
+    top: var(--border-w);
+    left: var(--border-w);
+    right: var(--border-w);
+    bottom: var(--border-w);
+
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    padding: 0.1rem;
+    background: linear-gradient(110deg, #02AEFF, rgba(60, 73, 194, 0.61));
+    mask: linear-gradient(#000000 0 0) content-box, linear-gradient(#000000 0 0);
+    mask-composite: exclude;
+    transition: all 0.5s ease;
+
+    @include md {
+      border-radius: 2.5rem;
+    }
+  }
+
+  &::after {
+    --border-w: 0.1rem;
+
+    content: "";
+    position: absolute;
+    z-index: 2;
+    // inset: calc(0rem - var(--border-w));
+    top: var(--border-w);
+    left: var(--border-w);
+    right: var(--border-w);
+    bottom: var(--border-w);
+
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    padding: 0.1rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.53));
+    mask: linear-gradient(#000000 0 0) content-box, linear-gradient(#000000 0 0);
+    mask-composite: exclude;
+    transition: all 0.5s ease;
+
+    @include md {
+      border-radius: 5rem;
+    }
+  }
+}

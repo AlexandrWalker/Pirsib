@@ -47,10 +47,14 @@
     padding: 5rem 5rem 6rem 5rem;
     background: linear-gradient(90deg, rgba(12, 15, 27, 0.95) 0%, rgba(13, 15, 27, 0) 100%);
     border-radius: 10rem;
-    border: 0.1rem solid #3C49C2;
     overflow: hidden;
 
     position: relative;
+
+    transition: all 0.3s linear;
+
+    transform: translateY(50%);
+    opacity: 0;
 
     @include md {
       min-height: unset;

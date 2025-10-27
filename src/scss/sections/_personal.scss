@@ -125,6 +125,11 @@
 
     position: relative;
 
+    transition: all 0.3s linear;
+
+    transform: translateY(50%);
+    opacity: 0;
+
     @include md {
       justify-content: space-between;
       width: calc(50% - 0.4rem);
