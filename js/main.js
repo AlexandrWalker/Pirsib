@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const checkEditMode = document.querySelector('.bx-panel-toggle-on') ?? null;
 
   /**
+   * Подключение ScrollTrigger
+   */
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  /**
    * Инициализация Lenis
    */
   const lenis = new Lenis({
@@ -106,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth > 834) {
 
       const gradientMoves = document.querySelectorAll('[data-gradient="gradientMove"]');
+      const body = document.body;
       gradientMoves.forEach(gradientMove => {
         window.addEventListener('mousemove', e => {
           w = window.innerWidth;
@@ -332,6 +338,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const textBlurs = document.querySelectorAll('[data-blur="textBlur"]');
+  if (textBlurs.length > 0) {
+    textBlurs.forEach(textBlur => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(textBlur, {
+        opacity: 0,
+        filter: "blur(10px)",
+        duration: 0.5,
+        ease: "power4.out",
+        onUpdate: function () {
+          this.targets().forEach(el => {
+            el.style.filter = `blur(${Math.abs(this.progress() - 1) * 10}px)`;
+          });
+        }
+      });
+      scrollTriggerPlayer(textBlur, tl)
+    });
+  }
+
   const titleFadeUps = document.querySelectorAll('[data-transform="titleFadeUp"]');
   if (titleFadeUps.length > 0) {
     titleFadeUps.forEach(titleFadeUp => {
@@ -352,41 +379,77 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const directionsItemAttrs = document.querySelectorAll('[data-transform="foreachFadeUp"]');
-  const directionsItems = document.querySelector('.directions__items');
-  const directionsItem1 = document.querySelector('[data-transform="foreachFadeUp1"]');
-  const directionsItem2 = document.querySelector('[data-transform="foreachFadeUp2"]');
-  const directionsItem3 = document.querySelector('[data-transform="foreachFadeUp3"]');
-  const directionsItem4 = document.querySelector('[data-transform="foreachFadeUp4"]');
+  const fadeUpStaggerParents = document.querySelectorAll('[data-transform="fadeUpStaggerParent"]')
+  if (fadeUpStaggerParents.length > 0) {
+    fadeUpStaggerParents.forEach(fadeUpStaggerParent => {
+      const items = fadeUpStaggerParent.querySelectorAll('[data-transform="fadeUpStagger"]');
+      gsap.to(items, {
+        scrollTrigger: {
+          trigger: fadeUpStaggerParent,
+          start: "top 80%",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power2.out"
+      });
+    });
+  }
 
-  for (let index = 0; index < directionsItemAttrs.length; index++) {
-    const element = directionsItemAttrs[index];
+  const fadeRightStaggerParents = document.querySelectorAll('[data-transform="fadeRightStaggerParent"]')
+  if (fadeRightStaggerParents.length > 0) {
+    fadeRightStaggerParents.forEach(fadeRightStaggerParent => {
+      const items = fadeRightStaggerParent.querySelectorAll('[data-transform="fadeRightStagger"]');
+      gsap.to(items, {
+        scrollTrigger: {
+          trigger: fadeRightStaggerParent,
+          start: "top 80%",
+        },
+        opacity: 1,
+        x: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power2.out"
+      });
+    });
+  }
 
+  const heroCover = document.querySelector('.hero__cover');
+  if (heroCover) {
     const tl = gsap.timeline({
       paused: true
     });
-
-    tl.to(element, { duration: 0.3, y: 0, opacity: 1, stagger: { amount: .3 } }, '+=0.' + index)
-    scrollTriggerPlayer(element.parentNode, tl);
+    tl.from(heroCover, {
+      opacity: 0,
+      y: "100",
+      duration: 1,
+      ease: "ease",
+      stagger: {
+        amount: .3
+      },
+    });
+    scrollTriggerPlayer(heroCover, tl)
   }
-  // directionsItemAttrs.forEach(directionsItemAttr => {
-  //   const tl = gsap.timeline({
-  //     paused: true
-  //   });
 
-  //   tl.to(directionsItemAttr, { duration: 0.3, y: 0, opacity: 1, stagger: { amount: .3 } }, '-=0.' + i)
-  //   scrollTriggerPlayer(directionsItemAttr, tl);
-  // });
-
-  // const tl = gsap.timeline({
-  //   paused: true
-  // });
-
-  // tl.to(directionsItem1, { duration: 0.3, y: 0, opacity: 1, stagger: { amount: .3 } })
-  //   .to(directionsItem2, { duration: 0.3, y: 0, opacity: 1, stagger: { amount: .3 } })
-  //   .to(directionsItem3, { duration: 0.3, y: 0, opacity: 1, stagger: { amount: .3 } })
-  //   .to(directionsItem4, { duration: 0.3, y: 0, opacity: 1, stagger: { amount: .3 } })
-  // scrollTriggerPlayer(directionsItems, tl);
+  const heroLogo = document.querySelector('.hero__logo');
+  if (heroLogo) {
+    const tl = gsap.timeline({
+      paused: true
+    });
+    tl.from(heroLogo, {
+      opacity: 0,
+      filter: "blur(10px)",
+      duration: 1,
+      ease: "power4.out",
+      onUpdate: function () {
+        this.targets().forEach(el => {
+          el.style.filter = `blur(${Math.abs(this.progress() - 1) * 10}px)`;
+        });
+      }
+    });
+    scrollTriggerPlayer(heroLogo, tl)
+  }
 
   function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 95%") {
     ScrollTrigger.create({
@@ -450,8 +513,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
- * Инициализация формы набора символов
- */
+   * Инициализация формы набора символов
+   */
   const form = document.querySelector('form');
   if (form) {
     const inputElements = document.querySelectorAll('.form-input');
