@@ -51,11 +51,6 @@
 
     position: relative;
 
-    transition: all 0.3s linear;
-
-    transform: translateY(50%);
-    opacity: 0;
-
     @include md {
       min-height: unset;
       padding: 3rem;

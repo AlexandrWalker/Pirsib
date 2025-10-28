@@ -61,11 +61,6 @@
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
 
-    transition: all 0.3s linear;
-
-    transform: translateY(50%);
-    opacity: 0;
-
     @include md {
       gap: 2rem;
       min-height: auto;

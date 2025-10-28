@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "Pirsib"})
+
+<body>
+  <div class="wrapper page__inner">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Секции страницы -->
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Контакты
+                </li>
+              </ul>
+            </div>
+
+            <div class="general__head">
+              <div class="general__title">
+                <h2 data-gradient="gradientMove">
+                  Контакты
+                </h2>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="find-us contacts">
+        <div class="container">
+          <div class="find-us__inner">
+
+            <div class="find-us__content border" data-transform="fadeUp">
+              <div class="find-us__items">
+                <div class="find-us__item">
+                  <p>
+                    Телефон:
+                  </p>
+                  <a href="tel:+79139178500">
+                    +7-913-917-8500
+                  </a>
+                </div>
+                <div class="find-us__item">
+                  <p>
+                    Почта:
+                  </p>
+                  <a href="mailto:pochta_companii@mail.ru">
+                    pochta_companii@mail.ru
+                  </a>
+                </div>
+                <div class="find-us__item">
+                  <p>
+                    Адрес:
+                  </p>
+                  <h6>
+                    Новосибирск,<br> Орджоникидзе, 35/1
+                  </h6>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="find-us__map">
+            <img src="./../images/temp/map.svg" alt="">
+          </div>
+
+          <img class="mask mask--4" src="./../../images/mask/mask-4.svg" alt="" data-animation="parallax-box">
+        </div>
+      </section>
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

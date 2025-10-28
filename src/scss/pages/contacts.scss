@@ -1,0 +1,32 @@
+@use './../mixins' as *;
+
+.find-us {
+
+  .page__inner & {
+    margin-top: -16rem;
+    padding: 16rem 0 25rem;
+
+    @include md {
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  &__content {
+
+    &::before,
+    &::after {
+
+      @include md {
+        border-radius: 2.4rem;
+      }
+    }
+  }
+
+  &__map {
+
+    .page__inner & {
+      top: -16rem;
+    }
+  }
+}

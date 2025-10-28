@@ -20,7 +20,15 @@
   cursor: pointer;
 
   @include md {
+    width: 6.6rem;
     margin-left: auto;
+  }
+
+  .page__inner & {
+
+    @include md {
+      margin-left: 0;
+    }
   }
 
   &__line {
@@ -28,6 +36,10 @@
     height: 0.1rem;
     background: var(--purple);
     transition: all 0.5s ease;
+
+    @include md {
+      width: 2.6rem;
+    }
 
     .burger--open & {
       width: 2.3rem;

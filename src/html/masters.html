@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "Pirsib"})
+
+<body>
+  <div class="wrapper page__inner">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Секции страницы -->
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Мастера
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="masters">
+        <div class="container">
+          <div class="masters__inner">
+
+            <div class="masters__content border">
+              <div class="general__head">
+                <div class="general__title" data-transform="titleFadeUp">
+                  <h2 data-gradient="gradientMove">Наши мастера</h2>
+                </div>
+                <div class="general__text" data-blur="textBlur">
+                  <h6>
+                    Наша история началась в 2006 году в маленьком кабинете, который был арендован в медицинском центре
+                    университета
+                  </h6>
+                </div>
+                <div class="btn">
+                  <i class="icon-chevron-min"></i>
+                </div>
+              </div>
+              <div class="masters__cover">
+                <img src="./../images/temp/masters-cover-2.png" alt="">
+              </div>
+            </div>
+
+            <div class="masters__items" data-transform="fadeUpStaggerParent">
+              @@loop('./elements/masters-item.html', './data/masters-items.json')
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

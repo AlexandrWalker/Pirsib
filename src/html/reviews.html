@@ -9,19 +9,39 @@
     <!-- Секции страницы -->
     <main class="main">
 
-      <section class="reviews">
+      <section class="template">
         <div class="container">
-          <div class="reviews__inner">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Мнение о нас
+                </li>
+              </ul>
+            </div>
 
             <div class="general__head">
               <div class="general__title">
-                <h2>
-                  Мнение о нас 
+                <h2 data-gradient="gradientMove">
+                  Мнение о нас
                 </h2>
               </div>
             </div>
 
-            <div class="reviews__items">
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="container">
+          <div class="reviews__inner">
+            <div class="reviews__items" data-transform="fadeUpStaggerParent">
               @@loop('./elements/opinion-item.html', './data/opinion-items.json')
             </div>
           </div>

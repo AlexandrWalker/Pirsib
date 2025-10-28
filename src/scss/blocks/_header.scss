@@ -68,6 +68,52 @@
           left: 0;
           z-index: -1;
         }
+
+        &::after {
+          content: "";
+          position: absolute;
+          z-index: 1;
+          /* растянуть на весь блок */
+          inset: 0;
+          border-radius: 10rem;
+          /* ширина stroke */
+          padding: calc(0.1rem/2);
+          background:
+            linear-gradient(142deg, var(--border-blue) 0%, var(--border-dark-blue-61) 21%) border-box,
+            linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%) border-box;
+          /* вырезаем внутренность */
+          -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          /* чтобы не мешал кликам */
+          pointer-events: none;
+          /* плавность смены градиента при наведении */
+          opacity: 1;
+          transition: opacity 0.5s ease;
+
+          @include md {
+            border-radius: 5rem;
+          }
+        }
+      }
+    }
+
+    .page__inner .header:not(.menu--open .header.show) & {
+
+      @include domd {
+        padding: 1.5rem 3.1rem 1.5rem 2.5rem;
+      }
+
+      @include md {
+        justify-content: space-between;
+
+        .logo {
+          display: flex;
+          opacity: 1;
+          height: 5.5rem;
+        }
       }
     }
   }
@@ -80,6 +126,14 @@
 
     @include md {
       width: 100%;
+    }
+
+    .page__inner & {
+
+      @include md {
+        width: fit-content;
+        gap: 0.8rem;
+      }
     }
 
     .page__inner .header:not(.menu--open .header.show) &,

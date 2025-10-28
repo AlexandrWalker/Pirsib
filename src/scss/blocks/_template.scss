@@ -1,1 +1,23 @@
 @use './../mixins' as *;
+
+.template {
+  margin-bottom: 4rem;
+
+  @include md {
+    margin-bottom: 3rem;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include md {
+      gap: 2rem;
+    }
+  }
+
+  .general__head {
+    margin-bottom: 0;
+  }
+}

@@ -41,11 +41,6 @@
     position: relative;
     z-index: 1;
 
-    transition: all 0.3s linear;
-
-    transform: translateY(50%);
-    opacity: 0;
-
     @include domd {
       width: calc(25% - ((2rem*3)/4));
       min-height: 50.3rem;
