@@ -120,7 +120,7 @@
 
     padding: 0;
 
-    .icon-chevron:not(.faq__item .btn .icon-chevron) {
+    .icon-chevron:not(.faq__item .btn .icon-chevron, .header__signup-btn .icon-chevron) {
       transform: rotate(-90deg);
     }
   }

@@ -52,7 +52,6 @@
       opacity: 1;
       transition: all 0.5s ease;
 
-      // background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
       backdrop-filter: blur(6.35px);
@@ -135,6 +134,17 @@
       @include sm {
         padding: 1.7rem 2rem 1.9rem 3rem;
         border-radius: 2.4rem;
+      }
+
+      .border {
+
+        &::before {
+          opacity: 0;
+        }
+
+        &::after {
+          opacity: 1;
+        }
       }
     }
 
