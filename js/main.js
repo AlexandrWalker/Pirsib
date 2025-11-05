@@ -122,48 +122,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
+      // Массив градиентов с их матрицами
+      const gradients = [
+        { id: 'paint0_radial_265_2289', matrix: 'matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)' },
+        { id: 'paint1_radial_265_2289', matrix: 'matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)' },
+        { id: 'paint2_radial_265_2289', matrix: 'matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)' },
+        { id: 'paint3_radial_265_2289', matrix: 'matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)' },
+        { id: 'paint4_radial_265_2289', matrix: 'matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)' },
+        { id: 'paint5_radial_265_2289', matrix: 'matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)' },
+        { id: 'paint6_radial_265_2289', matrix: 'matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)' },
+        { id: 'paint7_radial_265_2289', matrix: 'matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)' },
+        { id: 'paint8_radial_265_2289', matrix: 'matrix(10.2496 67.819 -168.886 262.836 207.79 386.652)' },
+        { id: 'paint9_radial_265_2289', matrix: 'matrix(8.73367 48.3895 -143.908 187.536 225.447 408.921)' },
+        { id: 'paint10_radial_265_2289', matrix: 'matrix(11.0124 65.8181 -181.456 255.081 246.985 388.905)' },
+        { id: 'paint11_radial_265_2289', matrix: 'matrix(8.99772 48.337 -148.259 187.332 269.923 408.961)' },
+        { id: 'paint12_radial_265_2289', matrix: 'matrix(8.99772 48.337 -148.259 187.332 290.511 408.961)' },
+        { id: 'paint13_radial_265_2289', matrix: 'matrix(10.6995 69.8199 -176.299 270.59 320.048 384.773)' },
+        { id: 'paint14_radial_265_2289', matrix: 'matrix(8.74344 67.819 -144.069 262.836 350.431 386.652)' },
+        { id: 'paint15_radial_265_2289', matrix: 'matrix(2.07338 66.924 -34.1639 259.367 369.095 387.66)' },
+        { id: 'paint16_radial_265_2289', matrix: 'matrix(8.49894 48.4422 -140.04 187.74 378.885 408.882)' },
+        { id: 'paint17_radial_265_2289', matrix: 'matrix(6.13216 47.3891 -101.042 183.658 398.671 409.655)' },
+        { id: 'paint18_radial_265_2289', matrix: 'matrix(7.81432 48.337 -128.759 187.332 412.233 408.961)' },
+        { id: 'paint19_radial_265_2289', matrix: 'matrix(2.07341 66.924 -34.1644 259.367 428.679 387.66)' },
+        { id: 'paint20_radial_265_2289', matrix: 'matrix(7.73609 47.3891 -127.47 183.658 439.312 409.674)' },
+        { id: 'paint21_radial_265_2289', matrix: 'matrix(8.66521 67.8716 -142.78 263.039 458.491 394.239)' },
+        { id: 'paint22_radial_265_2289', matrix: 'matrix(8.68477 69.7672 -143.102 270.386 487.002 384.832)' },
+        { id: 'paint23_radial_265_2289', matrix: 'matrix(5.87787 65.8181 -96.8518 255.081 505.838 388.905)' },
+        { id: 'paint24_radial_265_2289', matrix: 'matrix(7.38402 47.1784 -121.669 182.842 520.988 410.187)' },
+        { id: 'paint25_radial_265_2289', matrix: 'matrix(8.72389 70.8202 -143.747 274.467 539.606 383.666)' },
+        { id: 'paint26_radial_265_2289', matrix: 'matrix(2.07338 66.924 -34.1639 259.367 559.083 387.66)' },
+        { id: 'paint27_radial_265_2289', matrix: 'matrix(8.99774 48.337 -148.259 187.332 569.058 408.961)' }
+      ];
+
       $('#hero').mousemove(function (e) {
-        // position of mouse
-        mouseX = e.pageX - this.offsetLeft;
-        mouseY = e.pageY - this.offsetTop;
-        // client rect of the gear
+        const mouseX = e.pageX - this.offsetLeft;
+        const mouseY = e.pageY - this.offsetTop;
+
         const svgRoot = document.querySelector("#mysvg");
         const rect = svgRoot.getBoundingClientRect();
-        // center point is x+width/2 and y+height/2
-        const midx = rect.left + (rect.right - rect.left) / 2;
-        const midy = rect.top + (rect.bottom - rect.top) / 2;
-        // angle
-        const angle = Math.atan2(midy - mouseY, midx - mouseX);
-        const angleDeg = angle * 180 / Math.PI
-        $('svg defs #paint0_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)');
-        $('svg defs #paint1_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)');
-        $('svg defs #paint2_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)');
-        $('svg defs #paint3_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)');
-        $('svg defs #paint4_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)');
-        $('svg defs #paint5_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)');
-        $('svg defs #paint6_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)');
-        $('svg defs #paint7_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)');
-        $('svg defs #paint8_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(10.2496 67.819 -168.886 262.836 207.79 386.652)');
-        $('svg defs #paint9_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(8.73367 48.3895 -143.908 187.536 225.447 408.921)');
-        $('svg defs #paint10_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(11.0124 65.8181 -181.456 255.081 246.985 388.905)');
-        $('svg defs #paint11_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(8.99772 48.337 -148.259 187.332 269.923 408.961)');
-        $('svg defs #paint12_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(8.99772 48.337 -148.259 187.332 290.511 408.961)');
-        $('svg defs #paint13_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(10.6995 69.8199 -176.299 270.59 320.048 384.773)');
-        $('svg defs #paint14_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(8.74344 67.819 -144.069 262.836 350.431 386.652)');
-        $('svg defs #paint15_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(2.07338 66.924 -34.1639 259.367 369.095 387.66)');
-        $('svg defs #paint16_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(8.49894 48.4422 -140.04 187.74 378.885 408.882)');
-        $('svg defs #paint17_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(6.13216 47.3891 -101.042 183.658 398.671 409.655)');
-        $('svg defs #paint18_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(7.81432 48.337 -128.759 187.332 412.233 408.961)');
-        $('svg defs #paint19_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(2.07341 66.924 -34.1644 259.367 428.679 387.66)');
-        $('svg defs #paint20_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(7.73609 47.3891 -127.47 183.658 439.312 409.674)');
-        $('svg defs #paint21_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(8.66521 67.8716 -142.78 263.039 458.491 394.239)');
-        $('svg defs #paint22_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(8.68477 69.7672 -143.102 270.386 487.002 384.832)');
-        $('svg defs #paint23_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(5.87787 65.8181 -96.8518 255.081 505.838 388.905)');
-        $('svg defs #paint24_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(7.38402 47.1784 -121.669 182.842 520.988 410.187)');
-        $('svg defs #paint25_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(8.72389 70.8202 -143.747 274.467 539.606 383.666)');
-        $('svg defs #paint26_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(2.07338 66.924 -34.1639 259.367 559.083 387.66)');
-        $('svg defs #paint27_radial_265_2289').attr('gradientTransform', 'rotate(' + angleDeg + ') matrix(8.99774 48.337 -148.259 187.332 569.058 408.961)');
+        const midx = rect.left + rect.width / 2;
+        const midy = rect.top + rect.height / 2;
+
+        const angleDeg = Math.atan2(midy - mouseY, midx - mouseX) * 180 / Math.PI;
+
+        gradients.forEach(g => {
+          $(`svg defs #${g.id}`).attr('gradientTransform', `rotate(${angleDeg}) ${g.matrix}`);
+        });
       });
+
 
     }
   });
