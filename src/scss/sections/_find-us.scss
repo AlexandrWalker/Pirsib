@@ -45,13 +45,26 @@
 
     @include md {
       width: 100%;
+      padding: calc(100vw/(393/30));
+      border-radius: calc(100vw/(393/24));
+    }
+
+    @include sm {
+      width: 100%;
       padding: 3rem;
       border-radius: 2.4rem;
     }
 
-    &::before,
-    &::after {
-      border-radius: 5rem;
+    .border {
+      --border-radius: 5rem;
+
+      @include md {
+        --border-radius: calc(100vw/(393/24));
+      }
+
+      @include sm {
+        --border-radius: 2.4rem;
+      }
     }
   }
 
@@ -59,6 +72,14 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+
+    @include md {
+      gap: calc(100vw/(393/30));
+    }
+
+    @include sm {
+      gap: 3rem;
+    }
   }
 
   &__item {
@@ -66,12 +87,24 @@
     flex-direction: column;
     gap: 1.4rem;
 
+    @include md {
+      gap: calc(100vw/(393/14));
+    }
+
+    @include sm {
+      gap: 1.4rem;
+    }
+
     a {
       font-weight: 400;
       font-size: 2.4rem;
       line-height: 140%;
 
       @include md {
+        font-size: calc(100vw/(393/16));
+      }
+
+      @include sm {
         font-size: 1.6rem;
       }
     }
@@ -98,6 +131,10 @@
     gap: 1.8rem;
 
     @include md {
+      gap: calc(100vw/(393/10));
+    }
+
+    @include sm {
       gap: 1rem;
     }
   }

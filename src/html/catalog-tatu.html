@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "Pirsib"})
+
+<body>
+  <div class="wrapper page__inner">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Секции страницы -->
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Татуировки
+                </li>
+              </ul>
+            </div>
+
+            <div class="general__head">
+              <div class="general__title">
+                <h2 data-gradient="gradientMove">
+                  Татуировки
+                </h2>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="container">
+          <div class="reviews__inner">
+
+          </div>
+        </div>
+      </section>
+
+      <section class="opinion">
+        <div class="container">
+          <div class="opinion__inner">
+
+            <div class="opinion__head">
+              <div class="general__head">
+                <div class="general__title" data-transform="titleFadeUp">
+                  <h3 data-gradient="gradientMove">Мнение о нас</h3>
+                </div>
+              </div>
+              <div class="opinion__btns">
+                <a class="btn btn--inner" href="/">
+                  <span class="border"></span>
+                  Читать все отзывы
+                  <div class="btn btn--inner-icon">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                </a>
+                <div class="swiper__btns">
+                  <div class="swiper-button-prev opinion-button-prev">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                  <div class="swiper-button-next opinion-button-next">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="opinion__body" data-transform="fadeUpStaggerParent">
+              <div class="swiper opinion__slider">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/opinion-slide-item.html', './data/opinion-items.json')
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

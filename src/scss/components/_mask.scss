@@ -21,12 +21,24 @@
 
     @include md {
       display: block;
-      width: 37.9rem;
-      height: 19.1rem;
+      // width: 37.9rem;
+      width: calc(100vw/(393/379));
+      // height: 19.1rem;
+      height: calc(100vw/(393/191));
 
       top: 0;
-      right: -0.6rem;
+      // right: -0.6rem;
+      right: calc(-100vw/(393/6));
     }
+  }
+
+  &.mask--find-us {
+    width: 157.9rem;
+    height: 151.3rem;
+
+    top: -8.4rem;
+    left: -67.1rem;
+    z-index: -1;
   }
 
   &.mask--1 {

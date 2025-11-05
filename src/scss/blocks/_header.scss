@@ -159,6 +159,25 @@
 
       .btn {
         color: var(--pink);
+
+        &::before {
+          opacity: 0;
+        }
+
+        &::after {
+          opacity: 1;
+        }
+
+        .border {
+
+          &::before {
+            opacity: 0;
+          }
+
+          &::after {
+            opacity: 1;
+          }
+        }
       }
     }
   }
@@ -205,6 +224,27 @@
 
       .header__signup:hover & {
         grid-template-rows: 1fr;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        inset: 0;
+        border-radius: 2.4rem;
+        padding: 0.1rem;
+        background:
+          linear-gradient(135deg, var(--border-pink) 0%, var(--border-dark-blue-21) 25%) border-box,
+          linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%) border-box;
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
       }
     }
 

@@ -36,6 +36,10 @@ body {
   background: var(--page-bg);
 
   @include md {
+    font-size: calc(100vw/(393/14));
+  }
+
+  @include sm {
     font-size: 1.4rem;
   }
 }

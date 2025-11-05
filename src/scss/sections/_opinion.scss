@@ -11,6 +11,10 @@
     margin-bottom: -0.2rem;
 
     @include md {
+      margin-bottom: calc(100vw/(393/20));
+    }
+
+    @include sm {
       margin-bottom: 2rem;
     }
   }
@@ -44,6 +48,10 @@
     border-radius: 10rem;
 
     @include md {
+      border-radius: calc(100vw/(393/24));
+    }
+
+    @include sm {
       border-radius: 2.4rem;
     }
   }
@@ -62,10 +70,27 @@
     backdrop-filter: blur(6.35px);
 
     @include md {
-      gap: 2rem;
+      gap: calc(100vw/(393/20));
       min-height: auto;
+      padding: calc(100vw/(393/30));
+      border-radius: calc(100vw/(393/24));
+    }
+
+    @include sm {
+      gap: 2rem;
       padding: 3rem;
       border-radius: 2.4rem;
+    }
+
+    &>.border {
+
+      @include md {
+        --border-radius: calc(100vw/(393/24));
+      }
+
+      @include sm {
+        --border-radius: 2.4rem;
+      }
     }
 
     &-head {
@@ -75,6 +100,10 @@
       gap: 3rem;
 
       @include md {
+        gap: calc(100vw/(393/15));
+      }
+
+      @include sm {
         gap: 1.5rem;
       }
 
@@ -86,6 +115,10 @@
         color: var(--blue-dark-2);
 
         @include md {
+          font-size: calc(100vw/(393/12));
+        }
+
+        @include sm {
           font-size: 1.2rem;
         }
       }
@@ -100,6 +133,11 @@
       position: relative;
 
       @include md {
+        width: calc(100vw/(393/40));
+        height: calc(100vw/(393/40));
+      }
+
+      @include sm {
         width: 4rem;
         height: 4rem;
       }
@@ -118,6 +156,10 @@
         right: 0;
 
         @include md {
+          font-size: calc(100vw/(393/10));
+        }
+
+        @include sm {
           font-size: 1rem;
         }
       }
@@ -137,8 +179,14 @@
       margin-top: auto;
 
       @include md {
-        font-size: 1.2rem;
+        font-size: calc(100vw/(393/12));
         height: fit-content;
+        padding: calc(100vw/(393/5)) calc(100vw/(393/5)) calc(100vw/(393/5)) calc(100vw/(393/15));
+        gap: calc(100vw/(393/10));
+      }
+
+      @include sm {
+        font-size: 1.2rem;
         padding: 0.5rem 0.5rem 0.5rem 1.5rem;
         gap: 1rem;
       }

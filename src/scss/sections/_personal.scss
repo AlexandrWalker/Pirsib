@@ -13,6 +13,10 @@
     grid-row: 1/2;
 
     @include md {
+      gap: calc(100vw/(393/20));
+    }
+
+    @include sm {
       gap: 2rem;
     }
   }
@@ -42,8 +46,13 @@
     gap: 6rem 5rem;
 
     @include md {
-      grid-template-columns: calc(50% - 0.3rem) calc(50% - 0.3rem);
-      gap: 3rem 0.6rem;
+      grid-template-columns: calc(50% - calc(100vw/(393/4))) calc(50% - calc(100vw/(393/4)));
+      gap: calc(100vw/(393/30)) calc(100vw/(393/8));
+    }
+
+    @include sm {
+      grid-template-columns: calc(50% - 0.4rem) calc(50% - 0.4rem);
+      gap: 3rem 0.8rem;
     }
   }
 
@@ -129,9 +138,25 @@
       justify-content: space-between;
       width: calc(50% - 0.4rem);
       min-height: unset;
-      padding: 2rem 2rem 2.5rem;
+      padding: calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/25));
       border-radius: 2.4rem;
+    }
+
+    @include sm {
+      padding: 2rem 2rem 2.5rem;
+      max-height: unset;
       aspect-ratio: 173/187;
+    }
+
+    .border {
+
+      @include md {
+        --border-radius: calc(100vw/(393/24));
+      }
+
+      @include md {
+        --border-radius: 2.4rem;
+      }
     }
 
     &:hover {
@@ -175,8 +200,17 @@
       padding: 0;
 
       @include md {
+        --btn-width: calc(100vw/(393/50));
+        --btn-height: calc(100vw/(393/50));
+      }
+
+      @include sm {
         --btn-width: 5rem;
         --btn-height: 5rem;
+      }
+
+      .border {
+        --border-radius: 10rem;
       }
     }
 
@@ -188,6 +222,10 @@
       position: absolute;
 
       @include md {
+        height: calc(100vw/(393/61));
+      }
+
+      @include sm {
         height: 6.1rem;
       }
     }

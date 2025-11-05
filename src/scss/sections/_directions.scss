@@ -76,8 +76,25 @@
       min-height: unset;
       height: auto;
       padding: 3rem 2rem 2rem;
+      padding: calc(100vw/(393/30)) calc(100vw/(393/20)) calc(100vw/(393/20));
       aspect-ratio: 173/180;
+      border-radius: calc(100vw/(393/25));
+    }
+
+    @include sm {
       border-radius: 2.5rem;
+      padding: 3rem 2rem 2rem;
+    }
+
+    .border {
+
+      @include md {
+        --border-radius: calc(100vw/(393/25));
+      }
+
+      @include sm {
+        --border-radius: 2.5rem;
+      }
     }
 
     &:hover {
@@ -104,6 +121,11 @@
       margin: 0 0 0 auto;
 
       @include md {
+        --btn-width: calc(100vw/(393/40));
+        --btn-height: calc(100vw/(393/40));
+      }
+
+      @include sm {
         --btn-width: 4rem;
         --btn-height: 4rem;
       }

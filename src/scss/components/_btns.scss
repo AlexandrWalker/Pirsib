@@ -20,11 +20,6 @@
   transition: all 0.5s ease;
   overflow: hidden;
 
-  background-image: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
-  box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  backdrop-filter: blur(6.35px);
-  border-radius: var(--btn-border-radius);
-
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 1.4rem;
@@ -32,6 +27,9 @@
   color: var(--btn-color);
   white-space: nowrap;
   text-transform: uppercase;
+
+  position: relative;
+  z-index: 1;
 
   &:disabled {
     opacity: 0.5;
@@ -42,28 +40,65 @@
   &:hover {
 
     &::before {
+      opacity: 0;
+    }
+
+    &::after {
       opacity: 1;
     }
 
-    @include dosm {}
+    .border {
+
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 
   &::before {
     content: "";
     width: 100%;
     height: 100%;
-    background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
+    opacity: 1;
+    transition: all 0.5s ease;
+
+    background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
-    opacity: 0;
-    transition: all 0.5s ease;
+    border-radius: var(--btn-border-radius);
+    pointer-events: none;
 
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+
+    background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
+    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    backdrop-filter: blur(6.35px);
+    border-radius: var(--btn-border-radius);
+    pointer-events: none;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
   }
 
   &--icon {
@@ -98,19 +133,19 @@
     text-transform: none;
   }
 
-  &--whatsapp {
+  // &--whatsapp {
 
-    a:hover &,
-    &:hover {
-      background-image: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(56, 239, 125, 0.07) 100%);
-    }
-  }
+  //   a:hover &,
+  //   &:hover {
+  //     background-image: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(56, 239, 125, 0.07) 100%);
+  //   }
+  // }
 
-  &--telegram {
+  // &--telegram {
 
-    a:hover &,
-    &:hover {
-      background-image: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(2, 174, 255, 0.07) 100%);
-    }
-  }
+  //   a:hover &,
+  //   &:hover {
+  //     background-image: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(2, 174, 255, 0.07) 100%);
+  //   }
+  // }
 }

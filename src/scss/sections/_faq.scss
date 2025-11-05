@@ -13,6 +13,10 @@
     gap: 2rem;
 
     @include md {
+      gap: calc(100vw/(393/8));
+    }
+
+    @include sm {
       gap: 0.8rem;
     }
   }
@@ -23,7 +27,6 @@
     gap: 0;
     padding: 2.5rem 5rem 2.6rem;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) padding-box, radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%) border-box;
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
     transition: all 0.5s ease;
@@ -33,55 +36,105 @@
     position: relative;
 
     @include md {
+      padding: calc(100vw/(393/17)) calc(100vw/(393/20)) calc(100vw/(393/19)) calc(100vw/(393/30));
+      border-radius: calc(100vw/(393/24));
+    }
+
+    @include sm {
       padding: 1.7rem 2rem 1.9rem 3rem;
       border-radius: 2.4rem;
     }
 
-    // &::before {
-    //   content: "";
-    //   width: 100%;
-    //   height: 100%;
-    //   border-top: 0.1rem solid;
-    //   border-bottom: 0.1rem solid;
-    //   border-image-source: linear-gradient(61deg, rgba(2, 174, 255, 1) 0%, rgba(60, 73, 194, 1) 28%);
-    //   border-image-slice: 1;
-    //   border-radius: 5rem;
-    //   overflow: hidden;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      transition: all 0.5s ease;
 
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   left: 0;
-    // }
-
-    &.accordion-active {
-      gap: 3rem;
-      padding: 2.5rem 5rem 4rem;
+      // background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+      box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+      backdrop-filter: blur(6.35px);
       border-radius: 5rem;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 37.96% at 50% 48.33%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
+      pointer-events: none;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
 
       @include md {
-        gap: 2rem;
-        padding: 1.7rem 2rem 1.9rem 3rem;
+        border-radius: calc(100vw/(393/24));
+      }
+
+      @include sm {
         border-radius: 2.4rem;
       }
+    }
 
-      &.border::before {
-        background: linear-gradient(110deg, #FE9AFF, rgba(60, 73, 194, 0.61));
-        border-radius: 5rem;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.5s ease;
 
-        @include md {
-          border-radius: 2.4rem;
-        }
+      background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
+      box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+      backdrop-filter: blur(6.35px);
+      border-radius: 5rem;
+      pointer-events: none;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+
+      @include md {
+        border-radius: calc(100vw/(393/24));
       }
 
-      &.border::after {
-        border-radius: 5rem;
+      @include sm {
+        border-radius: 2.4rem;
+      }
+    }
 
-        @include md {
-          border-radius: 2.4rem;
-        }
+    .border {
+      --border-radius: 5rem;
+
+      @include md {
+        --border-radius: calc(100vw/(393/24));
+      }
+
+      @include sm {
+        --border-radius: 2.4rem;
+      }
+    }
+
+    &.accordion-active {
+      padding: 2.5rem 5rem 4rem;
+
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+
+      @include md {
+        padding: calc(100vw/(393/17)) calc(100vw/(393/20)) calc(100vw/(393/19)) calc(100vw/(393/30));
+        border-radius: calc(100vw/(393/24));
+      }
+
+      @include sm {
+        padding: 1.7rem 2rem 1.9rem 3rem;
+        border-radius: 2.4rem;
       }
     }
 
@@ -94,14 +147,26 @@
 
       .accordion-active & {
         color: var(--pink-2);
+        margin-bottom: 3rem;
+
+        @include md {
+          margin-bottom: calc(100vw/(393/20));
+        }
+
+        @include sm {
+          margin-bottom: 2rem;
+        }
       }
 
       .btn {
         --btn-width: 2.7rem;
         --btn-height: 2.7rem;
 
-        .accordion-active & {
-          transform: rotate(180deg);
+        i {
+
+          .accordion-active & {
+            transform: rotate(180deg);
+          }
         }
       }
     }
@@ -109,10 +174,15 @@
     &-body {
       display: grid;
       grid-template-rows: 0fr;
+      transition: all 0.5s ease;
       overflow: hidden;
     }
 
     &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 143.5rem;
       overflow: hidden;
     }
   }

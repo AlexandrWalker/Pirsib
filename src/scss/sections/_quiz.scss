@@ -10,8 +10,24 @@
     border-radius: 10rem;
 
     @include md {
+      padding: calc(100vw/(393/30)) calc(100vw/(393/57)) calc(100vw/(393/36)) calc(100vw/(393/20));
+      border-radius: calc(100vw/(393/24));
+    }
+
+    @include sm {
       padding: 3rem 5.7rem 3.6rem 2rem;
       border-radius: 2.4rem;
+    }
+
+    &>.border {
+
+      @include md {
+        --border-radius: calc(100vw/(393/24));
+      }
+
+      @include sm {
+        --border-radius: 2.4rem;
+      }
     }
   }
 
@@ -24,6 +40,10 @@
     margin-bottom: 3rem;
 
     @include md {
+      margin-bottom: calc(100vw/(393/20));
+    }
+
+    @include sm {
       margin-bottom: 2rem;
     }
   }
@@ -32,6 +52,10 @@
     margin-bottom: 4rem;
 
     @include md {
+      margin-bottom: calc(100vw/(393/28));
+    }
+
+    @include sm {
       margin-bottom: 2.8rem;
     }
   }

@@ -13,15 +13,72 @@
   flex-shrink: 0;
   border-radius: 10rem;
 
-  background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   backdrop-filter: blur(6.35px);
+
+  position: relative;
 
   cursor: pointer;
 
   @include md {
     width: 6.6rem;
     margin-left: auto;
+  }
+
+  &:hover,
+  &.burger--open {
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+
+    .burger__line {
+      background-color: var(--pink-2);
+    }
+
+    .border {
+
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    border-radius: 10rem;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(173, 50, 174, 0.07) 100%);
+    border-radius: 10rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
   }
 
   .page__inner & {
@@ -46,14 +103,14 @@
       background-color: var(--pink-2);
     }
 
-    &:first-child {
+    &:nth-child(1) {
 
       .burger--open & {
         transform: rotate(45deg) translateY(0.25rem);
       }
     }
 
-    &:last-child {
+    &:nth-child(2) {
 
       .burger--open & {
         transform: rotate(-45deg) translateY(-0.25rem);
@@ -100,6 +157,7 @@
       transition: all 0.5s ease-in-out;
       clip-path: inset(0 0 100% 0);
       height: fit-content;
+      min-height: 100vh;
     }
 
     .menu--open & {

@@ -3,6 +3,10 @@
 .hero {
   margin-bottom: 4.3rem;
 
+  @include md {
+    margin-bottom: 3rem;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -17,7 +21,7 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    padding-top: 5rem;
+    // padding-top: 5rem;
     max-width: 88.7rem;
     margin: 0 auto;
     transform: translateX(10.2rem);
@@ -29,6 +33,7 @@
       max-width: calc(100vw/(393/219));
       margin: 0;
       transform: none;
+      padding-top: 5rem;
     }
   }
 
@@ -143,17 +148,27 @@
       }
     }
 
-    .form-wrap {
-      margin-left: 0.8rem;
+    .form {
 
-      @include md {
-        margin-left: 0;
+      &-input {
+        box-shadow: unset;
+        backdrop-filter: unset;
       }
 
-      p {
+      &-wrap {
+        margin-left: 0.8rem;
 
         @include md {
-          font-size: 1rem;
+          margin-left: 0;
+        }
+
+        p {
+          opacity: 0.5;
+
+          @include md {
+            font-size: 1rem;
+            line-height: 120%;
+          }
         }
       }
     }
