@@ -41,6 +41,7 @@
     width: 78.7rem;
     height: 46.9rem;
     aspect-ratio: 787/469;
+    will-change: filter;
 
     @include md {
       // width: 19.9rem;
@@ -53,6 +54,7 @@
 
   &__text {
     color: var(--purple-50);
+    will-change: filter;
 
     h6 {
       font-weight: 400;

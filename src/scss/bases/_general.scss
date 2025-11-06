@@ -15,6 +15,10 @@
     max-width: 150rem;
     overflow: hidden;
   }
+
+  &__text {
+    will-change: filter;
+  }
 }
 
 .breadcrumbs {
@@ -152,4 +156,5 @@
   transition: transform 0.3s linear, opacity 0.3s linear !important;
   transform: translateX(20rem);
   opacity: 0;
+  will-change: transform, opacity;
 }
