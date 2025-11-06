@@ -90,6 +90,14 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -100,14 +108,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -3510,6 +3510,27 @@ p {
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
     border-radius: 10rem;
+  }
+
+  .faq__item:hover::before {
+    opacity: 0;
+  }
+
+  .faq__item:hover::after {
+    opacity: 1;
+  }
+
+  .faq__item:hover .border::before {
+    opacity: 0;
+  }
+
+  .faq__item:hover .border::after {
+    opacity: 1;
+  }
+
+  .faq__item:not(.faq__item.accordion-active):hover .faq__item-head {
+    color: var(--pink-2);
+    padding: 0 2rem;
   }
 
   .works__items {
