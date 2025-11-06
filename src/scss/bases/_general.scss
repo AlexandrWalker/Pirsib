@@ -150,6 +150,7 @@
   transition: transform 0.3s linear, opacity 0.3s linear !important;
   transform: translateY(50%);
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 [data-transform="fadeRightStagger"] {
@@ -157,4 +158,8 @@
   transform: translateX(20rem);
   opacity: 0;
   will-change: transform, opacity;
+}
+
+[data-animation="parallax-box"] {
+  will-change: transform;
 }

@@ -8,8 +8,6 @@
   position: absolute;
   z-index: -2;
 
-  display: none;
-
   @include md {
     display: none;
   }
@@ -73,7 +71,7 @@
 
     // top: -88.5rem;
     // top: -44.2rem;
-    top: 58.2rem;
+    top: -58.2rem;
     left: -99.3rem;
   }
 }

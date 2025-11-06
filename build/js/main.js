@@ -302,10 +302,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // === Parallax Boxes ===
-  // document.querySelectorAll('[data-animation="parallax-box"]').forEach(box => {
-  //   gsap.fromTo(box, { y: '20%' },
-  //     { y: '-20%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
-  // });
+  document.querySelectorAll('[data-animation="parallax-box"]').forEach(box => {
+    gsap.fromTo(box, { y: '10%' },
+      { y: '-10%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
+  });
 
   // === Form Input Handling ===
   document.querySelectorAll('.form-input, .form-textarea').forEach(input => {

@@ -90,16 +90,16 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -362,6 +362,7 @@ a:hover .border::after {
   -ms-transform: translateY(50%);
   transform: translateY(50%);
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 [data-transform=fadeRightStagger] {
@@ -374,6 +375,10 @@ a:hover .border::after {
   transform: translateX(20rem);
   opacity: 0;
   will-change: transform, opacity;
+}
+
+[data-animation=parallax-box] {
+  will-change: transform;
 }
 
 .swiper__btns {
@@ -1124,7 +1129,6 @@ a:hover .btn .border::after,
   pointer-events: none;
   position: absolute;
   z-index: -2;
-  display: none;
 }
 
 .mask.mask--hero {
@@ -1166,7 +1170,7 @@ a:hover .btn .border::after,
 .mask.mask--4 {
   width: 335.1rem;
   height: 392.6rem;
-  top: 58.2rem;
+  top: -58.2rem;
   left: -99.3rem;
 }
 
