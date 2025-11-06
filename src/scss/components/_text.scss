@@ -8,11 +8,6 @@ h2 {
   font-weight: 700;
   font-size: 12rem;
   line-height: 100%;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)), radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
 
   @include md {
     font-size: calc(100vw/(393/30));
@@ -25,14 +20,10 @@ h2 {
 
 h3 {
   font-family: var(--second-family);
+  font-style: normal;
   font-weight: 700;
   font-size: 5rem;
   line-height: 100%;
-  background: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
 
   @include md {
     font-size: calc(100vw/(393/24));
@@ -47,6 +38,7 @@ h4 {}
 
 h5 {
   font-family: var(--second-family);
+  font-style: normal;
   font-weight: 700;
   font-size: 3.4rem;
   line-height: 100%;
@@ -62,6 +54,7 @@ h5 {
 
 h6 {
   font-family: var(--second-family);
+  font-style: normal;
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 140%;
@@ -76,6 +69,8 @@ h6 {
 }
 
 p {
+  font-weight: 400;
+  font-style: normal;
   font-size: 1.6rem;
   line-height: 120%;
 
@@ -86,5 +81,29 @@ p {
 
   @include sm {
     font-size: 1.4rem;
+  }
+}
+
+[data-gradient-text] {
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #AD32AE 0%, #AD32AE 40%, #3C49C2 60%, #3C49C2 100%);
+  background-size: 300% 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: idleGradient 3s linear infinite;
+  cursor: default;
+  transition: background-size 0.5s ease, background-position 0.5s ease;
+  width: fit-content;
+}
+
+@keyframes idleGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 150% 50%;
   }
 }

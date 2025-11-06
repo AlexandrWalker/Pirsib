@@ -104,7 +104,7 @@
     flex-shrink: 0;
     inset: 0;
     border-radius: var(--border-radius);
-    padding: 0.1rem;
+    padding: calc(0.1rem / 2);
     background:
       linear-gradient(135deg, var(--border-blue) -23%, var(--border-dark-blue-21) 25%) border-box,
       linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%) border-box;
@@ -127,7 +127,7 @@
     flex-shrink: 0;
     inset: 0;
     border-radius: var(--border-radius);
-    padding: 0.1rem;
+    padding: calc(0.1rem / 2);
     background:
       linear-gradient(135deg, var(--border-pink) -23%, var(--border-dark-blue-21) 25%) border-box,
       linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%) border-box;

@@ -14,12 +14,13 @@ html {
 body {
   min-width: 320px;
   font-family: var(--font-family);
+  font-display: swap;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
   color: var(--purple);
   cursor: default;
-  background: var(--page-bg);
+  background-color: #0C0F1B;
 }
 
 .wrapper {
@@ -89,16 +90,16 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -113,8 +114,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -193,16 +194,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Outfit-Regular.woff2") format("woff2"), url("../fonts/Outfit-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Regular.woff2") format("woff2"), url("../fonts/Outfit-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -314,7 +315,7 @@ a:hover .border::after {
   flex-shrink: 0;
   inset: 0;
   border-radius: var(--border-radius);
-  padding: 0.1rem;
+  padding: 0.05rem;
   background: linear-gradient(135deg, var(--border-blue) -23%, var(--border-dark-blue-21) 25%) border-box, linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%) border-box;
   -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -336,7 +337,7 @@ a:hover .border::after {
   flex-shrink: 0;
   inset: 0;
   border-radius: var(--border-radius);
-  padding: 0.1rem;
+  padding: 0.05rem;
   background: linear-gradient(135deg, var(--border-pink) -23%, var(--border-dark-blue-21) 25%) border-box, linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%) border-box;
   -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -1159,8 +1160,8 @@ a:hover .btn .border::after,
 .mask.mask--4 {
   width: 335.1rem;
   height: 392.6rem;
-  top: -88.5rem;
-  left: -41.6rem;
+  top: 58.2rem;
+  left: -99.3rem;
 }
 
 h2 {
@@ -1169,28 +1170,19 @@ h2 {
   font-weight: 700;
   font-size: 12rem;
   line-height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.22)), to(rgba(0, 0, 0, 0.22))), radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)), radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
 }
 
 h3 {
   font-family: var(--second-family);
+  font-style: normal;
   font-weight: 700;
   font-size: 5rem;
   line-height: 100%;
-  background: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
 }
 
 h5 {
   font-family: var(--second-family);
+  font-style: normal;
   font-weight: 700;
   font-size: 3.4rem;
   line-height: 100%;
@@ -1198,14 +1190,55 @@ h5 {
 
 h6 {
   font-family: var(--second-family);
+  font-style: normal;
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 140%;
 }
 
 p {
+  font-weight: 400;
+  font-style: normal;
   font-size: 1.6rem;
   line-height: 120%;
+}
+
+[data-gradient-text] {
+  color: transparent;
+  background: radial-gradient(circle at 50% 50%, #AD32AE 0%, #AD32AE 40%, #3C49C2 60%, #3C49C2 100%);
+  background-size: 300% 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: idleGradient 3s linear infinite;
+  animation: idleGradient 3s linear infinite;
+  cursor: default;
+  -webkit-transition: background-size 0.5s ease, background-position 0.5s ease;
+  transition: background-size 0.5s ease, background-position 0.5s ease;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@-webkit-keyframes idleGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 150% 50%;
+  }
+}
+
+@keyframes idleGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 150% 50%;
+  }
 }
 
 /* Modules */
@@ -1672,6 +1705,58 @@ p {
   z-index: 201;
 }
 
+.header__wrap::before {
+  content: "";
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
+  -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+  box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+  backdrop-filter: blur(6.35px);
+  border-radius: 10rem;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.header.show:not(.menu--open .show) .header__wrap::before,
+.page__inner .header:not(.menu--open .show) .header__wrap::before {
+  opacity: 1;
+}
+
+.header__wrap::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  inset: 0;
+  border-radius: 10rem;
+  padding: 0.05rem;
+  background: linear-gradient(135deg, var(--border-blue) -23%, var(--border-dark-blue-21) 25%) border-box, linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%) border-box;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.header.show:not(.menu--open .show) .header__wrap::after,
+.page__inner .header:not(.menu--open .show) .header__wrap::after {
+  opacity: 1;
+}
+
 .header__btns {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1872,8 +1957,11 @@ p {
 }
 
 .header .logo {
-  display: none;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
   opacity: 0;
+  width: 0;
 }
 
 .menu__list {
@@ -2644,7 +2732,7 @@ p {
 
 .find-us__map {
   position: absolute;
-  top: 0;
+  top: -6.5rem;
   left: 0;
   z-index: -1;
 }
@@ -2774,9 +2862,9 @@ p {
   height: 115.4rem;
   pointer-events: none;
   position: absolute;
-  top: -13.5rem;
+  bottom: -17.2rem;
   left: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero__cover img {
@@ -3232,10 +3320,10 @@ p {
 }
 
 @media (min-width: 835px) {
-  .header.out {
-    -webkit-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    transform: translateY(-100%);
+  .header.out .header__wrap {
+    -webkit-transform: translateY(-18rem);
+    -ms-transform: translateY(-18rem);
+    transform: translateY(-18rem);
   }
 
   .page__inner .header:not(.menu--open .header.show) .header__wrap,
@@ -3247,51 +3335,6 @@ p {
     border-radius: 10rem;
     margin-left: 0;
     width: 100%;
-  }
-
-  .page__inner .header:not(.menu--open .header.show) .header__wrap::before,
-  .show:not(.menu--open .show) .header__wrap::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-    -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-    backdrop-filter: blur(6.35px);
-    border-radius: 10rem;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-  }
-
-  .page__inner .header:not(.menu--open .header.show) .header__wrap::after,
-  .show:not(.menu--open .show) .header__wrap::after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    /* растянуть на весь блок */
-    inset: 0;
-    border-radius: 10rem;
-    /* ширина stroke */
-    padding: 0.05rem;
-    background: linear-gradient(142deg, var(--border-blue) 0%, var(--border-dark-blue-61) 21%) border-box, linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%) border-box;
-    /* вырезаем внутренность */
-    -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000));
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    /* чтобы не мешал кликам */
-    pointer-events: none;
-    /* плавность смены градиента при наведении */
-    opacity: 1;
-    -webkit-transition: opacity 0.5s ease;
-    transition: opacity 0.5s ease;
   }
 
   .page__inner .header:not(.menu--open .header.show) .header__wrap {
@@ -3307,8 +3350,11 @@ p {
 
   .page__inner .header:not(.menu--open .header.show) .logo,
   .header.show:not(.menu--open .header.show) .logo {
-    display: block;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
     opacity: 1;
+    width: auto;
   }
 
   .certificates__item {
@@ -3448,17 +3494,22 @@ p {
     -webkit-box-pack: unset;
     -ms-flex-pack: unset;
     justify-content: unset;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     clip-path: inset(0 0 100% 0);
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     min-height: 100vh;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), -webkit-gradient(linear, left bottom, left top, from(rgba(25, 18, 39, 0.9)), to(rgba(25, 18, 39, 0.9))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
+    backdrop-filter: blur(1.855rem);
   }
 
   .menu--open .burger-menu__inner {
     clip-path: inset(0 0 0 0);
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
   }
 
   .footer__inner {
@@ -3553,6 +3604,14 @@ p {
     width: 100%;
   }
 
+  .header__wrap::before {
+    display: none;
+  }
+
+  .header__wrap::after {
+    display: none;
+  }
+
   .page__inner .header:not(.menu--open .header.show) .header__wrap {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
@@ -3586,9 +3645,15 @@ p {
     display: none;
   }
 
+  .logo {
+    display: none;
+  }
+
   .menu__list {
     padding: 11rem 2rem 7.6335877863vw 2rem;
     height: 100%;
+    background: unset;
+    backdrop-filter: unset;
   }
 
   .menu__list ul {
@@ -3607,6 +3672,8 @@ p {
     padding: 7.6335877863vw 2rem 10.1781170483vw 2rem;
     height: 100%;
     gap: 5.0890585242vw;
+    background: unset;
+    backdrop-filter: unset;
   }
 
   .menu__content::before {
@@ -4495,14 +4562,12 @@ p {
 }
 
 @media (max-width: 372px) {
+  .footer__contact a {
+    font-size: 3rem;
+    white-space: nowrap;
+  }
+
   .page__inner .certificates__item {
     width: 100%;
-  }
-}
-
-@media (min-width: 835px) and (max-width: 834px) {
-  .page__inner .header:not(.menu--open .header.show) .header__wrap::after,
-  .show:not(.menu--open .show) .header__wrap::after {
-    border-radius: 5rem;
   }
 }

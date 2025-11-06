@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Управляет поведением меню-бургера.
    */
   function burgerNav() {
+    const header = document.getElementById('header');
     const burgerBtn = document.getElementById('burger-btn');
     const burgerMenuInner = document.querySelector('.burger-menu');
 
@@ -52,8 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (document.documentElement.classList.contains('menu--open')) {
         lenis.start();
+        header.classList.add('out');
       } else {
         lenis.stop();
+      }
+
+      if (header.classList.contains('show')) {
+        header.classList.remove('show');
       }
 
       burgerBtn.classList.toggle('burger--open');
@@ -110,17 +116,102 @@ document.addEventListener('DOMContentLoaded', () => {
   $(window).on('resize load', function () {
     if (window.innerWidth > 834) {
 
-      const gradientMoves = document.querySelectorAll('[data-gradient="gradientMove"]');
-      const body = document.body;
-      gradientMoves.forEach(gradientMove => {
-        window.addEventListener('mousemove', e => {
-          w = window.innerWidth;
-          h = window.innerHeight;
-          x = Math.round(e.pageX / w * 100);
-          y = Math.round(e.pageY / h * 100);
-          gradientMove.style.backgroundImage = `radial-gradient(42.06% 481.38% at ${x}% ${y}%, #AD32AE 0%, #3C49C2 100%)`;
-        });
-      });
+      (function () {
+        function initGradientText(selector = '[data-gradient-text]') {
+          const elements = document.querySelectorAll(selector);
+
+          elements.forEach(el => {
+            let targetX = 50, targetY = 50;
+            let currentX = 50, currentY = 50;
+            let isHover = false;
+            const speed = 0.12;
+
+            function animate() {
+              currentX += (targetX - currentX) * speed;
+              currentY += (targetY - currentY) * speed;
+
+              if (isHover) {
+                // Градиент строго под курсором
+                el.style.backgroundImage = `radial-gradient(circle at ${currentX}% ${currentY}%, #AD32AE 0%, #AD32AE 40%, #3C49C2 60%, #3C49C2 100%)`;
+                el.style.backgroundSize = '100% 100%'; // фиксированное 100% для корректного отображения
+              }
+
+              requestAnimationFrame(animate);
+            }
+            animate();
+
+            function setTarget(e) {
+              const rect = el.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              targetX = (x / rect.width) * 100;
+              targetY = (y / rect.height) * 100;
+            }
+
+            el.addEventListener('mouseenter', e => {
+              isHover = true;
+              el.classList.add('active');
+              setTarget(e);
+              el.style.animation = 'none'; // отключаем автоматическую анимацию
+              el.style.backgroundSize = '100% 100%';
+            });
+
+            el.addEventListener('mousemove', e => {
+              if (isHover) setTarget(e);
+            });
+
+            el.addEventListener('mouseleave', () => {
+              isHover = false;
+              el.classList.remove('active');
+
+              // фиксируем текущую позицию градиента
+              const computedStyle = window.getComputedStyle(el);
+              const bgPos = computedStyle.backgroundPosition;
+              el.style.backgroundPosition = bgPos;
+              el.style.backgroundImage = '';
+              el.style.backgroundSize = '300% 100%';
+
+              // плавно возобновляем автоматическую анимацию
+              requestAnimationFrame(() => {
+                el.style.animation = 'idleGradient 3s linear infinite';
+              });
+            });
+
+            // Touch поддержка
+            el.addEventListener('touchstart', e => {
+              isHover = true;
+              el.classList.add('active');
+              const t = e.touches[0];
+              if (t) setTarget(t);
+              el.style.animation = 'none';
+              el.style.backgroundSize = '100% 100%';
+            }, { passive: true });
+
+            el.addEventListener('touchmove', e => {
+              if (!isHover) return;
+              const t = e.touches[0];
+              if (t) setTarget(t);
+            }, { passive: true });
+
+            el.addEventListener('touchend', () => {
+              isHover = false;
+              el.classList.remove('active');
+
+              const computedStyle = window.getComputedStyle(el);
+              const bgPos = computedStyle.backgroundPosition;
+              el.style.backgroundPosition = bgPos;
+              el.style.backgroundSize = '300% 100%';
+              el.style.backgroundImage = '';
+
+              requestAnimationFrame(() => {
+                el.style.animation = 'idleGradient 3s linear infinite';
+              });
+            });
+          });
+        }
+
+        initGradientText();
+      })();
 
       // Массив градиентов с их матрицами
       const gradients = [

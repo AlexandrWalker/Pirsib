@@ -11,11 +11,12 @@
     backdrop-filter: blur(1.855rem);
     transition: all 0.5s ease;
 
-    // box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-
     @include md {
       padding: 11rem 2rem calc(100vw/(393/30)) 2rem;
       height: 100%;
+
+      background: unset;
+      backdrop-filter: unset;
     }
 
     @include sm {
@@ -83,6 +84,9 @@
       padding: calc(100vw/(393/30)) 2rem calc(100vw/(393/40)) 2rem;
       height: 100%;
       gap: calc(100vw/(393/20));
+
+      background: unset;
+      backdrop-filter: unset;
     }
 
     @include sm {

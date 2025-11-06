@@ -105,6 +105,11 @@
       @include sm {
         font-size: 3.4rem;
       }
+
+      @include xxs {
+        font-size: 3rem;
+        white-space: nowrap;
+      }
     }
   }
 

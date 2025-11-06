@@ -5,6 +5,10 @@
   height: 7rem;
   transition: opacity 0.5s ease;
 
+  @include md {
+    display: none;
+  }
+
   img {
     width: auto;
     height: 100%;
@@ -12,16 +16,18 @@
   }
 
   .header & {
-    display: none;
+    transform: scale(0);
     opacity: 0;
+    width: 0;
   }
 
   .page__inner .header:not(.menu--open .header.show) &,
   .header.show:not(.menu--open .header.show) & {
 
     @include domd {
-      display: block;
+      transform: scale(1);
       opacity: 1;
+      width: auto;
     }
   }
 }
