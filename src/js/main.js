@@ -59,28 +59,52 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   headerFunc();
 
-  // === Gradient Text ===
-  const gradientEls = document.querySelectorAll('[data-gradient-text]');
-  const gradTargets = [];
-  gradientEls.forEach(el => {
-    gradTargets.push({ el, x: 50, y: 50, isHover: false });
-    el.addEventListener('mouseenter', () => gradTargets.find(g => g.el === el).isHover = true);
-    el.addEventListener('mouseleave', () => gradTargets.find(g => g.el === el).isHover = false);
-    el.addEventListener('mousemove', e => {
-      const g = gradTargets.find(g => g.el === el);
-      const rect = el.getBoundingClientRect();
-      g.x = (e.clientX - rect.left) / rect.width * 100;
-      g.y = (e.clientY - rect.top) / rect.height * 100;
-    });
-  });
+  (function () {
+    const elements = document.querySelectorAll('[data-gradient-text]');
+    const states = new Map();
 
-  function animateAllGradients() {
-    gradTargets.forEach(g => {
-      if (g.isHover) g.el.style.backgroundImage = `radial-gradient(circle at ${g.x}% ${g.y}%, #AD32AE 0%, #3C49C2 100%)`;
+    elements.forEach(el => {
+      states.set(el, {
+        x: 50, y: 50,
+        targetX: 50, targetY: 50,
+        hover: false,
+        auto: Math.random() * 100,
+        dir: Math.random() > 0.5 ? 1 : -1
+      });
+
+      el.addEventListener('mouseenter', () => states.get(el).hover = true);
+      el.addEventListener('mouseleave', () => states.get(el).hover = false);
+      el.addEventListener('mousemove', e => {
+        const s = states.get(el);
+        const rect = el.getBoundingClientRect();
+        s.targetX = ((e.clientX - rect.left) / rect.width) * 100;
+        s.targetY = ((e.clientY - rect.top) / rect.height) * 100;
+      });
     });
-    requestAnimationFrame(animateAllGradients);
-  }
-  requestAnimationFrame(animateAllGradients);
+
+    function animate() {
+      states.forEach((s, el) => {
+        if (s.hover) {
+          // плавное приближение к курсору
+          s.x += (s.targetX - s.x) * 0.1;
+          s.y += (s.targetY - s.y) * 0.1;
+        } else {
+          // авто-анимация при бездействии
+          s.auto += 0.3 * s.dir;
+          if (s.auto > 100 || s.auto < 0) s.dir *= -1;
+          s.x = s.auto;
+          s.y = 50;
+        }
+
+        el.style.backgroundImage =
+          `radial-gradient(circle at ${s.x}% ${s.y}%, #AD32AE 0%, #3C49C2 100%)`;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+  })();
 
   // === SVG Gradients Mouse ===
   // Массив градиентов с их матрицами
@@ -245,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // titleFadeUp
   document.querySelectorAll('[data-transform="titleFadeUp"]').forEach(parent => {
-    const title = parent.querySelector('[data-gradient="gradientMove"]');
+    const title = parent.querySelector('[data-gradient-text]');
     if (!title) return;
     const tl = gsap.timeline({ paused: true });
     tl.from(title, { opacity: 0, y: 100, duration: 0.5, ease: "ease", stagger: { amount: 0.3 } });
@@ -302,10 +326,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // === Parallax Boxes ===
-  document.querySelectorAll('[data-animation="parallax-box"]').forEach(box => {
-    gsap.fromTo(box, { y: '10%' },
-      { y: '-10%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
-  });
+  // document.querySelectorAll('[data-animation="parallax-box"]').forEach(box => {
+  //   gsap.fromTo(box, { y: '10%' },
+  //     { y: '-10%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
+  // });
 
   // === Form Input Handling ===
   document.querySelectorAll('.form-input, .form-textarea').forEach(input => {

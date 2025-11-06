@@ -6,7 +6,16 @@
   transition: opacity 0.5s ease;
 
   @include md {
-    display: none;
+    display: flex;
+    opacity: 1;
+    height: 5.5rem;
+  }
+
+  &:not(.page__inner .logo) {
+
+    @include md {
+      display: none;
+    }
   }
 
   img {
@@ -16,12 +25,16 @@
   }
 
   .header & {
-    transform: scale(0);
-    opacity: 0;
-    width: 0;
+
+    @include domd {
+      transform: scale(0);
+      opacity: 0;
+      width: 0;
+    }
   }
 
-  .page__inner .header:not(.menu--open .header.show) &,
+  .page__inner .header &,
+  // .page__inner .header:not(.menu--open .header.show) &,
   .header.show:not(.menu--open .header.show) & {
 
     @include domd {

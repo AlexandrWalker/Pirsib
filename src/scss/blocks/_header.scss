@@ -36,10 +36,17 @@
     z-index: 201;
 
     @include md {
-      justify-content: flex-start;
+      justify-content: space-between;
       padding: 3rem 0;
       margin-left: 0;
       width: 100%;
+    }
+
+    &:not(.page__inner) & {
+
+      @include md {
+        justify-content: flex-start;
+      }
     }
 
     &::before {
@@ -123,12 +130,6 @@
 
       @include md {
         justify-content: space-between;
-
-        .logo {
-          display: flex;
-          opacity: 1;
-          height: 5.5rem;
-        }
       }
     }
   }

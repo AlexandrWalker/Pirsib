@@ -28,7 +28,7 @@
 
             <div class="general__head">
               <div class="general__title">
-                <h2 data-gradient="gradientMove">
+                <h2 data-gradient-text>
                   Татуировки
                 </h2>
               </div>
@@ -38,10 +38,12 @@
         </div>
       </section>
 
-      <section class="reviews">
+      <section class="catalog">
         <div class="container">
-          <div class="reviews__inner">
-
+          <div class="catalog__inner">
+            <div class="catalog__items">
+              @@loop('./elements/catalog-tatu-item.html', './data/catalog-tatu-items.json')
+            </div>
           </div>
         </div>
       </section>
@@ -53,7 +55,7 @@
             <div class="opinion__head">
               <div class="general__head">
                 <div class="general__title" data-transform="titleFadeUp">
-                  <h3 data-gradient="gradientMove">Мнение о нас</h3>
+                  <h3 data-gradient-text>Мнение о нас</h3>
                 </div>
               </div>
               <div class="opinion__btns">

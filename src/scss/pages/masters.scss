@@ -117,6 +117,7 @@
     flex-direction: column;
     width: calc(25% - 1.5rem);
     border-radius: 5rem;
+    position: relative;
 
     @include md {
       width: calc(50% - 1rem);
@@ -127,25 +128,16 @@
       width: 100%;
     }
 
-    &::before,
-    &::after {
-      border-radius: 5rem;
+    .border {
+      --border-radius: 5rem;
 
       @include md {
-        border-radius: 2.4rem;
+        --border-radius: 2.4rem;
       }
     }
 
     &-head {
-
-      &::before,
-      &::after {
-        border-radius: 5rem;
-
-        @include md {
-          border-radius: 2.4rem;
-        }
-      }
+      position: relative;
     }
 
     &-body {
