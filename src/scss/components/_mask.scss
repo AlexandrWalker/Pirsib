@@ -8,6 +8,8 @@
   position: absolute;
   z-index: -2;
 
+  display: none;
+
   @include md {
     display: none;
   }

@@ -253,34 +253,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // fadeUpStaggerParent
-  // document.querySelectorAll('[data-transform="fadeUpStaggerParent"]').forEach(parent => {
-  //   const items = parent.querySelectorAll('[data-transform="fadeUpStagger"]');
-  //   if (!items.length) return;
-  //   gsap.to(items, { scrollTrigger: { trigger: parent, start: "top 80%" }, opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" });
-  // });
+  document.querySelectorAll('[data-transform="fadeUpStaggerParent"]').forEach(parent => {
+    const items = parent.querySelectorAll('[data-transform="fadeUpStagger"]');
+    if (!items.length) return;
+    gsap.to(items, { scrollTrigger: { trigger: parent, start: "top 80%" }, opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" });
+  });
 
   // fadeRightStaggerParent
-  // document.querySelectorAll('[data-transform="fadeRightStaggerParent"]').forEach(parent => {
-  //   const items = parent.querySelectorAll('[data-transform="fadeRightStagger"]');
-  //   if (!items.length) return;
+  document.querySelectorAll('[data-transform="fadeRightStaggerParent"]').forEach(parent => {
+    const items = parent.querySelectorAll('[data-transform="fadeRightStagger"]');
+    if (!items.length) return;
 
-  //   // Инициализация начального состояния
-  //   gsap.set(items, { opacity: 0, x: 50, willChange: "opacity, transform" });
+    // Инициализация начального состояния
+    gsap.set(items, { opacity: 0, x: 50, willChange: "opacity, transform" });
 
-  //   // Один ScrollTrigger на весь контейнер
-  //   gsap.to(items, {
-  //     scrollTrigger: {
-  //       trigger: parent,
-  //       start: "top 80%",
-  //       once: true,          // проиграть анимацию только один раз
-  //     },
-  //     opacity: 1,
-  //     x: 0,
-  //     duration: 0.5,
-  //     stagger: 0.1,
-  //     ease: "power2.out"
-  //   });
-  // });
+    // Один ScrollTrigger на весь контейнер
+    gsap.to(items, {
+      scrollTrigger: {
+        trigger: parent,
+        start: "top 80%",
+        once: true,          // проиграть анимацию только один раз
+      },
+      opacity: 1,
+      x: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: "power2.out"
+    });
+  });
 
   // hero__cover
   const heroCover = document.querySelector('.hero__cover');
@@ -302,10 +302,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // === Parallax Boxes ===
-  document.querySelectorAll('[data-animation="parallax-box"]').forEach(box => {
-    gsap.fromTo(box, { y: '20%' },
-      { y: '-20%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
-  });
+  // document.querySelectorAll('[data-animation="parallax-box"]').forEach(box => {
+  //   gsap.fromTo(box, { y: '20%' },
+  //     { y: '-20%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
+  // });
 
   // === Form Input Handling ===
   document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
