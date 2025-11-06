@@ -60,50 +60,51 @@ document.addEventListener('DOMContentLoaded', () => {
   headerFunc();
 
   (function () {
-    const elements = document.querySelectorAll('[data-gradient-text]');
-    const states = new Map();
+    $(window).on('resize load', function () {
+      if (window.innerWidth > 834) {
+        const elements = document.querySelectorAll('[data-gradient-text]');
+        const states = new Map();
+        elements.forEach(el => {
+          states.set(el, {
+            x: 50, y: 50,
+            targetX: 50, targetY: 50,
+            hover: false,
+            auto: Math.random() * 100,
+            dir: Math.random() > 0.5 ? 1 : -1
+          });
 
-    elements.forEach(el => {
-      states.set(el, {
-        x: 50, y: 50,
-        targetX: 50, targetY: 50,
-        hover: false,
-        auto: Math.random() * 100,
-        dir: Math.random() > 0.5 ? 1 : -1
-      });
+          el.addEventListener('mouseenter', () => states.get(el).hover = true);
+          el.addEventListener('mouseleave', () => states.get(el).hover = false);
+          el.addEventListener('mousemove', e => {
+            const s = states.get(el);
+            const rect = el.getBoundingClientRect();
+            s.targetX = ((e.clientX - rect.left) / rect.width) * 100;
+            s.targetY = ((e.clientY - rect.top) / rect.height) * 100;
+          });
+        });
+        function animate() {
+          states.forEach((s, el) => {
+            if (s.hover) {
+              // плавное приближение к курсору
+              s.x += (s.targetX - s.x) * 0.1;
+              s.y += (s.targetY - s.y) * 0.1;
+            } else {
+              // авто-анимация при бездействии
+              s.auto += 0.3 * s.dir;
+              if (s.auto > 100 || s.auto < 0) s.dir *= -1;
+              s.x = s.auto;
+              s.y = 50;
+            }
 
-      el.addEventListener('mouseenter', () => states.get(el).hover = true);
-      el.addEventListener('mouseleave', () => states.get(el).hover = false);
-      el.addEventListener('mousemove', e => {
-        const s = states.get(el);
-        const rect = el.getBoundingClientRect();
-        s.targetX = ((e.clientX - rect.left) / rect.width) * 100;
-        s.targetY = ((e.clientY - rect.top) / rect.height) * 100;
-      });
-    });
+            el.style.backgroundImage =
+              `radial-gradient(circle at ${s.x}% ${s.y}%, #AD32AE 0%, #3C49C2 100%)`;
+          });
 
-    function animate() {
-      states.forEach((s, el) => {
-        if (s.hover) {
-          // плавное приближение к курсору
-          s.x += (s.targetX - s.x) * 0.1;
-          s.y += (s.targetY - s.y) * 0.1;
-        } else {
-          // авто-анимация при бездействии
-          s.auto += 0.3 * s.dir;
-          if (s.auto > 100 || s.auto < 0) s.dir *= -1;
-          s.x = s.auto;
-          s.y = 50;
+          requestAnimationFrame(animate);
         }
-
-        el.style.backgroundImage =
-          `radial-gradient(circle at ${s.x}% ${s.y}%, #AD32AE 0%, #3C49C2 100%)`;
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    requestAnimationFrame(animate);
+        requestAnimationFrame(animate);
+      }
+    });
   })();
 
   // === SVG Gradients Mouse ===

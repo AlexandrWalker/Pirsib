@@ -45,6 +45,30 @@
       border-radius: 2.4rem;
     }
 
+    &:hover {
+      @include domd {
+
+        &::before {
+          opacity: 0;
+        }
+
+        &::after {
+          opacity: 1;
+        }
+
+        .border {
+
+          &::before {
+            opacity: 0;
+          }
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
     &::before {
       content: "";
       width: 100%;
@@ -115,6 +139,7 @@
       }
     }
 
+
     &.accordion-active {
       padding: 2.5rem 5rem 4rem;
 
@@ -154,6 +179,14 @@
       align-items: center;
       gap: 0 2rem;
       transition: all 0.5s ease;
+
+      .faq__item:not(.faq__item.accordion-active):hover & {
+
+        @include domd {
+          color: var(--pink-2);
+          padding: 0 2rem;
+        }
+      }
 
       .accordion-active & {
         color: var(--pink-2);
