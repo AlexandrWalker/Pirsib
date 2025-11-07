@@ -87,6 +87,9 @@
       --btn-width: 8rem;
       --btn-height: 8rem;
 
+      position: absolute;
+      bottom: 6rem;
+      left: 4.5rem;
       padding: 0;
 
       @include md {
@@ -115,7 +118,24 @@
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: -1;
+      z-index: -2;
+    }
+
+    &-img {
+
+      &::before {
+        content: "";
+        background: linear-gradient(90deg, rgba(12, 15, 27, 0.95) 0%, rgba(13, 15, 27, 0) 100%);
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+      }
     }
   }
 
@@ -123,7 +143,6 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    max-width: 20rem;
 
     @include md {
       max-width: calc(100vw/(393/200));
@@ -139,7 +158,7 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-
+      max-width: 20rem;
       color: var(--blue);
 
       @include md {

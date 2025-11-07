@@ -133,6 +133,23 @@
     text-transform: none;
   }
 
+  &--video {
+    --btn-width: 8rem;
+    --btn-height: 8rem;
+
+    padding: 0;
+
+    @include md {
+      --btn-width: calc(100vw/(393/50));
+      --btn-height: calc(100vw/(393/50));
+    }
+
+    @include sm {
+      --btn-width: 5rem;
+      --btn-height: 5rem;
+    }
+  }
+
   // &--whatsapp {
 
   //   a:hover &,

@@ -1,32 +1,32 @@
 @use './../mixins' as *;
 
-.find-us {
+.page__inner {
 
-  .page__inner & {
-    margin-top: -16rem;
-    padding: 16rem 0 25rem;
+  .find-us {
+    padding: 0 0 30rem;
 
     @include md {
-      margin-top: 0;
       padding: 0;
     }
-  }
 
-  &__content {
-
-    &::before,
-    &::after {
-
-      @include md {
-        border-radius: 2.4rem;
-      }
+    &__inner {
+      position: relative;
     }
-  }
 
-  &__map {
+    &__map {
+      width: calc(100% + (var(--container-padding)*2));
+      margin-left: calc(var(--container-padding) * -1);
+      position: absolute;
+      top: -20.9rem;
+    }
 
-    .page__inner & {
-      top: -16rem;
+    .mask {
+
+      &.mask--1 {
+        background-image: url(./../../images/mask/mask-1-reverse.avif);
+        right: unset;
+        left: -71.6rem;
+      }
     }
   }
 }

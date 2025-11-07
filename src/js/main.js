@@ -59,6 +59,63 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   headerFunc();
 
+  (function initParallax() {
+    const layers = document.querySelectorAll('.mask');
+    const maxShift = window.innerHeight * 0.2; // максимум 20% смещения
+    const visibleLayers = new Set(); // какие уже видны
+    let scrollY = 0;
+    let currentY = 0;
+
+    // Наблюдатель за появлением слоёв в зоне видимости
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          visibleLayers.add(entry.target);
+          entry.target.style.opacity = entry.target.dataset.initialOpacity || 1;
+        } else {
+          visibleLayers.delete(entry.target);
+          entry.target.style.opacity = 0;
+        }
+      });
+    }, { threshold: 0 });
+
+    layers.forEach(layer => {
+      layer.dataset.initialOpacity = layer.style.opacity || 1;
+      observer.observe(layer);
+    });
+
+    function animate() {
+      // Инерционное приближение (ease-out)
+      currentY += (scrollY - currentY) * 0.08;
+
+      layers.forEach((layer, index) => {
+        if (!visibleLayers.has(layer)) return; // двигаем только видимые
+
+        const rect = layer.getBoundingClientRect();
+        const screenH = window.innerHeight;
+
+        // Прогресс прокрутки конкретного слоя (0 вверху, 1 внизу)
+        const progress = Math.min(Math.max((screenH - rect.top) / (screenH * 2), 0), 1);
+
+        // Разная "глубина" для каждого слоя
+        // const depth = 0.2 - index * 0.05; // 0.2, 0.15, 0.1 ...
+        const depth = 0.2; // 0.2, 0.15, 0.1 ...
+        const offset = Math.min(currentY * depth * progress, maxShift);
+
+        layer.style.transform = `translateY(${offset}px)`;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('scroll', () => {
+      scrollY = window.scrollY;
+    });
+
+    animate();
+  })();
+
+
   (function () {
     $(window).on('resize load', function () {
       if (window.innerWidth > 834) {
@@ -185,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
         watchOverflow: true,
         mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
         passiveListeners: true,
-        pagination: { el: ".swiper-pagination", clickable: true },
+        pagination: { el: ".opinion__slider .swiper-pagination", clickable: true },
         navigation: { prevEl: ".opinion-button-prev", nextEl: ".opinion-button-next" },
         breakpoints: { 835: { slidesPerView: 3, spaceBetween: 20, pagination: false } }
       }
@@ -218,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         watchOverflow: true,
         mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
         passiveListeners: true,
-        pagination: { el: ".swiper-pagination", clickable: true },
+        pagination: { el: ".works__slider .swiper-pagination", clickable: true },
         navigation: { prevEl: ".works-button-prev", nextEl: ".works-button-next" },
         breakpoints: { 835: { slidesPerView: 3, spaceBetween: 20, pagination: false } }
       }
@@ -274,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!title) return;
     const tl = gsap.timeline({ paused: true });
     tl.from(title, { opacity: 0, y: 100, duration: 0.5, ease: "ease", stagger: { amount: 0.3 } });
-    scrollTriggerPlayer(title, tl);
+    scrollTriggerPlayer(title, tl, onEnterStart = "top 100%");
   });
 
   // fadeUpStaggerParent
@@ -306,6 +363,67 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "power2.out"
     });
   });
+
+  const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+  if (parallaxImgContainers.length > 0) {
+    parallaxImgContainers.forEach(parallaxImgContainer => {
+      const image = parallaxImgContainer.querySelector('img');
+      gsap.fromTo(image,
+        {
+          y: '-10%',
+        },
+        {
+          y: '10%',
+          scrollTrigger: {
+            trigger: image,
+            start: 'top 90%',
+            end: 'bottom top',
+            scrub: true,
+          },
+        }
+      );
+    });
+  }
+
+  const fadeItems = document.querySelectorAll('[data-transform="fade"]');
+  fadeItems.forEach(fadeItem => {
+    const tl = gsap.timeline({
+      paused: true
+    });
+
+    tl.from(fadeItem, {
+      opacity: 0,
+      y: "100",
+      duration: .8,
+      delay: .3,
+      ease: "ease",
+      stagger: {
+        amount: .8
+      }
+    });
+    scrollTriggerPlayer(fadeItem, tl)
+  });
+
+  const parallaxImgScaleContainers = document.querySelectorAll('[data-animation="parallax-img-scale"]');
+  if (parallaxImgScaleContainers.length > 0) {
+    parallaxImgScaleContainers.forEach(parallaxImgScaleContainer => {
+      const image = parallaxImgScaleContainer.querySelector('img');
+      gsap.fromTo(image,
+        {
+          scale: '0.8',
+        },
+        {
+          scale: '1',
+          scrollTrigger: {
+            trigger: parallaxImgScaleContainer,
+            start: 'top 90%',
+            end: 'bottom top',
+            scrub: true,
+          },
+        }
+      );
+    });
+  }
 
   // hero__cover
   const heroCover = document.querySelector('.hero__cover');

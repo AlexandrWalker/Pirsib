@@ -1,6 +1,8 @@
 @use './../mixins' as *;
 
 .directions {
+  // --transformY: 0%;
+
   margin-bottom: 9rem;
 
   @include md {
@@ -36,9 +38,7 @@
       }
     }
   }
-
-  &__inner {}
-
+  
   &__body {
     position: relative;
     z-index: 2;

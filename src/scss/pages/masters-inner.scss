@@ -1,0 +1,262 @@
+@use './../mixins' as *;
+
+.biography {
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    @include md {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: calc(50% - 1rem);
+    height: fit-content;
+    transition: all 0.5s ease;
+
+    position: sticky;
+    top: 17.7rem;
+
+    html.out & {
+      top: 2rem;
+    }
+
+    @include md {
+      width: 100%;
+      position: static;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 6rem 8rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    backdrop-filter: blur(6.35px);
+    border-radius: 10rem;
+    overflow: hidden;
+
+    position: relative;
+
+    @include md {
+      padding: calc(100vw/(393/15));
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+      border-radius: 2.4rem;
+
+      aspect-ratio: 353/368;
+    }
+
+    @include sm {
+      padding: 1.5rem;
+    }
+
+    &>.border {
+
+      @include md {
+        --border-radius: 2.4rem;
+      }
+    }
+
+    &-head {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      max-width: 24rem;
+
+      @include md {
+        display: none;
+      }
+    }
+
+    &-name {
+
+      h4 {
+        line-height: 120%;
+      }
+    }
+
+    &-post {
+      color: var(--pink);
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include md {
+        display: none;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &-img {
+      width: 41.3rem;
+      height: auto;
+      object-fit: contain;
+
+      position: absolute;
+      top: 2rem;
+      right: 7.6rem;
+
+      @include md {
+        width: calc(100vw/(393/240));
+
+        top: calc(100vw/(393/23));
+        left: calc(100vw/(393/70));
+        right: unset;
+      }
+
+      @include sm {
+        width: 24rem;
+
+        top: 2.3rem;
+        left: 7rem;
+      }
+    }
+
+    .btn--video {
+      margin-bottom: 4rem;
+    }
+
+    &--mob {
+      padding: 0;
+      background: unset;
+      box-shadow: unset;
+      backdrop-filter: unset;
+      border-radius: unset;
+
+      @include md {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+        box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+        backdrop-filter: blur(6.35px);
+        padding: calc(100vw/(393/30));
+        aspect-ratio: unset;
+      }
+
+      @include sm {
+        padding: 3rem;
+      }
+
+      .biography__block-head {
+        display: none;
+
+        @include md {
+          display: flex;
+          gap: calc(100vw/(393/10));
+          max-width: 100%;
+          margin-bottom: calc(100vw/(393/20));
+        }
+
+        @include md {
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
+      }
+
+      .biography__block-content {
+        display: none;
+
+        @include md {
+          display: flex;
+          flex-direction: column;
+          gap: calc(100vw/(393/10));
+          margin-bottom: calc(100vw/(393/30));
+        }
+
+        @include sm {
+          gap: 1rem;
+          margin-bottom: 3rem;
+        }
+      }
+
+      .btn:not(.btn--inner-icon) {
+        width: 100%;
+        height: fit-content;
+        padding: 2rem 2rem 2rem 6rem;
+
+        font-size: 2.4rem;
+        text-transform: uppercase;
+
+        @include md {
+          max-width: calc(100vw/(393/245));
+        }
+
+        @include sm {
+          max-width: 24.5rem;
+          height: 5rem;
+          padding: 0 1rem 0 2rem;
+
+          font-size: 1.4rem;
+          text-transform: none;
+        }
+      }
+
+      .btn--inner-icon {
+        --btn-width: 4rem;
+        --btn-height: 4rem;
+
+        @include md {
+          --btn-width: 2.7rem;
+          --btn-height: 2.7rem;
+        }
+      }
+    }
+  }
+
+  &__right {
+    width: calc(50% - 1rem);
+
+    @include md {
+      display: none;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    backdrop-filter: blur(6.35px);
+    border-radius: 10rem;
+    padding: 6rem;
+
+    h6 {
+      margin-bottom: 3rem;
+    }
+
+    p {
+      margin-bottom: 3rem;
+    }
+
+    &-img {
+      margin-bottom: 3rem;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      &--row {
+        width: 19.9rem;
+        margin-right: 2rem;
+        margin-bottom: 0;
+
+        float: left;
+      }
+    }
+  }
+}

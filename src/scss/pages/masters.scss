@@ -69,9 +69,16 @@
 
       &__text {
         max-width: 46.2rem;
+        opacity: 0.5;
 
         @include md {
           margin-bottom: 4rem;
+        }
+
+        h6 {
+          font-family: var(--font-family);
+          font-weight: 400;
+          line-height: 120%;
         }
       }
     }
@@ -83,7 +90,7 @@
     position: absolute;
     bottom: 0;
     right: 20.2rem;
-    z-index: 1;
+    z-index: 6;
 
     @include md {
       width: 29rem;
@@ -117,6 +124,10 @@
     flex-direction: column;
     width: calc(25% - 1.5rem);
     border-radius: 5rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    backdrop-filter: blur(6.35px);
+
     position: relative;
 
     @include md {
@@ -137,14 +148,16 @@
     }
 
     &-head {
-      position: relative;
-    }
+      border-radius: 5rem;
+      box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+      backdrop-filter: blur(6.35px);
+      aspect-ratio: 1/1;
 
-    &-body {
-      padding: 3rem 3rem 10rem;
+      position: relative;
+      z-index: 1;
 
       @include md {
-        padding: 3rem 2rem 5rem 2rem;
+        border-radius: 2.4rem;
       }
     }
 
@@ -152,9 +165,11 @@
       display: flex;
       flex-direction: column;
       gap: 3rem;
+      padding: 3rem 3rem 10rem;
 
       @include md {
         gap: 2rem;
+        padding: 3rem 2rem 5rem 2rem;
       }
 
       .btn {

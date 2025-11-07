@@ -74,11 +74,11 @@
     gap: 3rem;
 
     @include md {
-      gap: calc(100vw/(393/30));
+      gap: calc(100vw/(393/15));
     }
 
     @include sm {
-      gap: 3rem;
+      gap: 1.5rem;
     }
   }
 
@@ -88,14 +88,14 @@
     gap: 1.4rem;
 
     @include md {
-      gap: calc(100vw/(393/14));
+      gap: calc(100vw/(393/10));
     }
 
     @include sm {
-      gap: 1.4rem;
+      gap: 1rem;
     }
 
-    a {
+    a:not(.btn) {
       font-weight: 400;
       font-size: 2.4rem;
       line-height: 140%;
@@ -106,6 +106,10 @@
 
       @include sm {
         font-size: 1.6rem;
+      }
+
+      &:hover {
+        color: var(--pink);
       }
     }
 
@@ -120,6 +124,32 @@
 
         @include md {
           display: none;
+        }
+      }
+    }
+
+    &-btn {
+      display: none;
+
+      @include md {
+        display: flex;
+      }
+
+      .btn {
+        justify-content: center;
+
+        &--inner {
+          height: fit-content;
+          padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+        }
+
+        &--inner-icon {
+          --btn-width: 2.7rem;
+          --btn-height: 2.7rem;
+        }
+
+        i {
+          font-size: 1.7rem;
         }
       }
     }

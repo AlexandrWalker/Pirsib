@@ -35,6 +35,7 @@
           <div class="masters__inner">
 
             <div class="masters__content">
+              <div class="border"></div>
               <div class="general__head">
                 <div class="general__title" data-transform="titleFadeUp">
                   <h2 data-gradient-text>Наши мастера</h2>
@@ -45,16 +46,16 @@
                     университета
                   </h6>
                 </div>
-                <div class="btn">
+                <a class="btn" href="#masters__items">
                   <i class="icon-chevron-min"></i>
-                </div>
+                </a>
               </div>
               <div class="masters__cover">
                 <img src="./../images/temp/masters-cover-2.png" alt="">
               </div>
             </div>
 
-            <div class="masters__items" data-transform="fadeUpStaggerParent">
+            <div id="masters__items" class="masters__items" data-transform="fadeUpStaggerParent">
               @@loop('./elements/masters-item.html', './data/masters-items.json')
             </div>
 

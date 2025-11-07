@@ -97,6 +97,7 @@
       background-clip: text;
       -webkit-box-decoration-break: clone;
       text-fill-color: transparent;
+      white-space: nowrap;
 
       @include md {
         font-size: calc(100vw/(393/34));
@@ -108,7 +109,6 @@
 
       @include xxs {
         font-size: 3rem;
-        white-space: nowrap;
       }
     }
   }

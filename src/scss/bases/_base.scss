@@ -27,7 +27,6 @@ body {
   // background: var(--page-bg);
 
   font-family: var(--font-family);
-  font-display: swap;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
@@ -51,7 +50,7 @@ body {
   flex-direction: column;
   min-height: 100%;
 
-  overflow: hidden;
+  overflow: clip;
 
 
   // @include md {
@@ -77,6 +76,14 @@ section {
 
   @include md {
     margin-bottom: 3rem;
+  }
+
+  .page__inner & {
+    margin-bottom: 6rem;
+
+    @include md {
+      margin-bottom: 3rem;
+    }
   }
 }
 

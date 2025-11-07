@@ -1,12 +1,16 @@
 @use './../mixins' as *;
 
 .mask {
-  object-fit: cover;
-  max-width: none;
-  pointer-events: none;
-
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  transition: all 0.6s ease-out;
   position: absolute;
-  z-index: -2;
+  z-index: -1;
+
+  /* Оптимизация */
+  will-change: transform;
+  transform: translateZ(0);
 
   @include md {
     display: none;
@@ -42,14 +46,20 @@
   }
 
   &.mask--1 {
+    background-image: url('./../../images/mask/mask-1.avif');
     width: 239.8rem;
     height: 269.6rem;
 
     top: -123.6rem;
     right: -82.2rem;
+
+    .page__inner & {
+      top: -58.5rem;
+    }
   }
 
   &.mask--2 {
+    background-image: url('./../../images/mask/mask-2.avif');
     width: 174.1rem;
     height: 204rem;
 
@@ -58,6 +68,7 @@
   }
 
   &.mask--3 {
+    background-image: url('./../../images/mask/mask-3.avif');
     width: 164.7rem;
     height: 166rem;
 
@@ -66,6 +77,7 @@
   }
 
   &.mask--4 {
+    background-image: url('./../../images/mask/mask-4.avif');
     width: 335.1rem;
     height: 392.6rem;
 
