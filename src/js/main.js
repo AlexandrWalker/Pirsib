@@ -2,11 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  // === Lenis Smooth Scroll ===
+  /**
+   * Lenis Smooth Scroll
+   */
   const lenis = new Lenis({ anchors: { offset: -60 } });
   gsap.ticker.add(time => lenis.raf(time * 1000));
 
-  // === Burger Menu ===
+  /**
+   * Burger Menu
+   */
   function burgerNav() {
     const header = document.getElementById('header');
     const burgerBtn = document.getElementById('burger-btn');
@@ -37,84 +41,59 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   burgerNav();
 
-  // === Header Scroll ===
+  /**
+   * Header Scroll
+   */
   function headerFunc() {
     const header = document.getElementById('header');
     const firstSection = document.querySelector('section');
+    if (!header || !firstSection) return;
+
     const marker = 10;
-    let lastScrollTop = 1;
+    let lastScrollTop = 0;
     let ticking = false;
+    let isOut = false; // состояние класса .out
 
     const scrollHandler = () => {
       const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-      header.classList.toggle('out', scrollPos > lastScrollTop && scrollPos > marker);
+      const scrollingDown = scrollPos > lastScrollTop && scrollPos > marker;
+      const scrollingUp = scrollPos < lastScrollTop;
+
+      // Добавляем .out только один раз при начале скролла вниз
+      if (scrollingDown && !isOut) {
+        header.classList.add('out');
+        document.documentElement.classList.add('out');
+        isOut = true;
+      }
+
+      // Убираем .out только один раз при начале скролла вверх
+      if (scrollingUp && isOut) {
+        header.classList.remove('out');
+        document.documentElement.classList.remove('out');
+        isOut = false;
+      }
+
+      // Управление классом .show по высоте первой секции
       header.classList.toggle('show', scrollPos > firstSection.offsetHeight);
-      lastScrollTop = scrollPos;
+
+      lastScrollTop = scrollPos <= 0 ? 0 : scrollPos;
       ticking = false;
     };
 
     window.addEventListener('scroll', () => {
-      if (!ticking) { requestAnimationFrame(scrollHandler); ticking = true; }
+      if (!ticking) {
+        requestAnimationFrame(scrollHandler);
+        ticking = true;
+      }
     });
   }
+
   headerFunc();
 
-  // (function initParallax() {
-  //   const layers = document.querySelectorAll('.mask');
-  //   const maxShift = window.innerHeight * 0.2; // максимум 20% смещения
-  //   const visibleLayers = new Set(); // какие уже видны
-  //   let scrollY = 0;
-  //   let currentY = 0;
 
-  //   // Наблюдатель за появлением слоёв в зоне видимости
-  //   const observer = new IntersectionObserver((entries) => {
-  //     entries.forEach(entry => {
-  //       if (entry.isIntersecting) {
-  //         visibleLayers.add(entry.target);
-  //         entry.target.style.opacity = entry.target.dataset.initialOpacity || 1;
-  //       } else {
-  //         visibleLayers.delete(entry.target);
-  //         entry.target.style.opacity = 0;
-  //       }
-  //     });
-  //   }, { threshold: 0 });
-
-  //   layers.forEach(layer => {
-  //     layer.dataset.initialOpacity = layer.style.opacity || 1;
-  //     observer.observe(layer);
-  //   });
-
-  //   function animate() {
-  //     // Инерционное приближение (ease-out)
-  //     currentY += (scrollY - currentY) * 0.08;
-
-  //     layers.forEach((layer, index) => {
-  //       if (!visibleLayers.has(layer)) return; // двигаем только видимые
-
-  //       const rect = layer.getBoundingClientRect();
-  //       const screenH = window.innerHeight;
-
-  //       // Прогресс прокрутки конкретного слоя (0 вверху, 1 внизу)
-  //       const progress = Math.min(Math.max((screenH - rect.top) / (screenH * 2), 0), 1);
-
-  //       // Разная "глубина" для каждого слоя
-  //       // const depth = 0.2 - index * 0.05; // 0.2, 0.15, 0.1 ...
-  //       const depth = 0.2; // 0.2, 0.15, 0.1 ...
-  //       const offset = Math.min(currentY * depth * progress, maxShift);
-
-  //       layer.style.transform = `translateY(${offset}px)`;
-  //     });
-
-  //     requestAnimationFrame(animate);
-  //   }
-
-  //   window.addEventListener('scroll', () => {
-  //     scrollY = window.scrollY;
-  //   });
-
-  //   animate();
-  // })();
-
+  /**
+   * Анимация градиента заголовоков и наведения
+   */
   (function () {
     const elements = document.querySelectorAll('[data-gradient-text]');
     if (!elements.length) return;
@@ -207,7 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  // === SVG Gradients Mouse ===
+  /**
+   * SVG Gradients Mouse
+   */
   // Массив градиентов с их матрицами
   const gradients = [
     { id: 'paint0_radial_265_2289', matrix: 'matrix(89.5206 423.09 -1475.06 1639.7 334.444 -317.709)' },
@@ -239,7 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'paint26_radial_265_2289', matrix: 'matrix(2.07338 66.924 -34.1639 259.367 559.083 387.66)' },
     { id: 'paint27_radial_265_2289', matrix: 'matrix(8.99774 48.337 -148.259 187.332 569.058 408.961)' }
   ];
-
   $('#hero').mousemove(function (e) {
     const mouseX = e.pageX - this.offsetLeft;
     const mouseY = e.pageY - this.offsetTop;
@@ -256,7 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // === Accordion ===
+  /**
+   * Accordion
+   */
   function accordionFunc() {
     const accordions = document.querySelectorAll('.accordion');
     let activeAccordion = null;
@@ -271,66 +253,130 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   accordionFunc();
 
-  // === Swiper Sliders ===
+  /**
+   * Swiper Sliders
+   */
   const slidesConfig = [
     {
       selector: '.opinion__slider',
       options: {
-        slidesPerGroup: 1,
         slidesPerView: 1,
+        slidesPerGroup: 1,
         spaceBetween: 20,
-        loop: document.querySelectorAll('.opinion__slider .swiper-slide').length > 1,
+        centeredSlides: false,
+        centeredSlidesBounds: true,
+        centerInsufficientSlides: true,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
+        loop: false,
+        simulateTouch: true,
         grabCursor: true,
         speed: 600,
         watchOverflow: true,
         mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
-        passiveListeners: true,
+        freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
         pagination: { el: ".opinion__slider .swiper-pagination", clickable: true },
         navigation: { prevEl: ".opinion-button-prev", nextEl: ".opinion-button-next" },
-        breakpoints: { 835: { slidesPerView: 3, spaceBetween: 20, pagination: false } }
+        breakpoints: { 835: { slidesPerView: 3, spaceBetween: 20, pagination: false } },
       }
     },
     {
       selector: '.personal__slider',
       options: {
-        slidesPerGroup: 1,
         slidesPerView: 1,
+        slidesPerGroup: 1,
         spaceBetween: 20,
-        loop: document.querySelectorAll('.personal__slider .swiper-slide').length > 1,
         grabCursor: true,
         speed: 1000,
         effect: "creative",
         creativeEffect: { prev: { translate: ["-20%", 0, -1] }, next: { translate: ["20%", 0, 0] } },
         autoplay: { delay: 5000, disableOnInteraction: false },
         mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
-        passiveListeners: true
+        centeredSlides: false,
+        centeredSlidesBounds: true,
+        centerInsufficientSlides: true,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
+        loop: false,
+        simulateTouch: true,
+        freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
+        navigation: { prevEl: ".personal-button-prev", nextEl: ".personal-button-next" },
       }
     },
     {
       selector: '.works__slider',
       options: {
-        slidesPerGroup: 1,
         slidesPerView: 1,
+        slidesPerGroup: 1,
         spaceBetween: 8,
-        loop: document.querySelectorAll('.works__slider .swiper-slide').length > 1,
         grabCursor: true,
         speed: 600,
         watchOverflow: true,
         mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
-        passiveListeners: true,
         pagination: { el: ".works__slider .swiper-pagination", clickable: true },
         navigation: { prevEl: ".works-button-prev", nextEl: ".works-button-next" },
-        breakpoints: { 835: { slidesPerView: 3, spaceBetween: 20, pagination: false } }
+        breakpoints: { 835: { slidesPerView: 3, spaceBetween: 20, pagination: false } },
+        centeredSlides: false,
+        centeredSlidesBounds: true,
+        centerInsufficientSlides: true,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
+        loop: false,
+        simulateTouch: true,
+        freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
       }
     }
   ];
 
   slidesConfig.forEach(cfg => {
-    const el = document.querySelector(cfg.selector);
-    if (el) new Swiper(cfg.selector, cfg.options);
+    const container = document.querySelector(cfg.selector);
+    if (!container) return;
+
+    const swiper = new Swiper(cfg.selector, cfg.options);
+    initTempoNavigation(swiper);
   });
 
-  // === GSAP Animations ===
+  function initTempoNavigation(swiper) {
+    let slideQueue = 0;
+    let lastNav = null;
+    const clickTimes = [];
+    const WINDOW_MS = 800;
+
+    function recordAndDecide() {
+      const now = Date.now();
+      while (clickTimes.length && now - clickTimes[0] > WINDOW_MS) clickTimes.shift();
+      clickTimes.push(now);
+      const clicks = clickTimes.length;
+      if (clicks >= 5) return { slides: Math.min(4, clicks - 1), speed: 180 };
+      if (clicks >= 3) return { slides: 2, speed: 260 };
+      if (clicks === 2) return { slides: 1, speed: 340 };
+      return { slides: 1, speed: 200 };
+    }
+
+    function processQueue() {
+      if (!lastNav || slideQueue <= 0) return;
+      slideQueue = Math.max(0, slideQueue - 1);
+      const { dir, speed } = lastNav;
+      dir === 'next' ? swiper.slideNext(speed) : swiper.slidePrev(speed);
+    }
+
+    function navHandler(dir) {
+      const { slides, speed } = recordAndDecide();
+      lastNav = { dir, speed };
+      slideQueue += slides;
+      processQueue();
+    }
+
+    const nextBtn = document.querySelector('.swiper-button-next');
+    const prevBtn = document.querySelector('.swiper-button-prev');
+
+    if (nextBtn) nextBtn.addEventListener('click', () => navHandler('next'));
+    if (prevBtn) prevBtn.addEventListener('click', () => navHandler('prev'));
+  }
+
+  /**
+   * GSAP Animations
+   */
   function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 95%") {
     if (!triggerElement) return;
     ScrollTrigger.create({
@@ -349,17 +395,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // fadeUp
   document.querySelectorAll('[data-transform="fadeUp"]').forEach(el => {
     const tl = gsap.timeline({ paused: true });
-    tl.from(el, { opacity: 0, y: 100, duration: 0.5, ease: "ease", stagger: { amount: 0.3 } });
+    tl.from(el, { opacity: 0, y: 100, duration: 0.7, ease: "ease", stagger: { amount: 0.3 } });
     scrollTriggerPlayer(el, tl);
   });
 
-  // textBlur
-  document.querySelectorAll('[data-blur="textBlur"]').forEach(el => {
+  document.querySelectorAll('[data-transform="fadeUp1x"]').forEach(el => {
+    const tl = gsap.timeline({ paused: true });
+    tl.from(el, { opacity: 0, y: 100, duration: 1, ease: "ease", stagger: { amount: 0.3 } });
+    scrollTriggerPlayer(el, tl);
+  });
+
+  // Эффект появления с блюра
+  document.querySelectorAll('[data-animation="blur"]').forEach(el => {
     const tl = gsap.timeline({ paused: true });
     tl.from(el, {
       opacity: 0,
       filter: "blur(10px)",
-      duration: 0.5,
+      // duration: 0.5,
+      duration: 1,
       ease: "power4.out",
       onUpdate: function () {
         this.targets().forEach(t => t.style.filter = `blur(${Math.abs(this.progress() - 1) * 10}px)`);
@@ -368,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTriggerPlayer(el, tl);
   });
 
-  // titleFadeUp
+  // Эффект fade для заголовков
   document.querySelectorAll('[data-transform="titleFadeUp"]').forEach(parent => {
     const title = parent.querySelector('[data-gradient-text]');
     if (!title) return;
@@ -407,6 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Параллакс картинки
   const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
   if (parallaxImgContainers.length > 0) {
     parallaxImgContainers.forEach(parallaxImgContainer => {
@@ -428,25 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const fadeItems = document.querySelectorAll('[data-transform="fade"]');
-  fadeItems.forEach(fadeItem => {
-    const tl = gsap.timeline({
-      paused: true
-    });
-
-    tl.from(fadeItem, {
-      opacity: 0,
-      y: "100",
-      duration: .8,
-      delay: .3,
-      ease: "ease",
-      stagger: {
-        amount: .8
-      }
-    });
-    scrollTriggerPlayer(fadeItem, tl)
-  });
-
+  // Параллакс картинки с увеличением
   const parallaxImgScaleContainers = document.querySelectorAll('[data-animation="parallax-img-scale"]');
   if (parallaxImgScaleContainers.length > 0) {
     parallaxImgScaleContainers.forEach(parallaxImgScaleContainer => {
@@ -468,37 +504,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // hero__cover
-  const heroCover = document.querySelector('.hero__cover');
-  if (heroCover) {
-    const tl = gsap.timeline({ paused: true });
-    tl.from(heroCover, { opacity: 0, y: 100, duration: 1, ease: "ease", stagger: { amount: 0.3 } });
-    scrollTriggerPlayer(heroCover, tl);
-  }
+  // Parallax Boxes
+  document.querySelectorAll('[data-animation="parallax-box"]').forEach(box => {
+    gsap.fromTo(box, { y: '10%' },
+      { y: '-10%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
+  });
 
-  // hero__logo
-  const heroLogo = document.querySelector('.hero__logo');
-  if (heroLogo) {
-    const tl = gsap.timeline({ paused: true });
-    tl.from(heroLogo, {
-      opacity: 0, filter: "blur(10px)", duration: 1, ease: "power4.out",
-      onUpdate: function () { this.targets().forEach(t => t.style.filter = `blur(${Math.abs(this.progress() - 1) * 10}px)`); }
-    });
-    scrollTriggerPlayer(heroLogo, tl);
-  }
-
-  // === Parallax Boxes ===
-  // document.querySelectorAll('[data-animation="parallax-box"]').forEach(box => {
-  //   gsap.fromTo(box, { y: '10%' },
-  //     { y: '-10%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
-  // });
-
-  // === Form Input Handling ===
+  // Выявление заполненности поля формы для присваивания класса
   document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
     input.addEventListener('input', () => input.classList.toggle('filled', input.value.trim() !== ''));
   });
 
-  // === Fancybox ===
+  /**
+   * Инициализация Fancybox
+   */
   Fancybox.bind('[data-fancybox]', { Html: { autoSize: false }, on: { 'Carousel.ready': () => lenis.stop(), destroy: () => lenis.start() } });
 
 });

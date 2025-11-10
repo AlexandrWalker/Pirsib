@@ -91,12 +91,12 @@
       font-size: 8rem;
       line-height: 100%;
       text-transform: uppercase;
-      background-image: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      -webkit-box-decoration-break: clone;
-      text-fill-color: transparent;
+      // background-image: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+      // background-clip: text;
+      // -webkit-box-decoration-break: clone;
+      // text-fill-color: transparent;
       white-space: nowrap;
 
       @include md {

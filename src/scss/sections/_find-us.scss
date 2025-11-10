@@ -168,4 +168,17 @@
       gap: 1rem;
     }
   }
+
+  &__mask {
+    width: 157.9rem;
+    height: 151.3rem;
+    background-image: url(./../images/mask/mask-find-us.avif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    position: absolute;
+    top: -15.4rem;
+    left: -67.1rem;
+    z-index: -1;
+  }
 }

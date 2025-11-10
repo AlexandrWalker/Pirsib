@@ -12,9 +12,8 @@
       <section id="hero" class="hero">
         <div class="container hero__container">
           <div class="hero__inner">
-
             <div class="hero__content">
-              <div class="hero__logo">
+              <div class="hero__logo" data-animation="blur">
                 <svg id="mysvg" width="787" height="469" viewBox="0 0 787 469" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_265_2289)">
@@ -276,7 +275,7 @@
                   </defs>
                 </svg>
               </div>
-              <div class="hero__text" data-blur="textBlur">
+              <div class="hero__text" data-animation="blur">
                 <h6>
                   Наша история началась в 2006 году в маленьком кабинете, который был арендован в медицинском центре
                   университета
@@ -291,11 +290,9 @@
                 </div>
               </a>
             </div>
-
-            <div class="hero__cover">
+            <div class="hero__cover" data-transform="fadeUp1x">
               <img src="./../images/temp/hero-girl.svg" alt="" loading="lazy">
             </div>
-
             <div class="hero__request" data-transform="fadeUp">
               <span class="border"></span>
               <form class="hero__request-form" action="">
@@ -341,16 +338,15 @@
                 </div>
               </form>
             </div>
-
           </div>
           <!-- <img class="mask mask--hero" src="./../images/mask/mask-hero-text.svg" alt="" loading="lazy"> -->
+          <div class="hero__mask" data-animation="parallax-box"></div>
         </div>
       </section>
 
       <section class="directions">
         <div class="directions__container container">
           <div class="directions__inner">
-
             <div class="general__head">
               <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient-text>
@@ -363,10 +359,9 @@
                 </h2>
               </div>
             </div>
-
-            <div class="directions__body">
-              <div class="directions__items" data-transform="fadeUpStaggerParent">
-                <a class="directions__item" href="/" data-transform="fadeUpStagger">
+            <div class="directions__body" data-animation="blur">
+              <div class="directions__items">
+                <a class="directions__item" href="/">
                   <span class="border"></span>
                   <div class="directions__item-title">
                     <h5>
@@ -379,7 +374,7 @@
                   </div>
                   <img src="./../images/temp/directions-1.jpg" alt="" loading="lazy">
                 </a>
-                <a class="directions__item" href="/" data-transform="fadeUpStagger">
+                <a class="directions__item" href="/">
                   <span class="border"></span>
                   <div class="directions__item-title">
                     <h5>
@@ -392,7 +387,7 @@
                   </div>
                   <img src="./../images/temp/directions-2.jpg" alt="" loading="lazy">
                 </a>
-                <a class="directions__item" href="/" data-transform="fadeUpStagger">
+                <a class="directions__item" href="/">
                   <span class="border"></span>
                   <div class="directions__item-title">
                     <h5>
@@ -405,7 +400,7 @@
                   </div>
                   <img src="./../images/temp/directions-3.jpg" alt="" loading="lazy">
                 </a>
-                <a class="directions__item" href="/" data-transform="fadeUpStagger">
+                <a class="directions__item" href="/">
                   <span class="border"></span>
                   <div class="directions__item-title">
                     <h5>
@@ -422,10 +417,8 @@
                 </a>
               </div>
             </div>
-
           </div>
-          <!-- <img class="mask mask--1" src="./../images/mask/mask-1.avif" alt="" loading="lazy"
-            data-animation="parallax-box"> -->
+
           <div class="mask mask--1" data-animation="parallax-box"></div>
         </div>
       </section>
@@ -433,8 +426,7 @@
       <section class="personal">
         <div class="container">
           <div class="personal__inner">
-
-            <div class="swiper personal__slider">
+            <div class="swiper personal__slider" data-transform="fadeUp1x">
               <div class="swiper-wrapper">
                 <div class="swiper-slide personal__slide">
                   <div class="personal__slide-img">
@@ -448,7 +440,6 @@
                 </div>
               </div>
             </div>
-
             <div class="general__head">
               <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient-text>
@@ -457,16 +448,15 @@
                   <span>студии</span>
                 </h2>
               </div>
-              <div class="general__text" data-blur="textBlur">
+              <div class="general__text" data-animation="blur">
                 <p>
                   Первыми клиентами стали друзья, а рекламой кампанией — сарафанное радио. Я был студентом 4 курса,
                   работал фельдшером скорой помощи и получал медицинское образование.
                 </p>
               </div>
             </div>
-
-            <div class="personal__btns" data-transform="fadeUpStaggerParent">
-              <a class="personal__btn" href="/" data-transform="fadeUpStagger">
+            <div class="personal__btns" data-animation="blur">
+              <a class="personal__btn" href="/">
                 <span class="border"></span>
                 <img src="./../images/temp/personal-icon-1.svg" alt="" loading="lazy">
                 <div class="btn">
@@ -479,7 +469,7 @@
                   </h5>
                 </div>
               </a>
-              <a class="personal__btn" href="/" data-transform="fadeUpStagger">
+              <a class="personal__btn" href="/">
                 <span class="border"></span>
                 <img src="./../images/temp/personal-icon-2.svg" alt="" loading="lazy">
                 <div class="btn">
@@ -493,10 +483,7 @@
                 </div>
               </a>
             </div>
-
           </div>
-          <!-- <img class="mask mask--2" src="./../images/mask/mask-2.avif" alt="" loading="lazy"
-            data-animation="parallax-box"> -->
           <div class="mask mask--2" data-animation="parallax-box"></div>
         </div>
       </section>
@@ -504,7 +491,6 @@
       <section class="works">
         <div class="container">
           <div class="works__inner">
-
             <div class="works__head">
               <div class="general__head">
                 <div class="general__title" data-transform="titleFadeUp">
@@ -534,12 +520,11 @@
                 </div>
               </div>
             </div>
-
-            <div class="works__body" data-transform="fadeUpStaggerParent">
+            <div class="works__body" data-animation="blur">
               <div class="swiper works__slider">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <a class="works__item" href="/" data-transform="fadeUpStagger">
+                    <a class="works__item" href="/">
                       <span class="border"></span>
                       <div class="works__content">
                         <h5>
@@ -570,7 +555,7 @@
                     </a>
                   </div>
                   <div class="swiper-slide">
-                    <a class="works__item" href="/" data-transform="fadeUpStagger">
+                    <a class="works__item" href="/">
                       <span class="border"></span>
                       <div class="works__content">
                         <h5>
@@ -601,7 +586,7 @@
                     </a>
                   </div>
                   <div class="swiper-slide">
-                    <a class="works__item" href="/" data-transform="fadeUpStagger">
+                    <a class="works__item" href="/">
                       <span class="border"></span>
                       <div class="works__content">
                         <h5>
@@ -632,7 +617,7 @@
                     </a>
                   </div>
                   <div class="swiper-slide">
-                    <a class="works__item" href="/" data-transform="fadeUpStagger">
+                    <a class="works__item" href="/">
                       <span class="border"></span>
                       <div class="works__content">
                         <h5>
@@ -663,7 +648,7 @@
                     </a>
                   </div>
                   <div class="swiper-slide">
-                    <a class="works__item" href="/" data-transform="fadeUpStagger">
+                    <a class="works__item" href="/">
                       <span class="border"></span>
                       <div class="works__content">
                         <h5>
@@ -694,7 +679,7 @@
                     </a>
                   </div>
                   <div class="swiper-slide">
-                    <a class="works__item" href="/" data-transform="fadeUpStagger">
+                    <a class="works__item" href="/">
                       <span class="border"></span>
                       <div class="works__content">
                         <h5>
@@ -725,7 +710,7 @@
                     </a>
                   </div>
                   <div class="swiper-slide">
-                    <a class="works__item" href="/" data-transform="fadeUpStagger">
+                    <a class="works__item" href="/">
                       <span class="border"></span>
                       <div class="works__content">
                         <h5>
@@ -756,7 +741,7 @@
                     </a>
                   </div>
                   <div class="swiper-slide">
-                    <a class="works__item" href="/" data-transform="fadeUpStagger">
+                    <a class="works__item" href="/">
                       <span class="border"></span>
                       <div class="works__content">
                         <h5>
@@ -787,7 +772,7 @@
                     </a>
                   </div>
                   <div class="swiper-slide">
-                    <a class="works__item" href="/" data-transform="fadeUpStagger">
+                    <a class="works__item" href="/">
                       <span class="border"></span>
                       <div class="works__content">
                         <h5>
@@ -819,8 +804,8 @@
                   </div>
                 </div>
               </div>
-              <div class="works__items" data-transform="fadeUpStaggerParent">
-                <a class="works__item" href="/" data-transform="fadeUpStagger">
+              <div class="works__items">
+                <a class="works__item" href="/">
                   <span class="border"></span>
                   <div class="works__content">
                     <h5>
@@ -849,7 +834,7 @@
                   </div>
                   <img src="./../images/temp/works-1.jpg" alt="" loading="lazy">
                 </a>
-                <a class="works__item" href="/" data-transform="fadeUpStagger">
+                <a class="works__item" href="/">
                   <span class="border"></span>
                   <div class="works__content">
                     <h5>
@@ -878,7 +863,7 @@
                   </div>
                   <img src="./../images/temp/works-2.jpg" alt="" loading="lazy">
                 </a>
-                <a class="works__item" href="/" data-transform="fadeUpStagger">
+                <a class="works__item" href="/">
                   <span class="border"></span>
                   <div class="works__content">
                     <h5>
@@ -909,7 +894,6 @@
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -924,12 +908,12 @@
                   Получите скидку 20%
                 </h3>
               </div>
-              <div class="quiz__text">
+              <div class="quiz__text" data-animation="blur">
                 <p>
                   В честь двадцатилетия студии дарим скидку каждому новому клиенту на наши услуги
                 </p>
               </div>
-              <a class="btn btn--inner" href="/">
+              <a class="btn btn--inner" href="/" data-animation="blur">
                 <span class="border"></span>
                 Хочу получить скидку
                 <div class="btn btn--inner-icon">
@@ -945,19 +929,15 @@
       <section class="certificates">
         <div class="container">
           <div class="certificates__inner">
-
             <div class="general__head">
               <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient-text>Cертификаты</h2>
               </div>
             </div>
-            <div class="certificates__items" data-transform="fadeUpStaggerParent">
+            <div class="certificates__items" data-animation="blur">
               @@loop('./elements/certificates-item.html', './data/certificates-items.json')
             </div>
-
           </div>
-          <!-- <img class="mask mask--3" src="./../images/mask/mask-3.avif" alt="" loading="lazy"
-            data-animation="parallax-box"> -->
           <div class="mask mask--3" data-animation="parallax-box"></div>
         </div>
       </section>
@@ -965,11 +945,12 @@
       <section class="opinion">
         <div class="container">
           <div class="opinion__inner">
-
             <div class="opinion__head">
               <div class="general__head">
                 <div class="general__title" data-transform="titleFadeUp">
-                  <h2 data-gradient-text>Мнение о нас</h2>
+                  <h2 data-gradient-text>
+                    Мнение о нас
+                  </h2>
                 </div>
               </div>
               <div class="opinion__btns">
@@ -993,8 +974,7 @@
                 </div>
               </div>
             </div>
-
-            <div class="opinion__body" data-transform="fadeUpStaggerParent">
+            <div class="opinion__body" data-animation="blur">
               <div class="swiper opinion__slider">
                 <div class="swiper-wrapper">
                   @@loop('./elements/opinion-slide-item.html', './data/opinion-items.json')
@@ -1002,7 +982,6 @@
                 <div class="swiper-pagination"></div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -1010,7 +989,6 @@
       <section class="find-us">
         <div class="container">
           <div class="find-us__inner">
-
             <div class="general__head">
               <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient-text>
@@ -1018,7 +996,6 @@
                 </h2>
               </div>
             </div>
-
             <div class="find-us__content" data-transform="fadeUp">
               <span class="border"></span>
               <div class="find-us__items">
@@ -1073,21 +1050,17 @@
                 </div>
               </div>
             </div>
-
           </div>
-          <div class="find-us__map">
+          <div class="find-us__map" data-animation="blur">
             <img src="./../images/temp/map.png" alt="" loading="lazy">
           </div>
-
-          <!-- <img class="mask mask--find-us" src="./../images/mask/mask-find-us.avif" alt="" loading="lazy"
-            data-animation="parallax-box"> -->
+          <div class="find-us__mask" data-animation="parallax-box"></div>
         </div>
       </section>
 
       <section class="faq">
         <div class="container faq__container">
           <div class="faq__inner">
-
             <div class="general__head">
               <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient-text>
@@ -1095,10 +1068,9 @@
                 </h2>
               </div>
             </div>
-
-            <div class="faq__body" data-transform="fadeRightStaggerParent">
+            <div class="faq__body" data-animation="blur">
               <div class="faq__items accordion-parent">
-                <div class="faq__item accordion" data-transform="fadeRightStagger">
+                <div class="faq__item accordion">
                   <span class="border"></span>
                   <div class="faq__item-head">
                     <h6>
@@ -1120,7 +1092,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="faq__item accordion" data-transform="fadeRightStagger">
+                <div class="faq__item accordion">
                   <span class="border"></span>
                   <div class="faq__item-head">
                     <h6>
@@ -1142,7 +1114,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="faq__item accordion" data-transform="fadeRightStagger">
+                <div class="faq__item accordion">
                   <span class="border"></span>
                   <div class="faq__item-head">
                     <h6>
@@ -1164,7 +1136,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="faq__item accordion" data-transform="fadeRightStagger">
+                <div class="faq__item accordion">
                   <span class="border"></span>
                   <div class="faq__item-head">
                     <h6>
@@ -1186,7 +1158,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="faq__item accordion" data-transform="fadeRightStagger">
+                <div class="faq__item accordion">
                   <span class="border"></span>
                   <div class="faq__item-head">
                     <h6>
@@ -1208,7 +1180,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="faq__item accordion" data-transform="fadeRightStagger">
+                <div class="faq__item accordion">
                   <span class="border"></span>
                   <div class="faq__item-head">
                     <h6>
@@ -1232,13 +1204,8 @@
                 </div>
               </div>
             </div>
-
           </div>
-
-          <!-- <img class="mask mask--4" src="./../images/mask/mask-4.avif" alt="" loading="lazy"
-            data-animation="parallax-box"> -->
           <div class="mask mask--4" data-animation="parallax-box"></div>
-
         </div>
       </section>
 

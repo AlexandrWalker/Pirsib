@@ -33,7 +33,7 @@
     }
   }
 
-  .page__inner .header &,
+  .page__inner .header:not(.menu--open .page__inner .header) &,
   // .page__inner .header:not(.menu--open .header.show) &,
   .header.show:not(.menu--open .header.show) & {
 

@@ -93,6 +93,14 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -109,22 +117,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -135,6 +127,14 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -397,8 +397,6 @@ a:hover .border::after {
   will-change: transform;
 }
 
-/* Стиль для параллакс картинок */
-
 [data-animation=parallax-img] {
   overflow: hidden;
 }
@@ -413,6 +411,10 @@ a:hover .border::after {
 
 [data-animation=parallax-img-scale] {
   overflow: hidden;
+}
+
+[data-animation=blur] {
+  will-change: filter;
 }
 
 .swiper__btns {
@@ -997,6 +999,7 @@ a:hover .btn .border::after,
 .form-input:hover,
 .form-input:target {
   color: var(--pink-2);
+  padding: 2rem 2rem 2rem 6.4rem;
 }
 
 .form-input.filled::-webkit-input-placeholder, .form-input:checked::-webkit-input-placeholder, .form-input:focus::-webkit-input-placeholder, .form-input:hover::-webkit-input-placeholder, .form-input:target::-webkit-input-placeholder {
@@ -1029,6 +1032,7 @@ a:hover .btn .border::after,
 .form-input:hover + i,
 .form-input:target + i {
   color: var(--pink-2);
+  left: 3rem;
 }
 
 .form-input.filled + * + .border::before,
@@ -1123,8 +1127,8 @@ a:hover .btn .border::after,
 [class^=icon-],
 [class*=" icon-"] {
   font-size: var(--btn-height);
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .btn:hover .icon-chevron {
@@ -1140,7 +1144,7 @@ a:hover .btn .border::after,
 }
 
 .btn:hover .icon-telegram {
-  text-shadow: #02AEFF 0 0 0.8rem;
+  text-shadow: #02AEFF 0 0 1rem;
 }
 
 .icon-whatsapp {
@@ -1148,7 +1152,7 @@ a:hover .btn .border::after,
 }
 
 .btn:hover .icon-whatsapp {
-  text-shadow: #38EF7D 0 0 0.6rem;
+  text-shadow: #38EF7D 0 0 1rem;
 }
 
 .icon-vk {
@@ -1532,12 +1536,6 @@ p {
   font-size: 8rem;
   line-height: 100%;
   text-transform: uppercase;
-  background-image: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-box-decoration-break: clone;
-  text-fill-color: transparent;
   white-space: nowrap;
 }
 
@@ -1735,6 +1733,10 @@ p {
   transition: all 0.5s ease;
 }
 
+.header.out {
+  pointer-events: none;
+}
+
 .header__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1917,7 +1919,7 @@ p {
   flex-shrink: 0;
   inset: 0;
   border-radius: 2.4rem;
-  padding: 0.1rem;
+  padding: 0.05rem;
   background: linear-gradient(135deg, var(--border-pink) 0%, var(--border-dark-blue-21) 25%) border-box, linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%) border-box;
   -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -2116,11 +2118,6 @@ p {
   font-size: 3.4rem;
   line-height: 100%;
   white-space: nowrap;
-  background: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -2302,7 +2299,7 @@ p {
 }
 
 .page__inner .find-us {
-  padding: 0 0 30rem;
+  padding: 0 0 6rem;
 }
 
 .page__inner .find-us__inner {
@@ -3299,6 +3296,18 @@ html.out .biography__left {
   gap: 1.8rem;
 }
 
+.find-us__mask {
+  width: 157.9rem;
+  height: 151.3rem;
+  background-image: url(./../images/mask/mask-find-us.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: -15.4rem;
+  left: -67.1rem;
+  z-index: -1;
+}
+
 .hero {
   margin-bottom: 4.3rem;
 }
@@ -3411,6 +3420,18 @@ html.out .biography__left {
 
 .hero__request .form-wrap p {
   opacity: 0.5;
+}
+
+.hero__mask {
+  width: 127rem;
+  height: 64.1rem;
+  background-image: url(./../images/mask/mask-hero-text.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: -0.5rem;
+  right: 10.5rem;
+  z-index: -1;
 }
 
 .opinion {
@@ -3874,7 +3895,7 @@ html.out .biography__left {
     width: 0;
   }
 
-  .page__inner .header .logo,
+  .page__inner .header:not(.menu--open .page__inner .header) .logo,
   .header.show:not(.menu--open .header.show) .logo {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);

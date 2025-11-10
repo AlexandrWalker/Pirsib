@@ -177,4 +177,17 @@
       }
     }
   }
+
+  &__mask {
+    width: 127rem;
+    height: 64.1rem;
+    background-image: url(./../images/mask/mask-hero-text.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    position: absolute;
+    top: -0.5rem;
+    right: 10.5rem;
+    z-index: -1;
+  }
 }

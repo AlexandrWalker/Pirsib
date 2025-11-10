@@ -38,7 +38,7 @@
       <section class="catalog">
         <div class="container">
           <div class="catalog__inner">
-            <div class="catalog__items">
+            <div class="catalog__items" data-transform="fadeUp">
               @@loop('./elements/catalog-tatu-item.html', './data/catalog-tatu-items.json')
             </div>
           </div>
@@ -77,8 +77,8 @@
               </div>
             </div>
 
-            <div class="opinion__body" data-transform="fadeUpStaggerParent">
-              <div class="swiper opinion__slider">
+            <div class="opinion__body">
+              <div class="swiper opinion__slider" data-transform="fadeUp">
                 <div class="swiper-wrapper">
                   @@loop('./elements/opinion-slide-item.html', './data/opinion-items.json')
                 </div>

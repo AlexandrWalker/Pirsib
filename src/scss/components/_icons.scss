@@ -4,7 +4,7 @@
 [class^="icon-"],
 [class*=" icon-"] {
   font-size: var(--btn-height);
-  transition: all 0.5s ease;
+  transition: all 0.5s linear;
 }
 
 .icon {
@@ -27,7 +27,7 @@
     color: #02AEFF;
 
     .btn:hover & {
-      text-shadow: #02AEFF 0 0 0.8rem;
+      text-shadow: #02AEFF 0 0 1rem;
     }
   }
 
@@ -35,7 +35,7 @@
     color: #38EF7D;
 
     .btn:hover & {
-      text-shadow: #38EF7D 0 0 0.6rem;
+      text-shadow: #38EF7D 0 0 1rem;
     }
   }
 
