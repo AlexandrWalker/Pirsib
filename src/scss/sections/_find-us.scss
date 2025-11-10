@@ -180,5 +180,9 @@
     top: -15.4rem;
     left: -67.1rem;
     z-index: -1;
+
+    @include md {
+      display: none;
+    }
   }
 }

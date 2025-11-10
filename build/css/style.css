@@ -93,14 +93,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -109,8 +101,24 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -127,14 +135,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -3370,6 +3370,7 @@ html.out .biography__left {
 }
 
 .hero__cover img {
+  max-width: unset;
   width: auto;
   height: 100%;
   -o-object-fit: contain;
@@ -3665,13 +3666,62 @@ html.out .biography__left {
   width: calc(50% - 1rem);
   min-height: 35.4rem;
   padding: 4rem 4rem 6rem 9rem;
+  border-radius: 10rem;
+  position: relative;
+}
+
+.personal__btn::before {
+  content: "";
+  width: 100%;
+  height: 100%;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   backdrop-filter: blur(6.35px);
   border-radius: 10rem;
-  position: relative;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.personal__btn::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
+  -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+  box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+  backdrop-filter: blur(6.35px);
+  border-radius: 10rem;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.personal__btn:hover {
+  color: var(--pink-2);
+}
+
+.personal__btn:hover::before {
+  opacity: 0;
+}
+
+.personal__btn:hover::after {
+  opacity: 1;
 }
 
 .personal__btn:hover .btn::before {
@@ -4712,6 +4762,10 @@ html.out .biography__left {
     gap: 2.5445292621vw;
   }
 
+  .find-us__mask {
+    display: none;
+  }
+
   .hero {
     margin-bottom: 3rem;
   }
@@ -4750,8 +4804,7 @@ html.out .biography__left {
     height: 212.7226463104vw;
     top: 5.3435114504vw;
     bottom: unset;
-    right: -65.6488549618vw;
-    left: unset;
+    left: 29.262086514vw;
     z-index: -1;
   }
 
@@ -4791,6 +4844,14 @@ html.out .biography__left {
   .hero__request .form-wrap p {
     font-size: 1rem;
     line-height: 120%;
+  }
+
+  .hero__mask {
+    display: block;
+    width: 96.4376590331vw;
+    height: 48.6005089059vw;
+    top: 0;
+    right: -1.5267175573vw;
   }
 
   .opinion {
@@ -4886,6 +4947,14 @@ html.out .biography__left {
     width: calc(50% - 0.4rem);
     min-height: unset;
     padding: 5.0890585242vw 5.0890585242vw 6.3613231552vw;
+    border-radius: 2.4rem;
+  }
+
+  .personal__btn::before {
+    border-radius: 2.4rem;
+  }
+
+  .personal__btn::after {
     border-radius: 2.4rem;
   }
 

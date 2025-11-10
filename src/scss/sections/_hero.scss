@@ -76,25 +76,20 @@
     pointer-events: none;
 
     position: absolute;
-    // top: -13.5rem;
     bottom: -17.2rem;
     left: 0;
     z-index: 2;
 
     @include md {
-      // height: 83.6rem;
       height: calc(100vw/(393/836));
-
-      // top: 2.1rem;
       top: calc(100vw/(393/21));
       bottom: unset;
-      // right: -25.8rem;
-      right: calc(-100vw/(393/258));
-      left: unset;
+      left: calc(100vw/(393/115));
       z-index: -1;
     }
 
     img {
+      max-width: unset;
       width: auto;
       height: 100%;
       object-fit: contain;
@@ -189,5 +184,14 @@
     top: -0.5rem;
     right: 10.5rem;
     z-index: -1;
+
+    @include md {
+      display: block;
+      width: calc(100vw/(393/379));
+      height: calc(100vw/(393/191));
+
+      top: 0;
+      right: calc(-100vw/(393/6));
+    }
   }
 }
