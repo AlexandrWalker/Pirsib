@@ -46,6 +46,7 @@
     }
 
     &:hover {
+      
       @include domd {
 
         &::before {

@@ -93,14 +93,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -111,6 +103,14 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -1276,42 +1276,25 @@ p {
 }
 
 [data-gradient-text] {
+  --color1: #AD32AE;
+  --color2: #3C49C2;
   color: transparent;
-  background: radial-gradient(circle at 50% 50%, #AD32AE 0%, #AD32AE 40%, #3C49C2 60%, #3C49C2 100%);
-  background-size: 300% 100%;
-  background-repeat: repeat;
+  background: -webkit-gradient(linear, left top, right top, from(var(--color1)), color-stop(var(--color2)), to(var(--color1)));
+  background: linear-gradient(90deg, var(--color1), var(--color2), var(--color1));
+  background-size: 200% 100%;
+  /* увеличиваем фон для бесшовного движения */
+  background-repeat: repeat-x;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: idleGradient 3s linear infinite;
-  animation: idleGradient 3s linear infinite;
   cursor: default;
-  -webkit-transition: background-size 0.5s ease, background-position 0.5s ease;
-  transition: background-size 0.5s ease, background-position 0.5s ease;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  transition: --color1 0.5s, --color2 0.5s;
 }
 
-@-webkit-keyframes idleGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  100% {
-    background-position: 150% 50%;
-  }
-}
-
-@keyframes idleGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  100% {
-    background-position: 150% 50%;
-  }
-}
+/* Мобильные устройства — CSS-анимация */
 
 /* Modules */
 
@@ -3787,7 +3770,7 @@ html.out .biography__left {
   position: relative;
 }
 
-.works__item:hover .btn i {
+.works__item:hover .btn {
   -webkit-transform: translateX(0.5rem);
   -ms-transform: translateX(0.5rem);
   transform: translateX(0.5rem);
@@ -4046,6 +4029,31 @@ html.out .biography__left {
   p {
     font-size: 3.5623409669vw;
   }
+
+  [data-gradient-text] {
+    -webkit-animation: idleFlow 3s linear infinite;
+    animation: idleFlow 3s linear infinite;
+  }
+
+@-webkit-keyframes idleFlow {
+    from {
+      background-position: 0% 50%;
+    }
+
+    to {
+      background-position: 200% 50%;
+    }
+}
+
+@keyframes idleFlow {
+    from {
+      background-position: 0% 50%;
+    }
+
+    to {
+      background-position: 200% 50%;
+    }
+}
 
   .burger {
     width: 6.6rem;
@@ -4720,6 +4728,7 @@ html.out .biography__left {
   .hero__cover {
     height: 212.7226463104vw;
     top: 5.3435114504vw;
+    bottom: unset;
     right: -65.6488549618vw;
     left: unset;
     z-index: -1;

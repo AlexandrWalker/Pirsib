@@ -100,25 +100,35 @@ p {
 }
 
 [data-gradient-text] {
+  --color1: #AD32AE;
+  --color2: #3C49C2;
+
   color: transparent;
-  background: radial-gradient(circle at 50% 50%, #AD32AE 0%, #AD32AE 40%, #3C49C2 60%, #3C49C2 100%);
-  background-size: 300% 100%;
-  background-repeat: repeat;
+  background: linear-gradient(90deg, var(--color1), var(--color2), var(--color1));
+  background-size: 200% 100%;
+  /* увеличиваем фон для бесшовного движения */
+  background-repeat: repeat-x;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: idleGradient 3s linear infinite;
   cursor: default;
-  transition: background-size 0.5s ease, background-position 0.5s ease;
   width: fit-content;
+  transition: --color1 0.5s, --color2 0.5s;
 }
 
-@keyframes idleGradient {
-  0% {
-    background-position: 0% 50%;
+/* Мобильные устройства — CSS-анимация */
+@media (max-width: 834px) {
+  [data-gradient-text] {
+    animation: idleFlow 3s linear infinite;
   }
 
-  100% {
-    background-position: 150% 50%;
+  @keyframes idleFlow {
+    from {
+      background-position: 0% 50%;
+    }
+
+    to {
+      background-position: 200% 50%;
+    }
   }
 }

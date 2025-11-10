@@ -59,108 +59,151 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   headerFunc();
 
-  (function initParallax() {
-    const layers = document.querySelectorAll('.mask');
-    const maxShift = window.innerHeight * 0.2; // максимум 20% смещения
-    const visibleLayers = new Set(); // какие уже видны
-    let scrollY = 0;
-    let currentY = 0;
+  // (function initParallax() {
+  //   const layers = document.querySelectorAll('.mask');
+  //   const maxShift = window.innerHeight * 0.2; // максимум 20% смещения
+  //   const visibleLayers = new Set(); // какие уже видны
+  //   let scrollY = 0;
+  //   let currentY = 0;
 
-    // Наблюдатель за появлением слоёв в зоне видимости
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          visibleLayers.add(entry.target);
-          entry.target.style.opacity = entry.target.dataset.initialOpacity || 1;
-        } else {
-          visibleLayers.delete(entry.target);
-          entry.target.style.opacity = 0;
-        }
-      });
-    }, { threshold: 0 });
+  //   // Наблюдатель за появлением слоёв в зоне видимости
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach(entry => {
+  //       if (entry.isIntersecting) {
+  //         visibleLayers.add(entry.target);
+  //         entry.target.style.opacity = entry.target.dataset.initialOpacity || 1;
+  //       } else {
+  //         visibleLayers.delete(entry.target);
+  //         entry.target.style.opacity = 0;
+  //       }
+  //     });
+  //   }, { threshold: 0 });
 
-    layers.forEach(layer => {
-      layer.dataset.initialOpacity = layer.style.opacity || 1;
-      observer.observe(layer);
-    });
+  //   layers.forEach(layer => {
+  //     layer.dataset.initialOpacity = layer.style.opacity || 1;
+  //     observer.observe(layer);
+  //   });
 
-    function animate() {
-      // Инерционное приближение (ease-out)
-      currentY += (scrollY - currentY) * 0.08;
+  //   function animate() {
+  //     // Инерционное приближение (ease-out)
+  //     currentY += (scrollY - currentY) * 0.08;
 
-      layers.forEach((layer, index) => {
-        if (!visibleLayers.has(layer)) return; // двигаем только видимые
+  //     layers.forEach((layer, index) => {
+  //       if (!visibleLayers.has(layer)) return; // двигаем только видимые
 
-        const rect = layer.getBoundingClientRect();
-        const screenH = window.innerHeight;
+  //       const rect = layer.getBoundingClientRect();
+  //       const screenH = window.innerHeight;
 
-        // Прогресс прокрутки конкретного слоя (0 вверху, 1 внизу)
-        const progress = Math.min(Math.max((screenH - rect.top) / (screenH * 2), 0), 1);
+  //       // Прогресс прокрутки конкретного слоя (0 вверху, 1 внизу)
+  //       const progress = Math.min(Math.max((screenH - rect.top) / (screenH * 2), 0), 1);
 
-        // Разная "глубина" для каждого слоя
-        // const depth = 0.2 - index * 0.05; // 0.2, 0.15, 0.1 ...
-        const depth = 0.2; // 0.2, 0.15, 0.1 ...
-        const offset = Math.min(currentY * depth * progress, maxShift);
+  //       // Разная "глубина" для каждого слоя
+  //       // const depth = 0.2 - index * 0.05; // 0.2, 0.15, 0.1 ...
+  //       const depth = 0.2; // 0.2, 0.15, 0.1 ...
+  //       const offset = Math.min(currentY * depth * progress, maxShift);
 
-        layer.style.transform = `translateY(${offset}px)`;
-      });
+  //       layer.style.transform = `translateY(${offset}px)`;
+  //     });
 
-      requestAnimationFrame(animate);
-    }
+  //     requestAnimationFrame(animate);
+  //   }
 
-    window.addEventListener('scroll', () => {
-      scrollY = window.scrollY;
-    });
+  //   window.addEventListener('scroll', () => {
+  //     scrollY = window.scrollY;
+  //   });
 
-    animate();
-  })();
-
+  //   animate();
+  // })();
 
   (function () {
-    $(window).on('resize load', function () {
-      if (window.innerWidth > 834) {
-        const elements = document.querySelectorAll('[data-gradient-text]');
-        const states = new Map();
-        elements.forEach(el => {
-          states.set(el, {
-            x: 50, y: 50,
-            targetX: 50, targetY: 50,
-            hover: false,
-            auto: Math.random() * 100,
-            dir: Math.random() > 0.5 ? 1 : -1
-          });
+    const elements = document.querySelectorAll('[data-gradient-text]');
+    if (!elements.length) return;
 
-          el.addEventListener('mouseenter', () => states.get(el).hover = true);
-          el.addEventListener('mouseleave', () => states.get(el).hover = false);
-          el.addEventListener('mousemove', e => {
-            const s = states.get(el);
-            const rect = el.getBoundingClientRect();
-            s.targetX = ((e.clientX - rect.left) / rect.width) * 100;
-            s.targetY = ((e.clientY - rect.top) / rect.height) * 100;
-          });
-        });
-        function animate() {
-          states.forEach((s, el) => {
-            if (s.hover) {
-              // плавное приближение к курсору
-              s.x += (s.targetX - s.x) * 0.1;
-              s.y += (s.targetY - s.y) * 0.1;
-            } else {
-              // авто-анимация при бездействии
-              s.auto += 0.3 * s.dir;
-              if (s.auto > 100 || s.auto < 0) s.dir *= -1;
-              s.x = s.auto;
-              s.y = 50;
-            }
+    const states = [];
+    let animationFrame;
+    let active = window.innerWidth > 834;
 
-            el.style.backgroundImage =
-              `radial-gradient(circle at ${s.x}% ${s.y}%, #AD32AE 0%, #3C49C2 100%)`;
-          });
+    function init() {
+      cancelAnimationFrame(animationFrame);
+      states.length = 0;
 
-          requestAnimationFrame(animate);
-        }
-        requestAnimationFrame(animate);
+      if (!active) {
+        elements.forEach(el => el.style.backgroundImage = '');
+        return;
       }
+
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const textWidth = el.scrollWidth;
+
+        const state = {
+          el,
+          offset: 0,        // текущее смещение фона
+          speed: 0.5,       // скорость движения
+          hover: false,
+          targetX: 50,
+          rect,
+          textWidth
+        };
+
+        // Hover — плавная инверсия цветов через CSS-переменные
+        el.addEventListener('mouseenter', () => {
+          state.hover = true;
+          el.style.setProperty('--color1', '#3C49C2');
+          el.style.setProperty('--color2', '#AD32AE');
+        });
+
+        el.addEventListener('mouseleave', () => {
+          state.hover = false;
+          el.style.setProperty('--color1', '#AD32AE');
+          el.style.setProperty('--color2', '#3C49C2');
+        });
+
+        // Реакция на курсор
+        el.addEventListener('mousemove', e => {
+          const relX = ((e.clientX - rect.left) / textWidth) * 100;
+          state.targetX = Math.min(Math.max(relX, 0), 100);
+        });
+
+        states.push(state);
+      });
+
+      animate();
+    }
+
+    function animate() {
+      states.forEach(s => {
+        if (s.hover) {
+          // при наведении градиент смещается к курсору
+          s.el.style.backgroundPosition = `${100 - s.targetX}% 50%`;
+        } else {
+          // бесшовное движение справа налево
+          s.offset += s.speed;
+          if (s.offset <= -100) s.offset += 100; // зацикливаем без скачка
+          s.el.style.backgroundPosition = `${s.offset}% 50%`;
+        }
+      });
+
+      animationFrame = requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('load', init);
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const newState = window.innerWidth > 834;
+        if (newState !== active) {
+          active = newState;
+          init();
+        } else {
+          states.forEach(s => {
+            s.rect = s.el.getBoundingClientRect();
+            s.textWidth = s.el.scrollWidth;
+          });
+        }
+      }, 200);
     });
   })();
 
@@ -338,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-transform="fadeUpStaggerParent"]').forEach(parent => {
     const items = parent.querySelectorAll('[data-transform="fadeUpStagger"]');
     if (!items.length) return;
-    gsap.to(items, { scrollTrigger: { trigger: parent, start: "top 80%" }, opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" });
+    gsap.to(items, { scrollTrigger: { trigger: parent, start: "top 90%" }, opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" });
   });
 
   // fadeRightStaggerParent
@@ -353,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.to(items, {
       scrollTrigger: {
         trigger: parent,
-        start: "top 80%",
+        start: "top 90%",
         once: true,          // проиграть анимацию только один раз
       },
       opacity: 1,
