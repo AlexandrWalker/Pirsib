@@ -60,6 +60,10 @@
 
   &__inner {
 
+    body {
+      background: radial-gradient(45.26% 14.26% at 29.38% 7.82%, rgba(173, 50, 174, 0.2) 0%, rgba(12, 15, 27, 0.2) 100%), #0C0F1B;
+    }
+
     @include md {
       padding-top: 11rem;
     }

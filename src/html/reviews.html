@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="page__inner">
 @@include('blocks/head.html', {"title": "Pirsib"})
 
 <body>
-  <div class="wrapper page__inner">
+  <div class="wrapper">
     <!-- Шапка -->
     @@include('./blocks/header.html')
     <!-- Секции страницы -->
@@ -42,7 +42,7 @@
               @@loop('./elements/opinion-item.html', './data/opinion-items.json')
             </div>
           </div>
-          <div class="mask mask--1"></div>
+          <div class="mask mask--1" data-animation="parallax-box"></div>
         </div>
       </section>
 
