@@ -489,10 +489,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const image = parallaxImgScaleContainer.querySelector('img');
       gsap.fromTo(image,
         {
-          scale: '0.8',
+          // scale: '0.8',
+          scale: '1',
         },
         {
-          scale: '1',
+          // scale: '1',
+          scale: '1.2',
           scrollTrigger: {
             trigger: parallaxImgScaleContainer,
             start: 'top 90%',
@@ -508,6 +510,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-animation="parallax-box"]').forEach(box => {
     gsap.fromTo(box, { y: '10%' },
       { y: '-10%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
+  });
+  
+  document.querySelectorAll('[data-animation="parallax-box-2x"]').forEach(box => {
+    gsap.fromTo(box, { y: '20%' },
+      { y: '-20%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
   });
 
   // Выявление заполненности поля формы для присваивания класса
