@@ -114,6 +114,8 @@ p {
   cursor: default;
   width: fit-content;
   transition: --color1 0.5s, --color2 0.5s;
+
+  will-change: background-position;
 }
 
 /* Мобильные устройства — CSS-анимация */

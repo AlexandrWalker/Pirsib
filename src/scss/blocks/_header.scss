@@ -10,9 +10,9 @@
   transition: all 0.5s ease;
 
   &.out {
-    pointer-events: none;
 
     @include domd {
+      pointer-events: none;
 
       .header__wrap {
         transform: translateY(-18rem);
@@ -285,6 +285,23 @@
       flex-direction: row;
       align-items: center;
       gap: 1rem;
+
+      .border {
+
+        &::before {
+
+          .header__signup:hover & {
+            opacity: 0;
+          }
+        }
+
+        &::after {
+
+          .header__signup:hover & {
+            opacity: 1;
+          }
+        }
+      }
     }
 
     &-link {

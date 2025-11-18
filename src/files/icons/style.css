@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'PirsibIconFonts';
-  src:  url('fonts/PirsibIconFonts.eot?2og1u8');
-  src:  url('fonts/PirsibIconFonts.eot?2og1u8#iefix') format('embedded-opentype'),
-    url('fonts/PirsibIconFonts.ttf?2og1u8') format('truetype'),
-    url('fonts/PirsibIconFonts.woff?2og1u8') format('woff'),
-    url('fonts/PirsibIconFonts.svg?2og1u8#PirsibIconFonts') format('svg');
+  src:  url('fonts/PirsibIconFonts.eot?qmyzax');
+  src:  url('fonts/PirsibIconFonts.eot?qmyzax#iefix') format('embedded-opentype'),
+    url('fonts/PirsibIconFonts.ttf?qmyzax') format('truetype'),
+    url('fonts/PirsibIconFonts.woff?qmyzax') format('woff'),
+    url('fonts/PirsibIconFonts.svg?qmyzax#PirsibIconFonts') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,8 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-2gis:before {
+.icon-gis:before {
   content: "\e900";
+  color: #29b24a;
 }
 .icon-book:before {
   content: "\e901";
@@ -46,32 +47,36 @@
 .icon-mail-min:before {
   content: "\e906";
 }
-.icon-phone:before {
+.icon-ozon:before {
   content: "\e907";
 }
-.icon-phone-min:before {
+.icon-phone:before {
   content: "\e908";
 }
-.icon-play:before {
+.icon-phone-min:before {
   content: "\e909";
 }
-.icon-telegram:before {
+.icon-play:before {
   content: "\e90a";
 }
-.icon-telegram-hover:before {
+.icon-telegram:before {
   content: "\e90b";
-  color: #02aeff;
 }
-.icon-user:before {
+.icon-telegram-hover:before {
   content: "\e90c";
 }
-.icon-vk:before {
+.icon-user:before {
   content: "\e90d";
 }
-.icon-whatsapp:before {
+.icon-vk:before {
   content: "\e90e";
 }
-.icon-whatsapp-hover:before {
+.icon-wb:before {
   content: "\e90f";
-  color: #38ef7d;
+}
+.icon-whatsapp:before {
+  content: "\e910";
+}
+.icon-whatsapp-hover:before {
+  content: "\e911";
 }

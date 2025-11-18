@@ -112,6 +112,8 @@
       top: 2rem;
       right: 7.6rem;
 
+      overflow: visible;
+
       @include md {
         width: calc(100vw/(393/240));
 

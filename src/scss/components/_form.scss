@@ -119,7 +119,10 @@
     &:hover,
     &:target {
       color: var(--pink-2);
-      padding: 2rem 2rem 2rem 6.4rem;
+
+      @include domd {
+        padding: 2rem 2rem 2rem 6.4rem;
+      }
 
       &::placeholder {
         color: var(--pink-2);
@@ -127,7 +130,10 @@
 
       &+i {
         color: var(--pink-2);
-        left: 3rem;
+
+        @include domd {
+          left: 3rem;
+        }
       }
 
       &+*+.border {
@@ -147,6 +153,13 @@
     width: 100%;
     text-transform: none;
     transition: all 0.5s linear;
+
+    @include domd {
+
+      &:hover {
+        padding: 0 3rem;
+      }
+    }
   }
 
   &-checkbox {

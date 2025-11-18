@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/head.html', {"title": "Pirsib"})
+
+<body>
+  <div class="wrapper page__inner">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Секции страницы -->
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/Pirsib">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Каталог продукции
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product">
+        <div class="container">
+          <div class="product__inner">
+            <div class="product__content">
+              <div class="border"></div>
+              <div class="general__head">
+                <div class="general__title" data-transform="titleFadeUp">
+                  <h2 data-gradient-text>
+                    Каталог продукции
+                  </h2>
+                </div>
+                <div class="general__text">
+                  <h6>
+                    cобственная линейка украшений и уходовой косметики
+                  </h6>
+                </div>
+              </div>
+              <a class="btn" href="#decorations">
+                <i class="icon-chevron-min"></i>
+              </a>
+              <div class="product__bg" data-animation="parallax-img-scale">
+                <picture>
+                  <source media="(min-width: 601px)" srcset="./../images/temp/product-cover.jpg" type="image/jpg">
+                  <source media="(max-width: 600px)" srcset="./../images/temp/product-cover-mob.png" type="image/png">
+                  <img src="./../images/temp/product-cover.jpg" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="decorations" class="decorations">
+        <div class="container">
+          <div class="decorations__inner">
+            <div class="general__head">
+              <div class="general__title" data-transform="titleFadeUp">
+                <h4 data-gradient-text>
+                  Украшения
+                </h4>
+              </div>
+            </div>
+            <div class="decorations__items" data-animation="blur">
+              @@loop('./elements/decorations-item.html', './data/decorations-items.json')
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cosmetics">
+        <div class="container">
+          <div class="cosmetics__inner">
+            <div class="general__head">
+              <div class="general__title" data-transform="titleFadeUp">
+                <h4 data-gradient-text>
+                  Уходовая косметика
+                </h4>
+              </div>
+            </div>
+            <div class="cosmetics__items" data-animation="blur">
+              @@loop('./elements/cosmetics-item.html', './data/cosmetics-items.json')
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')
