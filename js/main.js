@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function burgerNav() {
     const header = document.getElementById('header');
+
+    /* new */
+    const firstSection = document.querySelector('section');
+    let scrollPos = 0;
+    /* /new */
+
     const burgerBtn = document.getElementById('burger-btn');
     const burgerMenuInner = document.querySelector('.burger-menu');
 
@@ -25,7 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
     burgerBtn.addEventListener('click', () => {
       if (document.documentElement.classList.contains('menu--open')) {
         lenis.start();
-        header.classList.add('out');
+        // header.classList.add('out');
+
+        /* new */
+        scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollPos > firstSection.offsetHeight) {
+          header.classList.add('out');
+        }
+        /* /new */
+
       } else {
         lenis.stop();
       }
@@ -67,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Убираем .out только один раз при начале скролла вверх
-      if (scrollingUp && isOut) {
+      if (scrollingUp && isOut || scrollPos < firstSection.offsetHeight) {
         header.classList.remove('out');
         document.documentElement.classList.remove('out');
         isOut = false;
@@ -90,6 +104,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
   headerFunc();
 
+  function stickyReveal() {
+    const items = Array.from(document.querySelectorAll('.sticky__item'));
+
+    const removeOffset = 31; // удаляем класс, если элемент ушёл ниже 50px
+
+    let ticking = false;
+
+    const checkItems = () => {
+      items.forEach((item, index) => {
+        // Пропускаем последний элемент
+        if (index === items.length - 1) return;
+
+        const rect = item.getBoundingClientRect();
+        const top = rect.top;
+        const isActive = item.classList.contains('sticky__item-active');
+
+        // Добавляем класс, когда верх элемента коснулся верхней границы окна
+        if (!isActive && top <= 0) {
+          item.classList.add('sticky__item-active');
+        }
+
+        // Убираем класс, если элемент ушёл ниже removeOffset
+        if (isActive && top > removeOffset) {
+          item.classList.remove('sticky__item-active');
+        }
+      });
+
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(checkItems);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', checkItems);
+
+    // Проверка при загрузке страницы
+    checkItems();
+  }
+
+  stickyReveal();
 
   /**
    * Анимация градиента заголовоков и наведения
@@ -306,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       selector: '.works__slider',
       options: {
-        slidesPerView: 1,
+        slidesPerView: 1.1,
         slidesPerGroup: 1,
         spaceBetween: 8,
         grabCursor: true,
@@ -511,7 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.fromTo(box, { y: '10%' },
       { y: '-10%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
   });
-  
+
   document.querySelectorAll('[data-animation="parallax-box-2x"]').forEach(box => {
     gsap.fromTo(box, { y: '20%' },
       { y: '-20%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });

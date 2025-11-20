@@ -93,6 +93,14 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -111,14 +119,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
   font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -477,6 +477,25 @@ a:hover .border::after {
   bottom: 0;
   left: 0;
   z-index: -1;
+}
+
+.sticky__item .over {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 0.8s, -webkit-transform 0.3s;
+  transition: opacity 0.8s, -webkit-transform 0.3s;
+  transition: opacity 0.8s, transform 0.3s;
+  transition: opacity 0.8s, transform 0.3s, -webkit-transform 0.3s;
+  border-radius: 2.4rem;
+  background-color: #0C0F1B;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .swiper__btns {
@@ -2078,8 +2097,8 @@ p {
   width: -moz-fit-content;
   width: fit-content;
   height: 7rem;
-  -webkit-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .logo img {
@@ -2228,7 +2247,7 @@ p {
   transition: all 0.5s ease;
   position: fixed;
   bottom: 0.5rem;
-  z-index: 100;
+  z-index: 300;
 }
 
 .plate__inner {
@@ -3043,6 +3062,8 @@ html.out .biography__left {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 2rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   padding-bottom: 4rem;
   border-bottom: 0.1rem solid var(--pink-10);
 }
@@ -4162,6 +4183,7 @@ html.out .biography__left {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 0.8rem;
+  display: none;
 }
 
 .works__item {
@@ -4313,13 +4335,18 @@ html.out .biography__left {
     width: 0;
   }
 
-  .page__inner .header:not(.menu--open .page__inner .header) .logo,
+  .page__inner .header:not(.menu--open.page__inner .header) .logo,
   .header.show:not(.menu--open .header.show) .logo {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
     opacity: 1;
     width: auto;
+  }
+
+  .price-list__item:hover {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .certificates__item {
@@ -4350,7 +4377,8 @@ html.out .biography__left {
     opacity: 1;
   }
 
-  .faq__item:not(.faq__item.accordion-active):hover .faq__item-head {
+  .faq__item.accordion-active .faq__item-head,
+  .faq__item:hover .faq__item-head {
     color: var(--pink-2);
     padding: 0 2rem;
   }
@@ -4389,6 +4417,10 @@ html.out .biography__left {
 
   .general__head {
     margin-bottom: 2rem;
+  }
+
+  .page__inner .wrapper {
+    padding-top: 0;
   }
 
   .page__inner {
@@ -4933,9 +4965,8 @@ html.out .biography__left {
     overflow: hidden;
   }
 
-  .masters__content.border::before,
-  .masters__content.border::after {
-    border-radius: 2.4rem;
+  .masters__content .border {
+    --border-radius: 2.4rem;
   }
 
   .masters__content .general__head {
@@ -5432,7 +5463,9 @@ html.out .biography__left {
   }
 
   .works__slider {
-    display: none;
+    width: calc(100% + var(--container-padding) * 2);
+    margin-left: calc(var(--container-padding) * -1);
+    padding: 0 var(--container-padding);
   }
 
   .works__item {
@@ -5473,6 +5506,26 @@ html.out .biography__left {
 @media (max-width: 600px) {
   body {
     font-size: 1.4rem;
+  }
+
+  .sticky__item {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    position: sticky;
+    top: 0;
+  }
+
+  .sticky__item.sticky__item-active {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  .sticky__item.sticky__item-active .over {
+    opacity: 0.9;
   }
 
   .btn--video {
@@ -5572,6 +5625,18 @@ html.out .biography__left {
     border-radius: 5rem;
   }
 
+  .header.show .logo:not(.menu--open .logo) {
+    -webkit-transform: translateY(-18rem);
+    -ms-transform: translateY(-18rem);
+    transform: translateY(-18rem);
+  }
+
+  .header.show .header__btns:not(.menu--open .header__btns) .btn {
+    -webkit-transform: translateY(-18rem);
+    -ms-transform: translateY(-18rem);
+    transform: translateY(-18rem);
+  }
+
   .menu__list {
     padding: 10rem 2rem 3rem 2rem;
   }
@@ -5585,7 +5650,7 @@ html.out .biography__left {
   }
 
   .menu__content {
-    padding: 3rem 2rem 4rem 2rem;
+    padding: 3rem 2rem 10rem 2rem;
     gap: 2rem;
   }
 
