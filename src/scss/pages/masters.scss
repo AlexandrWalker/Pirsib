@@ -22,14 +22,10 @@
       overflow: hidden;
     }
 
-    &.border {
+    .border {
 
       @include md {
-
-        &::before,
-        &::after {
-          border-radius: 2.4rem;
-        }
+        --border-radius: 2.4rem;
       }
     }
 

@@ -20,6 +20,23 @@
     }
   }
 
+  &.show {
+
+    @include sm {
+
+      .logo:not(.menu--open .logo) {
+        transform: translateY(-18rem);
+      }
+
+      .header__btns:not(.menu--open .header__btns) {
+
+        .btn {
+          transform: translateY(-18rem);
+        }
+      }
+    }
+  }
+
   &__inner {}
 
   &__wrap {

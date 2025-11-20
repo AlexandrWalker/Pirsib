@@ -8,7 +8,8 @@
 
   position: fixed;
   bottom: 0.5rem;
-  z-index: 100;
+  // z-index: 100;
+  z-index: 300;
 
   @include sm {
     transform: translateY(0);

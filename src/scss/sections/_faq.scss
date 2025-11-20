@@ -181,7 +181,8 @@
       gap: 0 2rem;
       transition: all 0.5s ease;
 
-      .faq__item:not(.faq__item.accordion-active):hover & {
+      .faq__item.accordion-active &,
+      .faq__item:hover & {
 
         @include domd {
           color: var(--pink-2);
