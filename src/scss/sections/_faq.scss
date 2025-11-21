@@ -46,8 +46,9 @@
     }
 
     &:hover {
-      
+
       @include domd {
+        padding: 2.5rem 7rem 2.6rem;
 
         &::before {
           opacity: 0;
@@ -140,9 +141,12 @@
       }
     }
 
-
     &.accordion-active {
       padding: 2.5rem 5rem 4rem;
+
+      @include domd {
+        padding: 2.5rem 7rem 4rem;
+      }
 
       &::before {
         opacity: 0;
@@ -186,7 +190,6 @@
 
         @include domd {
           color: var(--pink-2);
-          padding: 0 2rem;
         }
       }
 

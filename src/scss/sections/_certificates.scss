@@ -40,6 +40,7 @@
     text-align: center;
     position: relative;
     z-index: 1;
+    transition: all 0.5s ease;
 
     @include domd {
       width: calc(25% - ((2rem*3)/4));
@@ -49,6 +50,10 @@
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
       backdrop-filter: blur(6.35px);
       border-radius: 10rem;
+    }
+
+    &:hover {
+      color: var(--pink-2);
     }
 
     &-title {
