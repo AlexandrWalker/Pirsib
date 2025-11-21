@@ -3263,6 +3263,12 @@ html.out .biography__left {
   text-align: center;
   position: relative;
   z-index: 1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.certificates__item:hover {
+  color: var(--pink-2);
 }
 
 .certificates__item-title {
@@ -4361,6 +4367,10 @@ html.out .biography__left {
     border-radius: 10rem;
   }
 
+  .faq__item:hover {
+    padding: 2.5rem 7rem 2.6rem;
+  }
+
   .faq__item:hover::before {
     opacity: 0;
   }
@@ -4377,10 +4387,13 @@ html.out .biography__left {
     opacity: 1;
   }
 
+  .faq__item.accordion-active {
+    padding: 2.5rem 7rem 4rem;
+  }
+
   .faq__item.accordion-active .faq__item-head,
   .faq__item:hover .faq__item-head {
     color: var(--pink-2);
-    padding: 0 2rem;
   }
 
   .works__items {
