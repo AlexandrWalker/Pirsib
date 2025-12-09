@@ -178,6 +178,10 @@
   }
 }
 
+[data-transform] {
+  will-change: transform, opacity;
+}
+
 [data-transform="fadeUpStagger"] {
   transition: transform 0.3s linear, opacity 0.3s linear !important;
   transform: translateY(50%);

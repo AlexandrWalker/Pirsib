@@ -25,13 +25,10 @@
 
     @include md {
       display: block;
-      // width: 37.9rem;
       width: calc(100vw/(393/379));
-      // height: 19.1rem;
       height: calc(100vw/(393/191));
 
       top: 0;
-      // right: -0.6rem;
       right: calc(-100vw/(393/6));
     }
   }
@@ -81,8 +78,6 @@
     width: 335.1rem;
     height: 392.6rem;
 
-    // top: -88.5rem;
-    // top: -44.2rem;
     top: -58.2rem;
     left: -99.3rem;
   }

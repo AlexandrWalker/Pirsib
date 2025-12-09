@@ -433,147 +433,107 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prevBtn) prevBtn.addEventListener('click', () => navHandler('prev'));
   }
 
-  /**
-   * GSAP Animations
-   */
-  function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 95%") {
-    if (!triggerElement) return;
-    ScrollTrigger.create({
-      trigger: triggerElement,
-      start: "top bottom",
-      onLeaveBack: () => { timeline.progress(1); timeline.pause(); }
-    });
-    ScrollTrigger.create({
-      trigger: triggerElement,
-      start: onEnterStart,
-      scrub: true,
-      onEnter: () => timeline.play()
-    });
-  }
+  // ==== Общие настройки ====
+  gsap.defaults({ ease: "power2.out" });
 
-  // fadeUp
-  document.querySelectorAll('[data-transform="fadeUp"]').forEach(el => {
-    const tl = gsap.timeline({ paused: true });
-    tl.from(el, { opacity: 0, y: 100, duration: 0.7, ease: "ease", stagger: { amount: 0.3 } });
-    scrollTriggerPlayer(el, tl);
-  });
-
-  document.querySelectorAll('[data-transform="fadeUp1x"]').forEach(el => {
-    const tl = gsap.timeline({ paused: true });
-    tl.from(el, { opacity: 0, y: 100, duration: 1, ease: "ease", stagger: { amount: 0.3 } });
-    scrollTriggerPlayer(el, tl);
-  });
-
-  // Эффект появления с блюра
-  document.querySelectorAll('[data-animation="blur"]').forEach(el => {
-    const tl = gsap.timeline({ paused: true });
-    tl.from(el, {
+  // ==== Универсальный FadeUp ====
+  document.querySelectorAll('[data-transform="fadeUp"], [data-transform="fadeUp1x"]').forEach(el => {
+    const duration = el.dataset.transform === "fadeUp1x" ? 1 : 0.7;
+    gsap.from(el, {
       opacity: 0,
-      filter: "blur(10px)",
-      // duration: 0.5,
-      duration: 1,
-      ease: "power4.out",
-      onUpdate: function () {
-        this.targets().forEach(t => t.style.filter = `blur(${Math.abs(this.progress() - 1) * 10}px)`);
-      }
+      y: 100,
+      duration,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 95%",
+        toggleActions: "play none none none", // play один раз, не повторять
+        once: true
+      },
+      willChange: "opacity, transform"
     });
-    scrollTriggerPlayer(el, tl);
   });
 
-  // Эффект fade для заголовков
+  // ==== Title Fade ====
   document.querySelectorAll('[data-transform="titleFadeUp"]').forEach(parent => {
     const title = parent.querySelector('[data-gradient-text]');
     if (!title) return;
-    const tl = gsap.timeline({ paused: true });
-    tl.from(title, { opacity: 0, y: 100, duration: 0.5, ease: "ease", stagger: { amount: 0.3 } });
-    scrollTriggerPlayer(title, tl, onEnterStart = "top 100%");
-  });
-
-  // fadeUpStaggerParent
-  document.querySelectorAll('[data-transform="fadeUpStaggerParent"]').forEach(parent => {
-    const items = parent.querySelectorAll('[data-transform="fadeUpStagger"]');
-    if (!items.length) return;
-    gsap.to(items, { scrollTrigger: { trigger: parent, start: "top 90%" }, opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" });
-  });
-
-  // fadeRightStaggerParent
-  document.querySelectorAll('[data-transform="fadeRightStaggerParent"]').forEach(parent => {
-    const items = parent.querySelectorAll('[data-transform="fadeRightStagger"]');
-    if (!items.length) return;
-
-    // Инициализация начального состояния
-    gsap.set(items, { opacity: 0, x: 50, willChange: "opacity, transform" });
-
-    // Один ScrollTrigger на весь контейнер
-    gsap.to(items, {
-      scrollTrigger: {
-        trigger: parent,
-        start: "top 90%",
-        once: true,          // проиграть анимацию только один раз
-      },
-      opacity: 1,
-      x: 0,
+    gsap.from(title, {
+      opacity: 0,
+      y: 100,
       duration: 0.5,
-      stagger: 0.1,
-      ease: "power2.out"
+      scrollTrigger: {
+        trigger: title,
+        start: "top 100%",
+        toggleActions: "play none none none",
+        once: true
+      },
+      willChange: "opacity, transform"
     });
   });
 
-  // Параллакс картинки
-  const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
-  if (parallaxImgContainers.length > 0) {
-    parallaxImgContainers.forEach(parallaxImgContainer => {
-      const image = parallaxImgContainer.querySelector('img');
-      gsap.fromTo(image,
-        {
-          y: '-10%',
-        },
-        {
-          y: '10%',
-          scrollTrigger: {
-            trigger: image,
-            start: 'top 90%',
-            end: 'bottom top',
-            scrub: true,
-          },
+  // ==== FadeUpStaggerParent & FadeRightStaggerParent ====
+  [['fadeUpStaggerParent', 'fadeUpStagger', 'y', 50], ['fadeRightStaggerParent', 'fadeRightStagger', 'x', 50]].forEach(([parentAttr, itemAttr, dir, startOffset]) => {
+    document.querySelectorAll(`[data-transform="${parentAttr}"]`).forEach(parent => {
+      const items = parent.querySelectorAll(`[data-transform="${itemAttr}"]`);
+      if (!items.length) return;
+      gsap.set(items, { opacity: 0, [dir]: startOffset, willChange: "opacity, transform" });
+      gsap.to(items, {
+        opacity: 1,
+        [dir]: 0,
+        stagger: 0.1,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: parent,
+          start: "top 90%",
+          toggleActions: "play none none none",
+          once: true
         }
-      );
+      });
     });
-  }
-
-  // Параллакс картинки с увеличением
-  const parallaxImgScaleContainers = document.querySelectorAll('[data-animation="parallax-img-scale"]');
-  if (parallaxImgScaleContainers.length > 0) {
-    parallaxImgScaleContainers.forEach(parallaxImgScaleContainer => {
-      const image = parallaxImgScaleContainer.querySelector('img');
-      gsap.fromTo(image,
-        {
-          // scale: '0.8',
-          scale: '1',
-        },
-        {
-          // scale: '1',
-          scale: '1.2',
-          scrollTrigger: {
-            trigger: parallaxImgScaleContainer,
-            start: 'top 90%',
-            end: 'bottom top',
-            scrub: true,
-          },
-        }
-      );
-    });
-  }
-
-  // Parallax Boxes
-  document.querySelectorAll('[data-animation="parallax-box"]').forEach(box => {
-    gsap.fromTo(box, { y: '10%' },
-      { y: '-10%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
   });
 
-  document.querySelectorAll('[data-animation="parallax-box-2x"]').forEach(box => {
-    gsap.fromTo(box, { y: '20%' },
-      { y: '-20%', scrollTrigger: { trigger: box, start: 'top 90%', end: 'bottom top', scrub: true } });
+  // ==== Blur Animation (GPU-ускорение) ====
+  document.querySelectorAll('[data-animation="blur"]').forEach(el => {
+    gsap.set(el, { opacity: 0, filter: "blur(10px)", willChange: "opacity, filter" });
+    gsap.to(el, {
+      opacity: 1,
+      filter: "blur(0px)",
+      duration: 1,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 95%",
+        toggleActions: "play none none none",
+        once: true
+      }
+    });
+  });
+
+  // ==== Parallax для изображений и блоков ====
+  document.querySelectorAll('[data-animation="parallax-img"], [data-animation="parallax-img-scale"], [data-animation^="parallax-box"]').forEach(container => {
+    // Находим изображение внутри контейнера, если есть
+    const el = container.tagName.toLowerCase() === 'img' ? container : container.querySelector('img') || container;
+
+    const isScale = container.dataset.animation === "parallax-img-scale";
+    const yStart = container.dataset.animation === "parallax-box-2x" ? "20%" : "10%";
+    const yEnd = container.dataset.animation === "parallax-box-2x" ? "-20%" : "-10%";
+
+    const fromVars = { y: yStart };
+    if (isScale) fromVars.scale = 1;
+
+    const toVars = { y: yEnd };
+    if (isScale) toVars.scale = 1.2;
+
+    gsap.fromTo(el, fromVars, {
+      ...toVars,
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,   // триггер по контейнеру
+        start: "top 90%",
+        end: "bottom top",
+        scrub: true
+      },
+      willChange: "transform"
+    });
   });
 
   // Выявление заполненности поля формы для присваивания класса
