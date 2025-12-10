@@ -23,9 +23,12 @@
     .mask {
 
       &.mask--1 {
-        background-image: url(./../../images/mask/mask-1-reverse.avif);
+        background-image: url(./../../images/mask/new-mask-1-reverse.webp);
+        height: 189.7rem;
+
+        top: -48.5rem;
+        left: 0;
         right: unset;
-        left: -71.6rem;
       }
     }
   }
