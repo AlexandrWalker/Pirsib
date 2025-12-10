@@ -509,7 +509,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==== Parallax для изображений и блоков ====
-  document.querySelectorAll('[data-animation="parallax-img"], [data-animation="parallax-img-scale"], [data-animation^="parallax-box"]').forEach(container => {
+  const animations = document.querySelectorAll('[data-animation="parallax-img"], [data-animation="parallax-img-scale"], [data-animation^="parallax-box"]');
+  if (!animations.length) return;
+
+  animations.forEach(container => {
     // Находим изображение внутри контейнера, если есть
     const el = container.tagName.toLowerCase() === 'img' ? container : container.querySelector('img') || container;
 
