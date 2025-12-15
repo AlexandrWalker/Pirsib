@@ -219,7 +219,7 @@
     <!-- Секции страницы -->
     <main class="main">
 
-      <section class="template">
+      <section class="template template--cover">
         <div class="container">
           <div class="template__inner">
 
@@ -236,15 +236,7 @@
               </ul>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      <section class="masters">
-        <div class="container">
-          <div class="masters__inner">
-
-            <div class="masters__content">
+            <div class="template__content">
               <div class="border"></div>
               <div class="general__head">
                 <div class="general__title" data-transform="titleFadeUp">
@@ -256,14 +248,23 @@
                     университета
                   </h6>
                 </div>
-                <a class="btn" href="#masters__items">
+                <a class="btn" href="#masters">
                   <i class="icon-chevron-min"></i>
                 </a>
               </div>
-              <div class="masters__cover">
+              <div class="template__cover">
                 <img src="./images/temp/masters-cover-2.png" alt="">
               </div>
             </div>
+
+          </div>
+          <div class="mask mask--1" data-animation="parallax-box"></div>
+        </div>
+      </section>
+
+      <section id="masters" class="masters">
+        <div class="container">
+          <div class="masters__inner">
 
             <div id="masters__items" class="masters__items" data-transform="fadeUp">
               <a class="masters__item sticky__item" href="/Pirsib/masters-inner.html">
@@ -754,7 +755,6 @@
             </div>
 
           </div>
-          <div class="mask mask--1" data-animation="parallax-box"></div>
         </div>
       </section>
 

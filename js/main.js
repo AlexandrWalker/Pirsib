@@ -493,19 +493,44 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==== Blur Animation (GPU-ускорение) ====
+  function isFirefox() {
+    return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+  }
+
   document.querySelectorAll('[data-animation="blur"]').forEach(el => {
-    gsap.set(el, { opacity: 0, filter: "blur(10px)", willChange: "opacity, filter" });
-    gsap.to(el, {
-      opacity: 1,
-      filter: "blur(0px)",
-      duration: 1,
-      scrollTrigger: {
-        trigger: el,
-        start: "top 95%",
-        toggleActions: "play none none none",
-        once: true
-      }
-    });
+    if (isFirefox()) {
+      // Для Firefox — альтернативная анимация
+      gsap.set(el, { opacity: 0, y: 50 }); // смещение вместо blur
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 95%",
+          toggleActions: "play none none none",
+          once: true
+        }
+      });
+    } else {
+      // Для остальных — оригинальная blur-анимация
+      gsap.set(el, { opacity: 0, y: 50, filter: "blur(8px)", willChange: "opacity, filter" });
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1,
+        force3D: true,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 95%",
+          toggleActions: "play none none none",
+          once: true
+        }
+      });
+    }
   });
 
   // ==== Parallax для изображений и блоков ====
@@ -529,6 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.fromTo(el, fromVars, {
       ...toVars,
       ease: "none",
+      force3D: true,
       scrollTrigger: {
         trigger: container,   // триггер по контейнеру
         start: "top 90%",
