@@ -9,7 +9,7 @@
     <!-- Секции страницы -->
     <main class="main">
 
-      <section class="template">
+      <section class="template template--bg">
         <div class="container">
           <div class="template__inner">
             <div class="breadcrumbs">
@@ -24,36 +24,32 @@
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="product">
-        <div class="container">
-          <div class="product__inner">
-            <div class="product__content">
-              <div class="border"></div>
-              <div class="general__head">
-                <div class="general__title" data-transform="titleFadeUp">
-                  <h2 data-gradient-text>
-                    Каталог продукции
-                  </h2>
+            <div class="template__body">
+              <div class="template__content">
+                <div class="border"></div>
+                <div class="general__head">
+                  <div class="general__title" data-transform="titleFadeUp">
+                    <h2 data-gradient-text>
+                      Каталог продукции
+                    </h2>
+                  </div>
+                  <div class="general__text">
+                    <h6>
+                      cобственная линейка украшений и уходовой косметики
+                    </h6>
+                  </div>
                 </div>
-                <div class="general__text">
-                  <h6>
-                    cобственная линейка украшений и уходовой косметики
-                  </h6>
+                <a class="btn" href="#decorations">
+                  <i class="icon-chevron-min"></i>
+                </a>
+                <div class="template__bg" data-animation="parallax-img-scale">
+                  <picture>
+                    <source media="(min-width: 601px)" srcset="./../images/temp/product-cover.jpg" type="image/jpg">
+                    <source media="(max-width: 600px)" srcset="./../images/temp/product-cover-mob.png" type="image/png">
+                    <img src="./../images/temp/product-cover.jpg" alt="">
+                  </picture>
                 </div>
-              </div>
-              <a class="btn" href="#decorations">
-                <i class="icon-chevron-min"></i>
-              </a>
-              <div class="product__bg" data-animation="parallax-img-scale">
-                <picture>
-                  <source media="(min-width: 601px)" srcset="./../images/temp/product-cover.jpg" type="image/jpg">
-                  <source media="(max-width: 600px)" srcset="./../images/temp/product-cover-mob.png" type="image/png">
-                  <img src="./../images/temp/product-cover.jpg" alt="">
-                </picture>
               </div>
             </div>
           </div>
@@ -78,9 +74,9 @@
         </div>
       </section>
 
-      <section class="cosmetics">
+      <section id="decorations" class="decorations">
         <div class="container">
-          <div class="cosmetics__inner">
+          <div class="decorations__inner">
             <div class="general__head">
               <div class="general__title" data-transform="titleFadeUp">
                 <h4 data-gradient-text>
@@ -88,7 +84,7 @@
                 </h4>
               </div>
             </div>
-            <div class="cosmetics__items" data-animation="blur">
+            <div class="decorations__items" data-animation="blur">
               @@loop('./elements/cosmetics-item.html', './data/cosmetics-items.json')
             </div>
           </div>
