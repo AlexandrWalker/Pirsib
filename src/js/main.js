@@ -546,10 +546,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const yEnd = container.dataset.animation === "parallax-box-2x" ? "-20%" : "-10%";
 
     const fromVars = { y: yStart };
-    if (isScale) fromVars.scale = 1;
+    if (isScale) fromVars.scale = 1, fromVars.y = 0;
 
     const toVars = { y: yEnd };
-    if (isScale) toVars.scale = 1.2;
+    if (isScale) toVars.scale = 1.2, fromVars.y = 0;
 
     gsap.fromTo(el, fromVars, {
       ...toVars,

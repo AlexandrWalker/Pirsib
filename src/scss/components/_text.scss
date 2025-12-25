@@ -1,6 +1,20 @@
 @use './../mixins' as *;
 
-h1 {}
+h1 {
+  font-family: var(--second-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12rem;
+  line-height: 100%;
+
+  @include md {
+    font-size: calc(100vw/(393/30));
+  }
+
+  @include sm {
+    font-size: 3rem;
+  }
+}
 
 h2 {
   font-family: var(--second-family);
@@ -23,7 +37,6 @@ h3 {
   font-style: normal;
   font-weight: 700;
   font-size: 8rem;
-  // line-height: 100%;
   line-height: 120%;
 
   @include md {
