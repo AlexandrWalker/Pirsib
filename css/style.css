@@ -109,6 +109,14 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -125,8 +133,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -135,14 +143,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
   font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -1324,6 +1324,14 @@ a:hover .btn .border::after,
   right: 0;
 }
 
+h1 {
+  font-family: var(--second-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12rem;
+  line-height: 100%;
+}
+
 h2 {
   font-family: var(--second-family);
   font-style: normal;
@@ -2363,6 +2371,24 @@ p {
   margin: 0;
 }
 
+.template.template--bg .general__title * {
+  font-family: var(--second-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12rem;
+  line-height: 100%;
+  padding-bottom: 1rem;
+}
+
+.template.template--cover .general__title * {
+  font-family: var(--second-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12rem;
+  line-height: 100%;
+  padding-bottom: 1rem;
+}
+
 .template__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2376,6 +2402,14 @@ p {
 
 .template .general__head {
   margin-bottom: 0;
+}
+
+.template .general__title * {
+  font-family: var(--second-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 120%;
 }
 
 .template__content {
@@ -2413,10 +2447,6 @@ p {
 .template__content .general__title {
   max-width: none;
   overflow: visible;
-}
-
-.template__content .general__title h2 {
-  padding-bottom: 1rem;
 }
 
 .template__content .general__text {
@@ -4340,6 +4370,10 @@ html.out .biography__left {
     right: -1.5267175573vw;
   }
 
+  h1 {
+    font-size: 7.6335877863vw;
+  }
+
   h2 {
     font-size: 7.6335877863vw;
   }
@@ -4634,8 +4668,20 @@ html.out .biography__left {
     margin: 0;
   }
 
+  .template.template--bg .general__title * {
+    font-size: 12.7226463104vw;
+  }
+
+  .template.template--cover .general__title * {
+    font-size: 12.7226463104vw;
+  }
+
   .template__inner {
     gap: 5.0890585242vw;
+  }
+
+  .template .general__title * {
+    font-size: 7.6335877863vw;
   }
 
   .template--bg .template__content {
@@ -5383,6 +5429,10 @@ html.out .biography__left {
     gap: 2rem;
   }
 
+  h1 {
+    font-size: 3rem;
+  }
+
   h2 {
     font-size: 3rem;
   }
@@ -5503,8 +5553,20 @@ html.out .biography__left {
     padding: 3rem 0;
   }
 
+  .template.template--bg .general__title * {
+    font-size: 5rem;
+  }
+
+  .template.template--cover .general__title * {
+    font-size: 5rem;
+  }
+
   .template__inner {
     gap: 2rem;
+  }
+
+  .template .general__title * {
+    font-size: 3rem;
   }
 
   .template--bg .template__content {
@@ -5518,10 +5580,6 @@ html.out .biography__left {
 
   .template__content .general__head {
     gap: 2.3rem;
-  }
-
-  .template__content .general__title h2 {
-    font-size: 5rem;
   }
 
   .template__content .btn {
