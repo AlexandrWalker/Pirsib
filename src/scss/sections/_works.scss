@@ -17,6 +17,88 @@
     @include md {
       display: none;
     }
+
+    .btn {
+
+      &:hover {
+
+        i {
+          transform: rotate(180deg);
+          transition-duration: 0.3s;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    position: relative;
+
+    &:hover {
+
+      .works__btn-body {
+        grid-template-rows: 1fr;
+        padding: 2rem;
+      }
+    }
+
+    .btn--inner {
+      min-width: 20.8rem;
+    }
+
+    &-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+      width: 100%;
+      padding: 0 2rem;
+      transition: all 0.5s ease;
+      background: radial-gradient(39.27% 41.96% at 50% 53.43%, rgba(228, 233, 255, 0.07) 0%, rgba(173, 50, 174, 0.07) 100%);
+      box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+      backdrop-filter: blur(6.35px);
+      border-radius: 2.4rem;
+
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      z-index: 1;
+
+      .border {
+        --border-radius: 2.4rem;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      overflow: hidden;
+    }
+
+    &-link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+
+      &:hover {
+
+        span {
+          text-decoration-line: underline;
+        }
+      }
+
+      img {
+        width: 2.4rem;
+        height: 2.4rem;
+        object-fit: cover;
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 120%;
+        color: var(--purple);
+      }
+    }
   }
 
   &__body {}
