@@ -56,9 +56,15 @@
 
         @include md {
           display: block;
+          margin-bottom: calc(100vw/(393/16));
+          width: calc(100vw/(393/60));
+          height: calc(100vw/(393/60));
+        }
+
+        @include sm {
           margin-bottom: 1.6rem;
-          width: 6.7rem;
-          height: 6.7rem;
+          width: 6rem;
+          height: 6rem;
         }
       }
 

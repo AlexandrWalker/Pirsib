@@ -39,6 +39,14 @@
     }
   }
 
+  &-max {
+    color: #356BEF;
+
+    .btn:hover & {
+      text-shadow: #356BEF 0 0 1rem;
+    }
+  }
+
   &-vk {
     color: #4680C2;
   }

@@ -56,8 +56,28 @@
         <div class="container">
           <div class="masters__inner">
 
+            <div class="general__head" id="mastersPiercing">
+              <div class="general__title">
+                <h4 data-gradient-text>
+                  Мастера пирсинга
+                </h4>
+              </div>
+            </div>
+
             <div id="masters__items" class="masters__items" data-transform="fadeUp">
-              @@loop('./elements/masters-item.html', './data/masters-items.json')
+              @@loop('./elements/masters-item.html', './data/masters-piercing-items.json')
+            </div>
+
+            <div class="general__head" id="mastersTatu">
+              <div class="general__title">
+                <h4 data-gradient-text>
+                  Мастера тату
+                </h4>
+              </div>
+            </div>
+
+            <div id="masters__items" class="masters__items" data-transform="fadeUp">
+              @@loop('./elements/masters-item.html', './data/masters-tatu-items.json')
             </div>
 
           </div>

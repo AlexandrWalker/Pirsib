@@ -131,7 +131,7 @@
     gap: 3.8rem;
     width: calc(50% - 1rem);
     min-height: 35.4rem;
-    padding: 4rem 4rem 6rem 9rem;
+    padding: 4rem 4rem 6rem 7rem;
     border-radius: 10rem;
 
     position: relative;
@@ -269,22 +269,35 @@
       }
     }
 
-    img {
-      width: auto;
-      height: 15rem;
-      object-fit: contain;
+    &-img {
+      width: 14.8rem;
+      height: 14.8rem;
 
       position: absolute;
 
       @include md {
+        width: calc(100vw/(393/61));
         height: calc(100vw/(393/61));
       }
 
       @include sm {
+        width: 6.1rem;
         height: 6.1rem;
+      }
+
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
       }
     }
 
-    &-title {}
+    &-title {
+      margin-left: 2rem;
+
+      @include md {
+        margin-left: 0;
+      }
+    }
   }
 }

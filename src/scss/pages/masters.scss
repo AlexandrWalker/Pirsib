@@ -7,9 +7,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-bottom: 4rem;
+
+    @include md {
+      margin-bottom: calc(100vw/(393/30));
+    }
 
     @include sm {
       gap: 0.8rem;
+      margin-bottom: 3rem;
     }
   }
 

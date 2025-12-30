@@ -44,7 +44,7 @@
 
     @include domd {
       width: calc(25% - ((2rem*3)/4));
-      min-height: 50.3rem;
+      min-height: 50rem;
       padding: 7.5rem 10rem 4rem;
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
@@ -66,11 +66,18 @@
     }
 
     &-icon {
-      width: 13.8rem;
-      height: 13.9rem;
+      width: 11rem;
+      height: 11rem;
+      flex-shrink: 0;
 
       @include md {
         display: none;
+      }
+
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
       }
     }
 

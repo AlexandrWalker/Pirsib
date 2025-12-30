@@ -46,6 +46,13 @@
     @include sm {
       margin-bottom: 2rem;
     }
+
+    @include sm {
+
+      * {
+        font-size: 2.4rem;
+      }
+    }
   }
 
   &__text {

@@ -5,8 +5,31 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Lenis Smooth Scroll
    */
-  const lenis = new Lenis({ anchors: { offset: -60 } });
-  gsap.ticker.add(time => lenis.raf(time * 1000));
+  const lenis = new Lenis({
+    anchors: false
+  })
+
+  gsap.ticker.add(time => {
+    lenis.raf(time * 1000)
+  })
+
+  // прокрутка к якорю после загрузки
+  window.addEventListener('load', () => {
+    const hash = window.location.hash
+    if (!hash) return
+
+    const target = document.querySelector(hash)
+    if (!target) return
+
+    // небольшая задержка, чтобы Lenis и layout гарантированно инициализировались
+    setTimeout(() => {
+      lenis.scrollTo(target, {
+        offset: -60,
+        immediate: false
+      })
+    }, 50)
+  })
+
 
   /**
    * Burger Menu

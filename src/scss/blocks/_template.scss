@@ -237,12 +237,16 @@
     z-index: 6;
 
     @include md {
-      width: 29rem;
-      margin-top: -5.1rem;
-
+      width: calc(100vw/(393/180));
+      margin-top: calc(-100vw/(393/51));
       position: relative;
       right: -0.7rem;
       margin-left: auto;
+    }
+
+    @include sm {
+      width: 29rem;
+      margin-top: -5.1rem;
     }
 
     img {
