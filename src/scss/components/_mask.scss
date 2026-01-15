@@ -41,6 +41,20 @@
     z-index: -1;
   }
 
+  &.mask--notfound {
+    background-image: url('./../../images/mask/mask-notfound.webp');
+    width: 157.6rem;
+    height: 269.6rem;
+
+    top: -101.1rem;
+    right: 0;
+    z-index: 1;
+
+    &--2 {
+      right: -60rem;
+    }
+  }
+
   &.mask--1 {
     background-image: url('./../../images/mask/new-mask-1.webp');
     width: 157.6rem;
