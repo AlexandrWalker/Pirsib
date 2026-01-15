@@ -85,6 +85,14 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
@@ -103,14 +111,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -2901,6 +2901,61 @@ html.out .biography__left {
   color: var(--blue);
 }
 
+.notfound {
+  padding: 8rem 0 17rem;
+}
+
+.notfound__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+}
+
+.notfound__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.notfound__suptitle {
+  margin-bottom: 2rem;
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 20rem;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.notfound__title {
+  margin-bottom: 7rem;
+  max-width: 90rem;
+}
+
+.notfound__title * {
+  font-weight: 400;
+}
+
+.notfound__video {
+  width: 69.5rem;
+  height: 120.6rem;
+  position: absolute;
+  top: -29.7rem;
+  right: 0;
+  z-index: 1;
+}
+
 .price-list__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5066,6 +5121,14 @@ html.out .biography__left {
     bottom: 2rem;
   }
 
+  .notfound__suptitle {
+    font-size: 8rem;
+  }
+
+  .notfound__video {
+    display: none;
+  }
+
   .price-list__inner {
     gap: 2.5445292621vw;
   }
@@ -5872,6 +5935,10 @@ html.out .biography__left {
 
   .masters__item {
     width: 100%;
+  }
+
+  .notfound__suptitle {
+    font-size: 4rem;
   }
 
   .price-list__inner {

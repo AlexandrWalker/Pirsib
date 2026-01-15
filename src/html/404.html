@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" class="page__inner">
+@@include('blocks/head.html', {"title": "Pirsib"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Секции страницы -->
+    <main class="main">
+
+      <section class="notfound">
+        <div class="container">
+          <div class="notfound__inner">
+
+            <div class="notfound__content">
+              <div class="notfound__suptitle" data-gradient-text>
+                Печаль :(
+              </div>
+              <div class="notfound__title">
+                <h1 data-gradient-text>
+                  Страница
+                  <div>не найдена...</div>
+                </h1>
+              </div>
+              <a class="btn" href="/Pirsib/">
+                <span class="border"></span>
+                Перейти на главную
+              </a>
+            </div>
+
+            <video class="notfound__video" autoplay muted loop playsinline>
+              <source src="./video/404.MP4" type="video/mp4">
+            </video>
+
+          </div>
+          <div class="mask mask--1" data-animation="parallax-box"></div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')
