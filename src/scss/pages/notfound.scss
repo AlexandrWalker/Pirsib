@@ -7,13 +7,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
     position: relative;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
+    z-index: 1;
   }
 
   &__suptitle {
@@ -50,10 +51,16 @@
     position: absolute;
     top: -29.7rem;
     right: 0;
-    z-index: 1;
 
     @include md {
       display: none;
     }
+  }
+}
+
+.page__notfound {
+
+  body {
+    background: #0C0F1B;
   }
 }
