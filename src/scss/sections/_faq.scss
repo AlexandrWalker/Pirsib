@@ -3,6 +3,10 @@
 .faq {
   margin-top: -23.6rem;
 
+  .page__inner & {
+    margin-top: 0;
+  }
+
   @include md {
     margin-top: 0;
   }

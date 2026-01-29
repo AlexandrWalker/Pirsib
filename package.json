@@ -7,7 +7,6 @@
     "build": "gulp build --imgmin",
     "docs": "gulp build --docs",
     "deploy": "gh-pages -d build",
-    
     "zipsrc": "gulp zipsrc",
     "zipbuild": "gulp zipbuild",
     "zipdocs": "gulp zipdocs"
@@ -17,6 +16,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "baseline-browser-mapping": "^2.9.19",
     "browser-sync": "^3.0.2",
     "css-loader": "^7.0.0",
     "gh-pages": "^6.1.1",

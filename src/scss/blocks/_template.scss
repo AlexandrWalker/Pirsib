@@ -60,6 +60,116 @@
     }
   }
 
+  &--primary {
+
+    .general {
+
+      &__title * {
+        font-family: var(--second-family);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12rem;
+        line-height: 100%;
+
+        @include md {
+          font-size: calc(100vw/(393/50));
+        }
+
+        @include sm {
+          font-size: 5rem;
+        }
+      }
+    }
+
+    .template {
+
+      &__content {
+        padding: 8.5rem 13.2rem 8.5rem;
+        background: none;
+        background-image: url(./../../images/temp/template-primary-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        overflow: hidden;
+        box-shadow: none;
+        backdrop-filter: none;
+
+        @include md {
+          padding: calc(100vw/(393/30)) calc(100vw/(393/20)) calc(100vw/(393/277));
+          border-radius: 2.4rem;
+          background-image: none;
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.64% at 50% 50.47%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+          box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+          backdrop-filter: blur(6.35px);
+        }
+
+        @include sm {
+          padding: 3rem 2rem 27.7rem;
+        }
+
+        .general {
+
+          &__head {
+            gap: 4rem;
+
+            @include md {
+              gap: calc(100vw/(393/20));
+            }
+
+            @include sm {
+              gap: 2rem;
+            }
+
+            .btn {
+
+              @include md {
+                margin-top: calc(100vw/(393/20));
+              }
+
+              @include sm {
+                margin-top: 2rem;
+              }
+            }
+          }
+
+          &__text {
+
+            @include md {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+
+      &__cover {
+        width: auto;
+        height: 57.4rem;
+
+        position: absolute;
+        right: 1.7rem;
+        bottom: 0;
+
+        @include md {
+          height: calc(100vw/(393/272));
+
+          right: unset;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        @include sm {
+          height: 27.2rem;
+        }
+
+        img {
+          max-width: none;
+          width: auto;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
