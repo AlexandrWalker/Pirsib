@@ -1,0 +1,153 @@
+@use './../mixins' as *;
+
+.blog {
+
+  .general__head {
+    margin-bottom: 2rem;
+  }
+
+  .decorations {
+
+    &__item {
+
+      @include md {
+        width: calc(50% - calc(100vw/(393/4)));
+        border-radius: 1.6rem;
+      }
+
+      @include sm {
+        width: calc(50% - 0.4rem);
+      }
+
+      .border {
+
+        @include md {
+          --border-radius: 1.6rem;
+        }
+      }
+
+      &-head {
+
+        @include md {
+          border-radius: 1.6rem;
+        }
+
+        .border {
+
+          @include md {
+            --border-radius: 1.6rem;
+          }
+        }
+      }
+
+      &-body {
+        padding: 2rem 1rem;
+
+        @include md {
+          gap: calc(100vw/(393/30));
+        }
+
+        @include sm {
+          gap: 3rem;
+        }
+      }
+
+      &-content {
+
+        @include md {
+          gap: calc(100vw/(393/10));
+        }
+
+        @include sm {
+          gap: 1rem;
+        }
+
+        h6 {
+          font-size: 1.6rem;
+
+          @include md {
+            font-size: calc(100vw/(393/12));
+          }
+
+          @include sm {
+            font-size: 1.2rem;
+          }
+        }
+
+        p {
+
+          @include md {
+            font-size: calc(100vw/(393/10));
+          }
+
+          @include sm {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .btn {
+    gap: 1.6rem;
+
+    @include md {
+      padding: 0;
+      width: fit-content;
+      min-width: auto;
+      height: fit-content;
+      gap: 0;
+
+      font-size: calc(100vw/(393/12));
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    @include sm {
+      font-size: 1.2rem;
+    }
+
+    &::before {
+
+      @include md {
+        display: none;
+      }
+    }
+
+    &::after {
+
+      @include md {
+        display: none;
+      }
+    }
+
+    .border {
+
+      @include md {
+        display: none;
+      }
+    }
+
+    i {
+
+      @include md {
+        display: none;
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @include md {
+      gap: calc(100vw/(393/8));
+    }
+
+    @include sm {
+      gap: 0.8rem;
+    }
+  }
+}

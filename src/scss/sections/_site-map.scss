@@ -1,0 +1,65 @@
+@use './../mixins' as *;
+
+.site-map {
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+      gap: calc(100vw/(393/30));
+    }
+
+    @include sm {
+      gap: 3rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include md {
+      gap: calc(100vw/(393/15));
+    }
+
+    @include sm {
+      gap: 1.5rem;
+    }
+
+    &-head {
+
+      * {
+
+        @include md {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      @include md {
+        gap: calc(100vw/(393/15));
+      }
+
+      @include sm {
+        gap: 1.5rem;
+      }
+    }
+
+    &-link {
+      color: var(--blue-dark-2);
+
+      &:hover {
+        color: var(--purple);
+      }
+    }
+  }
+}

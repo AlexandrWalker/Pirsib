@@ -88,4 +88,32 @@
       background-color: var(--border-dark-blue);
     }
   }
+
+  ul {}
+
+  li {
+    padding-left: 2.4rem;
+    margin-bottom: 2rem;
+    position: relative;
+
+    @include sm {
+      margin-bottom: 1.5rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "";
+      width: 0.25rem;
+      height: 0.25rem;
+      border-radius: 50%;
+      background-color: var(--purple);
+
+      position: absolute;
+      top: 0.75rem;
+      left: 1.05rem;
+    }
+  }
 }

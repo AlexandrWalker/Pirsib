@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru" class="page__inner">
+@@include('blocks/head.html', {"title": "Pirsib"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Секции страницы -->
+    <main class="main">
+
+      <section class="template">
+        <div class="container">
+          <div class="template__inner">
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/Pirsib">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  Блог
+                </li>
+              </ul>
+            </div>
+            <div class="general__head">
+              <div class="general__title">
+                <h1 data-gradient-text>
+                  Блог
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="blog">
+        <div class="container">
+          <div class="blog__inner">
+
+            <div class="general__head">
+              <div class="filter">
+                <div class="filter__items">
+                  <label class="filter__item filter__item--active">
+                    <span class="border"></span>
+                    <input type="radio" name="blog-filter" class="filter__input" checked="">
+                    <span>
+                      Татуировки
+                    </span>
+                  </label>
+                  <label class="filter__item">
+                    <span class="border"></span>
+                    <input type="radio" name="blog-filter" class="filter__input" checked="">
+                    <span>
+                      Пирсинг
+                    </span>
+                  </label>
+                  <label class="filter__item">
+                    <span class="border"></span>
+                    <input type="radio" name="blog-filter" class="filter__input" checked="">
+                    <span>
+                      Разное
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="blog__items" data-animation="blur">
+              @@loop('./elements/blog-item.html', './data/blog-items.json')
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="sample">
+        <div class="container">
+          <div class="sample__inner">
+
+            <div class="general__head">
+              <div class="general__title" data-transform="titleFadeUp">
+                <h5 data-gradient-text>
+                  Блок для СЕО (наполнение примерное)
+                </h5>
+              </div>
+            </div>
+            <div class="sample__body" data-transform="fadeUp">
+              <div class="sample__content">
+                <p>
+                  15 мин. Это первый этап после того как вы решились сделать татуировку.
+                  На консультации вы обсудите с мастером рисунок, идею, стилистику исполнения и уже когда все детали
+                  оговорены уже будет понятна стоимость вашей татуировки.
+                </p>
+                <p>
+                  <b>
+                    Разработка же эскиза для последующей работы мастером стоит 2000р. На руки же эскиз НЕ ВЫДАЕТСЯ.
+                  </b>
+                </p>
+                <p>
+                  А используется для дальнейшего исполнения татуировки мастером. Так же эта оплата войдет в стоимость
+                  этой работы.
+                </p>
+                <p>
+                  Запись на сеанс татуировки создаёт уже администратор или сам мастер после консультации.
+                </p>
+              </div>
+            </div>
+            <div class="sample__tags" data-transform="fadeUp">
+              <a class="sample__tag" href="/Pirsib">
+                Название тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название длинного тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                СЕО тег
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Название тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название длинного тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название длинного тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название длинного тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                СЕО тег
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Название тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Название тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название длинного тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                Примерное название тега
+              </a>
+              <a class="sample__tag" href="/Pirsib">
+                СЕО тег
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')
