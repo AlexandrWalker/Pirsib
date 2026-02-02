@@ -1,0 +1,38 @@
+@use './../mixins' as *;
+
+.about-page {
+
+  .opinion .general__title {
+    max-width: none;
+  }
+
+  .template {
+
+    &__content {
+      padding: 9rem 13.2rem 8.4rem;
+
+      .general__text {
+        max-width: 62.2rem;
+        margin-top: -1rem;
+      }
+
+      .btn {
+        --btn-width: 7rem;
+        --btn-height: 7rem;
+      }
+    }
+
+    &__cover {
+      width: auto;
+      height: 76.8rem;
+
+      right: -1.3rem;
+      bottom: -7rem;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru" class="page__inner about-page">
+@@include('blocks/head.html', {"title": "Pirsib"})
+
+<body>
+  <div class="wrapper">
+    <!-- Шапка -->
+    @@include('./blocks/header.html')
+    <!-- Секции страницы -->
+    <main class="main">
+
+      <section class="template template--cover">
+        <div class="container">
+          <div class="template__inner">
+
+            <div class="breadcrumbs">
+              <ul>
+                <li>
+                  <a href="/Pirsib">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  О студии
+                </li>
+              </ul>
+            </div>
+
+            <div class="template__content">
+              <div class="border"></div>
+              <div class="general__head">
+                <div class="general__title" data-transform="titleFadeUp">
+                  <h1 data-gradient-text>О студии</h1>
+                </div>
+                <div class="general__text">
+                  <h6>
+                    Первыми клиентами стали друзья, а рекламой кампанией — сарафанное радио. Я был студентом 4 курса,
+                    работал фельдшером скорой помощи и получал медицинское образование.
+                  </h6>
+                </div>
+                <a class="btn" href="#masters">
+                  <i class="icon-chevron-min"></i>
+                </a>
+              </div>
+              <div class="template__cover">
+                <img src="./../images/temp/about-cover.png" alt="">
+              </div>
+            </div>
+
+          </div>
+          <div class="mask mask--1" data-animation="parallax-box"></div>
+        </div>
+      </section>
+
+      <!-- Миссия и ценности -->
+
+      <!-- История -->
+
+      <section class="directions">
+        <div class="directions__container container">
+          <div class="directions__inner">
+            <div class="general__head">
+              <div class="general__title" data-transform="titleFadeUp">
+                <h2 data-gradient-text>
+                  <span>
+                    Направления
+                  </span> <br>
+                  <span>
+                    студии
+                  </span>
+                </h2>
+              </div>
+            </div>
+            <div class="directions__body" data-animation="blur">
+              <div class="directions__items">
+                <a class="directions__item" href="/">
+                  <span class="border"></span>
+                  <div class="directions__item-title">
+                    <h5>
+                      Пирсинг
+                    </h5>
+                  </div>
+                  <div class="btn">
+                    <span class="border"></span>
+                    <i class="icon-chevron-min"></i>
+                  </div>
+                  <img src="./../images/temp/directions-1.jpg" alt="" loading="lazy">
+                </a>
+                <a class="directions__item" href="/">
+                  <span class="border"></span>
+                  <div class="directions__item-title">
+                    <h5>
+                      Татуировки
+                    </h5>
+                  </div>
+                  <div class="btn">
+                    <span class="border"></span>
+                    <i class="icon-chevron-min"></i>
+                  </div>
+                  <img src="./../images/temp/directions-2.jpg" alt="" loading="lazy">
+                </a>
+                <a class="directions__item" href="/">
+                  <span class="border"></span>
+                  <div class="directions__item-title">
+                    <h5>
+                      Удаление татуировки
+                    </h5>
+                  </div>
+                  <div class="btn">
+                    <span class="border"></span>
+                    <i class="icon-chevron-min"></i>
+                  </div>
+                  <img src="./../images/temp/directions-3.jpg" alt="" loading="lazy">
+                </a>
+                <a class="directions__item" href="/">
+                  <span class="border"></span>
+                  <div class="directions__item-title">
+                    <h5>
+                      Украшения
+                      и косметика для
+                      ухода
+                    </h5>
+                  </div>
+                  <div class="btn">
+                    <span class="border"></span>
+                    <i class="icon-chevron-min"></i>
+                  </div>
+                  <img src="./../images/temp/directions-4.jpg" alt="" loading="lazy">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mask mask--1" data-animation="parallax-box"></div>
+        </div>
+      </section>
+
+      <!-- Наша ценность команда  -->
+
+      <section class="certificates">
+        <div class="container">
+          <div class="certificates__inner">
+            <div class="general__head">
+              <div class="general__title" data-transform="titleFadeUp">
+                <h2 data-gradient-text>Гарантия качества</h2>
+              </div>
+            </div>
+            <div class="certificates__items" data-animation="blur">
+              @@loop('./elements/certificates-item.html', './data/certificates-items.json')
+            </div>
+          </div>
+          <div class="mask mask--3" data-animation="parallax-box"></div>
+        </div>
+      </section>
+
+      <section class="opinion">
+        <div class="container">
+          <div class="opinion__inner">
+            <div class="opinion__head">
+              <div class="general__head">
+                <div class="general__title" data-transform="titleFadeUp">
+                  <h2 data-gradient-text>
+                    Нам доверяют
+                  </h2>
+                </div>
+              </div>
+              <div class="opinion__btns">
+                <a class="btn btn--inner" href="/Pirsib/reviews.html">
+                  <span class="border"></span>
+                  Читать все отзывы
+                  <div class="btn btn--inner-icon">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                </a>
+                <div class="swiper__btns">
+                  <div class="swiper-button-prev opinion-button-prev">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                  <div class="swiper-button-next opinion-button-next">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="opinion__body" data-animation="blur">
+              <div class="swiper opinion__slider">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/opinion-slide-item.html', './data/opinion-items.json')
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="find-us">
+        <div class="container">
+          <div class="find-us__inner">
+            <div class="general__head">
+              <div class="general__title" data-transform="titleFadeUp">
+                <h2 data-gradient-text>
+                  Как нас найти
+                </h2>
+              </div>
+            </div>
+            <div class="find-us__content" data-transform="fadeUp">
+              <span class="border"></span>
+              <div class="find-us__items">
+                <div class="find-us__item">
+                  <p>
+                    Телефон:
+                  </p>
+                  <a href="tel:+79139178500">
+                    +7-913-917-8500
+                  </a>
+                </div>
+                <div class="find-us__item">
+                  <p>
+                    Почта:
+                  </p>
+                  <a href="mailto:pochta_companii@mail.ru">
+                    pochta_companii@mail.ru
+                  </a>
+                </div>
+                <div class="find-us__item">
+                  <p>
+                    Адрес:
+                  </p>
+                  <h6>
+                    Новосибирск,<br> Орджоникидзе, 35/1
+                  </h6>
+                  <div class="find-us__item-btn">
+                    <a class="btn btn--inner" href="/">
+                      <span class="border"></span>
+                      Построить маршрут
+                      <div class="btn btn--inner-icon">
+                        <span class="border"></span>
+                        <i class="icon-2gis"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="find-us__item">
+                  <p>
+                    Мессенджеры
+                  </p>
+                  <div class="find-us__social">
+                    <a class="btn btn--icon btn--max" href="/">
+                      <span class="border"></span>
+                      <i class="icon-max"></i>
+                    </a>
+                    <a class="btn btn--icon btn--telegram" href="/">
+                      <span class="border"></span>
+                      <i class="icon-telegram"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="find-us__map" data-animation="blur">
+            <img src="./../images/temp/map.png" alt="" loading="lazy">
+          </div>
+          <div class="find-us__mask" data-animation="parallax-box"></div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Подвал -->
+    @@include('blocks/footer.html')

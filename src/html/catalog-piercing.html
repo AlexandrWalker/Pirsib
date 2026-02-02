@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner">
+<html lang="ru" class="page__inner piercing-page">
 @@include('blocks/head.html', {"title": "Pirsib"})
 
 <body>
@@ -9,9 +9,10 @@
     <!-- Секции страницы -->
     <main class="main">
 
-      <section class="template">
+      <section class="template template--primary">
         <div class="container">
           <div class="template__inner">
+
             <div class="breadcrumbs">
               <ul>
                 <li>
@@ -24,23 +25,125 @@
                 </li>
               </ul>
             </div>
-            <div class="general__head">
-              <div class="general__title">
-                <h1 data-gradient-text>
-                  Пирсинг
-                </h1>
+
+            <div class="template__content" data-transform="fadeUp">
+              <div class="border"></div>
+              <div class="general__head">
+                <div class="general__title" data-transform="titleFadeUp">
+                  <h1 data-gradient-text>Пирсинг</h1>
+                </div>
+                <div class="general__text">
+                  <h6>
+                    Первыми клиентами стали друзья, а рекламой кампанией — сарафанное радио.
+                  </h6>
+                </div>
+                <a class="btn" href="#catalog">
+                  <i class="icon-chevron-min"></i>
+                </a>
+              </div>
+              <div class="template__cover">
+                <picture>
+                  <source media="(min-width: 835px)" srcset="./../images/temp/catalog-piercing-cover.png"
+                    type="image/png">
+                  <source media="(max-width: 834px)" srcset="./../images/temp/catalog-piercing-cover-mob.png"
+                    type="image/png">
+                  <img src="./../images/temp/catalog-tatu-cover.png" alt="">
+                </picture>
               </div>
             </div>
+
           </div>
+          <div class="mask mask--1" data-animation="parallax-box"></div>
+        </div>
+      </section>
+
+      <section class="stages">
+        <div class="container">
+          <div class="stages__inner">
+
+            <form class="hero__request" data-transform="fadeUp">
+              <span class="border"></span>
+              <form class="hero__request-form" action="">
+                <div class="hero__request-head">
+                  <h5>
+                    Бесплатная консультация
+                  </h5>
+                </div>
+                <div class="hero__request-body">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <input class="form-input" name="hero_name" type="text" placeholder="Ваше имя*">
+                      <i class="icon-user"></i>
+                      <span class="border"></span>
+                    </div>
+                  </div>
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <input class="form-input" name="hero_tel" type="tel" placeholder="Телефон*">
+                      <i class="icon-phone"></i>
+                      <span class="border"></span>
+                    </div>
+                  </div>
+                  <button class="btn form-btn">
+                    <span class="border"></span>
+                    Записаться на консультацию
+                    <div class="btn btn--inner-icon">
+                      <span class="border"></span>
+                      <i class="icon-chevron"></i>
+                    </div>
+                  </button>
+                </div>
+                <div class="hero__request-foot">
+                  <div class="form-group">
+                    <div class="form-wrap">
+                      <input id="hero_checkbox" class="form-checkbox" type="checkbox">
+                      <label for="hero_checkbox" class="form-checkbox--item"></label>
+                      <p>
+                        Нажимая кнопку, вы даёте согласие на обработку ваших персональных данных
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="catalog" class="catalog">
+        <div class="container">
+          <div class="catalog__inner">
+
+            <div class="general__head">
+              <div class="general__title" data-transform="titleFadeUp">
+                <h4 data-gradient-text>Виды пирсинга</h4>
+              </div>
+            </div>
+
+            <div class="catalog__items" data-transform="fadeUp">
+              @@loop('./elements/piercing-type-item.html', './data/piercing-type-items.json')
+            </div>
+
+          </div>
+          <div class="mask mask--1" data-animation="parallax-box"></div>
         </div>
       </section>
 
       <section class="catalog">
         <div class="container">
           <div class="catalog__inner">
+
+            <div class="general__head">
+              <div class="general__title" data-transform="titleFadeUp">
+                <h4 data-gradient-text>Портфолио работ</h4>
+              </div>
+            </div>
+
             <div class="catalog__items" data-transform="fadeUp">
               @@loop('./elements/catalog-piercing-item.html', './data/catalog-piercing-items.json')
             </div>
+
           </div>
           <div class="mask mask--1" data-animation="parallax-box"></div>
         </div>
@@ -90,7 +193,6 @@
           </div>
         </div>
       </section>
-
 
       <section class="faq">
         <div class="container faq__container">

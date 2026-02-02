@@ -1,0 +1,88 @@
+@use './../mixins' as *;
+
+.piercing-page {
+
+  // .template--primary
+
+  .template {
+
+    &__content {
+      padding: 13.3rem;
+    }
+
+    &__cover {
+      height: 60.5rem;
+      right: -1.5rem;
+      bottom: -5.4rem;
+
+      @include sm {
+        bottom: 0;
+      }
+    }
+  }
+
+  .decorations__item {
+
+    &:hover {
+
+      @include domd {
+
+        &::before {
+          opacity: 0;
+        }
+
+        &::after {
+          opacity: 1;
+        }
+
+        .catalog__item-btn {
+          width: 100%;
+
+          &--text {
+            opacity: 1;
+            transition: all 0.5s ease, opacity 0.3s ease 0.2s;
+          }
+        }
+      }
+    }
+  }
+
+  .decorations__item-head {
+    aspect-ratio: 405/319;
+    background: #0C0F1B;
+    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    backdrop-filter: blur(6.35px);
+  }
+
+  .decorations__item-content {
+    gap: 1.5rem;
+
+    h6 {
+      font-size: 3rem;
+
+      @include sm {
+        font-size: 2.4rem;
+      }
+    }
+
+    p {
+      font-size: 1.4rem;
+      opacity: 1;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 2rem;
+    }
+  }
+
+  .catalog__item-btn {
+    margin-left: auto;
+
+    position: static;
+
+    .btn {
+      padding: 0;
+    }
+  }
+}
