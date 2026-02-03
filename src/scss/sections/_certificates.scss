@@ -19,6 +19,24 @@
     }
   }
 
+  &__mask {
+    width: 54.3rem;
+    height: 61.4rem;
+
+    position: absolute;
+    top: -2.3rem;
+    right: -32.1rem;
+
+    @include md {
+      display: none;
+    }
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
   &__items {
     display: flex;
     flex-direction: row;

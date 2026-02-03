@@ -1,5 +1,6 @@
 @use './../mixins' as *;
 
+.h1,
 h1 {
   font-family: var(--second-family);
   font-style: normal;
@@ -48,6 +49,7 @@ h3 {
   }
 }
 
+.h4,
 h4 {
   font-family: var(--second-family);
   font-style: normal;
@@ -80,6 +82,7 @@ h5 {
   }
 }
 
+.h6,
 h6 {
   font-family: var(--second-family);
   font-style: normal;

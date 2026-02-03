@@ -1,0 +1,123 @@
+@use './../mixins' as *;
+
+.timeline {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+
+  @include md {
+    /* На мобильных устройствах - свободный скролл */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    padding: 0 var(--container-padding);
+    margin-right: calc(var(--container-padding) * -1);
+    margin-left: calc(var(--container-padding) * -1);
+    width: calc(100% + (var(--container-padding) * 2));
+
+    /* Скрываем scrollbar для лучшего UX */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &-placeholder {
+    position: relative;
+    height: 0;
+    overflow: clip;
+    padding: 0;
+
+    @include md {
+      padding: 4rem 0 3rem;
+    }
+  }
+
+  &-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+
+    margin-left: calc(var(--container-padding) * -1);
+    max-width: var(--container-width);
+    width: 100%;
+    height: 100vh;
+
+    @include md {
+      /* Мобильная версия - убираем фиксацию */
+      position: relative;
+      height: auto;
+      margin-left: unset;
+      max-width: calc(var(--container-width) + (var(--container-padding) * 2));
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    transition: transform 0.1s linear;
+    width: 100%;
+    will-change: transform;
+
+    @include md {
+      /* На мобильных устройствах - свободный скролл */
+      width: max-content;
+      transition: none;
+
+      transform: none !important;
+    }
+
+    &.grabbing {
+      cursor: grabbing;
+      transition: none;
+    }
+  }
+
+  &-item {
+    flex-shrink: 0;
+
+    &.timeline-active {}
+
+    &:last-child {
+
+      .history__wrap-item {
+        display: none;
+      }
+    }
+  }
+
+  &-button-prev,
+  &-button-next {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    font-size: 5rem;
+    transition: all 0.3s ease;
+
+    /* Скрываем кнопки на мобильных устройствах */
+    @include md {
+      display: none;
+    }
+
+    &:hover {
+      color: var(--white);
+      background-color: var(--accent);
+    }
+
+    i {
+      --font-size: 5rem;
+
+      color: var(--gray);
+    }
+  }
+}

@@ -1,6 +1,6 @@
 @use './../mixins' as *;
 
-.page__inner {
+.page__inner:not(.about-page) {
 
   .certificates {
 

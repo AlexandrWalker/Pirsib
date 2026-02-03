@@ -1,0 +1,110 @@
+@use './../mixins' as *;
+
+.values {
+  margin-bottom: -42.2rem !important;
+
+  position: relative;
+
+  @include md {
+    margin-bottom: calc(-100vw/(393/231)) !important;
+  }
+
+  @include sm {
+    margin-bottom: -23.1rem !important;
+  }
+
+  &__mask {
+    width: auto;
+    height: 46.2rem;
+
+    position: absolute;
+    top: 10.4rem;
+    right: -26.7rem;
+
+    @include md {
+      display: none;
+    }
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    gap: 5.6rem;
+
+    @include md {
+      flex-direction: column-reverse;
+      gap: calc(100vw/(393/13));
+    }
+
+    @include sm {
+      gap: 1.3rem;
+    }
+  }
+
+  &__cover {
+    width: auto;
+    height: 98.1rem;
+
+    @include md {
+      height: calc(100vw/(393/724));
+    }
+
+    @include sm {
+      height: 72.4rem;
+    }
+
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    max-width: 97.1rem;
+
+    @include md {
+      gap: calc(100vw/(393/20));
+    }
+
+    @include sm {
+      gap: 2rem;
+    }
+  }
+
+  .general__text {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    span {
+      font-family: var(--second-family);
+      font-weight: 700;
+      font-size: 20rem;
+      line-height: 100%;
+
+      @include sm {
+        font-size: 8rem;
+      }
+    }
+
+    div {
+      font-weight: 400;
+      font-style: italic;
+      padding-top: 4.6rem;
+
+      @include sm {
+        font-size: 1.2rem;
+        padding-top: 0.9rem;
+      }
+    }
+  }
+}

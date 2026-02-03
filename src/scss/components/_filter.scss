@@ -7,6 +7,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
+
+    @include md {
+      gap: calc(100vw/(393/5));
+    }
+
+    @include sm {
+      gap: 0.5rem;
+    }
   }
 
   &__item {
@@ -24,6 +32,15 @@
     font-size: 1.4rem;
     line-height: 120%;
     color: var(--purple);
+
+    @include md {
+      padding: 0 calc(100vw/(393/15));
+    }
+
+    @include sm {
+      height: 4rem;
+      padding: 0 1.5rem;
+    }
 
     &:hover {
 

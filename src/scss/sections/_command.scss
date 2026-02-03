@@ -1,0 +1,114 @@
+@use './../mixins' as *;
+
+.command {
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+
+    @include md {
+      flex-direction: column;
+      gap: calc(100vw/(393/30));
+    }
+
+    @include sm {
+      gap: 3rem;
+    }
+  }
+
+  &__head {
+    max-width: 65rem;
+  }
+  
+  &__body {
+    margin-top: 4rem;
+    margin-left: -8.3rem;
+    margin-right: -3.3rem;
+
+    @include md {
+      margin: 0;
+    }
+  }
+
+  &__feat {
+
+    &-items {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 4rem 9rem;
+
+      @include md {
+        grid-template-columns: 1fr 1fr;
+        gap: calc(100vw/(393/20)) calc(100vw/(393/30));
+      }
+
+      @include sm {
+        gap: 2rem 3rem;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 0.5rem;
+        height: 100%;
+        background: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      @include md {
+        gap: calc(100vw/(393/10));
+      }
+
+      @include sm {
+        gap: 1rem;
+      }
+
+      h4 {
+        background: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        white-space: nowrap;
+      }
+
+      p {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__img {
+    height: 68rem;
+
+    @include md {
+      width: 100%;
+      height: auto;
+    }
+
+    img {
+      max-width: unset;
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+
+      @include md {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

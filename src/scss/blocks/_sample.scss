@@ -11,6 +11,8 @@
     flex-direction: column;
     gap: 3rem;
 
+    max-width: 125.2rem;
+
     @include md {
       gap: calc(100vw/(393/20));
     }
@@ -24,6 +26,10 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include md {
+      gap: calc(100vw/(393/15));
+    }
 
     @include sm {
       gap: 1.5rem;
@@ -95,6 +101,10 @@
     padding-left: 2.4rem;
     margin-bottom: 2rem;
     position: relative;
+
+    @include md {
+      margin-bottom: calc(100vw/(393/15));
+    }
 
     @include sm {
       margin-bottom: 1.5rem;

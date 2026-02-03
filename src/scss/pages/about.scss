@@ -2,23 +2,58 @@
 
 .about-page {
 
-  .opinion .general__title {
-    max-width: none;
-  }
-
   .template {
 
+    @include sm {
+      padding: 0 0 3rem 0;
+    }
+
     &__content {
+      background-color: rgba(0, 0, 0, 0.4);
       padding: 9rem 13.2rem 8.4rem;
 
-      .general__text {
-        max-width: 62.2rem;
-        margin-top: -1rem;
+      @include md {
+        overflow: visible;
+      }
+
+      @include sm {}
+
+      .general {
+
+        &__head {
+
+          @include md {
+            gap: calc(100vw/(393/40));
+          }
+
+          @include sm {
+            gap: 4rem;
+          }
+        }
+
+        &__text {
+          max-width: 62.2rem;
+          margin-top: -1rem;
+
+          @include md {
+            margin-top: calc(-100vw/(393/40));
+            margin-left: 0;
+          }
+
+          @include sm {
+            margin-top: -2rem;
+          }
+        }
       }
 
       .btn {
         --btn-width: 7rem;
         --btn-height: 7rem;
+
+        @include sm {
+          --btn-width: 5rem;
+          --btn-height: 5rem;
+        }
       }
     }
 
@@ -29,9 +64,54 @@
       right: -1.3rem;
       bottom: -7rem;
 
+      @include md {
+        width: fit-content;
+        height: calc(100vw/(393/368));
+        margin-top: calc(-100vw/(393/23));
+        margin-left: unset;
+
+        right: unset;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -0.2rem;
+      }
+
+      @include sm {
+        height: 36.8rem;
+        margin-top: -2.3rem;
+      }
+
       img {
+        max-width: unset;
         width: auto;
         height: 100%;
+      }
+    }
+  }
+
+  .directions {
+    position: relative;
+  }
+
+  .opinion {
+
+    .general__title {
+      max-width: none;
+
+      h2 {
+        line-height: 120%;
+      }
+    }
+  }
+
+  .certificates {
+    position: relative;
+
+    .general__head {
+      margin-bottom: 5rem;
+
+      @include sm {
+        margin-bottom: 2rem;
       }
     }
   }

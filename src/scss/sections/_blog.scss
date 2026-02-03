@@ -2,8 +2,56 @@
 
 .blog {
 
+  &-page {
+
+    .template {
+
+      @include sm {
+        padding: 0 0 2rem 0;
+      }
+    }
+
+    .decorations {
+
+      &__item {
+
+        &-content {
+
+          p {
+
+            @include md {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-inner-page {
+
+    .template {
+
+      @include md {
+        padding: 0 0 calc(100vw/(393/20)) 0;
+      }
+
+      @include sm {
+        padding: 0 0 2rem 0;
+      }
+    }
+  }
+
   .general__head {
     margin-bottom: 2rem;
+
+    @include md {
+      margin-bottom: calc(100vw/(393/10));
+    }
+
+    @include sm {
+      margin-bottom: 1rem;
+    }
   }
 
   .decorations {

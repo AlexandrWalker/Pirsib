@@ -17,7 +17,8 @@
 
   &__title {
     max-width: 150rem;
-    overflow: hidden;
+    // overflow: hidden;
+    overflow: visible;
   }
 
   &__text {

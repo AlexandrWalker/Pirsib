@@ -94,4 +94,22 @@
     top: -58.2rem;
     right: 0;
   }
+
+  &.mask--5 {
+    background-image: url('./../../images/mask/directions-mask.webp');
+    width: 181.1rem;
+    height: 269.7rem;
+
+    top: -96.9rem;
+    left: 0;
+  }
+
+  &.mask--6 {
+    background-image: url('./../../images/mask/about-mask.webp');
+    width: 158.7rem;
+    height: 153.1rem;
+
+    top: -18rem;
+    right: 0;
+  }
 }

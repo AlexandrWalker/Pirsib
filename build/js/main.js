@@ -598,4 +598,544 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   Fancybox.bind('[data-fancybox]', { Html: { autoSize: false }, on: { 'Carousel.ready': () => lenis.stop(), destroy: () => lenis.start() } });
 
+  /**
+   * Таймлайн
+   */
+  const TimelineScroll = {
+
+    defaultConfig: {
+      breakpoint: 768,
+      selectors: {
+        placeholder: '.timeline-placeholder',
+        container: '.timeline-container',
+        timeline: '.timeline',
+        wrapper: '.timeline-wrapper',
+        items: '.timeline-item',
+        btnPrev: '.timeline-button-prev',
+        btnNext: '.timeline-button-next'
+      }
+    },
+
+    init(placeholderSelector = '.timeline-placeholder', customSelectors = {}) {
+
+      this.config = {
+        ...this.defaultConfig,
+        selectors: { ...this.defaultConfig.selectors, ...customSelectors }
+      };
+
+      this.state = {
+        rootElement: null,
+        timelinePlaceholder: null,
+        timelineContainer: null,
+        timeline: null,
+        timelineWrapper: null,
+        timelineItems: null,
+        btnPrev: null,
+        btnNext: null,
+
+        itemWidth: 0,
+        containerWidth: 0,
+        totalWidth: 0,
+        maxScroll: 0,
+        placeholderHeight: 0,
+        containerHeight: 0,
+        scrollDistance: 0,
+
+        timelineProgress: 0,
+        currentIndex: 0,
+        isAnimating: false,
+        startX: 0,
+        startY: 0,
+        currentX: 0,
+        isDragging: false,
+        startScroll: 0,
+        xSwipe: false,
+
+        scrollTimeout: null,
+        isScrolling: false,
+
+        buttonHoldInterval: null,
+        buttonHoldDirection: null,
+        buttonHoldDelay: 300,
+        buttonHoldSpeed: 100,
+        initialButtonPress: true
+      };
+
+      this.setRootElement(placeholderSelector);
+
+      this.cacheElements();
+      this.calculatePlaceholderHeight();
+      this.bindEvents();
+      this.updateButtons();
+      this.updateActiveItem(0);
+      return this;
+    },
+
+    setRootElement(selector) {
+      const element = typeof selector === 'string'
+        ? document.querySelector(selector)
+        : selector;
+
+      if (!element) {
+        console.warn(`TimelineScroll: Root element not found with selector "${selector}"`);
+      }
+
+      this.state.rootElement = element;
+    },
+
+    destroy() {
+      window.removeEventListener('resize', this.onResize.bind(this));
+      this.stopButtonHold();
+    },
+
+    next() {
+      this.goToIndex(this.state.currentIndex + 1);
+    },
+
+    prev() {
+      this.goToIndex(this.state.currentIndex - 1);
+    },
+
+    goTo(index) {
+      this.goToIndex(index);
+    },
+
+    getCurrentIndex() {
+      return this.state.currentIndex;
+    },
+
+    startButtonHold(direction) {
+      const s = this.state;
+
+      if (s.buttonHoldInterval) {
+        clearInterval(s.buttonHoldInterval);
+      }
+
+      s.buttonHoldDirection = direction;
+      s.initialButtonPress = true;
+
+      if (direction === 'next') {
+        this.next();
+      } else {
+        this.prev();
+      }
+
+      s.buttonHoldInterval = setTimeout(() => {
+        s.initialButtonPress = false;
+        s.buttonHoldInterval = setInterval(() => {
+          if (s.buttonHoldDirection === 'next') {
+            this.next();
+          } else {
+            this.prev();
+          }
+        }, s.buttonHoldSpeed);
+      }, s.buttonHoldDelay);
+    },
+
+    stopButtonHold() {
+      const s = this.state;
+
+      if (s.buttonHoldInterval) {
+        clearTimeout(s.buttonHoldInterval);
+        clearInterval(s.buttonHoldInterval);
+        s.buttonHoldInterval = null;
+        s.buttonHoldDirection = null;
+      }
+    },
+
+    cacheElements() {
+      const s = this.state;
+      const selectors = this.config.selectors;
+
+      s.timelinePlaceholder = s.rootElement;
+      s.timelineContainer = this.findElement(selectors.container);
+      s.timeline = this.findElement(selectors.timeline);
+      s.timelineWrapper = this.findElement(selectors.wrapper);
+      s.timelineItems = this.findElement(selectors.items, true);
+      s.btnPrev = this.findElement(selectors.btnPrev);
+      s.btnNext = this.findElement(selectors.btnNext);
+
+      this.validateRequiredElements();
+    },
+
+    findElement(selector, all = false) {
+      if (all) {
+        return this.state.rootElement.querySelectorAll(selector);
+      }
+      return this.state.rootElement.querySelector(selector);
+    },
+
+    validateRequiredElements() {
+      const s = this.state;
+      const required = [
+        { element: s.timelineContainer, name: 'container' },
+        { element: s.timeline, name: 'timeline' },
+        { element: s.timelineWrapper, name: 'wrapper' },
+        { element: s.timelineItems, name: 'items' }
+      ];
+
+      required.forEach(({ element, name }) => {
+        if (!element || (Array.isArray(element) && element.length === 0)) {
+          console.warn(`TimelineScroll: Required element "${name}" not found with selector "${this.config.selectors[name]}"`)
+        }
+      });
+    },
+
+    isMobileDevice() {
+      return window.innerWidth <= this.config.breakpoint;
+    },
+
+    calculatePlaceholderHeight() {
+      const s = this.state;
+
+      if (this.isMobileDevice()) {
+        s.timelinePlaceholder.style.height = 'auto';
+        return;
+      }
+
+      s.containerHeight = s.timelineContainer.offsetHeight;
+      s.itemWidth = s.timelineItems[0].offsetWidth;
+      // s.containerWidth = s.timeline.offsetWidth;
+      s.containerWidth = s.timelineContainer.offsetWidth;
+
+      s.totalWidth = s.itemWidth * s.timelineItems.length;
+      s.maxScroll = Math.max(0, s.totalWidth - s.containerWidth);
+      s.scrollDistance = s.maxScroll;
+      s.placeholderHeight = s.containerHeight + s.scrollDistance;
+
+      s.timelinePlaceholder.style.height = `${s.placeholderHeight}px`;
+    },
+
+    updateButtons() {
+      const s = this.state;
+      if (this.isMobileDevice() || !s.btnPrev || !s.btnNext) return;
+
+      s.btnPrev.disabled = s.currentIndex === 0;
+      s.btnNext.disabled = s.currentIndex === s.timelineItems.length - 1;
+    },
+
+    goToIndex(index) {
+      if (this.isMobileDevice()) {
+        return this.goToIndexMobile(index);
+      }
+
+      const s = this.state;
+      if (s.isAnimating) return;
+
+      index = Math.max(0, Math.min(index, s.timelineItems.length - 1));
+      if (index === s.currentIndex) return;
+
+      s.isAnimating = true;
+
+      const maxIndex = s.timelineItems.length - 1;
+      const targetProgress = index / maxIndex;
+      const containerTop = s.timelinePlaceholder.offsetTop;
+      const targetScroll = containerTop + (targetProgress * s.scrollDistance);
+
+      lenis.scrollTo(targetScroll, {
+        duration: 0.4, // Было 0.7, стало 0.4
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        onComplete: () => {
+          s.isAnimating = false;
+        }
+      });
+    },
+
+    goToIndexMobile(index) {
+      const s = this.state;
+      index = Math.max(0, Math.min(index, s.timelineItems.length - 1));
+      const item = s.timelineItems[index];
+      const itemLeft = item.offsetLeft;
+      const itemWidth = item.offsetWidth;
+      const containerWidth = s.timeline.offsetWidth;
+
+      const scrollPosition = itemLeft - (containerWidth / 2) + (itemWidth / 2);
+
+      s.timeline.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+
+      this.updateActiveItemMobile(index);
+    },
+
+    updateTimeline(scrollY) {
+      const s = this.state;
+      if (this.isMobileDevice()) return;
+
+      const containerTop = s.timelinePlaceholder.offsetTop;
+
+      let scrollProgress = (scrollY - containerTop) / s.scrollDistance;
+      scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+
+      if (scrollY >= containerTop && scrollY <= containerTop + s.scrollDistance) {
+        s.timelineProgress = scrollProgress;
+
+        const translateX = -s.timelineProgress * s.maxScroll;
+        s.timelineWrapper.style.transform = `translateX(${translateX}px)`;
+
+        this.updateActiveItem(s.timelineProgress);
+
+      } else {
+        if (scrollY < containerTop) {
+          s.timelineProgress = 0;
+          s.timelineWrapper.style.transform = 'translateX(0px)';
+          this.updateActiveItem(0);
+        } else if (scrollY > containerTop + s.scrollDistance) {
+          s.timelineProgress = 1;
+          s.timelineWrapper.style.transform = `translateX(${-s.maxScroll}px)`;
+          this.updateActiveItem(1);
+        }
+      }
+    },
+
+    updateActiveItem(progress) {
+      const s = this.state;
+      const maxIndex = s.timelineItems.length - 1;
+      const newIndex = Math.min(
+        maxIndex,
+        Math.round(progress * maxIndex)
+      );
+
+      if (newIndex !== s.currentIndex) {
+        s.currentIndex = newIndex;
+
+        s.timelineItems.forEach((item, index) => {
+          item.classList.toggle('timeline-active', index === s.currentIndex);
+        });
+
+        this.updateButtons();
+      }
+    },
+
+    updateActiveItemMobile(index) {
+      const s = this.state;
+      if (index !== s.currentIndex) {
+        s.currentIndex = index;
+
+        s.timelineItems.forEach((item, i) => {
+          item.classList.toggle('timeline-active', i === s.currentIndex);
+        });
+      }
+    },
+
+    handleMobileScroll() {
+      const s = this.state;
+      if (!this.isMobileDevice()) return;
+
+      clearTimeout(s.scrollTimeout);
+      s.isScrolling = true;
+
+      const scrollLeft = s.timeline.scrollLeft;
+      const containerWidth = s.timeline.offsetWidth;
+      const itemWidth = s.timelineItems[0].offsetWidth;
+
+      const center = scrollLeft + (containerWidth / 2);
+
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      s.timelineItems.forEach((item, index) => {
+        const itemLeft = item.offsetLeft;
+        const itemCenter = itemLeft + (itemWidth / 2);
+        const distance = Math.abs(center - itemCenter);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      this.updateActiveItemMobile(closestIndex);
+
+      s.scrollTimeout = setTimeout(() => {
+        s.isScrolling = false;
+
+        if (!s.isScrolling) {
+          this.goToIndex(closestIndex);
+        }
+      }, 100);
+    },
+
+    handleTouchStart(e) {
+      const s = this.state;
+      if (s.isAnimating) return;
+
+      s.startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+      s.startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+      s.currentX = parseInt(getComputedStyle(s.timelineWrapper).transform.split(',')[4] || 0, 10);
+      s.startScroll = lenis.scroll;
+      s.isDragging = true;
+      s.xSwipe = false;
+      s.timelineWrapper.classList.add('grabbing');
+    },
+
+    handleTouchMove(e) {
+      const s = this.state;
+      if (!s.isDragging) return;
+      e.preventDefault();
+
+      const x = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+      const y = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+
+      if (!s.xSwipe) {
+        const diffX = Math.abs(x - s.startX);
+        const diffY = Math.abs(y - s.startY);
+
+        if (diffY > diffX && diffY > 10) {
+          s.isDragging = false;
+          s.timelineWrapper.classList.remove('grabbing');
+          return;
+        }
+
+        if (diffX > 10) {
+          s.xSwipe = true;
+          e.preventDefault();
+        }
+      }
+
+      if (s.xSwipe) {
+        const diff = x - s.startX;
+
+        let newX = s.currentX + diff;
+
+        newX = Math.min(Math.max(newX, -s.maxScroll), 0);
+
+        s.timelineWrapper.style.transform = `translateX(${newX}px)`;
+
+        lenis.scrollTo(s.startScroll, { immediate: true });
+      }
+    },
+
+    handleTouchEnd(e) {
+      const s = this.state;
+      if (!s.isDragging) return;
+      s.isDragging = false;
+      s.timelineWrapper.classList.remove('grabbing');
+
+      const x = e.type === 'touchend' ? (e.changedTouches ? e.changedTouches[0].clientX : 0) : e.clientX;
+      const diff = x - s.startX;
+      const velocity = diff / 100;
+
+      if (Math.abs(diff) > 50 || Math.abs(velocity) > 0.5) {
+        if (diff > 0) {
+          this.goToIndex(s.currentIndex - 1);
+        } else {
+          this.goToIndex(s.currentIndex + 1);
+        }
+      } else {
+        this.goToIndex(s.currentIndex);
+      }
+    },
+
+    onLenisScroll({ scroll }) {
+      if (!this.state.isDragging) {
+        this.updateTimeline(scroll);
+      }
+    },
+
+    onResize() {
+      this.calculatePlaceholderHeight();
+      this.updateTimeline(lenis.scroll);
+      this.updateButtons();
+    },
+
+    bindEvents() {
+      const s = this.state;
+
+      if (s.btnPrev) {
+        s.btnPrev.addEventListener('click', () => {
+          this.goToIndex(s.currentIndex - 1);
+        });
+
+        s.btnPrev.addEventListener('mousedown', () => {
+          this.startButtonHold('prev');
+        });
+
+        s.btnPrev.addEventListener('touchstart', () => {
+          this.startButtonHold('prev');
+        });
+
+        s.btnPrev.addEventListener('mouseup', () => {
+          this.stopButtonHold();
+        });
+
+        s.btnPrev.addEventListener('touchend', () => {
+          this.stopButtonHold();
+        });
+
+        s.btnPrev.addEventListener('mouseleave', () => {
+          this.stopButtonHold();
+        });
+      }
+
+      if (s.btnNext) {
+        s.btnNext.addEventListener('click', () => {
+          this.goToIndex(s.currentIndex + 1);
+        });
+
+        s.btnNext.addEventListener('mousedown', () => {
+          this.startButtonHold('next');
+        });
+
+        s.btnNext.addEventListener('touchstart', () => {
+          this.startButtonHold('next');
+        });
+
+        s.btnNext.addEventListener('mouseup', () => {
+          this.stopButtonHold();
+        });
+
+        s.btnNext.addEventListener('touchend', () => {
+          this.stopButtonHold();
+        });
+
+        s.btnNext.addEventListener('mouseleave', () => {
+          this.stopButtonHold();
+        });
+      }
+
+      document.addEventListener('mouseup', () => {
+        this.stopButtonHold();
+      });
+
+      document.addEventListener('touchend', () => {
+        this.stopButtonHold();
+      });
+
+      if (!this.isMobileDevice()) {
+        s.timelineWrapper.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: false });
+        s.timelineWrapper.addEventListener('mousedown', this.handleTouchStart.bind(this));
+
+        s.timelineWrapper.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
+        s.timelineWrapper.addEventListener('mousemove', this.handleTouchMove.bind(this));
+
+        s.timelineWrapper.addEventListener('touchend', this.handleTouchEnd.bind(this));
+        s.timelineWrapper.addEventListener('mouseup', this.handleTouchEnd.bind(this));
+        s.timelineWrapper.addEventListener('mouseleave', this.handleTouchEnd.bind(this));
+      }
+
+      s.timeline.addEventListener('scroll', this.handleMobileScroll.bind(this));
+
+      lenis.on('scroll', this.onLenisScroll.bind(this));
+      window.addEventListener('resize', this.onResize.bind(this));
+    }
+  };
+
+  TimelineScroll.create = function (placeholderSelector = '.timeline-placeholder', customSelectors = {}) {
+    const instance = Object.create(this);
+    return instance.init(placeholderSelector, customSelectors);
+  };
+  // можно вынести в отдельный файл - КОНЕЦ
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  if (document.getElementById('timelinePlaceholder')) {
+    const timeline = TimelineScroll.create('#timelinePlaceholder');
+  }
+
 });
