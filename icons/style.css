@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'PirsibIconFont';
-  src:  url('fonts/PirsibIconFont.eot?9wghx3');
-  src:  url('fonts/PirsibIconFont.eot?9wghx3#iefix') format('embedded-opentype'),
-    url('fonts/PirsibIconFont.ttf?9wghx3') format('truetype'),
-    url('fonts/PirsibIconFont.woff?9wghx3') format('woff'),
-    url('fonts/PirsibIconFont.svg?9wghx3#PirsibIconFont') format('svg');
+  src:  url('fonts/PirsibIconFont.eot?8b1a35');
+  src:  url('fonts/PirsibIconFont.eot?8b1a35#iefix') format('embedded-opentype'),
+    url('fonts/PirsibIconFont.ttf?8b1a35') format('truetype'),
+    url('fonts/PirsibIconFont.woff?8b1a35') format('woff'),
+    url('fonts/PirsibIconFont.svg?8b1a35#PirsibIconFont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,7 +25,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-2gis:before {
+.icon-gis:before {
   content: "\e900";
 }
 .icon-book:before {
@@ -34,51 +34,57 @@
 .icon-chevron:before {
   content: "\e902";
 }
-.icon-chevron-min:before {
+.icon-chevron-left:before {
   content: "\e903";
 }
-.icon-location:before {
+.icon-chevron-min:before {
   content: "\e904";
 }
-.icon-mail:before {
+.icon-download:before {
   content: "\e905";
 }
-.icon-mail-min:before {
+.icon-location:before {
   content: "\e906";
 }
-.icon-max:before {
+.icon-mail:before {
   content: "\e907";
 }
-.icon-ozon:before {
+.icon-mail-min:before {
   content: "\e908";
 }
-.icon-phone:before {
+.icon-max:before {
   content: "\e909";
 }
-.icon-phone-min:before {
+.icon-ozon:before {
   content: "\e90a";
 }
-.icon-play:before {
+.icon-phone:before {
   content: "\e90b";
 }
-.icon-telegram:before {
+.icon-phone-min:before {
   content: "\e90c";
 }
-.icon-telegram-hover:before {
+.icon-play:before {
   content: "\e90d";
 }
-.icon-user:before {
+.icon-telegram:before {
   content: "\e90e";
 }
-.icon-vk:before {
+.icon-telegram-hover:before {
   content: "\e90f";
 }
-.icon-wb:before {
+.icon-user:before {
   content: "\e910";
 }
-.icon-whatsapp:before {
+.icon-vk:before {
   content: "\e911";
 }
-.icon-whatsapp-hover:before {
+.icon-wb:before {
   content: "\e912";
+}
+.icon-whatsapp:before {
+  content: "\e913";
+}
+.icon-whatsapp-hover:before {
+  content: "\e914";
 }
