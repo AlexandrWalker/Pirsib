@@ -25,7 +25,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-gis:before {
+.icon-2gis:before {
   content: "\e900";
 }
 .icon-book:before {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner">
+<html lang="ru" class="page__inner reviews__page">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
@@ -11,7 +11,10 @@
   <meta name="format-detection" content="address=no">
   <meta name="format-detection" content="email=no">
   <!-- favicon -->
-
+  <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
   <!-- title -->
   <title>Pirsib</title>
   <!-- icons -->
@@ -248,6 +251,26 @@
       <section class="reviews">
         <div class="container">
           <div class="reviews__inner">
+            <div class="general__head">
+              <div class="filter">
+                <div class="filter__items">
+                  <label class="filter__item filter__item--active">
+                    <span class="border"></span>
+                    <input type="radio" name="blog-filter" class="filter__input" checked="">
+                    <span>
+                      Пирсинг
+                    </span>
+                  </label>
+                  <label class="filter__item">
+                    <span class="border"></span>
+                    <input type="radio" name="blog-filter" class="filter__input" checked="">
+                    <span>
+                      Татуировки
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
             <div class="reviews__items" data-transform="fadeUp">
               <div class="opinion__item">
   <span class="border"></span>
@@ -615,6 +638,9 @@
           <a href="tel:+79139178500" data-gradient-text>
             +7-913-917-8500
           </a>
+          <a href="tel:+79139178500" data-gradient-text>
+            +7-913-917-8500
+          </a>
           <h6>
             Орджоникидзе, 35/1, Новосибирск
           </h6>
@@ -661,9 +687,35 @@
                 Контакты
               </a>
             </li>
+            <li>
+              <a href="/Pirsib/about.html">
+                История
+              </a>
+            </li>
+            <li>
+              <a href="/Pirsib/site-map.html">
+                Карта сайта
+              </a>
+            </li>
           </ul>
         </div>
         <div class="footer__wrap">
+          <div class="footer__links">
+            <div class="footer__links-title">
+              <p>
+                Информация
+              </p>
+            </div>
+            <a href="/Pirsib/privacy.html">
+              Политика конфиденциальности
+            </a>
+            <a href="/Pirsib/policy.html">
+              Политика в отношении обработки персональных данных
+            </a>
+            <a href="/Pirsib/agreement.html">
+              Пользовательское соглашение
+            </a>
+          </div>
           <div class="footer__messengers">
             <div class="footer__messengers-title">
               <p>
@@ -679,9 +731,13 @@
                 <span class="border"></span>
                 <i class="icon-telegram"></i>
               </a>
+              <a class="btn btn--icon btn--vk" href="/">
+                <span class="border"></span>
+                <i class="icon-vk"></i>
+              </a>
             </div>
           </div>
-          <div class="footer__social">
+          <!-- <div class="footer__social">
             <div class="footer__social-title">
               <p>
                 Наш канал и группы в ВК:
@@ -713,7 +769,7 @@
                 </div>
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="footer__foot">
           <div class="footer__foot-wrap">
@@ -723,22 +779,6 @@
             <div class="footer__made">
               Разработка сайта — <a href="https://1and2.ru/">Once&Twice</a>
             </div>
-          </div>
-          <div class="footer__links">
-            <div class="footer__links-title">
-              <p>
-                Информация
-              </p>
-            </div>
-            <a href="/Pirsib">
-              Политика конфиденциальности
-            </a>
-            <a href="/Pirsib">
-              Политика конфиденциальности
-            </a>
-            <a href="/Pirsib">
-              Пользовательское соглашение
-            </a>
           </div>
         </div>
       </div>
@@ -790,12 +830,31 @@
                 </button>
                 <div class="form-group">
                   <div class="form-wrap">
-                    <input id="foot_checkbox" class="form-checkbox" type="checkbox">
-                    <label for="foot_checkbox" class="form-checkbox--item"></label>
-                    <p>
-                      Нажимая кнопку, вы даёте согласие на обработку ваших персональных данных
-                    </p>
+                    <input id="policy_checkbox" class="form-checkbox" name="form_policy_agree" type="checkbox">
+                    <label for="policy_checkbox" class="form-checkbox--item">
+                      <div class="form-checkbox--icon"></div>
+                      <p>
+                        Я согласен на обработку персональных данных
+                      </p>
+                    </label>
                   </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-wrap">
+                    <input id="ad_checkbox" class="form-checkbox" name="form_ad_agree" type="checkbox">
+                    <label for="ad_checkbox" class="form-checkbox--item">
+                      <div class="form-checkbox--icon"></div>
+                      <p>
+                        Я согласен на рекламные уведомления
+                      </p>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <p>
+                    Нажимая на кнопку «Отправить» вы соглашаетесь с <a href="/Pirsib/policy.html">Политикой обработки
+                      персональных данных</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -827,6 +886,21 @@
         <i class="icon-chevron"></i>
       </div>
     </div>
+  </div>
+</div>
+
+<div id="plate-cookie" class="cookie">
+  <div class="cookie__inner">
+    <div class="cookie__text">
+      <p>
+        Мы обрабатываем <a href="/Pirsib/cookie,html">cookies</a> с целью персонализации сервисов, и чтобы Вам было
+        удобнее пользоваться веб-сайтом.
+      </p>
+    </div>
+    <button class="btn" onclick="checkCookies()">
+      <span class="border"></span>
+      Хорошо
+    </button>
   </div>
 </div>
 <!-- Попап -->
