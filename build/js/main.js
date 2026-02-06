@@ -1138,4 +1138,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeline = TimelineScroll.create('#timelinePlaceholder');
   }
 
+  /**
+   * Кнопка куки
+   */
+  if (('; ' + document.cookie).split(`; COOKIE_ACCEPT=`).pop().split(';')[0] !== '1') {
+    const cookiesNotify = document.getElementById('plate-cookie');
+
+    if (cookiesNotify) {
+      cookiesNotify.style.right = '0';
+    }
+  }
+
 });
+
+function checkCookies() {
+  document.cookie = 'COOKIE_ACCEPT=1;path=\'/\';expires:' + (new Date(new Date().getTime() + 86400e3 * 365).toUTCString());
+  document.getElementById('plate-cookie').style.right = '-100%';
+  setInterval(() => document.getElementById('plate-cookie').remove(), 5000);
+}

@@ -1,18 +1,25 @@
 @use './../mixins' as *;
 
 .plate {
+  display: flex;
+  align-items: flex-end;
   padding: 0 1rem;
-  width: 100%;
-  transform: translateY(10rem);
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
   transition: all 0.5s ease;
+  will-change: top;
+  pointer-events: none;
 
   position: fixed;
-  bottom: 0.5rem;
-  // z-index: 100;
+  top: 100%;
+  right: 0;
+  left: 0;
   z-index: 300;
 
   @include sm {
-    transform: translateY(0);
+    top: 0;
   }
 
   &__inner {
@@ -22,7 +29,8 @@
     width: 100%;
     height: fit-content;
     padding: 0.5rem 0.6rem 0.5rem 0.8rem;
-
+    margin-bottom: 0.5rem;
+    pointer-events: all;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), radial-gradient(37.16% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);

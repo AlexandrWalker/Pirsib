@@ -17,12 +17,12 @@
     @include md {
       display: flex;
       flex-direction: column-reverse;
-      gap: 3rem;
-
+      gap: calc(100vw/(393/20));
       border-radius: calc(100vw/(393/50));
     }
 
     @include sm {
+      gap: 2rem;
       border-radius: 5rem;
       margin-bottom: 8rem;
     }
@@ -67,12 +67,12 @@
     padding: 6rem 0 3.7rem 5rem;
 
     @include md {
-      gap: calc(100vw/(393/30));
+      gap: calc(100vw/(393/20));
       padding: 0 calc(100vw/(393/30)) calc(100vw/(393/40)) calc(100vw/(393/30));
     }
 
     @include sm {
-      gap: 3rem;
+      gap: 2rem;
       padding: 0 3rem 4rem 3rem;
     }
 
@@ -85,18 +85,21 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+
+    @include md {
+      gap: calc(100vw/(393/10));
+    }
+
+    @include sm {
+      gap: 1rem;
+    }
 
     a {
       font-weight: 700;
-      font-size: 8rem;
+      font-size: 4.5rem;
       line-height: 100%;
       text-transform: uppercase;
-      // background-image: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
-      // -webkit-background-clip: text;
-      // -webkit-text-fill-color: transparent;
-      // background-clip: text;
-      // -webkit-box-decoration-break: clone;
-      // text-fill-color: transparent;
       white-space: nowrap;
 
       @include md {
@@ -118,6 +121,11 @@
 
     @include md {
       width: 100%;
+      margin-bottom: calc(-100vw/(393/15));
+    }
+
+    @include sm {
+      margin-bottom: -1.5rem;
     }
 
     ul {
@@ -149,9 +157,12 @@
       font-weight: 400;
       color: var(--blue-dark-2);
 
-      &.is-active,
-      &:hover {
+      &.is-active {
         font-weight: 700;
+        color: var(--purple);
+      }
+
+      &:hover {
         color: var(--purple);
       }
     }
@@ -163,11 +174,11 @@
     gap: 4rem;
 
     @include md {
-      gap: calc(100vw/(393/40));
+      gap: calc(100vw/(393/20));
     }
 
     @include sm {
-      gap: 4rem;
+      gap: 2rem;
     }
   }
 
@@ -177,14 +188,22 @@
     gap: 2rem;
 
     &-title {
-      font-weight: 700;
       color: var(--purple);
+
+      * {
+        font-weight: 700;
+      }
     }
 
     &-btns {
       display: flex;
       flex-direction: row;
-      gap: 1rem;
+      gap: 1.8rem;
+
+      .btn {
+        --btn-width: 6rem;
+        --btn-height: 6rem;
+      }
     }
   }
 
@@ -266,23 +285,29 @@
   &__links {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 
     @include md {
-      gap: calc(100vw/(393/10));
+      gap: calc(100vw/(393/15));
     }
 
     @include sm {
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     &-title {
-      display: none;
-      font-weight: 700;
       color: var(--purple);
 
-      @include md {
-        display: block;
+      * {
+        font-weight: 700;
+      }
+    }
+
+    a {
+      color: var(--blue-dark-2);
+
+      &:hover {
+        color: var(--purple);
       }
     }
   }

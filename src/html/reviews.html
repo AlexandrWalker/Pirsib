@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner">
+<html lang="ru" class="page__inner reviews__page">
 @@include('blocks/head.html', {"title": "Pirsib"})
 
 <body>
@@ -38,6 +38,26 @@
       <section class="reviews">
         <div class="container">
           <div class="reviews__inner">
+            <div class="general__head">
+              <div class="filter">
+                <div class="filter__items">
+                  <label class="filter__item filter__item--active">
+                    <span class="border"></span>
+                    <input type="radio" name="blog-filter" class="filter__input" checked="">
+                    <span>
+                      Пирсинг
+                    </span>
+                  </label>
+                  <label class="filter__item">
+                    <span class="border"></span>
+                    <input type="radio" name="blog-filter" class="filter__input" checked="">
+                    <span>
+                      Татуировки
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
             <div class="reviews__items" data-transform="fadeUp">
               @@loop('./elements/opinion-item.html', './data/opinion-items.json')
             </div>

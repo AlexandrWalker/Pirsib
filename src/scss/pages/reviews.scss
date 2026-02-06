@@ -2,14 +2,45 @@
 
 .reviews {
 
+  &__page {
+
+    .template {
+      padding: 4rem 0 3rem;
+
+      @include md {
+        padding: 0 0 calc(100vw/(393/20));
+      }
+
+      @include sm {
+        padding: 0 0 2rem;
+      }
+    }
+  }
+
   &__items {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
 
+    @include md {
+      gap: calc(100vw/(393/8));
+    }
+
     @include sm {
       gap: 0.8rem;
+    }
+  }
+
+  .general__head {
+    margin-bottom: 3rem;
+
+    @include md {
+      margin-bottom: calc(100vw/(393/10));
+    }
+
+    @include sm {
+      margin-bottom: 1rem;
     }
   }
 

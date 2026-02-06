@@ -23,21 +23,16 @@
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    @include md {
-      gap: calc(100vw/(393/15));
-    }
-
-    @include sm {
-      gap: 1.5rem;
-    }
 
     * {
+      margin-bottom: 2rem;
+
+      @include md {
+        margin-bottom: calc(100vw/(393/15));
+      }
 
       @include sm {
+        margin-bottom: 1.5rem;
         font-size: 1.2rem;
       }
     }
@@ -124,6 +119,28 @@
       position: absolute;
       top: 0.75rem;
       left: 1.05rem;
+    }
+  }
+
+  img {
+    width: 49.7rem;
+    height: 32.5rem;
+    object-fit: cover;
+    border-radius: 5rem;
+    float: left;
+    margin: 1rem 4rem 1rem 0;
+
+    @include md {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin: 0;
+      margin-bottom: calc(100vw/(393/15));
+      border-radius: 2.4rem;
+    }
+
+    @include sm {
+      margin-bottom: 1.5rem;
     }
   }
 }

@@ -1,0 +1,94 @@
+@use './../mixins' as *;
+
+.privacy {
+
+  h5 {
+    color: var(--pink);
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+
+    @include md {
+      margin-bottom: calc(100vw/(393/15));
+    }
+
+    @include sm {
+      margin-bottom: 1.5rem;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  p {
+    margin-bottom: 2rem;
+
+    @include md {
+      margin-bottom: calc(100vw/(393/15));
+    }
+
+    @include sm {
+      margin-bottom: 1.5rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--pink);
+    }
+  }
+
+  ul {
+    margin-bottom: 2rem;
+
+    @include md {
+      margin-bottom: calc(100vw/(393/15));
+    }
+
+    @include sm {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  li {
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+
+    @include md {
+      margin-bottom: calc(100vw/(393/15));
+    }
+
+    @include sm {
+      margin-bottom: 1.5rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: var(--purple);
+      background: radial-gradient(326.83% 657.18% at 81.65% 66.5%, #AD32AE 0%, #3C49C2 100%);
+
+      position: absolute;
+      top: 0.75rem;
+      left: 0;
+    }
+  }
+
+  .mask.mask--1 {
+    top: -78rem;
+    right: -14rem;
+  }
+}

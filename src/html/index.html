@@ -290,8 +290,12 @@
                 </div>
               </a>
             </div>
-            <div class="hero__cover" data-transform="fadeUp1x">
-              <img src="./../images/temp/hero-girl.webp" alt="" loading="lazy">
+            <div class="hero__cover" data-animation="video-blur">
+            <!-- <div class="hero__cover" data-transform="fadeUp1x"> -->
+              <!-- <img src="./../images/temp/hero-girl.webp" alt="" loading="lazy"> -->
+              <video class="hero__video" autoplay muted playsinline>
+                <source src="./video/main.MP4" type="video/mp4">
+              </video>
             </div>
             <div class="hero__request" data-transform="fadeUp">
               <span class="border"></span>
@@ -328,12 +332,31 @@
                 <div class="hero__request-foot">
                   <div class="form-group">
                     <div class="form-wrap">
-                      <input id="hero_checkbox" class="form-checkbox" type="checkbox">
-                      <label for="hero_checkbox" class="form-checkbox--item"></label>
-                      <p>
-                        Нажимая кнопку, вы даёте согласие на обработку ваших персональных данных
-                      </p>
+                      <input id="policy_checkbox" class="form-checkbox" name="form_policy_agree" type="checkbox">
+                      <label for="policy_checkbox" class="form-checkbox--item">
+                        <div class="form-checkbox--icon"></div>
+                        <p>
+                          Я согласен на обработку персональных данных
+                        </p>
+                      </label>
                     </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-wrap">
+                      <input id="ad_checkbox" class="form-checkbox" name="form_ad_agree" type="checkbox">
+                      <label for="ad_checkbox" class="form-checkbox--item">
+                        <div class="form-checkbox--icon"></div>
+                        <p>
+                          Я согласен на рекламные уведомления
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-wrap">
+                    <p>
+                      Нажимая на кнопку «Отправить» вы соглашаетесь с <a href="/Pirsib/policy.html">Политикой обработки
+                        персональных данных</a>
+                    </p>
                   </div>
                 </div>
               </form>
@@ -435,6 +458,56 @@
                 <div class="swiper-slide personal__slide">
                   <div class="personal__slide-img">
                     <img src="./../images/temp/personal-2.webp" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="swiper-slide personal__slide">
+                  <div class="personal__slide-img">
+                    <img src="./../images/temp/personal-3.webp" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="swiper-slide personal__slide">
+                  <div class="personal__slide-img">
+                    <img src="./../images/temp/personal-4.webp" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="swiper-slide personal__slide">
+                  <div class="personal__slide-img">
+                    <img src="./../images/temp/personal-5.webp" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="swiper-slide personal__slide">
+                  <div class="personal__slide-img">
+                    <img src="./../images/temp/personal-6.webp" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="swiper-slide personal__slide">
+                  <div class="personal__slide-img">
+                    <img src="./../images/temp/personal-7.webp" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="swiper-slide personal__slide">
+                  <div class="personal__slide-img">
+                    <img src="./../images/temp/personal-8.webp" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="swiper-slide personal__slide">
+                  <div class="personal__slide-img">
+                    <img src="./../images/temp/personal-9.webp" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="swiper-slide personal__slide">
+                  <div class="personal__slide-img">
+                    <img src="./../images/temp/personal-10.webp" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="swiper-slide personal__slide">
+                  <div class="personal__slide-img">
+                    <img src="./../images/temp/personal-11.webp" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="swiper-slide personal__slide">
+                  <div class="personal__slide-img">
+                    <img src="./../images/temp/personal-12.webp" alt="" loading="lazy">
                   </div>
                 </div>
               </div>
@@ -926,9 +999,9 @@
             <span class="border"></span>
             <div class="quiz__content">
               <div class="quiz__title">
-                <h3 data-gradient-text>
+                <h4 data-gradient-text>
                   Получите скидку 20%
-                </h3>
+                </h4>
               </div>
               <div class="quiz__text" data-animation="blur">
                 <p>
@@ -1025,9 +1098,14 @@
                   <p>
                     Телефон:
                   </p>
-                  <a href="tel:+79139178500">
-                    +7-913-917-8500
-                  </a>
+                  <div class="find-us__item-tel">
+                    <a href="tel:+79139178500">
+                      +7-913-917-8500
+                    </a>
+                    <a href="tel:+79139178500">
+                      +7-913-917-8500
+                    </a>
+                  </div>
                 </div>
                 <div class="find-us__item">
                   <p>
@@ -1047,7 +1125,7 @@
                   <div class="find-us__item-btn">
                     <a class="btn btn--inner" href="/">
                       <span class="border"></span>
-                      Построить маршрут
+                      Смотреть на карте
                       <div class="btn btn--inner-icon">
                         <span class="border"></span>
                         <i class="icon-2gis"></i>

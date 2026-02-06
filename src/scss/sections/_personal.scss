@@ -131,7 +131,7 @@
     gap: 3.8rem;
     width: calc(50% - 1rem);
     min-height: 35.4rem;
-    padding: 4rem 4rem 6rem 7rem;
+    padding: 4rem 4rem 6rem 9rem;
     border-radius: 10rem;
 
     position: relative;
@@ -270,19 +270,22 @@
     }
 
     &-img {
-      width: 14.8rem;
-      height: 14.8rem;
+      width: auto;
+      height: 20rem;
 
       position: absolute;
+      top: 0.9rem;
+      left: 5.3rem;
 
       @include md {
-        width: calc(100vw/(393/61));
-        height: calc(100vw/(393/61));
+        height: calc(100vw/(393/80));
       }
 
       @include sm {
-        width: 6.1rem;
-        height: 6.1rem;
+        height: 8rem;
+
+        top: 1rem;
+        left: 1rem;
       }
 
       img {
@@ -293,11 +296,7 @@
     }
 
     &-title {
-      margin-left: 2rem;
-
-      @include md {
-        margin-left: 0;
-      }
+      max-width: 30rem;
     }
   }
 }

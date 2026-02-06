@@ -5,17 +5,21 @@
   &__inner {
     padding: 6rem 14rem 5rem;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.64% at 50% 50.47%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    background-image: url(./../../images/temp/quiz-bg.webp);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
     border-radius: 10rem;
 
     @include md {
       padding: calc(100vw/(393/30)) calc(100vw/(393/57)) calc(100vw/(393/36)) calc(100vw/(393/20));
+      background-image: url(./../images/temp/quiz-bg-mob.webp);
       border-radius: calc(100vw/(393/24));
     }
 
     @include sm {
-      padding: 3rem 5.7rem 3.6rem 2rem;
+      padding: 3rem 7rem 2.5rem 2rem;
       border-radius: 2.4rem;
     }
 
@@ -34,6 +38,10 @@
   &__content {
     display: flex;
     flex-direction: column;
+
+    @include md {
+      min-height: 28.3rem;
+    }
   }
 
   &__title {
@@ -41,10 +49,12 @@
 
     @include md {
       margin-bottom: calc(100vw/(393/20));
+      max-width: calc(100vw/(393/170));
     }
 
     @include sm {
       margin-bottom: 2rem;
+      max-width: 17rem;
     }
 
     @include sm {
@@ -56,14 +66,25 @@
   }
 
   &__text {
+    max-width: 56rem;
     margin-bottom: 4rem;
 
     @include md {
-      margin-bottom: calc(100vw/(393/28));
+      // margin-bottom: calc(100vw/(393/28));
+      margin-bottom: auto;
+      max-width: calc(100vw/(393/170));
     }
 
     @include sm {
-      margin-bottom: 2.8rem;
+      // margin-bottom: 2.8rem;
+      max-width: 17rem;
+    }
+  }
+
+  .btn:not(.btn--inner-icon) {
+
+    @include md {
+      width: 100%;
     }
   }
 }

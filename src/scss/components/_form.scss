@@ -167,7 +167,7 @@
 
     &:checked {
 
-      &+.form-checkbox--item {
+      &+.form-checkbox--item>.form-checkbox--icon {
 
         &::before {
           background-color: var(--pink-2);
@@ -176,8 +176,15 @@
     }
 
     &--item {
-      width: 2.4rem;
-      height: 2.4rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    &--icon {
+      width: 1.6rem;
+      height: 1.6rem;
       border-radius: 50%;
       background-color: var(--blue-dark-1);
       position: relative;
@@ -185,8 +192,8 @@
 
       &::before {
         content: "";
-        width: 1.4rem;
-        height: 1.4rem;
+        width: 0.933rem;
+        height: 0.933rem;
         border-radius: 50%;
         background-color: var(--purple);
         flex-shrink: 0;
@@ -209,6 +216,19 @@
     p {
       font-size: 1rem;
       color: var(--purple-50);
+
+      @include md {
+        font-size: 1rem;
+        line-height: 120%;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        color: var(--pink);
+      }
     }
   }
 
@@ -217,5 +237,10 @@
     align-items: center;
     gap: 1rem;
     margin-left: 2.3rem;
+
+    p {
+      font-size: 1rem;
+      line-height: 100%;
+    }
   }
 }

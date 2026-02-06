@@ -49,6 +49,10 @@
 
   &-vk {
     color: #4680C2;
+
+    .btn:hover & {
+      text-shadow: #4680C2 0 0 1rem;
+    }
   }
 
   &-play {

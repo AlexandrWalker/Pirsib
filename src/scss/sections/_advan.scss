@@ -1,0 +1,154 @@
+@use './../mixins' as *;
+
+.advan {
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @include md {
+      gap: 1rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 4rem 5rem 5rem 5rem;
+    border-radius: 10rem;
+    width: calc(33.33333% - (4rem / 3));
+    min-height: 36.4rem;
+    overflow: hidden;
+    pointer-events: none;
+
+    position: relative;
+
+    @include md {
+      padding: 1.5rem 1.5rem 3.5rem 1.5rem;
+      border-radius: 2.4rem;
+      width: calc(50% - 0.5rem);
+      min-height: unset;
+    }
+
+    .border {
+
+      @include md {
+        --border-radius: 2.4rem;
+      }
+    }
+
+    &--last {
+
+      &::before {
+        content: "!";
+
+        font-family: var(--second-family);
+        font-style: normal;
+        font-weight: 800;
+        font-size: 10rem;
+        line-height: 100%;
+
+        background: radial-gradient(91.79% 857.38% at -20.26% -63.28%, #AD32AE 0%, #3C49C2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        pointer-events: none;
+
+        position: absolute;
+        right: 7.2rem;
+        bottom: 5.7rem;
+
+        @include md {
+          display: none;
+        }
+      }
+    }
+
+    &-count {
+      font-family: var(--second-family);
+      font-weight: 300;
+      font-size: 10rem;
+      line-height: 100%;
+      background: radial-gradient(91.79% 857.38% at -20.26% -63.28%, #AD32AE 0%, #3C49C2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+
+      @include md {
+        font-size: 5rem;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include md {
+        gap: 1rem;
+      }
+    }
+
+    &-title {
+
+      .advan__item--last & {
+        color: var(--pink);
+      }
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      * {
+
+        @include md {
+          font-size: 1.2rem;
+        }
+
+        .advan__item--last & {
+          font-weight: 700;
+        }
+      }
+    }
+
+    li {
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+
+      @include md {
+        font-size: 1.2rem;
+        margin-bottom: calc(100vw/(393/15));
+      }
+
+      @include sm {
+        margin-bottom: 1.5rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: var(--purple);
+        background: radial-gradient(326.83% 657.18% at 81.65% 66.5%, #AD32AE 0%, #3C49C2 100%);
+
+        position: absolute;
+        top: 0.75rem;
+        left: 0;
+      }
+    }
+  }
+}

@@ -6,6 +6,10 @@
   margin-bottom: 9rem;
 
   @include md {
+    margin-bottom: calc(100vw/(393/30));
+  }
+
+  @include sm {
     margin-bottom: 3rem;
   }
 
@@ -17,6 +21,18 @@
     @include md {
       margin-bottom: -0.7rem;
       z-index: 3;
+    }
+
+    .price-list__page & {
+      margin-bottom: 4rem;
+
+      @include md {
+        margin-bottom: calc(100vw/(393/30));
+      }
+
+      @include sm {
+        margin-bottom: 3rem;
+      }
     }
   }
 
@@ -33,12 +49,16 @@
         margin-top: -3.6rem;
 
         @include md {
+          margin-top: calc(-100vw/(393/12));
+        }
+
+        @include sm {
           margin-top: -1.2rem;
         }
       }
     }
   }
-  
+
   &__body {
     position: relative;
     z-index: 2;
@@ -51,6 +71,10 @@
     gap: 2rem;
 
     @include md {
+      gap: calc(100vw/(393/8));
+    }
+
+    @include sm {
       gap: 0.8rem;
     }
   }

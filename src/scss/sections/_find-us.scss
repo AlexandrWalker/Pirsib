@@ -71,7 +71,7 @@
   &__items {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
 
     @include md {
       gap: calc(100vw/(393/15));
@@ -85,7 +85,7 @@
   &__item {
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1.5rem;
 
     @include md {
       gap: calc(100vw/(393/10));
@@ -93,6 +93,16 @@
 
     @include sm {
       gap: 1rem;
+    }
+
+    &-tel {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      a {
+        line-height: 100% !important;
+      }
     }
 
     a:not(.btn) {
@@ -129,7 +139,7 @@
     }
 
     &-btn {
-      display: none;
+      // display: none;
 
       @include md {
         display: flex;
