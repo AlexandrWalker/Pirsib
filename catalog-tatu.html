@@ -158,26 +158,39 @@
     </div>
     <div class="menu__content">
       <div class="menu__item">
-        <p>
-          Телефон:
-        </p>
-        <a href="tel:+79139178500" data-gradient-text>
-          +7-913-917-8500
-        </a>
+        <div class="menu__item-title">
+          <p>
+            Телефон:
+          </p>
+        </div>
+        <div class="menu__item-wrap">
+          <a class="menu__item-link" href="tel:+79139178500" data-gradient-text>
+            +7-913-917-8500
+          </a>
+          <a class="menu__item-link" href="tel:+79139178500" data-gradient-text>
+            +7-913-917-8500
+          </a>
+        </div>
       </div>
       <div class="menu__item">
-        <p>
-          Телефон:
-        </p>
-        <h5 data-gradient-text>
-          Орджоникидзе, 35/1, <br> Новосибирск
-        </h5>
+        <div class="menu__item-title">
+          <p>
+            Телефон:
+          </p>
+        </div>
+        <div class="menu__item-wrap">
+          <div class="menu__item-text" data-gradient-text>
+            Орджоникидзе, 35/1, <br> Новосибирск
+          </div>
+        </div>
       </div>
       <div class="menu__item">
-        <p>
-          Наши группы в ВК:
-        </p>
-        <div class="menu__btns">
+        <div class="menu__item-title">
+          <p>
+            Наши группы в ВК:
+          </p>
+        </div>
+        <div class="menu__item-btns">
           <a class="btn btn--social" href="/">
             <span class="border"></span>
             Пирсинг
@@ -197,9 +210,11 @@
         </div>
       </div>
       <div class="menu__item">
-        <p>
-          Наш канал в Telegram
-        </p>
+        <div class="menu__item-title">
+          <p>
+            Наш канал в Telegram
+          </p>
+        </div>
         <div class="menu__btns">
           <a class="btn btn--social" href="/">
             <span class="border"></span>
@@ -331,19 +346,15 @@
                   </h5>
                 </div>
                 <div class="hero__request-body">
-                  <div class="col-xs-12">
-                    <div class="form-group">
-                      <input class="form-input" name="hero_name" type="text" placeholder="Ваше имя*">
-                      <i class="icon-user"></i>
-                      <span class="border"></span>
-                    </div>
+                  <div class="form-group">
+                    <input class="form-input" name="hero_name" type="text" placeholder="Ваше имя*">
+                    <i class="icon-user"></i>
+                    <span class="border"></span>
                   </div>
-                  <div class="col-xs-12">
-                    <div class="form-group">
-                      <input class="form-input" name="hero_tel" type="tel" placeholder="Телефон*">
-                      <i class="icon-phone"></i>
-                      <span class="border"></span>
-                    </div>
+                  <div class="form-group">
+                    <input class="form-input" name="hero_tel" type="tel" placeholder="Телефон*">
+                    <i class="icon-phone"></i>
+                    <span class="border"></span>
                   </div>
                   <button class="btn form-btn">
                     <span class="border"></span>
@@ -570,7 +581,7 @@
             </div>
 
             <div class="catalog__items" data-transform="fadeUp">
-              <a class="catalog__item sticky__item" href="/">
+              <a class="catalog__item sticky__item item-bg" href="/">
   <span class="border"></span>
   <div class="catalog__item-img" data-animation="parallax-img">
     <span class="border"></span>
@@ -600,7 +611,7 @@
     </div>
   </div>
   <div class="over"></div>
-</a><a class="catalog__item sticky__item" href="/">
+</a><a class="catalog__item sticky__item item-bg" href="/">
   <span class="border"></span>
   <div class="catalog__item-img" data-animation="parallax-img">
     <span class="border"></span>
@@ -630,7 +641,7 @@
     </div>
   </div>
   <div class="over"></div>
-</a><a class="catalog__item sticky__item" href="/">
+</a><a class="catalog__item sticky__item item-bg" href="/">
   <span class="border"></span>
   <div class="catalog__item-img" data-animation="parallax-img">
     <span class="border"></span>
@@ -660,7 +671,7 @@
     </div>
   </div>
   <div class="over"></div>
-</a><a class="catalog__item sticky__item" href="/">
+</a><a class="catalog__item sticky__item item-bg" href="/">
   <span class="border"></span>
   <div class="catalog__item-img" data-animation="parallax-img">
     <span class="border"></span>
@@ -690,7 +701,7 @@
     </div>
   </div>
   <div class="over"></div>
-</a><a class="catalog__item sticky__item" href="/">
+</a><a class="catalog__item sticky__item item-bg" href="/">
   <span class="border"></span>
   <div class="catalog__item-img" data-animation="parallax-img">
     <span class="border"></span>
@@ -720,7 +731,7 @@
     </div>
   </div>
   <div class="over"></div>
-</a><a class="catalog__item sticky__item" href="/">
+</a><a class="catalog__item sticky__item item-bg" href="/">
   <span class="border"></span>
   <div class="catalog__item-img" data-animation="parallax-img">
     <span class="border"></span>
@@ -794,11 +805,11 @@
               <div class="swiper opinion__slider" data-transform="fadeUp">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/explanation-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-female.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -815,21 +826,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/blog-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-male.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -846,21 +857,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/catalog-piercing-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-female.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -877,21 +888,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/explanation-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-male.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -908,21 +919,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/explanation-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-female.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -939,21 +950,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/explanation-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-male.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -970,21 +981,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/explanation-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-female.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -1001,21 +1012,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/explanation-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-male.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -1032,21 +1043,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/explanation-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-female.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -1063,21 +1074,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/explanation-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-male.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -1094,21 +1105,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/explanation-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-female.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -1125,21 +1136,21 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div><div class="swiper-slide">
-  <div class="opinion__item">
+  <a class="opinion__item item-bg" href="./images/temp/explanation-cover.png" data-fancybox>
     <span class="border"></span>
     <div class="opinion__item-head">
       <div class="opinion__item-photo">
-        <img src="./images/temp/opinion-photo-1.png" alt="">
+        <img src="./images/temp/opinion-avatar-male.svg" alt="">
         <i class="icon-2gis"></i>
       </div>
       <div class="opinion__item-wrap">
@@ -1156,15 +1167,15 @@
         Я настроилась уже на жуткую боль, как мастер Алина предложила поставить титановое украшение с фианитом, потому что золотое украшение на очень короткой ножке и с зазагулиной и что ставить его будет оооочень больно и ещё оно опять может вылететь. А титановое на прямой ножке и закручивается, то есть оно больше не вылетит! Эти аргументы были для меня решающими!
       </p>
     </div>
-    <a class="btn btn--inner" href="/">
+    <div class="btn btn--inner">
       <span class="border"></span>
       Весь отзыв
       <div class="btn btn--inner-icon">
         <span class="border"></span>
         <i class="icon-chevron"></i>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -1187,7 +1198,7 @@
             </div>
             <div class="faq__body" data-animation="blur">
               <div class="faq__items accordion-parent">
-                <div class="faq__item accordion">
+                <div class="faq__item accordion item-bg">
                   <span class="border"></span>
                   <div class="faq__item-head">
                     <h6>
@@ -1209,7 +1220,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="faq__item accordion">
+                <div class="faq__item accordion item-bg">
                   <span class="border"></span>
                   <div class="faq__item-head">
                     <h6>
@@ -1231,7 +1242,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="faq__item accordion">
+                <div class="faq__item accordion item-bg">
                   <span class="border"></span>
                   <div class="faq__item-head">
                     <h6>
@@ -1253,7 +1264,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="faq__item accordion">
+                <div class="faq__item accordion item-bg">
                   <span class="border"></span>
                   <div class="faq__item-head">
                     <h6>
@@ -1376,22 +1387,25 @@
       </section>
 
     </main>
-    <!-- Подвал -->
-    <footer id="footer" class="footer" data-transform="fadeUp">
-  <div class="container">
-    <div class="footer__inner">
 
+    <!-- Подвал -->
+<footer id="footer" class="footer" data-transform="fadeUp">
+  <div class="container">
+    <div class="footer__inner block-bg">
+      <div class="border"></div>
       <div class="footer__content" data-animation="blur">
         <div class="footer__contact">
-          <a href="tel:+79139178500" data-gradient-text>
-            +7-913-917-8500
-          </a>
-          <a href="tel:+79139178500" data-gradient-text>
-            +7-913-917-8500
-          </a>
-          <h6>
+          <div class="footer__contact-links">
+            <a class="footer__contact-link" href="tel:+73832998500" data-gradient-text>
+              +7 383 299 8500
+            </a>
+            <a class="footer__contact-link" href="tel:+79139178500" data-gradient-text>
+              +7 913 917 85 00
+            </a>
+          </div>
+          <div class="footer__contact-address">
             Орджоникидзе, 35/1, Новосибирск
-          </h6>
+          </div>
         </div>
         <div class="footer__menu">
           <ul>
@@ -1447,30 +1461,51 @@
             </li>
           </ul>
         </div>
-        <div class="footer__wrap">
-          <div class="footer__links">
-            <div class="footer__links-title">
-              <p>
-                Информация
-              </p>
+        <div class="footer__items">
+          <div class="footer__item footer__item--groups">
+            <div class="footer__item-title">
+              Наши группы в ВК:
             </div>
-            <a href="/Pirsib/privacy.html">
-              Политика конфиденциальности
-            </a>
-            <a href="/Pirsib/policy.html">
-              Политика в отношении обработки персональных данных
-            </a>
-            <a href="/Pirsib/agreement.html">
-              Пользовательское соглашение
-            </a>
+            <div class="footer__item-btns">
+              <a class="btn btn--social" href="/">
+                <span class="border"></span>
+                <div class="btn__text" data-text="Пирсинг" data-text-mob="Группа по пирсингу"></div>
+                <div class="btn btn--inner-icon">
+                  <span class="border"></span>
+                  <i class="icon-vk"></i>
+                </div>
+              </a>
+              <a class="btn btn--social" href="/">
+                <span class="border"></span>
+                <div class="btn__text" data-text="Татуировки" data-text-mob="Группа по Татуировкам"></div>
+                <div class="btn btn--inner-icon">
+                  <span class="border"></span>
+                  <i class="icon-vk"></i>
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="footer__messengers">
-            <div class="footer__messengers-title">
-              <p>
-                Мессенджеры
-              </p>
+          <div class="footer__item footer__item--channel">
+            <div class="footer__item-title">
+              Наш канал в Telegram
             </div>
-            <div class="footer__messengers-btns">
+            <div class="footer__item-btns">
+              <a class="btn btn--social" href="/">
+                <span class="border"></span>
+                <div class="btn__text" data-text="Подписаться" data-text-mob="Канал в Telegram">
+                </div>
+                <div class="btn btn--inner-icon">
+                  <span class="border"></span>
+                  <i class="icon-telegram"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="footer__item">
+            <div class="footer__item-title">
+              Напишите нам
+            </div>
+            <div class="footer__item-social">
               <a class="btn btn--icon btn--max" href="/">
                 <span class="border"></span>
                 <i class="icon-max"></i>
@@ -1485,137 +1520,103 @@
               </a>
             </div>
           </div>
-          <!-- <div class="footer__social">
-            <div class="footer__social-title">
-              <p>
-                Наш канал и группы в ВК:
-              </p>
-            </div>
-            <div class="footer__social-btns">
-              <a class="btn btn--social" href="/">
-                <span class="border"></span>
-                Пирсинг
-                <div class="btn btn--inner-icon">
-                  <span class="border"></span>
-                  <i class="icon-vk"></i>
-                </div>
-              </a>
-              <a class="btn btn--social" href="/">
-                <span class="border"></span>
-                Татуировки
-                <div class="btn btn--inner-icon">
-                  <span class="border"></span>
-                  <i class="icon-vk"></i>
-                </div>
-              </a>
-              <a class="btn btn--social" href="/">
-                <span class="border"></span>
-                Подписаться в Telegram
-                <div class="btn btn--inner-icon">
-                  <span class="border"></span>
-                  <i class="icon-telegram"></i>
-                </div>
-              </a>
-            </div>
-          </div> -->
+        </div>
+        <div class="footer__links">
+          <a href="/Pirsib/privacy.html">
+            Политика конфиденциальности
+          </a>
+          <a href="/Pirsib/policy.html">
+            Политика в отношении обработки персональных данных
+          </a>
+          <a href="/Pirsib/agreement.html">
+            Пользовательское соглашение
+          </a>
         </div>
         <div class="footer__foot">
-          <div class="footer__foot-wrap">
-            <div class="footer__copyright">
-              © ООО «Пирсиб»
-            </div>
-            <div class="footer__made">
-              Разработка сайта — <a href="https://1and2.ru/">Once&Twice</a>
-            </div>
+          <div class="footer__copyright">
+            © ООО «Пирсиб»
+          </div>
+          <div class="footer__made">
+            Разработка сайта — <a href="https://1and2.ru/">Once&Twice</a>
           </div>
         </div>
       </div>
-
-      <div class="footer__form" data-animation="blur">
-        <form class="form" action="">
+      <div class="footer__form block-bg" data-animation="blur">
+        <div class="border"></div>
+        <div class="form">
           <div class="form__head">
             <div class="form__title">
-              <h5>
-                Закажите консультацию по телефону
-              </h5>
+              Закажите консультацию по телефону
             </div>
             <div class="form__text">
               Наша история началась в 2006 году в маленьком кабинете, который был арендован в медицинском центре
               университета
             </div>
           </div>
-          <div class="form__body">
-            <div class="col-xs-12">
-              <div class="form-group">
-                <input class="form-input" name="foot_name" type="text" placeholder="Ваше имя*">
-                <i class="icon-user"></i>
-                <span class="border"></span>
-              </div>
+          <form action="" class="form__body">
+            <div class="form-group">
+              <input class="form-input" name="foot_name" type="text" placeholder="Ваше имя*">
+              <i class="icon-user"></i>
+              <span class="border"></span>
             </div>
-            <div class="col-xs-12">
-              <div class="form-group">
-                <input class="form-input" name="foot_tel" type="tel" placeholder="Телефон*">
-                <i class="icon-phone"></i>
-                <span class="border"></span>
-              </div>
+            <div class="form-group">
+              <input class="form-input" name="foot_tel" type="tel" placeholder="Телефон*">
+              <i class="icon-phone"></i>
+              <span class="border"></span>
             </div>
-            <div class="col-xs-12">
-              <div class="form-group">
-                <input class="form-input" name="foot_email" type="email" placeholder="Эл. почта">
-                <i class="icon-mail"></i>
-                <span class="border"></span>
-              </div>
+            <div class="form-group">
+              <input class="form-input" name="foot_email" type="email" placeholder="Эл. почта">
+              <i class="icon-mail"></i>
+              <span class="border"></span>
             </div>
-            <div class="col-xs-12">
-              <div class="form-foot">
-                <button class="btn form-btn">
+            <div class="form-foot">
+              <button class="btn form-btn">
+                <span class="border"></span>
+                Отправить заявку
+                <div class="btn btn--inner-icon">
                   <span class="border"></span>
-                  Отправить заявку
-                  <div class="btn btn--inner-icon">
-                    <span class="border"></span>
-                    <i class="icon-chevron"></i>
-                  </div>
-                </button>
-                <div class="form-group">
-                  <div class="form-wrap">
-                    <input id="policy_checkbox" class="form-checkbox" name="form_policy_agree" type="checkbox">
-                    <label for="policy_checkbox" class="form-checkbox--item">
-                      <div class="form-checkbox--icon"></div>
-                      <p>
-                        Я согласен на обработку персональных данных
-                      </p>
-                    </label>
-                  </div>
+                  <i class="icon-chevron"></i>
                 </div>
-                <div class="form-group">
-                  <div class="form-wrap">
-                    <input id="ad_checkbox" class="form-checkbox" name="form_ad_agree" type="checkbox">
-                    <label for="ad_checkbox" class="form-checkbox--item">
-                      <div class="form-checkbox--icon"></div>
-                      <p>
-                        Я согласен на рекламные уведомления
-                      </p>
-                    </label>
-                  </div>
-                </div>
+              </button>
+              <div class="form-group">
                 <div class="form-wrap">
-                  <p>
-                    Нажимая на кнопку «Отправить» вы соглашаетесь с <a href="/Pirsib/policy.html">Политикой обработки
-                      персональных данных</a>
-                  </p>
+                  <input id="foot_policy_checkbox" class="form-checkbox" name="foot_form_policy_agree" type="checkbox">
+                  <label for="foot_policy_checkbox" class="form-checkbox--item">
+                    <div class="form-checkbox--icon"></div>
+                    <p>
+                      Я согласен на обработку персональных данных
+                    </p>
+                  </label>
                 </div>
               </div>
+              <div class="form-group">
+                <div class="form-wrap">
+                  <input id="foot_ad_checkbox" class="form-checkbox" name="foot_form_ad_agree" type="checkbox">
+                  <label for="foot_ad_checkbox" class="form-checkbox--item">
+                    <div class="form-checkbox--icon"></div>
+                    <p>
+                      Я согласен на рекламные уведомления
+                    </p>
+                  </label>
+                </div>
+              </div>
+              <div class="form-wrap">
+                <p>
+                  Нажимая на кнопку «Отправить» вы соглашаетесь с <a href="/Pirsib/policy.html">Политикой обработки
+                    персональных данных</a>
+                </p>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-
     </div>
   </div>
 </footer>
 <!-- Плашки -->
 <div class="plate">
-  <div class="plate__inner">
+  <div class="plate__inner block-bg">
+    <div class="border"></div>
     <div class="plate__social">
       <a class="btn btn--icon btn--max" href="/">
         <span class="border"></span>
@@ -1638,7 +1639,8 @@
 </div>
 
 <div id="plate-cookie" class="cookie">
-  <div class="cookie__inner">
+  <div class="cookie__inner block-bg">
+    <div class="border"></div>
     <div class="cookie__text">
       <p>
         Мы обрабатываем <a href="/Pirsib/cookie,html">cookies</a> с целью персонализации сервисов, и чтобы Вам было
@@ -1651,7 +1653,7 @@
     </button>
   </div>
 </div>
-<!-- Попап -->
+<!-- Попапы -->
 <div class="popup" id="popup-1">
 
   <form class="form" action="">
