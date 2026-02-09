@@ -134,7 +134,7 @@
     min-height: 57.5rem;
     padding: 5rem 5rem 6rem 5rem;
     background: linear-gradient(90deg, rgba(12, 15, 27, 0.95) 0%, rgba(13, 15, 27, 0) 100%);
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
     overflow: hidden;
 
     position: relative;
@@ -142,32 +142,18 @@
     @include md {
       min-height: unset;
       padding: calc(100vw/(393/30));
-      border-radius: calc(100vw/(393/24));
 
       aspect-ratio: 353/371;
     }
 
     @include sm {
       padding: 3rem;
-      border-radius: 2.4rem;
     }
 
     &:hover {
 
-
       .btn {
         transform: translateX(0.5rem);
-      }
-    }
-
-    .border {
-
-      @include md {
-        --border-radius: calc(100vw/(393/24));
-      }
-
-      @include sm {
-        --border-radius: 2.4rem;
       }
     }
 
@@ -253,6 +239,10 @@
       color: var(--blue);
 
       @include md {
+        gap: calc(100vw/(393/10));
+      }
+
+      @include sm {
         gap: 1rem;
       }
     }

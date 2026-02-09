@@ -6,7 +6,7 @@
   --btn-height: 5rem;
   --btn-color: var(--purple);
   --btn-background: transparent;
-  --btn-border-radius: 10rem;
+  --btn-border-radius: var(--border-radius);
 
   display: flex;
   justify-content: space-between;
@@ -30,6 +30,24 @@
 
   position: relative;
   z-index: 1;
+
+  @include md {
+    --btn-height: calc(100vw/(393/50));
+
+    gap: 0 calc(100vw/(393/10));
+    padding: 0 calc(100vw/(393/20));
+
+    font-size: calc(100vw/(393/14));
+  }
+
+  @include sm {
+    --btn-height: 5rem;
+
+    gap: 0 1rem;
+    padding: 0 2rem;
+
+    font-size: 1.4rem;
+  }
 
   &:disabled {
     opacity: 0.5;
@@ -101,8 +119,28 @@
     z-index: -1;
   }
 
+  &__text {
+    position: relative;
+
+    &::before {
+      content: attr(data-text);
+
+      @include md {
+        content: attr(data-text-mob);
+      }
+    }
+  }
+
   &--icon {
     padding: 0;
+
+    @include md {
+      padding: 0;
+    }
+
+    @include sm {
+      padding: 0;
+    }
   }
 
   &--inner {
@@ -111,14 +149,38 @@
     font-size: 1.4rem;
     text-transform: none;
 
+    @include md {
+      padding: 0 calc(100vw/(393/14)) 0 calc(100vw/(393/20));
 
+      font-size: calc(100vw/(393/14));
+    }
+
+    @include sm {
+      padding: 0 1.4rem 0 2rem;
+
+      font-size: 1.4rem;
+    }
   }
 
   &--inner-icon {
-    --btn-width: 2.4rem;
-    --btn-height: 2.4rem;
+    --btn-width: 2.7rem;
+    --btn-height: 2.7rem;
 
     padding: 0;
+
+    @include md {
+      --btn-width: calc(100vw/(393/27));
+      --btn-height: calc(100vw/(393/27));
+
+      padding: 0;
+    }
+
+    @include sm {
+      --btn-width: 2.7rem;
+      --btn-height: 2.7rem;
+
+      padding: 0;
+    }
 
     .icon-chevron:not(.faq__item .btn .icon-chevron, .header__signup-btn .icon-chevron, .works__btns .btn .icon-chevron) {
       transform: rotate(-90deg);
@@ -127,10 +189,26 @@
 
   &--social {
     padding: 0 1.4rem 0 2rem;
+    max-width: 26.4rem;
+    width: 100%;
 
     font-weight: 600;
     font-size: 1.4rem;
     text-transform: none;
+
+    @include md {
+      padding: 0 calc(100vw/(393/14)) 0 calc(100vw/(393/20));
+      max-width: calc(100vw/(393/264));
+
+      font-size: calc(100vw/(393/14));
+    }
+
+    @include sm {
+      padding: 0 1.4rem 0 2rem;
+      max-width: 26.4rem;
+
+      font-size: 1.4rem;
+    }
   }
 
   &--video {
@@ -142,27 +220,50 @@
     @include md {
       --btn-width: calc(100vw/(393/50));
       --btn-height: calc(100vw/(393/50));
+
+      padding: 0;
     }
 
     @include sm {
       --btn-width: 5rem;
       --btn-height: 5rem;
+
+      padding: 0;
     }
   }
 
-  // &--whatsapp {
+  &--big-icon {
+    --btn-width: 100%;
+    --btn-height: 8rem;
+    --btn-border-radius: 10rem;
 
-  //   a:hover &,
-  //   &:hover {
-  //     background-image: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(56, 239, 125, 0.07) 100%);
-  //   }
-  // }
+    max-width: 34.4rem;
+    padding: 0 0 0 4rem;
 
-  // &--telegram {
+    font-weight: 700;
+    text-transform: unset;
 
-  //   a:hover &,
-  //   &:hover {
-  //     background-image: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(2, 174, 255, 0.07) 100%);
-  //   }
-  // }
+    @include md {
+      --border-radius: calc(100vw/(393/100));
+      --btn-height: calc(100vw/(393/80));
+
+      max-width: calc(100vw/(393/344));
+      padding: 0 0 0 calc(100vw/(393/40));
+    }
+
+    @include sm {
+      --btn-height: 8rem;
+      
+      padding: 0 0 0 4rem;
+    }
+
+    i {
+      background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+      box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+      backdrop-filter: blur(6.35px);
+      border-radius: var(--btn-border-radius);
+
+      position: relative;
+    }
+  }
 }

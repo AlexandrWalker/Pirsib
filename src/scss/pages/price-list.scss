@@ -17,34 +17,27 @@
   }
 
   &__block {
+    --border-radius: 5rem;
+
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
-    border-radius: 5rem;
+    border-radius: var(--border-radius);
     padding: 4rem 14rem;
 
     @include md {
       padding: calc(100vw/(393/30)) calc(100vw/(393/20));
-      border-radius: 2.4rem;
     }
 
     @include sm {
       padding: 3rem 2rem;
-    }
-
-    .border {
-      --border-radius: 5rem;
-
-      @include md {
-        --border-radius: 2.4rem;
-      }
     }
   }
 
   &__items {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
 
     @include md {
       gap: calc(100vw/(393/10));
@@ -73,8 +66,8 @@
     flex-direction: column;
     gap: 2rem;
     transition: all 0.5s ease;
-    padding-bottom: 4rem;
     border-bottom: 0.1rem solid var(--pink-10);
+    padding-bottom: 2rem;
 
     @include md {
       gap: calc(100vw/(393/10));

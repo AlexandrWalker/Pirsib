@@ -4,8 +4,12 @@
   padding: 8rem 0 17rem;
 
   @include md {
-    // margin-top: -11rem;
     padding: 0;
+    margin: calc(-100vw/(393/110)) 0 0 0;
+  }
+
+  @include sm {
+    margin-top: -11rem;
   }
 
   &__inner {
@@ -24,20 +28,6 @@
     display: flex;
     flex-direction: column;
     z-index: 1;
-
-    .btn {
-      --btn-width: 100%;
-      --btn-height: 8rem;
-
-      max-width: 34.4rem;
-      padding: 0 0 0 4rem;
-      font-weight: 700;
-      text-transform: unset;
-
-      i {
-        position: relative;
-      }
-    }
   }
 
   &__suptitle {
@@ -47,18 +37,13 @@
     font-weight: 700;
     font-size: 20rem;
     line-height: 100%;
+    white-space: nowrap;
     text-transform: uppercase;
 
     @include md {
       margin-bottom: calc(100vw/(393/10));
 
       font-size: calc(100vw/(393/70));
-    }
-
-    @include sm {
-      margin-bottom: 1rem;
-
-      font-size: 7rem;
     }
   }
 
@@ -121,7 +106,6 @@
 .page__notfound {
 
   body {
-    // background: #0C0F1B;
     background: #090d19;
   }
 

@@ -7,7 +7,11 @@
 
   @include md {
     display: flex;
+    height: calc(100vw/(393/55));
     opacity: 1;
+  }
+
+  @include sm {
     height: 5.5rem;
   }
 
@@ -34,7 +38,6 @@
   }
 
   .page__inner .header:not(.menu--open.page__inner .header) &,
-  // .page__inner .header:not(.menu--open .header.show) &,
   .header.show:not(.menu--open .header.show) & {
 
     @include domd {

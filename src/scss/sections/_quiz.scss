@@ -10,28 +10,15 @@
     background-size: 100% 100%;
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
 
     @include md {
       padding: calc(100vw/(393/30)) calc(100vw/(393/57)) calc(100vw/(393/36)) calc(100vw/(393/20));
       background-image: url(./../images/temp/quiz-bg-mob.webp);
-      border-radius: calc(100vw/(393/24));
     }
 
     @include sm {
       padding: 3rem 7rem 2.5rem 2rem;
-      border-radius: 2.4rem;
-    }
-
-    &>.border {
-
-      @include md {
-        --border-radius: calc(100vw/(393/24));
-      }
-
-      @include sm {
-        --border-radius: 2.4rem;
-      }
     }
   }
 
@@ -40,6 +27,10 @@
     flex-direction: column;
 
     @include md {
+      min-height: calc(100vw/(393/283));
+    }
+
+    @include sm {
       min-height: 28.3rem;
     }
   }
@@ -55,9 +46,6 @@
     @include sm {
       margin-bottom: 2rem;
       max-width: 17rem;
-    }
-
-    @include sm {
 
       * {
         font-size: 2.4rem;
@@ -70,13 +58,11 @@
     margin-bottom: 4rem;
 
     @include md {
-      // margin-bottom: calc(100vw/(393/28));
       margin-bottom: auto;
       max-width: calc(100vw/(393/170));
     }
 
     @include sm {
-      // margin-bottom: 2.8rem;
       max-width: 17rem;
     }
   }

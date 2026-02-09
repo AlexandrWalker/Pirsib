@@ -9,6 +9,10 @@
     gap: 2rem;
 
     @include md {
+      gap: calc(100vw/(393/10));
+    }
+
+    @include sm {
       gap: 1rem;
     }
   }
@@ -19,7 +23,7 @@
     justify-content: space-between;
     gap: 2rem;
     padding: 4rem 5rem 5rem 5rem;
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
     width: calc(33.33333% - (4rem / 3));
     min-height: 36.4rem;
     overflow: hidden;
@@ -28,17 +32,16 @@
     position: relative;
 
     @include md {
-      padding: 1.5rem 1.5rem 3.5rem 1.5rem;
-      border-radius: 2.4rem;
-      width: calc(50% - 0.5rem);
+      gap: calc(100vw/(393/20));
+      padding: calc(100vw/(393/15)) calc(100vw/(393/15)) calc(100vw/(393/35)) calc(100vw/(393/15));
+      width: calc(50% - (100vw/(393/5)));
       min-height: unset;
     }
 
-    .border {
-
-      @include md {
-        --border-radius: 2.4rem;
-      }
+    @include sm {
+      gap: 2rem;
+      padding: 1.5rem 1.5rem 3.5rem 1.5rem;
+      width: calc(50% - 0.5rem);
     }
 
     &--last {
@@ -81,6 +84,10 @@
       text-fill-color: transparent;
 
       @include md {
+        font-size: calc(100vw/(393/50));
+      }
+
+      @include sm {
         font-size: 5rem;
       }
     }
@@ -91,6 +98,10 @@
       gap: 2rem;
 
       @include md {
+        gap: calc(393/(393/10));
+      }
+
+      @include sm {
         gap: 1rem;
       }
     }
@@ -110,6 +121,10 @@
       * {
 
         @include md {
+          font-size: calc(100vw/(393/12));
+        }
+
+        @include sm {
           font-size: 1.2rem;
         }
 
@@ -122,15 +137,21 @@
     li {
       padding-left: 2rem;
       margin-bottom: 2rem;
+
       position: relative;
 
       @include md {
-        font-size: 1.2rem;
+        padding-left: calc(100vw/(393/10));
         margin-bottom: calc(100vw/(393/15));
+
+        font-size: calc(100vw/(393/12));
       }
 
       @include sm {
+        padding-left: 1rem;
         margin-bottom: 1.5rem;
+        
+        font-size: 1.2rem;
       }
 
       &:last-child {
@@ -148,6 +169,20 @@
         position: absolute;
         top: 0.75rem;
         left: 0;
+
+        @include md {
+          width: calc(100vw/(393/5));
+          height: calc(100vw/(393/5));
+
+          top: calc(100vw/(393/7.5));
+        }
+
+        @include sm {
+          width: 0.5rem;
+          height: 0.5rem;
+
+          top: 0.75rem;
+        }
       }
     }
   }

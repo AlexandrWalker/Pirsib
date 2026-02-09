@@ -13,7 +13,7 @@
     line-height: 100%;
     text-transform: uppercase;
 
-    @include sm {
+    @include md {
       font-size: calc(100vw/(393/80));
       margin-left: calc(var(--container-padding) * -1);
     }
@@ -23,7 +23,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    // padding-right: 16.4rem;
     width: fit-content;
     height: 100%;
 
@@ -74,11 +73,11 @@
         padding: 0;
         margin: 0 4.2rem;
 
-        @include sm {
-          --btn-width: 3.5rem;
-          --btn-height: 3.5rem;
+        @include md {
+          --btn-width: calc(100vw/(393/35));
+          --btn-height: calc(100vw/(393/35));
 
-          margin: 0 0.9rem;
+          margin: 0 calc(100vw/(393/9));
         }
       }
 
@@ -86,8 +85,8 @@
         font-size: 8rem;
         color: var(--pink);
 
-        @include sm {
-          font-size: 3.5rem;
+        @include md {
+          font-size: calc(100vw/(393/35));
         }
       }
     }
@@ -104,13 +103,12 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
 
     @include md {
       width: calc(100vw/(393/218));
       padding: calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/10));
       gap: calc(100vw/(393/10));
-      border-radius: 2.4rem;
     }
 
     @include sm {
@@ -119,27 +117,20 @@
       gap: 1rem;
     }
 
-    .border {
-      --border-radius: 10rem;
-
-      @include md {
-        --border-radius: 2.4rem;
-      }
-    }
-
     &-year {
       font-family: var(--second-family);
       font-weight: 400;
       font-size: 10rem;
       line-height: 120%;
+      
       background: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       text-fill-color: transparent;
 
-      @include sm {
-        font-size: 3.4rem;
+      @include md {
+        font-size: calc(100vw/(393/34));
       }
     }
 

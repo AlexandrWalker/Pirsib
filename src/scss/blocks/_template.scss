@@ -33,6 +33,7 @@
 
       @include md {
         font-size: calc(100vw/(393/50));
+        padding-bottom: calc(100vw/393/10);
       }
 
       @include sm {
@@ -53,6 +54,7 @@
 
       @include md {
         font-size: calc(100vw/(393/50));
+        padding-bottom: calc(100vw/393/10);
       }
 
       @include sm {
@@ -195,7 +197,6 @@
 
       * {
         font-family: var(--second-family);
-        font-style: normal;
         font-weight: 700;
         font-size: 8rem;
         line-height: 120%;
@@ -211,18 +212,17 @@
     }
   }
 
-  &__body {}
-
   &__content {
     display: flex;
     flex-direction: column;
     gap: 10.8rem;
     padding: 10rem 13.2rem 11.2rem;
+    border-radius: var(--border-radius);
+
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
-    border-radius: 10rem;
-    // overflow: hidden;
+
     position: relative;
 
     .template--bg & {
@@ -230,7 +230,6 @@
       @include md {
         gap: calc(100vw/(393/54));
         padding: calc(100vw/(393/50)) calc(100vw/(393/20));
-        border-radius: 2.4rem;
         overflow: hidden;
       }
 
@@ -244,20 +243,12 @@
 
       @include md {
         padding: calc(100vw/(393/30)) calc(100vw/(393/20)) 0;
-        border-radius: 2.4rem;
         overflow: hidden;
         gap: 0;
       }
 
       @include sm {
         padding: 3rem 2rem 0;
-      }
-    }
-
-    .border {
-
-      @include md {
-        --border-radius: 2.4rem;
       }
     }
 
@@ -272,6 +263,7 @@
 
         @include md {
           gap: calc(100vw/(393/23));
+          max-width: calc(100vw/(393/782));
         }
 
         @include sm {
@@ -288,6 +280,11 @@
         max-width: 46.2rem;
         opacity: 0.5;
         margin-left: 1rem;
+
+        @include md {
+          max-width: calc(100vw/(393/462));
+          margin-left: calc(100vw/(393/10));
+        }
 
         h6 {
           font-family: var(--font-family);
@@ -320,17 +317,13 @@
     pointer-events: none;
     width: 100%;
     height: 100%;
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
     overflow: hidden;
 
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-
-    @include md {
-      border-radius: 2.4rem;
-    }
 
     img {
       width: 100%;
@@ -350,14 +343,17 @@
     @include md {
       width: calc(100vw/(393/180));
       margin-top: calc(-100vw/(393/51));
-      position: relative;
-      right: -0.7rem;
       margin-left: auto;
+
+      position: relative;
+      right: calc(-100vw/(393/7));
     }
 
     @include sm {
       width: 29rem;
       margin-top: -5.1rem;
+
+      right: -0.7rem;
     }
 
     img {

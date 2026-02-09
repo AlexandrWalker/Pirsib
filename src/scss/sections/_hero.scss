@@ -4,6 +4,10 @@
   margin-bottom: 4.3rem;
 
   @include md {
+    margin-bottom: calc(100vw/(393/30));
+  }
+
+  @include sm {
     margin-bottom: 3rem;
   }
 
@@ -13,7 +17,11 @@
     gap: 8.5rem;
 
     @include md {
-      gap: 13.2rem;
+      gap: calc(100vw/(393/52));
+    }
+
+    @include sm {
+      gap: 5.2rem;
     }
   }
 
@@ -21,19 +29,17 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    // padding-top: 5rem;
     max-width: 88.7rem;
     margin: 0 auto;
     transform: translateX(10.2rem);
 
     @include md {
       align-items: flex-start;
-      gap: 2.8rem;
-      // max-width: 21.9rem;
+      gap: calc(100vw/(393/28));
       max-width: calc(100vw/(393/219));
       margin: 0;
       transform: none;
-      padding-top: 5rem;
+      padding-top: calc(100vw/(393/30));
     }
   }
 
@@ -44,9 +50,7 @@
     will-change: filter;
 
     @include md {
-      // width: 19.9rem;
       width: calc(100vw/(393/199));
-      // height: 11.8rem;
       height: calc(100vw/(393/118));
       aspect-ratio: 199/118;
     }
@@ -66,33 +70,35 @@
 
     @include md {
       display: flex;
-      margin-top: 2.2rem;
+      margin-top: calc(100vw/(393/22));
+    }
+
+    @include sm {
+      margin-top: 0;
     }
   }
 
   &__cover {
     width: auto;
-    // height: 115.4rem;
     height: 126.4rem;
     pointer-events: none;
 
     position: absolute;
-    // bottom: -17.2rem;
     bottom: -21.5rem;
-    // left: 0;
     left: -15rem;
     z-index: -1;
 
     @include md {
-      height: calc(100vw/(393/836));
-      top: calc(100vw/(393/21));
+      height: calc(100vw/(393/1000));
+      top: calc(-100vw/(393/100));
       bottom: unset;
-      left: calc(100vw/(393/115));
+      left: calc(100vw/(393/30));
     }
 
     @include sm {
-      top: -7rem;
-      left: 7rem;
+      height: 100rem;
+      top: -10rem;
+      left: 3rem;
     }
 
     img {
@@ -115,11 +121,14 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
 
     @include md {
-      padding: 3rem 3rem 4rem 3rem;
-      border-radius: 5rem;
+      padding: calc(100vw/(393/30)) calc(100vw/(393/30)) calc(100vw/(393/40)) calc(100vw/(393/30));
+    }
+
+    @include sm {
+      padding: 4rem 3rem 3rem 3rem;
     }
 
     &-form {
@@ -127,6 +136,10 @@
       flex-direction: column;
 
       @include md {
+        gap: calc(100vw/(393/10));
+      }
+
+      @include sm {
         gap: 1rem;
       }
     }
@@ -136,13 +149,21 @@
       margin-bottom: 2rem;
 
       @include md {
-        margin-bottom: 2rem;
+        margin-bottom: calc(100vw/(393/20));
         margin-left: 0;
+      }
+
+      @include sm {
+        margin-bottom: 2rem;
       }
 
       h6 {
 
         @include md {
+          font-size: calc(100vw/(393/20));
+        }
+
+        @include sm {
           font-size: 2rem;
         }
       }
@@ -157,6 +178,10 @@
       @include md {
         display: flex;
         flex-direction: column;
+        gap: calc(100vw/(393/10));
+      }
+
+      @include sm {
         gap: 1rem;
       }
     }
@@ -166,13 +191,25 @@
       flex-direction: column;
       gap: 0.5rem;
 
+      @include md {
+        gap: calc(100vw/(393/5));
+      }
+
+      @include sm {
+        gap: 0.5rem;
+      }
+
       p {
         font-size: 1rem;
         color: var(--purple-50);
 
         @include md {
-          font-size: 1rem;
+          font-size: calc(100vw/(393/10));
           line-height: 120%;
+        }
+
+        @include sm {
+          font-size: 1rem;
         }
       }
 

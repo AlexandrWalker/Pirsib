@@ -6,13 +6,11 @@
   justify-content: center;
   align-items: center;
   gap: 0.3rem 0;
-
   width: 8.4rem;
   height: 5rem;
   padding: 0;
   flex-shrink: 0;
-  border-radius: 10rem;
-
+  border-radius: var(--border-radius);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   backdrop-filter: blur(6.35px);
 
@@ -21,8 +19,16 @@
   cursor: pointer;
 
   @include md {
-    width: 6.6rem;
+    gap: calc(100vw/(393/3)) 0;
+    width: calc(100vw/(393/66));
+    height: calc(100vw/(393/50));
     margin-left: auto;
+  }
+
+  @include sm {
+    gap: 0.3rem 0;
+    width: 6.6rem;
+    height: 5rem;
   }
 
   &:hover,
@@ -54,7 +60,7 @@
   &::before {
     content: "";
     background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
     opacity: 1;
     transition: opacity 0.5s ease;
 
@@ -69,7 +75,7 @@
   &::after {
     content: "";
     background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(173, 50, 174, 0.07) 100%);
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
     opacity: 0;
     transition: opacity 0.5s ease;
 
@@ -95,18 +101,40 @@
     transition: all 0.5s ease;
 
     @include md {
+      width: calc(100vw/(393/26));
+      height: calc(100vw/(393/1));
+    }
+
+    @include sm {
       width: 2.6rem;
+      height: 0.1rem;
     }
 
     .burger--open & {
       width: 2.3rem;
       background-color: var(--pink-2);
+
+      @include md {
+        width: calc(100vw/(393/23));
+      }
+
+      @include sm {
+        width: 2.3rem;
+      }
     }
 
     &:nth-child(1) {
 
       .burger--open & {
         transform: rotate(45deg) translateY(0.25rem);
+
+        @include md {
+          transform: rotate(45deg) translateY(calc(100vw/(393/2.5)));
+        }
+
+        @include sm {
+          width: 2.3rem;
+        }
       }
     }
 
@@ -114,6 +142,10 @@
 
       .burger--open & {
         transform: rotate(-45deg) translateY(-0.25rem);
+
+        @include md {
+          transform: rotate(-45deg) translateY(calc(-100vw/(393/2.5)));
+        }
       }
     }
   }
@@ -125,14 +157,13 @@
   width: 100vw;
   height: 100vh;
   pointer-events: none;
+  transition: all 1s ease;
+  overflow: hidden;
 
   position: fixed;
   top: 0;
   right: 0;
   z-index: 200;
-
-  transition: all 1s ease;
-  overflow: hidden;
 
   .menu--open & {
     pointer-events: all;
@@ -158,7 +189,6 @@
       clip-path: inset(0 0 100% 0);
       height: fit-content;
       min-height: 100vh;
-
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
       backdrop-filter: blur(1.855rem);
     }

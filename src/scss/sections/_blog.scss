@@ -4,13 +4,6 @@
 
   &-page {
 
-    .template {
-
-      @include sm {
-        padding: 0 0 2rem 0;
-      }
-    }
-
     .decorations {
 
       &__item {
@@ -28,19 +21,7 @@
     }
   }
 
-  &-inner-page {
-
-    .template {
-
-      @include md {
-        padding: 0 0 calc(100vw/(393/20)) 0;
-      }
-
-      @include sm {
-        padding: 0 0 2rem 0;
-      }
-    }
-  }
+  &-inner-page {}
 
   .general__head {
     margin-bottom: 2rem;
@@ -60,43 +41,22 @@
 
       @include md {
         width: calc(50% - calc(100vw/(393/4)));
-        border-radius: 1.6rem;
       }
 
       @include sm {
         width: calc(50% - 0.4rem);
       }
 
-      .border {
-
-        @include md {
-          --border-radius: 1.6rem;
-        }
-      }
-
-      &-head {
-
-        @include md {
-          border-radius: 1.6rem;
-        }
-
-        .border {
-
-          @include md {
-            --border-radius: 1.6rem;
-          }
-        }
-      }
-
       &-body {
-        padding: 2rem 1rem;
 
         @include md {
           gap: calc(100vw/(393/30));
+          padding: calc(100vw/(393/20)) calc(100vw/(393/10));
         }
 
         @include sm {
           gap: 3rem;
+          padding: 2rem 1rem;
         }
       }
 

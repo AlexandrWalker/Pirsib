@@ -13,10 +13,6 @@
     gap: 4rem;
   }
 
-  .col-xs-12 {
-    width: 100%;
-  }
-
   &__head {
     display: flex;
     flex-direction: column;
@@ -32,16 +28,17 @@
   }
 
   &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 3.4rem;
+    line-height: 100%;
 
-    h5 {
+    @include md {
+      font-size: calc(100vw/(393/20));
+    }
 
-      @include md {
-        font-size: calc(100vw/(393/20));
-      }
-
-      @include sm {
-        font-size: 2rem;
-      }
+    @include sm {
+      font-size: 2rem;
     }
   }
 
@@ -54,7 +51,7 @@
     }
 
     @include sm {
-      max-width: calc(100vw/(393/475));
+      max-width: 100%;
     }
   }
 
@@ -84,6 +81,18 @@
       top: 50%;
       left: 2rem;
       transform: translateY(-50%);
+
+      @include md {
+        font-size: calc(100vw/(393/24));
+
+        left: calc(100vw/(393/20));
+      }
+
+      @include sm {
+        font-size: 2.4rem;
+
+        left: 2rem;
+      }
     }
   }
 
@@ -101,8 +110,22 @@
 
     box-shadow: inset 0px 0px 1.14rem rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(0.635rem);
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
     transition: all 0.5s linear;
+
+    @include md {
+      height: calc(100vw/(393/50));
+      padding: calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/54));
+
+      font-size: calc(100vw/(393/14));
+    }
+
+    @include sm {
+      height: 5rem;
+      padding: 2rem 2rem 2rem 5.4rem;
+
+      font-size: 1.4rem;
+    }
 
     &::placeholder {
       font-family: var(--font-family);
@@ -111,6 +134,14 @@
       line-height: 120%;
       color: var(--purple-50);
       transition: all 0.5s linear;
+
+      @include md {
+        font-size: calc(100vw/(393/14));
+      }
+
+      @include sm {
+        font-size: 1.4rem;
+      }
     }
 
     &.filled,
@@ -180,6 +211,14 @@
       flex-direction: row;
       align-items: center;
       gap: 0.6rem;
+
+      @include md {
+        gap: calc(100vw/(393/6));
+      }
+
+      @include sm {
+        gap: 0.6rem;
+      }
     }
 
     &--icon {
@@ -189,6 +228,16 @@
       background-color: var(--blue-dark-1);
       position: relative;
       flex-shrink: 0;
+
+      @include md {
+        width: calc(100vw/(393/16));
+        height: calc(100vw/(393/16));
+      }
+
+      @include sm {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
 
       &::before {
         content: "";
@@ -204,6 +253,16 @@
         left: 50%;
         z-index: 1;
         transform: translate(-50%, -50%);
+
+        @include md {
+          width: calc(100vw/(393/9.33));
+          height: calc(100vw/(393/9.33));
+        }
+
+        @include sm {
+          width: 0.933rem;
+          height: 0.933rem;
+        }
       }
     }
   }
@@ -213,13 +272,25 @@
     flex-direction: column;
     gap: 1.8rem;
 
+    @include md {
+      gap: calc(100vw/(393/18));
+    }
+
+    @include sm {
+      gap: 1.8rem;
+    }
+
     p {
       font-size: 1rem;
       color: var(--purple-50);
 
       @include md {
-        font-size: 1rem;
+        font-size: calc(100vw/(393/10));
         line-height: 120%;
+      }
+
+      @include sm {
+        font-size: 1rem;
       }
     }
 
@@ -238,9 +309,25 @@
     gap: 1rem;
     margin-left: 2.3rem;
 
+    @include md {
+      margin-left: calc(100vw/(23));
+    }
+
+    @include sm {
+      margin-left: 2.3rem;
+    }
+
     p {
       font-size: 1rem;
       line-height: 100%;
+
+      @include md {
+        font-size: calc(100vw/(393/10));
+      }
+
+      @include sm {
+        font-size: 1rem;
+      }
     }
   }
 }

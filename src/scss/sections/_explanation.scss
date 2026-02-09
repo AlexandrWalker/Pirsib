@@ -22,6 +22,7 @@
       grid-row: 3/4;
 
       @include md {
+        gap: calc(100vw/(393/23));
         order: 3;
       }
 
@@ -32,6 +33,10 @@
         line-height: 100%;
 
         @include md {
+          font-size: calc(100vw/(393/100));
+        }
+
+        @include sm {
           font-size: 10rem;
         }
       }
@@ -47,23 +52,30 @@
     @include md {
       display: flex;
       flex-direction: column;
+      gap: calc(100vw/(393/20));
+    }
+
+    @include sm {
       gap: 2rem;
     }
   }
 
   &__cover {
+    --border-radius: 5rem;
+
     width: 54.5rem;
     height: 53.4rem;
-    border-radius: 5rem;
+    border-radius: var(--border-radius);
     overflow: hidden;
 
     grid-column: 1/2;
     grid-row: 1/5;
 
     @include md {
+      --border-radius: calc(100vw/(393/24));
+
       width: 100%;
       height: auto;
-      border-radius: 2.4rem;
 
       order: 2;
     }
@@ -85,6 +97,14 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include md {
+      gap: calc(100vw/(393/20));
+    }
+
+    @include sm {
+      gap: 2rem;
+    }
   }
 
   &__text {
@@ -93,6 +113,10 @@
 
     @include md {
       max-width: unset;
+      padding-top: calc(100vw/(393/12));
+    }
+
+    @include sm {
       padding-top: 1.2rem;
     }
   }

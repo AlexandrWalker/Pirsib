@@ -6,6 +6,10 @@
 
     h4 {
 
+      @include md {
+        font-size: calc(100vw/(393/30));
+      }
+
       @include sm {
         font-size: 3rem;
       }
@@ -20,6 +24,7 @@
 
     @include md {
       flex-direction: column;
+      gap: calc(100vw/(393/8));
     }
 
     @include sm {
@@ -28,27 +33,28 @@
   }
 
   &__item {
+    --border-radius: 5rem;
+
     display: flex;
     flex-direction: column;
     width: calc(25% - (6rem/4));
-    border-radius: 5rem;
+    border-radius: var(--border-radius);
     overflow: hidden;
 
     position: relative;
 
     @include md {
+      --border-radius: calc(100vw/(393/24));
+      
       width: 100%;
-    }
-
-    .border {
-      --border-radius: 5rem;
     }
 
     &-head {
       flex-shrink: 0;
       aspect-ratio: 1/1;
-      border-radius: 5rem;
+      border-radius: var(--border-radius);
       overflow: hidden;
+
       position: relative;
     }
 
@@ -98,6 +104,14 @@
       display: flex;
       flex-direction: row;
       gap: 1rem;
+
+      @include md {
+        gap: calc(100vw/(393/10));
+      }
+
+      @include sm {
+        gap: 1rem;
+      }
     }
   }
 }

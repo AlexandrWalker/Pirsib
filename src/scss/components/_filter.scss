@@ -24,8 +24,10 @@
     width: fit-content;
     height: 5rem;
     padding: 0 2rem;
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
     overflow: hidden;
+    transition: all 0.5s ease;
+
     position: relative;
 
     font-weight: 600;
@@ -34,23 +36,22 @@
     color: var(--purple);
 
     @include md {
+      height: calc(100vw/(393/40));
       padding: 0 calc(100vw/(393/15));
+
+      font-size: calc(100vw/(393/14));
     }
 
     @include sm {
       height: 4rem;
       padding: 0 1.5rem;
+
+      font-size: 1.4rem;
     }
 
+    &--active,
     &:hover {
-
-      &::before {
-        opacity: 0;
-      }
-
-      &::after {
-        opacity: 1;
-      }
+      color: var(--pink);
 
       .border {
 
@@ -77,6 +78,7 @@
       backdrop-filter: blur(6.35px);
       border-radius: var(--btn-border-radius);
       pointer-events: none;
+
       position: absolute;
       top: 0;
       right: 0;
@@ -98,6 +100,7 @@
       backdrop-filter: blur(6.35px);
       border-radius: var(--btn-border-radius);
       pointer-events: none;
+
       position: absolute;
       top: 0;
       right: 0;

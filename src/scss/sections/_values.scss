@@ -91,6 +91,10 @@
       font-size: 20rem;
       line-height: 100%;
 
+      @include md {
+        font-size: calc(100vw/(393/80));
+      }
+
       @include sm {
         font-size: 8rem;
       }
@@ -100,6 +104,11 @@
       font-weight: 400;
       font-style: italic;
       padding-top: 4.6rem;
+
+      @include md {
+        font-size: calc(100vw/(393/12));
+        padding-top: calc(100vw/(393/9));
+      }
 
       @include sm {
         font-size: 1.2rem;

@@ -84,6 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function headerFunc() {
     const header = document.getElementById('header');
     const firstSection = document.querySelector('section');
+    const html = document.documentElement;
+
     if (!header || !firstSection) return;
 
     const marker = 10;
@@ -95,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
       const scrollingDown = scrollPos > lastScrollTop && scrollPos > marker;
       const scrollingUp = scrollPos < lastScrollTop;
+      const menuOpen = html.classList.contains('menu--open');
 
       // Добавляем .out только один раз при начале скролла вниз
       if (scrollingDown && !isOut) {
@@ -355,6 +358,13 @@ document.addEventListener('DOMContentLoaded', () => {
         grabCursor: true,
         speed: 600,
         watchOverflow: true,
+
+        direction: 'horizontal',
+        touchStartPreventDefault: true,
+        touchMoveStopPropagation: true,
+        threshold: 8,
+        touchAngle: 25,
+
         mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
         freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
         pagination: { el: ".opinion__slider .swiper-pagination", clickable: true },
@@ -383,6 +393,12 @@ document.addEventListener('DOMContentLoaded', () => {
         simulateTouch: true,
         freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
         navigation: { prevEl: ".personal-button-prev", nextEl: ".personal-button-next" },
+
+        direction: 'horizontal',
+        touchStartPreventDefault: true,
+        touchMoveStopPropagation: true,
+        threshold: 8,
+        touchAngle: 25,
       }
     },
     {
@@ -406,6 +422,12 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: false,
         simulateTouch: true,
         freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
+
+        direction: 'horizontal',
+        touchStartPreventDefault: true,
+        touchMoveStopPropagation: true,
+        threshold: 8,
+        touchAngle: 25,
       }
     }
   ];
@@ -596,7 +618,13 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Инициализация Fancybox
    */
-  Fancybox.bind('[data-fancybox]', { Html: { autoSize: false }, on: { 'Carousel.ready': () => lenis.stop(), destroy: () => lenis.start() } });
+  Fancybox.bind('[data-fancybox]', {
+    Panzoom: false,
+    Html: {
+      autoSize: false
+    },
+    on: { 'Carousel.ready': () => lenis.stop(), destroy: () => lenis.start() }
+  });
 
   /**
    * Таймлайн

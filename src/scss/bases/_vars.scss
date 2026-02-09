@@ -6,6 +6,7 @@
 
   --container-padding: 12rem;
   --container-width: 168rem;
+  --border-radius: 10rem;
 
   --white: #ffffff;
   --pink: #AD32AE;
@@ -28,8 +29,16 @@
   --page-bg: radial-gradient(45.26% 14.26% at 29.38% 7.82%, rgba(173, 50, 174, 0.2) 0%, rgba(12, 15, 27, 0.2) 100%), #0C0F1B;
 
   @include md {
-    --container-padding: 2rem;
+    --container-padding: calc(100vw/(393/20));
+    --container-width: calc(100vw/(393/1680));
+    --border-radius: calc(100vw/(393/24));
 
     --page-bg: #0C0F1B;
+  }
+
+  @include sm {
+    --container-padding: 2rem;
+    --container-width: 168rem;
+    --border-radius: 2.4rem;
   }
 }

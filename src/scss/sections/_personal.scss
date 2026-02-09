@@ -35,6 +35,10 @@
           @include md {
             margin-top: -1.2rem;
           }
+
+          @include sm {
+            margin-top: calc(-100vw/(393/12));
+          }
         }
       }
     }
@@ -74,7 +78,7 @@
       max-width: 100%;
       margin-left: 0;
       grid-row: 1/2;
-      top: -0.3rem;
+      top: calc(-100vw/(393/3));
     }
   }
 
@@ -119,7 +123,7 @@
     grid-row: 2/3;
 
     @include md {
-      gap: 0.8rem;
+      gap: calc(100vw/(393/8));
 
       grid-column: 1/3;
     }
@@ -132,16 +136,15 @@
     width: calc(50% - 1rem);
     min-height: 35.4rem;
     padding: 4rem 4rem 6rem 9rem;
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
 
     position: relative;
 
     @include md {
       justify-content: space-between;
-      width: calc(50% - 0.4rem);
+      width: calc(50% - calc(100vw/(393/4)));
       min-height: unset;
       padding: calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/25));
-      border-radius: 2.4rem;
     }
 
     @include sm {
@@ -157,7 +160,7 @@
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
       backdrop-filter: blur(6.35px);
-      border-radius: 10rem;
+      border-radius: var(--border-radius);
       opacity: 1;
       transition: all 0.5s ease;
       position: absolute;
@@ -166,10 +169,6 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-
-      @include md {
-        border-radius: 2.4rem;
-      }
     }
 
     &::after {
@@ -179,7 +178,7 @@
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
       backdrop-filter: blur(6.35px);
-      border-radius: 10rem;
+      border-radius: var(--border-radius);
       opacity: 0;
       transition: all 0.5s ease;
       position: absolute;
@@ -188,21 +187,6 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-
-      @include md {
-        border-radius: 2.4rem;
-      }
-    }
-
-    .border {
-
-      @include md {
-        --border-radius: calc(100vw/(393/24));
-      }
-
-      @include md {
-        --border-radius: 2.4rem;
-      }
     }
 
     &:hover {
@@ -228,6 +212,11 @@
         left: 8.7rem;
 
         @include md {
+          top: calc(100vw/(393/20));
+          left: calc(100vw/(393/20));
+        }
+
+        @include sm {
           top: 2rem;
           left: 2rem;
         }
@@ -241,6 +230,11 @@
         left: 6.6rem;
 
         @include md {
+          top: calc(100vw/(393/20));
+          left: calc(100vw/(393/20));
+        }
+
+        @include sm {
           top: 2rem;
           left: 2rem;
         }
@@ -263,10 +257,6 @@
         --btn-width: 5rem;
         --btn-height: 5rem;
       }
-
-      .border {
-        --border-radius: 10rem;
-      }
     }
 
     &-img {
@@ -279,6 +269,9 @@
 
       @include md {
         height: calc(100vw/(393/80));
+
+        top: calc(100vw/(393/10));
+        left: calc(100vw/(393/10));
       }
 
       @include sm {

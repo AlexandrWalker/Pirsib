@@ -8,6 +8,10 @@
     z-index: 2;
 
     @include md {
+      margin-bottom: calc(100vw/(393/20));
+    }
+
+    @include sm {
       margin-bottom: 2rem;
     }
   }
@@ -46,6 +50,10 @@
 
     @include md {
       flex-direction: column;
+      gap: calc(100vw/(393/8));
+    }
+
+    @include sm {
       gap: 0.8rem;
     }
   }

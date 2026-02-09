@@ -6,6 +6,10 @@
 
     .template {
 
+      @include md {
+        padding: 0 0 calc(100/(393/30)) 0;
+      }
+
       @include sm {
         padding: 0 0 3rem 0;
       }
