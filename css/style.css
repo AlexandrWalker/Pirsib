@@ -101,6 +101,30 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -139,41 +163,9 @@ a {
 }
 
 @font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Outfit;
   font-display: swap;
   src: url("../fonts/Outfit-Bold.woff2") format("woff2"), url("../fonts/Outfit-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Outfit;
-  font-display: swap;
-  src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -189,6 +181,14 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
+  src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  font-display: swap;
   src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -197,8 +197,8 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-SemiBold.woff2") format("woff2"), url("../fonts/Outfit-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -213,16 +213,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Thin.woff2") format("woff2"), url("../fonts/Outfit-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Outfit-SemiBold.woff2") format("woff2"), url("../fonts/Outfit-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Outfit-Thin.woff2") format("woff2"), url("../fonts/Outfit-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -559,12 +559,12 @@ a:hover .border::after {
 }
 
 .laser-removal-page .catalog__item {
-  --border-radius: 10rem;
   width: 100%;
   height: 100%;
+  min-height: unset;
 }
 
-.laser-removal-page .catalog-content {
+.laser-removal-page .catalog__item-content {
   padding: 3rem 3rem 4rem 3rem;
 }
 
@@ -1604,7 +1604,6 @@ a:hover .btn .border::after,
   height: 36.2rem;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  border-radius: var(--border-radius);
   overflow: hidden;
   -ms-touch-action: none;
   touch-action: none;
@@ -5290,6 +5289,12 @@ html.out .biography__left {
   gap: 3rem;
 }
 
+.site-map__item-title {
+  font-weight: 700;
+  font-size: 3.4rem;
+  line-height: 100%;
+}
+
 .site-map__item-body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5895,6 +5900,10 @@ html.out .biography__left {
     color: var(--pink-2);
   }
 
+  .site-map__item-title:hover {
+    color: var(--pink);
+  }
+
   .works__items {
     display: none;
   }
@@ -5966,15 +5975,11 @@ html.out .biography__left {
     font-size: 3.0534351145vw;
   }
 
-  .laser-removal-page .catalog__item {
-    --border-radius: calc(100vw/(393/24));
-  }
-
   .laser-removal-page .catalog__item-wrap {
     max-width: 58.524173028vw;
   }
 
-  .laser-removal-page .catalog-content {
+  .laser-removal-page .catalog__item-content {
     padding: 7.6335877863vw 5.0890585242vw 6.3613231552vw 5.0890585242vw;
   }
 
@@ -7750,8 +7755,8 @@ html.out .biography__left {
     gap: 3.8167938931vw;
   }
 
-  .site-map__item-head * {
-    font-size: 1.4rem;
+  .site-map__item-title {
+    font-size: 3.5623409669vw;
   }
 
   .site-map__item-body {
@@ -7896,15 +7901,11 @@ html.out .biography__left {
     font-size: 1.2rem;
   }
 
-  .laser-removal-page .catalog__item {
-    --border-radius: 2.4rem;
-  }
-
   .laser-removal-page .catalog__item-wrap {
     max-width: 23rem;
   }
 
-  .laser-removal-page .catalog-content {
+  .laser-removal-page .catalog__item-content {
     padding: 3rem 2rem 2.5rem 2rem;
   }
 
@@ -8982,6 +8983,10 @@ html.out .biography__left {
 
   .site-map__item {
     gap: 1.5rem;
+  }
+
+  .site-map__item-title {
+    font-size: 1.4rem;
   }
 
   .site-map__item-body {
