@@ -101,22 +101,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -139,6 +123,14 @@ a {
 }
 
 @font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
   font-family: Outfit;
   font-display: swap;
   src: url("../fonts/Outfit-Black.woff2") format("woff2"), url("../fonts/Outfit-Black.woff") format("woff");
@@ -149,24 +141,16 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Outfit;
-  font-display: swap;
-  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -187,6 +171,22 @@ a {
 }
 
 @font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  font-display: swap;
+  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
   font-family: Outfit;
   font-display: swap;
   src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
@@ -197,8 +197,8 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Outfit-SemiBold.woff2") format("woff2"), url("../fonts/Outfit-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -221,8 +221,8 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-SemiBold.woff2") format("woff2"), url("../fonts/Outfit-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -556,6 +556,16 @@ a:hover .border::after {
   top: 0.2rem;
   right: 10rem;
   bottom: unset;
+}
+
+.laser-removal-page .catalog__item {
+  --border-radius: 10rem;
+  width: 100%;
+  height: 100%;
+}
+
+.laser-removal-page .catalog-content {
+  padding: 3rem 3rem 4rem 3rem;
 }
 
 .swiper__btns {
@@ -1586,6 +1596,102 @@ a:hover .btn .border::after,
   height: 153.1rem;
   top: -18rem;
   right: 0;
+}
+
+.range__item {
+  --value: 50%;
+  width: 100%;
+  height: 36.2rem;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
+  position: relative;
+}
+
+.range__item-img {
+  max-width: none;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+}
+
+.range__item-img--before {
+  left: 0;
+  width: var(--value);
+  border-right: 0.2rem solid var(--white);
+  -o-object-position: left;
+  object-position: left;
+}
+
+.range__item-img--after {
+  right: 0;
+  width: calc(100% - var(--value));
+  border-left: 0.2rem solid var(--white);
+  -o-object-position: right;
+  object-position: right;
+}
+
+.range__item-js::-moz-range-thumb {
+  width: 4.6rem;
+  height: 4.6rem;
+  background-color: var(--pink);
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZpZXdCb3g9IjAgMCA0NiA0NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIG9wYWNpdHk9IjAuOCIgZD0iTTE5IDE4LjRMMTcuODMzMyAxN0wxMiAyNEwxNy44MzMzIDMxTDE5IDI5LjZMMTQuMzMzMyAyNEwxOSAxOC40WiIgZmlsbD0id2hpdGUiLz4NCjxwYXRoIG9wYWNpdHk9IjAuOCIgZD0iTTI2IDE4LjRMMjcuMTY2NyAxN0wzMyAyNEwyNy4xNjY3IDMxTDI2IDI5LjZMMzAuNjY2NyAyNEwyNiAxOC40WiIgZmlsbD0id2hpdGUiLz4NCjwvc3ZnPg0K);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  transform: translateX(calc(var(--value) - 50%));
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.range__item-js::-webkit-slider-thumb {
+  width: 4.6rem;
+  height: 4.6rem;
+  background-color: var(--pink);
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZpZXdCb3g9IjAgMCA0NiA0NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIG9wYWNpdHk9IjAuOCIgZD0iTTE5IDE4LjRMMTcuODMzMyAxN0wxMiAyNEwxNy44MzMzIDMxTDE5IDI5LjZMMTQuMzMzMyAyNEwxOSAxOC40WiIgZmlsbD0id2hpdGUiLz4NCjxwYXRoIG9wYWNpdHk9IjAuOCIgZD0iTTI2IDE4LjRMMjcuMTY2NyAxN0wzMyAyNEwyNy4xNjY3IDMxTDI2IDI5LjZMMzAuNjY2NyAyNEwyNiAxOC40WiIgZmlsbD0id2hpdGUiLz4NCjwvc3ZnPg0K);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  -webkit-transform: translateX(calc(var(--value) - 50%));
+  transform: translateX(calc(var(--value) - 50%));
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.range__item-js {
+  position: absolute;
+  margin: 0;
+  background-color: transparent;
+  outline: 0;
+  cursor: col-resize;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  inset: 0;
+  pointer-events: auto;
+}
+
+.range__item-js:hover {
+  color: var(--purple);
+}
+
+.range__item-js:active {
+  color: var(--purple);
+}
+
+.range__item-js:focus-visible::-moz-range-thumb {
+  outline: auto;
+}
+
+.range__item-js:focus-visible::-webkit-slider-thumb {
+  outline: auto;
 }
 
 .h1,
@@ -3727,6 +3833,30 @@ html.out .biography__left {
   gap: 2rem;
 }
 
+.catalog__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.catalog__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
 .catalog__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4766,7 +4896,7 @@ html.out .biography__left {
 }
 
 .opinion__slider {
-  border-radius: 10rem;
+  border-radius: var(--border-radius);
 }
 
 .opinion__item {
@@ -4783,6 +4913,10 @@ html.out .biography__left {
   padding: 5rem 3rem 5rem 5rem;
   border-radius: var(--border-radius);
   position: relative;
+}
+
+.opinion__item > .border {
+  border-radius: var(--border-radius);
 }
 
 .opinion__item-head {
@@ -5828,6 +5962,22 @@ html.out .biography__left {
     bottom: 0;
   }
 
+  .laser-removal-page .catalog p {
+    font-size: 3.0534351145vw;
+  }
+
+  .laser-removal-page .catalog__item {
+    --border-radius: calc(100vw/(393/24));
+  }
+
+  .laser-removal-page .catalog__item-wrap {
+    max-width: 58.524173028vw;
+  }
+
+  .laser-removal-page .catalog-content {
+    padding: 7.6335877863vw 5.0890585242vw 6.3613231552vw 5.0890585242vw;
+  }
+
   .swiper__btns {
     gap: 2.5445292621vw;
   }
@@ -6008,6 +6158,28 @@ html.out .biography__left {
     height: 48.6005089059vw;
     top: 0;
     right: -1.5267175573vw;
+  }
+
+  .range__item {
+    height: 59.0330788804vw;
+  }
+
+  .range__item-img--before {
+    border-width: 0.5089058524vw;
+  }
+
+  .range__item-img--after {
+    border-width: 0.5089058524vw;
+  }
+
+  .range__item-js::-moz-range-thumb {
+    width: 11.7048346056vw;
+    height: 11.7048346056vw;
+  }
+
+  .range__item-js::-webkit-slider-thumb {
+    width: 11.7048346056vw;
+    height: 11.7048346056vw;
   }
 
   .h1,
@@ -6993,25 +7165,23 @@ html.out .biography__left {
     font-size: 3.5623409669vw;
   }
 
+  .catalog__btns {
+    display: none;
+  }
+
   .catalog__items {
     gap: 2.0356234097vw;
   }
 
   .catalog__item {
-    --border-radius: calc(100vw/(393/24));
     width: calc(50% - 1.0178117048vw);
-    min-height: 58.6rem;
+    min-height: unset;
     aspect-ratio: unset;
   }
 
   .catalog__item-content {
     gap: 5.0890585242vw;
     padding: 7.6335877863vw 5.0890585242vw 8.3969465649vw;
-  }
-
-  .catalog__item-content {
-    gap: 2rem;
-    padding: 3rem 2rem 3.3rem;
   }
 
   .catalog__item-title h6 {
@@ -7022,10 +7192,6 @@ html.out .biography__left {
     gap: 2.5445292621vw;
   }
 
-  .catalog__item-wrap {
-    gap: 1rem;
-  }
-
   .catalog__item .btn {
     --btn-width: calc(100vw/(393/50));
     --btn-height: calc(100vw/(393/50));
@@ -7034,19 +7200,19 @@ html.out .biography__left {
   }
 
   .catalog__item-btn {
-    width: 5rem;
-    height: 5rem;
+    width: 12.7226463104vw;
+    height: 12.7226463104vw;
     background: none;
     -webkit-box-shadow: none;
     box-shadow: none;
     backdrop-filter: unset;
-    right: 2rem;
-    bottom: 2rem;
+    right: 5.0890585242vw;
+    bottom: 5.0890585242vw;
   }
 
   .catalog__item-btn .btn {
-    --btn-width: 5rem;
-    --btn-height: 5rem;
+    --btn-width: calc(100vw/(393/50));
+    --btn-height: calc(100vw/(393/50));
     right: 0;
     bottom: 0;
   }
@@ -7437,18 +7603,10 @@ html.out .biography__left {
     display: none;
   }
 
-  .opinion__slider {
-    border-radius: 6.106870229vw;
-  }
-
   .opinion__item {
     gap: 5.0890585242vw;
     min-height: auto;
     padding: 7.6335877863vw;
-  }
-
-  .opinion__item > .border {
-    --border-radius: calc(100vw/(393/24));
   }
 
   .opinion__item-head {
@@ -7734,6 +7892,22 @@ html.out .biography__left {
     margin-bottom: 2.4rem;
   }
 
+  .laser-removal-page .catalog p {
+    font-size: 1.2rem;
+  }
+
+  .laser-removal-page .catalog__item {
+    --border-radius: 2.4rem;
+  }
+
+  .laser-removal-page .catalog__item-wrap {
+    max-width: 23rem;
+  }
+
+  .laser-removal-page .catalog-content {
+    padding: 3rem 2rem 2.5rem 2rem;
+  }
+
   [class^=swiper-button-],
   [class*=" swiper-button-"] {
     width: 5rem;
@@ -7879,6 +8053,10 @@ html.out .biography__left {
 
   .form-wrap p {
     font-size: 1rem;
+  }
+
+  .range__item {
+    height: 23.2rem;
   }
 
   .h1,
@@ -8437,12 +8615,20 @@ html.out .biography__left {
   }
 
   .catalog__item {
-    --border-radius: 2.4rem;
     width: 100%;
+  }
+
+  .catalog__item-content {
+    gap: 2rem;
+    padding: 3rem 2rem 3.3rem;
   }
 
   .catalog__item-title h6 {
     font-size: 1.6rem;
+  }
+
+  .catalog__item-wrap {
+    gap: 1rem;
   }
 
   .catalog__item .btn {
@@ -8450,6 +8636,18 @@ html.out .biography__left {
     --btn-height: 5rem;
     right: 2rem;
     bottom: 2rem;
+  }
+
+  .catalog__item-btn {
+    width: 5rem;
+    height: 5rem;
+    right: 2rem;
+    bottom: 2rem;
+  }
+
+  .catalog__item-btn .btn {
+    --btn-width: 5rem;
+    --btn-height: 5rem;
   }
 
   .certificates .general__head {
@@ -8665,17 +8863,9 @@ html.out .biography__left {
     margin-bottom: 2rem;
   }
 
-  .opinion__slider {
-    border-radius: 2.4rem;
-  }
-
   .opinion__item {
     gap: 2rem;
     padding: 3rem;
-  }
-
-  .opinion__item > .border {
-    --border-radius: 2.4rem;
   }
 
   .opinion__item-head {

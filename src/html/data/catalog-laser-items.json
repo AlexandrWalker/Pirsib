@@ -1,0 +1,62 @@
+[
+  {
+    "num": "1",
+    "img-before": "./images/temp/laser-photo-before.png",
+    "img-after": "./images/temp/laser-photo-after.png",
+    "title": "Название работы",
+    "time": "Количество затраченных часов:",
+    "time-count": "10 часов",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  },
+  {
+    "num": "2",
+    "img-before": "./images/temp/laser-photo-before.png",
+    "img-after": "./images/temp/laser-photo-after.png",
+    "title": "Название работы",
+    "time": "Количество затраченных часов:",
+    "time-count": "10 часов",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  },
+  {
+    "num": "3",
+    "img-before": "./images/temp/laser-photo-before.png",
+    "img-after": "./images/temp/laser-photo-after.png",
+    "title": "Название работы",
+    "time": "Количество затраченных часов:",
+    "time-count": "10 часов",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  },
+  {
+    "num": "4",
+    "img-before": "./images/temp/laser-photo-before.png",
+    "img-after": "./images/temp/laser-photo-after.png",
+    "title": "Название работы",
+    "time": "Количество затраченных часов:",
+    "time-count": "10 часов",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  },
+  {
+    "num": "5",
+    "img-before": "./images/temp/laser-photo-before.png",
+    "img-after": "./images/temp/laser-photo-after.png",
+    "title": "Название работы",
+    "time": "Количество затраченных часов:",
+    "time-count": "10 часов",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  },
+  {
+    "num": "6",
+    "img-before": "./images/temp/laser-photo-before.png",
+    "img-after": "./images/temp/laser-photo-after.png",
+    "title": "Название работы",
+    "time": "Количество затраченных часов:",
+    "time-count": "10 часов",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  }
+]

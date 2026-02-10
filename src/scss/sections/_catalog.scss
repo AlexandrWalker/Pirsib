@@ -24,6 +24,23 @@
     }
   }
 
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    @include md {
+      display: none;
+    }
+  }
+
   &__items {
     display: flex;
     flex-direction: row;
@@ -51,17 +68,15 @@
     position: relative;
 
     @include md {
-      --border-radius: calc(100vw/(393/24));
-
       width: calc(50% - (100vw/(393/4)));
-      min-height: 58.6rem;
+      // min-height: calc(100vw/(393/586));
+      min-height: unset;
       aspect-ratio: unset;
     }
 
     @include sm {
-      --border-radius: 2.4rem;
-
       width: 100%;
+      // min-height: 58.6rem;
     }
 
     &:hover {
@@ -113,7 +128,7 @@
         padding: calc(100vw/(393/30)) calc(100vw/(393/20)) calc(100vw/(393/33));
       }
 
-      @include md {
+      @include sm {
         gap: 2rem;
         padding: 3rem 2rem 3.3rem;
       }
@@ -140,12 +155,12 @@
       gap: 1rem;
 
       max-width: 20rem;
-      
+
       @include md {
         gap: calc(100vw/(393/10));
       }
 
-      @include md {
+      @include sm {
         gap: 1rem;
       }
     }
@@ -193,12 +208,21 @@
       right: 3rem;
       bottom: 3rem;
 
+
       @include md {
-        width: 5rem;
-        height: 5rem;
+        width: calc(100vw/(393/50));
+        height: calc(100vw/(393/50));
         background: none;
         box-shadow: none;
         backdrop-filter: unset;
+
+        right: calc(100vw/(393/20));
+        bottom: calc(100vw/(393/20));
+      }
+
+      @include sm {
+        width: 5rem;
+        height: 5rem;
 
         right: 2rem;
         bottom: 2rem;
@@ -223,11 +247,16 @@
         bottom: 0;
 
         @include md {
-          --btn-width: 5rem;
-          --btn-height: 5rem;
+          --btn-width: calc(100vw/(393/50));
+          --btn-height: calc(100vw/(393/50));
 
           right: 0;
           bottom: 0;
+        }
+
+        @include sm {
+          --btn-width: 5rem;
+          --btn-height: 5rem;
         }
       }
     }

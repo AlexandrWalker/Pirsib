@@ -45,15 +45,7 @@
   }
 
   &__slider {
-    border-radius: 10rem;
-
-    @include md {
-      border-radius: calc(100vw/(393/24));
-    }
-
-    @include sm {
-      border-radius: 2.4rem;
-    }
+    border-radius: var(--border-radius);
   }
 
   &__item {
@@ -78,14 +70,7 @@
     }
 
     &>.border {
-
-      @include md {
-        --border-radius: calc(100vw/(393/24));
-      }
-
-      @include sm {
-        --border-radius: 2.4rem;
-      }
+      border-radius: var(--border-radius);
     }
 
     &-head {

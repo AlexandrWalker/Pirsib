@@ -343,6 +343,36 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const slidesConfig = [
     {
+      selector: '.catalog__slider',
+      options: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+        centeredSlides: false,
+        centeredSlidesBounds: true,
+        centerInsufficientSlides: true,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
+        loop: false,
+        simulateTouch: true,
+        grabCursor: true,
+        speed: 600,
+        watchOverflow: true,
+
+        direction: 'horizontal',
+        touchStartPreventDefault: true,
+        touchMoveStopPropagation: true,
+        threshold: 8,
+        touchAngle: 25,
+
+        mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
+        freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
+        pagination: { el: ".catalog__slider .swiper-pagination", clickable: true },
+        navigation: { prevEl: ".catalog-button-prev", nextEl: ".catalog-button-next" },
+        breakpoints: { 835: { slidesPerView: 3, spaceBetween: 20, pagination: false } },
+      }
+    },
+    {
       selector: '.opinion__slider',
       options: {
         slidesPerView: 1,
@@ -1165,6 +1195,34 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('timelinePlaceholder')) {
     const timeline = TimelineScroll.create('#timelinePlaceholder');
   }
+
+  (function () {
+    const rangeItems = document.querySelectorAll('.range__item');
+    if (rangeItems.length > 0) {
+      rangeItems.forEach(rangeItem => {
+        const range = rangeItem.querySelector('.range__item-js');
+        range.addEventListener('input', () => {
+          rangeItem.style.setProperty('--value', range.value + '%');
+        });
+      });
+    }
+
+    rangeItems.forEach(block => {
+
+      const stop = e => e.stopPropagation();
+
+      // mouse
+      block.addEventListener('mousedown', stop, { passive: true });
+
+      // touch
+      block.addEventListener('touchstart', stop, { passive: true });
+      block.addEventListener('touchmove', stop, { passive: true });
+
+      // pointer (на всякий случай)
+      block.addEventListener('pointerdown', stop, { passive: true });
+    });
+
+  })();
 
   /**
    * Кнопка куки

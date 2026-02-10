@@ -294,15 +294,33 @@
         <div class="container">
           <div class="catalog__inner">
 
-
-            <div class="general__head">
-              <div class="general__title" data-transform="titleFadeUp">
-                <h4 data-gradient-text>Портфолио работ</h4>
+            <div class="catalog__head">
+              <div class="general__head">
+                <div class="general__title" data-transform="titleFadeUp">
+                  <h4 data-gradient-text>Портфолио работ</h4>
+                </div>
+              </div>
+              <div class="catalog__btns">
+                <div class="swiper__btns">
+                  <div class="swiper-button-prev catalog-button-prev">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                  <div class="swiper-button-next catalog-button-next">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="catalog__items" data-transform="fadeUp">
-              @@loop('./elements/catalog-tatu-item.html', './data/catalog-tatu-items.json')
+            <div class="catalog__body">
+              <div class="swiper catalog__slider" data-transform="fadeUp">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/catalog-laser-item.html', './data/catalog-laser-items.json')
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
             </div>
 
           </div>
