@@ -1204,24 +1204,17 @@ document.addEventListener('DOMContentLoaded', () => {
         range.addEventListener('input', () => {
           rangeItem.style.setProperty('--value', range.value + '%');
         });
+
+        const stop = e => e.stopPropagation();
+        // mouse
+        rangeItem.addEventListener('mousedown', stop, { passive: true });
+        // touch
+        rangeItem.addEventListener('touchstart', stop, { passive: true });
+        rangeItem.addEventListener('touchmove', stop, { passive: true });
+        // pointer (на всякий случай)
+        rangeItem.addEventListener('pointerdown', stop, { passive: true });
       });
     }
-
-    rangeItems.forEach(block => {
-
-      const stop = e => e.stopPropagation();
-
-      // mouse
-      block.addEventListener('mousedown', stop, { passive: true });
-
-      // touch
-      block.addEventListener('touchstart', stop, { passive: true });
-      block.addEventListener('touchmove', stop, { passive: true });
-
-      // pointer (на всякий случай)
-      block.addEventListener('pointerdown', stop, { passive: true });
-    });
-
   })();
 
   /**
