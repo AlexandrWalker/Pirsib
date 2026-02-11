@@ -168,4 +168,13 @@
 .f-panzoom__wrapper {
   border-radius: var(--border-radius);
   overflow: hidden;
+  margin: 0 2rem;
+
+  @include md {
+    margin: 0 calc(100vw/(393/15));
+  }
+
+  @include sm {
+    margin: 0 1.5rem;
+  }
 }

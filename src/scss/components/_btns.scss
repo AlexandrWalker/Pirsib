@@ -132,6 +132,8 @@
   }
 
   &--icon {
+    --btn-border-radius: 50%;
+
     padding: 0;
 
     @include md {
@@ -140,6 +142,10 @@
 
     @include sm {
       padding: 0;
+    }
+
+    .border {
+      --border-radius: 50% !important;
     }
   }
 
