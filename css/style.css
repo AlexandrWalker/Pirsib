@@ -93,6 +93,14 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -103,14 +111,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -707,6 +707,7 @@ a:hover .border::after {
 .f-panzoom__wrapper {
   border-radius: var(--border-radius);
   overflow: hidden;
+  margin: 0 2rem;
 }
 
 /* Reset and base styles  */
@@ -998,7 +999,12 @@ a:hover .btn .border::after,
 }
 
 .btn--icon {
+  --btn-border-radius: 50%;
   padding: 0;
+}
+
+.btn--icon .border {
+  --border-radius: 50% !important;
 }
 
 .btn--inner {
@@ -6009,6 +6015,10 @@ html.out .biography__left {
     font-size: 12.7226463104vw;
   }
 
+  .f-panzoom__wrapper {
+    margin: 0 3.8167938931vw;
+  }
+
   :root {
     --container-padding: calc(100vw/(393/20));
     --container-width: calc(100vw/(393/1680));
@@ -6358,14 +6368,13 @@ html.out .biography__left {
   }
 
   .footer__menu ul {
-    display: inline-block;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.8167938931vw;
   }
 
   .footer__menu li {
-    margin-bottom: 3.8167938931vw;
+    margin-bottom: 0;
   }
 
   .footer__menu a {
@@ -7920,6 +7929,10 @@ html.out .biography__left {
     font-size: 5rem;
   }
 
+  .f-panzoom__wrapper {
+    margin: 0 1.5rem;
+  }
+
   :root {
     --container-padding: 2rem;
     --container-width: 168rem;
@@ -8143,8 +8156,8 @@ html.out .biography__left {
     font-size: 1.4rem;
   }
 
-  .footer__menu li {
-    margin-bottom: 1.5rem;
+  .footer__menu ul {
+    gap: 1.5rem;
   }
 
   .footer__menu a {
