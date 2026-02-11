@@ -108,10 +108,18 @@
     }
 
     .btn--inner {
+      --border-radius: 10rem;
+
       margin-top: auto;
 
       @include md {
+        --border-radius: calc(100vw/(393/100));
+
         width: 100%;
+      }
+
+      @include sm {
+        --border-radius: 10rem;
       }
 
       span {

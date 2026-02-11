@@ -93,14 +93,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -117,8 +109,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -127,6 +119,14 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -1222,6 +1222,7 @@ a:hover .btn .border::after,
 }
 
 .form-input {
+  --border-radius: 10rem;
   width: 100%;
   height: 5rem;
   padding: 2rem 2rem 2rem 5.4rem;
@@ -1346,6 +1347,7 @@ a:hover .btn .border::after,
 }
 
 .form-btn {
+  --border-radius: 10rem;
   width: 100%;
   text-transform: none;
   -webkit-transition: all 0.5s linear;
@@ -2616,6 +2618,7 @@ p {
 }
 
 .plate__inner {
+  --border-radius: 10rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2805,7 +2808,7 @@ p {
   font-style: normal;
   font-weight: 700;
   font-size: 12rem;
-  line-height: 100%;
+  line-height: 120%;
   padding-bottom: 1rem;
 }
 
@@ -2814,7 +2817,7 @@ p {
   font-style: normal;
   font-weight: 700;
   font-size: 12rem;
-  line-height: 100%;
+  line-height: 120%;
   padding-bottom: 1rem;
 }
 
@@ -2823,7 +2826,7 @@ p {
   font-style: normal;
   font-weight: 700;
   font-size: 12rem;
-  line-height: 100%;
+  line-height: 120%;
 }
 
 .template--primary .template__content {
@@ -4068,6 +4071,7 @@ html.out .biography__left {
 }
 
 .certificates__item .btn--inner {
+  --border-radius: 10rem;
   margin-top: auto;
 }
 
@@ -6107,6 +6111,7 @@ html.out .biography__left {
   }
 
   .form-input {
+    --border-radius: calc(100vw/(393/100));
     height: 12.7226463104vw;
     padding: 5.0890585242vw 5.0890585242vw 5.0890585242vw 13.7404580153vw;
     font-size: 3.5623409669vw;
@@ -6130,6 +6135,10 @@ html.out .biography__left {
 
   .form-input::placeholder {
     font-size: 3.5623409669vw;
+  }
+
+  .form-btn {
+    --border-radius: calc(100vw/(393/100));
   }
 
   .form-checkbox--item {
@@ -7256,6 +7265,7 @@ html.out .biography__left {
   }
 
   .certificates__item .btn--inner {
+    --border-radius: calc(100vw/(393/100));
     width: 100%;
   }
 
@@ -8014,6 +8024,7 @@ html.out .biography__left {
   }
 
   .form-input {
+    --border-radius: 10rem;
     height: 5rem;
     padding: 2rem 2rem 2rem 5.4rem;
     font-size: 1.4rem;
@@ -8037,6 +8048,10 @@ html.out .biography__left {
 
   .form-input::placeholder {
     font-size: 1.4rem;
+  }
+
+  .form-btn {
+    --border-radius: 10rem;
   }
 
   .form-checkbox--item {
@@ -8670,6 +8685,10 @@ html.out .biography__left {
 
   .certificates__items {
     gap: 0.8rem;
+  }
+
+  .certificates__item .btn--inner {
+    --border-radius: 10rem;
   }
 
   .command__inner {

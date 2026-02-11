@@ -97,6 +97,8 @@
   }
 
   &-input {
+    --border-radius: 10rem;
+
     width: 100%;
     height: 5rem;
     padding: 2rem 2rem 2rem 5.4rem;
@@ -114,6 +116,8 @@
     transition: all 0.5s linear;
 
     @include md {
+      --border-radius: calc(100vw/(393/100));
+
       height: calc(100vw/(393/50));
       padding: calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/54));
 
@@ -121,6 +125,8 @@
     }
 
     @include sm {
+      --border-radius: 10rem;
+
       height: 5rem;
       padding: 2rem 2rem 2rem 5.4rem;
 
@@ -181,9 +187,19 @@
   }
 
   &-btn {
+    --border-radius: 10rem;
+    
     width: 100%;
     text-transform: none;
     transition: all 0.5s linear;
+
+    @include md {
+      --border-radius: calc(100vw/(393/100));
+    }
+
+    @include sm {
+      --border-radius: 10rem;
+    }
 
     @include domd {
 
