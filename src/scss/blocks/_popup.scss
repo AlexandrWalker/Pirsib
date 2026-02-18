@@ -18,7 +18,7 @@
     max-width: calc(100vw/(393/412));
   }
 
-  h5 {
+  .h5 {
 
     @include md {
       font-size: calc(100vw/(393/34));

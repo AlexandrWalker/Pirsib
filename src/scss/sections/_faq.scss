@@ -3,6 +3,25 @@
 .faq {
   margin-top: -23.6rem;
 
+  .general__title {
+
+    h2 {
+      font-family: var(--second-family);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 5rem;
+      line-height: 100%;
+
+      @include md {
+        font-size: calc(100vw/(393/24));
+      }
+
+      @include sm {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
   .page__inner & {
     margin-top: 0;
   }

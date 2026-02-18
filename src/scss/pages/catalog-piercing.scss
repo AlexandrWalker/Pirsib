@@ -57,14 +57,6 @@
   .decorations__item-content {
     gap: 1.5rem;
 
-    h6 {
-      font-size: 3rem;
-
-      @include sm {
-        font-size: 2.4rem;
-      }
-    }
-
     p {
       font-size: 1.4rem;
       opacity: 1;
@@ -73,6 +65,14 @@
     span {
       font-weight: 700;
       font-size: 2rem;
+    }
+  }
+
+  .decorations__item-title {
+    font-size: 3rem;
+
+    @include sm {
+      font-size: 2.4rem;
     }
   }
 

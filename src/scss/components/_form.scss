@@ -43,7 +43,6 @@
   }
 
   &__text {
-    opacity: 0.5;
     max-width: 47.5rem;
 
     @include md {
@@ -138,7 +137,7 @@
       font-weight: 400;
       font-size: 1.4rem;
       line-height: 120%;
-      color: var(--purple-50);
+      color: var(--purple);
       transition: all 0.5s linear;
 
       @include md {
@@ -297,16 +296,16 @@
     }
 
     p {
-      font-size: 1rem;
-      color: var(--purple-50);
+      font-size: 1.2rem;
+      color: var(--purple);
 
       @include md {
-        font-size: calc(100vw/(393/10));
+        font-size: calc(100vw/(393/12));
         line-height: 120%;
       }
 
       @include sm {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
 
@@ -334,15 +333,15 @@
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 100%;
 
       @include md {
-        font-size: calc(100vw/(393/10));
+        font-size: calc(100vw/(393/12));
       }
 
       @include sm {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
   }

@@ -45,8 +45,31 @@
 
     @include md {
       --border-radius: calc(100vw/(393/24));
-      
+
       width: 100%;
+    }
+
+    &--piercing {
+
+      .decorations__item-head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 3.2rem;
+
+        @include md {
+          padding: 0 calc(100vw/(393/20));
+        }
+
+        @include sm {
+          padding: 0 2rem;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
 
     &-head {
@@ -90,13 +113,9 @@
         gap: 2rem;
       }
 
-      h6 {
+      &-title {
         font-family: var(--font-family);
         line-height: 90%;
-      }
-
-      p {
-        opacity: 0.5;
       }
     }
 

@@ -278,7 +278,6 @@
 
       &__text {
         max-width: 46.2rem;
-        opacity: 0.5;
         margin-left: 1rem;
 
         @include md {
@@ -286,7 +285,7 @@
           margin-left: calc(100vw/(393/10));
         }
 
-        h6 {
+        .h6, h6 {
           font-family: var(--font-family);
           font-weight: 400;
           line-height: 120%;
