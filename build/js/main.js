@@ -410,8 +410,12 @@ document.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 20,
         grabCursor: true,
         speed: 1000,
-        effect: "creative",
-        creativeEffect: { prev: { translate: ["-20%", 0, -1] }, next: { translate: ["20%", 0, 0] } },
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true
+        },
+        // effect: "creative",
+        // creativeEffect: { prev: { translate: ["-20%", 0, -1] }, next: { translate: ["20%", 0, 0] } },
         autoplay: { delay: 5000, disableOnInteraction: false },
         mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
         centeredSlides: false,
