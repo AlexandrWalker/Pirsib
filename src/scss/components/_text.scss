@@ -106,7 +106,7 @@ p {
   font-weight: 400;
   font-style: normal;
   font-size: 1.6rem;
-  line-height: 120%;
+  line-height: 140%;
 
   @include md {
     font-size: calc(100vw/(393/14));
