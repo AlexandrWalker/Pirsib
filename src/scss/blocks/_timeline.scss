@@ -48,6 +48,10 @@
     width: 100%;
     height: 100vh;
 
+    @include doxxxl {
+      margin-left: auto;
+    }
+
     @include md {
       /* Мобильная версия - убираем фиксацию */
       position: relative;

@@ -24,7 +24,7 @@
   &.template--bg {
 
     .general__title * {
-      font-family: var(--second-family);
+      font-family: var(--font-family);
       font-style: normal;
       font-weight: 700;
       font-size: 12rem;
@@ -45,7 +45,7 @@
   &.template--cover {
 
     .general__title * {
-      font-family: var(--second-family);
+      font-family: var(--font-family);
       font-style: normal;
       font-weight: 700;
       font-size: 12rem;
@@ -68,7 +68,7 @@
     .general {
 
       &__title * {
-        font-family: var(--second-family);
+        font-family: var(--font-family);
         font-style: normal;
         font-weight: 700;
         font-size: 12rem;
@@ -196,7 +196,7 @@
     &__title {
 
       * {
-        font-family: var(--second-family);
+        font-family: var(--font-family);
         font-weight: 700;
         font-size: 8rem;
         line-height: 120%;

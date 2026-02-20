@@ -702,7 +702,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const TimelineScroll = {
 
     defaultConfig: {
-      breakpoint: 768,
+      breakpoint: 834,
       selectors: {
         placeholder: '.timeline-placeholder',
         container: '.timeline-container',
