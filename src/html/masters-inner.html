@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner">
+<html lang="ru" class="page__inner page__masters-inner">
 @@include('blocks/head.html', {"title": "Pirsib"})
 
 <body>
@@ -506,6 +506,21 @@
               </div> -->
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      <section class="certificates awards">
+        <div class="container">
+          <div class="certificates__inner">
+            <div class="general__head">
+              <div class="general__title" data-transform="titleFadeUp">
+                <h2 data-gradient-text>Награды и дипломы</h2>
+              </div>
+            </div>
+            <div class="certificates__items" data-animation="blur">
+              @@loop('./elements/awards-item.html', './data/awards-items.json')
+            </div>
           </div>
         </div>
       </section>

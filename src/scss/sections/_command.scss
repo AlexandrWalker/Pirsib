@@ -5,6 +5,7 @@
   &__inner {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
     @include md {
       flex-direction: column;
@@ -18,15 +19,35 @@
 
   &__head {
     max-width: 65rem;
+    margin-top: 3rem;
   }
 
   &__body {
-    margin-top: 4rem;
-    margin-left: -8.3rem;
-    margin-right: -3.3rem;
+    margin-top: -2rem;
+
+    position: relative;
 
     @include md {
       margin: 0;
+    }
+
+    &-title {
+      font-family: var(--second-family);
+      font-weight: 700;
+      font-size: 22rem;
+      line-height: 120%;
+      text-align: right;
+
+      position: absolute;
+      right: -1rem;
+      bottom: -2rem;
+
+      @include md {
+        font-size: calc(100vw/(393/76));
+
+        right: unset;
+        bottom: -0.5rem;
+      }
     }
   }
 
@@ -108,7 +129,7 @@
   }
 
   &__img {
-    height: 68rem;
+    height: 60.8rem;
 
     @include md {
       width: 100%;

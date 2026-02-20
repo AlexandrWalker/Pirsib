@@ -2,6 +2,40 @@
 
 .certificates {
 
+  .page__masters-inner & {
+
+    .general__head {
+      margin-bottom: 4rem;
+
+      @include md {
+        margin-bottom: calc(100vw/(393/20));
+      }
+
+      @include sm {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .general__title {
+
+      h2 {
+        font-family: var(--second-family);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 5rem;
+        line-height: 100%;
+
+        @include md {
+          font-size: calc(100vw/(393/24));
+        }
+
+        @include sm {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+
   .general__head {
     margin-bottom: -1.6rem;
     position: relative;
@@ -29,6 +63,7 @@
 
     position: absolute;
     top: -2.3rem;
+    top: 2.7rem;
     right: -32.1rem;
 
     @include md {
@@ -76,6 +111,14 @@
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
       backdrop-filter: blur(6.35px);
       border-radius: 10rem;
+    }
+
+    &.awards__item {
+      padding: 7.5rem 4rem 4rem 4rem;
+
+      @include md {
+        padding: 0;
+      }
     }
 
     &:hover {

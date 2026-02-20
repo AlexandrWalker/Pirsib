@@ -93,14 +93,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -117,8 +109,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -133,8 +125,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -143,6 +135,14 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -165,16 +165,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Bold.woff2") format("woff2"), url("../fonts/Outfit-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Outfit-Bold.woff2") format("woff2"), url("../fonts/Outfit-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -2034,6 +2034,15 @@ p {
   text-transform: capitalize;
 }
 
+.cookie__text a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.cookie__text a:hover {
+  color: var(--pink);
+}
+
 .footer__inner {
   display: grid;
   grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
@@ -3302,12 +3311,12 @@ p {
   gap: 1rem;
 }
 
-.page__inner:not(.about-page) .certificates__items {
+.certificates__page .certificates__items {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
-.page__inner:not(.about-page) .certificates__item {
+.certificates__page .certificates__item {
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
@@ -4067,6 +4076,18 @@ html.out .biography__left {
   bottom: 0;
 }
 
+.page__masters-inner .certificates .general__head {
+  margin-bottom: 4rem;
+}
+
+.page__masters-inner .certificates .general__title h2 {
+  font-family: var(--second-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 100%;
+}
+
 .certificates .general__head {
   margin-bottom: -1.6rem;
   position: relative;
@@ -4082,6 +4103,7 @@ html.out .biography__left {
   height: 61.4rem;
   position: absolute;
   top: -2.3rem;
+  top: 2.7rem;
   right: -32.1rem;
 }
 
@@ -4121,6 +4143,10 @@ html.out .biography__left {
   z-index: 1;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.certificates__item.awards__item {
+  padding: 7.5rem 4rem 4rem 4rem;
 }
 
 .certificates__item:hover {
@@ -4163,16 +4189,30 @@ html.out .biography__left {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .command__head {
   max-width: 65rem;
+  margin-top: 3rem;
 }
 
 .command__body {
-  margin-top: 4rem;
-  margin-left: -8.3rem;
-  margin-right: -3.3rem;
+  margin-top: -2rem;
+  position: relative;
+}
+
+.command__body-title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 22rem;
+  line-height: 120%;
+  text-align: right;
+  position: absolute;
+  right: -1rem;
+  bottom: -2rem;
 }
 
 .command__feat-items {
@@ -4226,7 +4266,7 @@ html.out .biography__left {
 }
 
 .command__img {
-  height: 68rem;
+  height: 60.8rem;
 }
 
 .command__img img {
@@ -4987,6 +5027,15 @@ html.out .biography__left {
   font-weight: 700;
   font-size: 5rem;
   line-height: 80%;
+}
+
+.page__main .opinion .general__title h2,
+.about-page .opinion .general__title h2 {
+  font-family: var(--second-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12rem;
+  line-height: 100%;
 }
 
 .opinion__head {
@@ -6960,7 +7009,7 @@ html.out .biography__left {
     gap: 2.5445292621vw;
   }
 
-  .page__inner:not(.about-page) .certificates__items {
+  .certificates__page .certificates__items {
     gap: 2.0356234097vw;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -6968,29 +7017,29 @@ html.out .biography__left {
     flex-direction: row;
   }
 
-  .page__inner:not(.about-page) .certificates__item {
+  .certificates__page .certificates__item {
     width: calc(50% - 1.0178117048vw);
     padding: 5.0890585242vw 3.3078880407vw;
     border-radius: 2.4rem;
   }
 
-  .page__inner:not(.about-page) .certificates__item .border {
+  .certificates__page .certificates__item .border {
     --border-radius: 2.4rem;
   }
 
-  .page__inner:not(.about-page) .certificates__item-title {
+  .certificates__page .certificates__item-title {
     display: block;
     margin-bottom: 2rem;
   }
 
-  .page__inner:not(.about-page) .certificates__item-icon {
+  .certificates__page .certificates__item-icon {
     display: block;
     margin-bottom: 4.0712468193vw;
     width: 15.2671755725vw;
     height: 15.2671755725vw;
   }
 
-  .page__inner:not(.about-page) .certificates__item .btn--inner span::before {
+  .certificates__page .certificates__item .btn--inner span::before {
     content: attr(data-text);
   }
 
@@ -7368,6 +7417,14 @@ html.out .biography__left {
     bottom: 0;
   }
 
+  .page__masters-inner .certificates .general__head {
+    margin-bottom: 5.0890585242vw;
+  }
+
+  .page__masters-inner .certificates .general__title h2 {
+    font-size: 6.106870229vw;
+  }
+
   .certificates .general__head {
     margin-bottom: 5.0890585242vw;
   }
@@ -7382,6 +7439,10 @@ html.out .biography__left {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 2.0356234097vw;
+  }
+
+  .certificates__item.awards__item {
+    padding: 0;
   }
 
   .certificates__item-title {
@@ -7411,6 +7472,12 @@ html.out .biography__left {
 
   .command__body {
     margin: 0;
+  }
+
+  .command__body-title {
+    font-size: 19.3384223919vw;
+    right: unset;
+    bottom: -0.5rem;
   }
 
   .command__feat-items {
@@ -7756,6 +7823,11 @@ html.out .biography__left {
 
   .opinion .general__title h2 {
     font-size: 6.106870229vw;
+  }
+
+  .page__main .opinion .general__title h2,
+  .about-page .opinion .general__title h2 {
+    font-size: 7.6335877863vw;
   }
 
   .opinion__btns {
@@ -8590,22 +8662,22 @@ html.out .biography__left {
     gap: 1rem;
   }
 
-  .page__inner:not(.about-page) .certificates__items {
+  .certificates__page .certificates__items {
     gap: 0.8rem;
   }
 
-  .page__inner:not(.about-page) .certificates__item {
+  .certificates__page .certificates__item {
     width: calc(50% - 0.4rem);
     padding: 2rem 1.3rem;
   }
 
-  .page__inner:not(.about-page) .certificates__item-icon {
+  .certificates__page .certificates__item-icon {
     margin-bottom: 1.6rem;
     width: 6rem;
     height: 6rem;
   }
 
-  .page__inner:not(.about-page) .certificates__item .btn--inner {
+  .certificates__page .certificates__item .btn--inner {
     --btn-height: 3.7rem;
     padding: 0 1.5rem;
     -webkit-box-pack: center;
@@ -8613,11 +8685,11 @@ html.out .biography__left {
     justify-content: center;
   }
 
-  .page__inner:not(.about-page) .certificates__item .btn--inner-icon {
+  .certificates__page .certificates__item .btn--inner-icon {
     display: none;
   }
 
-  .page__inner:not(.about-page) .certificates__item .btn--inner span::before {
+  .certificates__page .certificates__item .btn--inner span::before {
     font-size: 1.2rem;
   }
 
@@ -8828,6 +8900,14 @@ html.out .biography__left {
   .catalog__item-btn .btn {
     --btn-width: 5rem;
     --btn-height: 5rem;
+  }
+
+  .page__masters-inner .certificates .general__head {
+    margin-bottom: 2rem;
+  }
+
+  .page__masters-inner .certificates .general__title h2 {
+    font-size: 2.4rem;
   }
 
   .certificates .general__head {
@@ -9050,6 +9130,11 @@ html.out .biography__left {
 
   .opinion .general__title h2 {
     font-size: 2.4rem;
+  }
+
+  .page__main .opinion .general__title h2,
+  .about-page .opinion .general__title h2 {
+    font-size: 3rem;
   }
 
   .opinion__item {
@@ -9285,7 +9370,7 @@ html.out .biography__left {
     font-size: 3rem;
   }
 
-  .page__inner:not(.about-page) .certificates__item {
+  .certificates__page .certificates__item {
     width: 100%;
   }
 }
