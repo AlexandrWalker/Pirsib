@@ -93,6 +93,14 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -101,8 +109,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -127,14 +135,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
   font-style: normal;
 }
 
@@ -873,6 +873,7 @@ body {
   --white: #ffffff;
   --pink: #AD32AE;
   --pink-10: rgba(173, 50, 174, 0.1);
+  --pink-50: rgba(173, 50, 174, 0.5);
   --pink-2: #FE9AFF;
   --purple: #6D85F4;
   --purple-50: rgba(109, 133, 244, 0.5);
@@ -2503,7 +2504,6 @@ p {
   overflow: hidden;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), -webkit-gradient(linear, left bottom, left top, from(rgba(25, 18, 39, 0.9)), to(rgba(25, 18, 39, 0.9))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-  -webkit-backdrop-filter: blur(1.855rem);
   -webkit-backdrop-filter: blur(1.855rem);
   backdrop-filter: blur(1.855rem);
   -webkit-transition: all 0.5s ease;
@@ -4730,11 +4730,11 @@ html.out .biography__left {
 
 .hero__cover {
   width: auto;
-  height: 126.4rem;
+  height: 140rem;
   pointer-events: none;
   position: absolute;
-  bottom: -21.5rem;
-  left: -15rem;
+  bottom: -23.5rem;
+  left: -16.8rem;
   z-index: -1;
 }
 
@@ -4754,8 +4754,9 @@ html.out .biography__left {
 }
 
 .hero__request {
-  width: 100%;
-  padding: 2rem 13.6rem 2rem 12rem;
+  width: auto;
+  padding: 2rem 7rem 2rem 13rem;
+  margin-left: 31rem;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
@@ -4763,7 +4764,7 @@ html.out .biography__left {
   -webkit-backdrop-filter: blur(6.35px);
   backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
-  border: 0.05rem solid var(--pink);
+  border: 0.05rem solid var(--pink-50);
 }
 
 .hero__request-form {
@@ -4801,7 +4802,7 @@ html.out .biography__left {
 
 .hero__request-foot p {
   font-size: 1.2rem;
-  color: var(--purple);
+  color: var(--purple-50);
 }
 
 .hero__request-foot a {
@@ -7670,6 +7671,8 @@ html.out .biography__left {
 
   .hero__request {
     padding: 7.6335877863vw 7.6335877863vw 10.1781170483vw 7.6335877863vw;
+    margin-left: 0;
+    width: 100%;
   }
 
   .hero__request-form {
@@ -8350,7 +8353,7 @@ html.out .biography__left {
   .footer__foot {
     gap: 0.7rem;
     margin-top: -0.5rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .footer__form {

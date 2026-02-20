@@ -78,12 +78,15 @@
 
   &__cover {
     width: auto;
-    height: 126.4rem;
+    // height: 126.4rem;
+    height: 140rem;
     pointer-events: none;
 
     position: absolute;
-    bottom: -21.5rem;
-    left: -15rem;
+    // bottom: -21.5rem;
+    bottom: -23.5rem;
+    // left: -15rem;
+    left: -16.8rem;
     z-index: -1;
 
     @include md {
@@ -114,17 +117,23 @@
   }
 
   &__request {
-    width: 100%;
-    padding: 2rem 13.6rem 2rem 12rem;
+    // width: 100%;
+    width: auto;
+    // padding: 2rem 13.6rem 2rem 12rem;
+    padding: 2rem 7rem 2rem 13rem;
+    margin-left: 31rem;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
     border-radius: var(--border-radius);
 
-    border: calc(0.1rem / 2) solid var(--pink);
+    // border: calc(0.1rem / 2) solid var(--pink);
+    border: calc(0.1rem / 2) solid var(--pink-50);
 
     @include md {
       padding: calc(100vw/(393/30)) calc(100vw/(393/30)) calc(100vw/(393/40)) calc(100vw/(393/30));
+      margin-left: 0;
+      width: 100%;
     }
 
     @include sm {
@@ -194,7 +203,7 @@
 
       p {
         font-size: 1.2rem;
-        color: var(--purple);
+        color: var(--purple-50);
 
         @include md {
           font-size: calc(100vw/(393/12));
