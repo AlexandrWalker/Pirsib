@@ -612,6 +612,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  document.querySelectorAll('[data-animation="video-blur"]').forEach(el => {
+    if (isFirefox()) {
+      // Для Firefox — альтернативная анимация
+      gsap.set(el, { opacity: 0 }); // смещение вместо blur
+      gsap.to(el, {
+        opacity: 1,
+        duration: 1,
+        delay: 0.2,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 95%",
+          toggleActions: "play none none none",
+          once: true
+        }
+      });
+    } else {
+      // Для остальных — оригинальная blur-анимация
+      gsap.set(el, { opacity: 0, filter: "blur(8px)", willChange: "opacity, filter" });
+      gsap.to(el, {
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 1,
+        delay: 0.2,
+        force3D: true,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 95%",
+          toggleActions: "play none none none",
+          once: true
+        }
+      });
+    }
+  });
+
   // ==== Parallax для изображений и блоков ====
   const animations = document.querySelectorAll('[data-animation="parallax-img"], [data-animation="parallax-img-scale"], [data-animation^="parallax-box"]');
   if (!animations.length) return;
