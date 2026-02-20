@@ -93,32 +93,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -133,8 +109,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -149,8 +125,32 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -165,16 +165,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Outfit-Bold.woff2") format("woff2"), url("../fonts/Outfit-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Bold.woff2") format("woff2"), url("../fonts/Outfit-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -1195,7 +1195,7 @@ a:hover .btn .border::after,
 }
 
 .form__title {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 3.4rem;
   line-height: 100%;
@@ -1731,7 +1731,7 @@ a:hover .btn .border::after,
 
 .h1,
 h1 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 12rem;
@@ -1740,7 +1740,7 @@ h1 {
 
 .h2,
 h2 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 12rem;
@@ -1749,7 +1749,7 @@ h2 {
 
 .h3,
 h3 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 8rem;
@@ -1758,7 +1758,7 @@ h3 {
 
 .h4,
 h4 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 5rem;
@@ -1767,7 +1767,7 @@ h4 {
 
 .h5,
 h5 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 3.4rem;
@@ -1776,7 +1776,7 @@ h5 {
 
 .h6,
 h6 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 2.4rem;
@@ -2619,7 +2619,7 @@ p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 3.4rem;
   line-height: 100%;
@@ -2847,7 +2847,7 @@ p {
 }
 
 .template.template--bg .general__title * {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 12rem;
@@ -2856,7 +2856,7 @@ p {
 }
 
 .template.template--cover .general__title * {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 12rem;
@@ -2865,7 +2865,7 @@ p {
 }
 
 .template--primary .general__title * {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 12rem;
@@ -2921,7 +2921,7 @@ p {
 }
 
 .template .general__title * {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 8rem;
   line-height: 120%;
@@ -3647,7 +3647,7 @@ html.out .biography__left {
 
 .notfound__suptitle {
   margin-bottom: 2rem;
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 20rem;
   line-height: 100%;
@@ -3769,7 +3769,7 @@ html.out .biography__left {
 /* Sections */
 
 .advan .general__title h2 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 5rem;
@@ -3812,7 +3812,7 @@ html.out .biography__left {
 
 .advan__item--last::before {
   content: "!";
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 800;
   font-size: 10rem;
@@ -3829,7 +3829,7 @@ html.out .biography__left {
 }
 
 .advan__item-count {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 300;
   font-size: 10rem;
   line-height: 100%;
@@ -3918,7 +3918,7 @@ html.out .biography__left {
 }
 
 .catalog .general__title * {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 5rem;
@@ -4081,7 +4081,7 @@ html.out .biography__left {
 }
 
 .page__masters-inner .certificates .general__title h2 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 5rem;
@@ -4205,7 +4205,7 @@ html.out .biography__left {
 }
 
 .command__body-title {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 22rem;
   line-height: 120%;
@@ -4411,7 +4411,7 @@ html.out .biography__left {
 }
 
 .explanation .general__text span {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 20rem;
   line-height: 100%;
@@ -4464,7 +4464,7 @@ html.out .biography__left {
 }
 
 .faq .general__title h2 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 5rem;
@@ -4894,9 +4894,9 @@ html.out .biography__left {
 }
 
 .history__title {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 700;
-  font-size: 18.3333333333vw;
+  font-size: 16.6666666667vw;
   line-height: 100%;
   text-transform: uppercase;
 }
@@ -4987,7 +4987,7 @@ html.out .biography__left {
 }
 
 .history__item-year {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 10rem;
   line-height: 120%;
@@ -5022,7 +5022,7 @@ html.out .biography__left {
 }
 
 .opinion .general__title h2 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 5rem;
@@ -5031,7 +5031,7 @@ html.out .biography__left {
 
 .page__main .opinion .general__title h2,
 .about-page .opinion .general__title h2 {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 12rem;
@@ -5527,7 +5527,7 @@ html.out .biography__left {
 }
 
 .stages__item-count {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 300;
   font-size: 10rem;
   line-height: 100%;
@@ -5654,7 +5654,7 @@ html.out .biography__left {
 }
 
 .values .general__text span {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 20rem;
   line-height: 100%;
@@ -6077,6 +6077,14 @@ html.out .biography__left {
 @media (min-width: 1921px) {
   html {
     font-size: calc(10px + 0 * (100vw - var(--refRes) * 1px) / var(--refRes));
+  }
+
+  .timeline-container {
+    margin-left: auto;
+  }
+
+  .history__title {
+    font-size: 32rem;
   }
 }
 
@@ -7785,8 +7793,7 @@ html.out .biography__left {
   }
 
   .history__title {
-    font-size: 20.3562340967vw;
-    margin-left: calc(var(--container-padding) * -1);
+    font-size: 17.048346056vw;
   }
 
   .history__wrap-item .btn {
