@@ -101,8 +101,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -125,16 +125,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -143,6 +135,14 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -165,6 +165,14 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
+  src: url("../fonts/Outfit-Bold.woff2") format("woff2"), url("../fonts/Outfit-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  font-display: swap;
   src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -175,14 +183,6 @@ a {
   font-display: swap;
   src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Outfit;
-  font-display: swap;
-  src: url("../fonts/Outfit-Bold.woff2") format("woff2"), url("../fonts/Outfit-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -1763,6 +1763,7 @@ h4 {
   font-weight: 700;
   font-size: 5rem;
   line-height: 100%;
+  line-height: 120%;
 }
 
 .h5,
@@ -3213,6 +3214,15 @@ p {
   padding: 0;
 }
 
+.decorations .general__title h2 {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 100%;
+  line-height: 120%;
+}
+
 .decorations__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3533,6 +3543,15 @@ html.out .biography__left {
   margin-right: 2rem;
   margin-bottom: 0;
   float: left;
+}
+
+.masters .general__title h2 {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 100%;
+  line-height: 120%;
 }
 
 .masters__items {
@@ -3917,7 +3936,7 @@ html.out .biography__left {
   gap: 2rem;
 }
 
-.catalog .general__title * {
+.catalog .general__title h2 {
   font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
@@ -4279,6 +4298,15 @@ html.out .biography__left {
 
 .directions {
   margin-bottom: 9rem;
+}
+
+.price-list__page .directions .general__title h2 {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 100%;
+  line-height: 120%;
 }
 
 .directions .general__head {
@@ -4805,6 +4833,10 @@ html.out .biography__left {
   backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   border: 0.05rem solid var(--pink-50);
+}
+
+.page__inner .hero__request {
+  margin-left: 0;
 }
 
 .hero__request-form {
@@ -5353,13 +5385,21 @@ html.out .biography__left {
   max-width: 30rem;
 }
 
-.privacy h5 {
+.privacy .h2,
+.privacy .h3,
+.privacy .h4,
+.privacy .h5,
+.privacy .h6 {
   color: var(--pink);
   padding-top: 1rem;
   margin-bottom: 2rem;
 }
 
-.privacy h5:first-child {
+.privacy .h2:first-child,
+.privacy .h3:first-child,
+.privacy .h4:first-child,
+.privacy .h5:first-child,
+.privacy .h6:first-child {
   padding-top: 0;
 }
 
@@ -5642,6 +5682,15 @@ html.out .biography__left {
   max-width: 97.1rem;
 }
 
+.values .general__title .h2,
+.values .general__title h2 {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12rem;
+  line-height: 100%;
+}
+
 .values .general__text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5664,6 +5713,23 @@ html.out .biography__left {
   font-weight: 400;
   font-style: italic;
   padding-top: 4.6rem;
+}
+
+.works .general__title h2 {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 120%;
+}
+
+.page__masters-inner .works .general__title h2 {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 100%;
+  line-height: 120%;
 }
 
 .works__head {
@@ -6983,7 +7049,7 @@ html.out .biography__left {
     bottom: -0.2rem;
   }
 
-  .decorations .general__title h4 {
+  .decorations .general__title h2 {
     font-size: 7.6335877863vw;
   }
 
@@ -7143,6 +7209,10 @@ html.out .biography__left {
   .biography__right {
     display: none;
     width: 100%;
+  }
+
+  .masters .general__title h2 {
+    font-size: 6.106870229vw;
   }
 
   .masters__items {
@@ -7359,7 +7429,7 @@ html.out .biography__left {
     gap: 2.0356234097vw;
   }
 
-  .catalog .general__title * {
+  .catalog .general__title h2 {
     font-size: 6.106870229vw;
   }
 
@@ -7518,6 +7588,10 @@ html.out .biography__left {
 
   .directions {
     margin-bottom: 7.6335877863vw;
+  }
+
+  .price-list__page .directions .general__title h2 {
+    font-size: 6.106870229vw;
   }
 
   .directions .general__head {
@@ -7936,7 +8010,11 @@ html.out .biography__left {
     left: 2.5445292621vw;
   }
 
-  .privacy h5 {
+  .privacy .h2,
+  .privacy .h3,
+  .privacy .h4,
+  .privacy .h5,
+  .privacy .h6 {
     margin-bottom: 3.8167938931vw;
   }
 
@@ -8020,6 +8098,11 @@ html.out .biography__left {
     gap: 5.0890585242vw;
   }
 
+  .values .general__title .h2,
+  .values .general__title h2 {
+    font-size: 7.6335877863vw;
+  }
+
   .values .general__text span {
     font-size: 20.3562340967vw;
   }
@@ -8027,6 +8110,14 @@ html.out .biography__left {
   .values .general__text div {
     font-size: 3.0534351145vw;
     padding-top: 2.2900763359vw;
+  }
+
+  .works .general__title h2 {
+    font-size: 7.6335877863vw;
+  }
+
+  .page__masters-inner .works .general__title h2 {
+    font-size: 6.106870229vw;
   }
 
   .works__btns {
@@ -8644,7 +8735,7 @@ html.out .biography__left {
     font-size: 2.4rem;
   }
 
-  .decorations .general__title h4 {
+  .decorations .general__title h2 {
     font-size: 3rem;
   }
 
@@ -8725,6 +8816,10 @@ html.out .biography__left {
     padding: 0 1rem 0 2rem;
     font-size: 1.4rem;
     text-transform: none;
+  }
+
+  .masters .general__title h2 {
+    font-size: 2.4rem;
   }
 
   .masters__items {
@@ -8856,7 +8951,7 @@ html.out .biography__left {
     gap: 0.8rem;
   }
 
-  .catalog .general__title * {
+  .catalog .general__title h2 {
     font-size: 2.4rem;
   }
 
@@ -8951,6 +9046,10 @@ html.out .biography__left {
 
   .directions {
     margin-bottom: 3rem;
+  }
+
+  .price-list__page .directions .general__title h2 {
+    font-size: 2.4rem;
   }
 
   .directions .general__head {
@@ -9216,7 +9315,11 @@ html.out .biography__left {
     left: 1rem;
   }
 
-  .privacy h5 {
+  .privacy .h2,
+  .privacy .h3,
+  .privacy .h4,
+  .privacy .h5,
+  .privacy .h6 {
     margin-bottom: 1.5rem;
   }
 
@@ -9333,6 +9436,11 @@ html.out .biography__left {
     gap: 2rem;
   }
 
+  .values .general__title .h2,
+  .values .general__title h2 {
+    font-size: 3rem;
+  }
+
   .values .general__text span {
     font-size: 8rem;
   }
@@ -9340,6 +9448,14 @@ html.out .biography__left {
   .values .general__text div {
     font-size: 1.2rem;
     padding-top: 0.9rem;
+  }
+
+  .works .general__title h2 {
+    font-size: 3rem;
+  }
+
+  .page__masters-inner .works .general__title h2 {
+    font-size: 2.4rem;
   }
 
   .works__item {

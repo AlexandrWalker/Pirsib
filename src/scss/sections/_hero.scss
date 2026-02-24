@@ -117,9 +117,7 @@
   }
 
   &__request {
-    // width: 100%;
     width: auto;
-    // padding: 2rem 13.6rem 2rem 12rem;
     padding: 2rem 7rem 2rem 13rem;
     margin-left: 31rem;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
@@ -127,7 +125,6 @@
     backdrop-filter: blur(6.35px);
     border-radius: var(--border-radius);
 
-    // border: calc(0.1rem / 2) solid var(--pink);
     border: calc(0.1rem / 2) solid var(--pink-50);
 
     @include md {
@@ -138,6 +135,10 @@
 
     @include sm {
       padding: 4rem 3rem 3rem 3rem;
+    }
+
+    .page__inner & {
+      margin-left: 0;
     }
 
     &-form {
