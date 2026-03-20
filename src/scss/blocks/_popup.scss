@@ -14,8 +14,14 @@
   color: var(--purple);
 
   @include md {
+    --border-radius: calc(100vw/(393/24));
+
     padding: calc(100vw/(393/40)) calc(100vw/(393/40)) calc(100vw/(393/50));
     max-width: calc(100vw/(393/412));
+  }
+
+  @include sm {
+    --border-radius: 2.4rem;
   }
 
   .h5 {
@@ -51,6 +57,10 @@
 
     @include md {
       gap: calc(100vw/(393/30));
+    }
+
+    &__title {
+      padding-right: 3.4rem;
     }
 
     &__head {

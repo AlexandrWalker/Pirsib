@@ -103,9 +103,13 @@
   .hero__request {
     padding: 3rem 3rem 3rem 8.6rem;
 
+    @include md {
+      padding: calc(100vw/(393/30));
+      border-radius: var(--border-radius);
+    }
+
     @include sm {
-      padding: 3rem 3rem 2rem 3rem;
-      border-radius: 2.4rem;
+      padding: 3rem;
     }
 
     .border {

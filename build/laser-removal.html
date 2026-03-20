@@ -67,7 +67,7 @@
 
             <div class="header__signup-content">
               <div class="header__signup-block">
-                <a class="header__signup-item" href="/">
+                <div class="header__signup-item" data-fancybox href="#popup-1">
                   <div class="btn btn--inner-icon">
                     <span class="border"></span>
                     <i class="icon-book"></i>
@@ -75,7 +75,7 @@
                   <div class="header__signup-link">
                     Запись он-лайн
                   </div>
-                </a>
+                </div>
                 <div class="header__signup-item" data-fancybox href="#popup-2">
                   <div class="btn btn--inner-icon">
                     <span class="border"></span>
@@ -325,12 +325,12 @@
       <section class="stages">
         <div class="container">
           <div class="stages__inner">
-            <form class="hero__request" data-transform="fadeUp">
-              <form class="hero__request-form" action="">
+            <div class="hero__request" data-transform="fadeUp">
+              <div class="hero__request-form">
                 <div class="hero__request-head h5">
                   Бесплатная консультация
                 </div>
-                <div class="hero__request-body">
+                <form class="hero__request-body" action="">
                   <div class="form-group">
                     <input class="form-input" name="hero_name" type="text" placeholder="Ваше имя*">
                     <i class="icon-user"></i>
@@ -349,39 +349,40 @@
                       <i class="icon-chevron"></i>
                     </div>
                   </button>
-                </div>
-                <div class="hero__request-foot">
-                  <div class="form-group">
+                  <div class="hero__request-foot">
+                    <div class="form-group">
+                      <div class="form-wrap">
+                        <input id="policy_checkbox" class="form-checkbox" name="form_policy_agree" type="checkbox">
+                        <label for="policy_checkbox" class="form-checkbox--item">
+                          <div class="form-checkbox--icon"></div>
+                          <p>
+                            Я согласен на <a href="/Pirsib/policy.html">обработку персональных данных</a>
+                          </p>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="form-wrap">
+                        <input id="ad_checkbox" class="form-checkbox" name="form_ad_agree" type="checkbox">
+                        <label for="ad_checkbox" class="form-checkbox--item">
+                          <div class="form-checkbox--icon"></div>
+                          <p>
+                            Я согласен на рекламные уведомления
+                          </p>
+                        </label>
+                      </div>
+                    </div>
                     <div class="form-wrap">
-                      <input id="policy_checkbox" class="form-checkbox" name="form_policy_agree" type="checkbox">
-                      <label for="policy_checkbox" class="form-checkbox--item">
-                        <div class="form-checkbox--icon"></div>
-                        <p>
-                          Я согласен на <a href="/Pirsib/policy.html">обработку персональных данных</a>
-                        </p>
-                      </label>
+                      <p>
+                        Нажимая на кнопку «Отправить» вы соглашаетесь с <a href="/Pirsib/policy.html">Политикой
+                          обработки
+                          персональных данных</a>
+                      </p>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <div class="form-wrap">
-                      <input id="ad_checkbox" class="form-checkbox" name="form_ad_agree" type="checkbox">
-                      <label for="ad_checkbox" class="form-checkbox--item">
-                        <div class="form-checkbox--icon"></div>
-                        <p>
-                          Я согласен на рекламные уведомления
-                        </p>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="form-wrap">
-                    <p>
-                      Нажимая на кнопку «Отправить» вы соглашаетесь с <a href="/Pirsib/policy.html">Политикой обработки
-                        персональных данных</a>
-                    </p>
-                  </div>
-                </div>
-              </form>
-            </form>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1441,13 +1442,13 @@
               </a>
             </li>
             <li>
-              <a href="/Pirsib/laser-removal.html">
-                Лазерное удаление татуировок
+              <a href="/Pirsib/site-map.html">
+                Карта сайта
               </a>
             </li>
             <li>
-              <a href="/Pirsib/site-map.html">
-                Карта сайта
+              <a href="/Pirsib/laser-removal.html">
+                Лазерное удаление татуировок
               </a>
             </li>
           </ul>
@@ -1647,7 +1648,7 @@
 <!-- Попапы -->
 <div class="popup" id="popup-1">
 
-  <form class="form" action="">
+  <div class="form">
     <div class="form__head">
       <div class="form__title">
         <div class="h5">
@@ -1659,7 +1660,7 @@
         университета
       </div>
     </div>
-    <div class="form__body">
+    <form class="form__body" action="">
       <div class="form-group">
         <input class="form-input" name="foot_name" type="text" placeholder="Ваше имя*">
         <i class="icon-user"></i>
@@ -1706,8 +1707,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 
 </div>
 
