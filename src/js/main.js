@@ -9,9 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
     anchors: false
   })
 
+  gsap.ticker.lagSmoothing(0);
+  
   gsap.ticker.add(time => {
     lenis.raf(time * 1000)
   })
+
+  lenis.on('scroll', ScrollTrigger.update);
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      lenis.stop();
+    } else {
+      lenis.start();
+    }
+  });
 
   // прокрутка к якорю после загрузки
   window.addEventListener('load', () => {
@@ -29,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     }, 50)
   })
-
 
   /**
    * Burger Menu
@@ -1226,11 +1237,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   // можно вынести в отдельный файл - КОНЕЦ
 
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
+  // function raf(time) {
+  //   lenis.raf(time);
+  //   requestAnimationFrame(raf);
+  // }
+  // requestAnimationFrame(raf);
 
   if (document.getElementById('timelinePlaceholder')) {
     const timeline = TimelineScroll.create('#timelinePlaceholder');
