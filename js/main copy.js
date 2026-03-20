@@ -6,24 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
    * Lenis Smooth Scroll
    */
   const lenis = new Lenis({
-    anchors: false
+    anchors: false,
+    prevent: (node) => {
+      return node.closest('.timeline-wrapper') !== null;
+    }
   })
 
-  gsap.ticker.lagSmoothing(0);
-  
   gsap.ticker.add(time => {
     lenis.raf(time * 1000)
   })
 
   lenis.on('scroll', ScrollTrigger.update);
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      lenis.stop();
-    } else {
-      lenis.start();
-    }
-  });
 
   // прокрутка к якорю после загрузки
   window.addEventListener('load', () => {
@@ -41,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     }, 50)
   })
+
 
   /**
    * Burger Menu
@@ -946,7 +940,12 @@ document.addEventListener('DOMContentLoaded', () => {
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         onComplete: () => {
           s.isAnimating = false;
+        },
+        //
+        onStop: () => {
+          s.isAnimating = false;
         }
+        //
       });
     },
 
@@ -971,6 +970,10 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTimeline(scrollY) {
       const s = this.state;
       if (this.isMobileDevice()) return;
+
+      //
+      if (s.isAnimating) return;
+      //
 
       const containerTop = s.timelinePlaceholder.offsetTop;
 
@@ -1082,7 +1085,6 @@ document.addEventListener('DOMContentLoaded', () => {
     handleTouchMove(e) {
       const s = this.state;
       if (!s.isDragging) return;
-      e.preventDefault();
 
       const x = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
       const y = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
@@ -1099,20 +1101,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (diffX > 10) {
           s.xSwipe = true;
-          e.preventDefault();
+          if (e.cancelable) e.preventDefault();
         }
       }
 
       if (s.xSwipe) {
         const diff = x - s.startX;
-
         let newX = s.currentX + diff;
-
         newX = Math.min(Math.max(newX, -s.maxScroll), 0);
-
-        s.timelineWrapper.style.transform = `translateX(${newX}px)`;
-
-        lenis.scrollTo(s.startScroll, { immediate: true });
+        s.timelineWrapper.style.transform = `translateX(\${newX}px)`;
       }
     },
 
@@ -1122,7 +1119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       s.isDragging = false;
       s.timelineWrapper.classList.remove('grabbing');
 
-      const x = e.type === 'touchend' ? (e.changedTouches ? e.changedTouches[0].clientX : 0) : e.clientX;
+      const x = e.type === 'touchend' ? (e.changedTouches && e.cancelable ? e.changedTouches[0].clientX : 0) : e.clientX;
       const diff = x - s.startX;
       const velocity = diff / 100;
 
@@ -1219,7 +1216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         s.timelineWrapper.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
         s.timelineWrapper.addEventListener('mousemove', this.handleTouchMove.bind(this));
 
-        s.timelineWrapper.addEventListener('touchend', this.handleTouchEnd.bind(this));
+        s.timelineWrapper.addEventListener('touchend', this.handleTouchEnd.bind(this), { passive: true });
         s.timelineWrapper.addEventListener('mouseup', this.handleTouchEnd.bind(this));
         s.timelineWrapper.addEventListener('mouseleave', this.handleTouchEnd.bind(this));
       }
@@ -1257,12 +1254,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const stop = e => e.stopPropagation();
-        // mouse
         rangeItem.addEventListener('mousedown', stop, { passive: true });
-        // touch
-        rangeItem.addEventListener('touchstart', stop, { passive: true });
-        rangeItem.addEventListener('touchmove', stop, { passive: true });
-        // pointer (на всякий случай)
+        rangeItem.addEventListener('touchstart', stop, { passive: false });
+        rangeItem.addEventListener('touchmove', stop, { passive: false });
         rangeItem.addEventListener('pointerdown', stop, { passive: true });
       });
     }
