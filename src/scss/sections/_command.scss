@@ -80,11 +80,15 @@
       position: relative;
 
       @include md {
-        gap: calc(100vw/(393/20));
+        gap: calc(100vw/(393/15));
       }
 
       @include sm {
-        gap: 2rem;
+        gap: 1.5rem;
+      }
+
+      @include xxs {
+        gap: 1rem;
       }
 
       &::before {
