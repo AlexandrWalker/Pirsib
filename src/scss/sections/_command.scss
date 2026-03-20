@@ -64,7 +64,11 @@
       }
 
       @include sm {
-        gap: 2rem 3rem;
+        gap: 2rem 1.5rem;
+      }
+
+      @include xxs {
+        gap: 2rem 1rem;
       }
     }
 

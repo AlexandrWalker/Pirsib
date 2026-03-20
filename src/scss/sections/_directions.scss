@@ -125,6 +125,7 @@
     }
 
     @include sm {
+      width: calc(50% - 0.4rem);
       padding: 3rem 2rem 2rem;
     }
 
