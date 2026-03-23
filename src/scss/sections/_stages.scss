@@ -119,13 +119,25 @@
       }
     }
 
-    &-head {
+    .form__head {
       margin-bottom: 3rem;
+
+      @include md {
+        margin-bottom: calc(100vw/(393/5));
+      }
+
+      @include sm {
+        margin-bottom: 0.5rem;
+      }
     }
 
-    &-body {
+    .form__body {
       grid-template-columns: 40.5rem 40.5rem 31.5rem;
       margin-bottom: 1rem;
+
+      @include md {
+        margin-bottom: 0;
+      }
     }
   }
 }
