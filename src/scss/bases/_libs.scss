@@ -21,6 +21,10 @@
     margin: 1rem 0 0 0;
     line-height: 0.5rem;
 
+    @include domd {
+      display: none;
+    }
+
     @include md {
       margin: calc(100vw/(393/10)) 0 0 0;
       line-height: calc(100vw/(393/5));

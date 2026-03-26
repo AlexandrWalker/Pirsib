@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   gsap.ticker.lagSmoothing(0);
-  
+
   gsap.ticker.add(time => {
     lenis.raf(time * 1000)
   })
@@ -350,178 +350,340 @@ document.addEventListener('DOMContentLoaded', () => {
   accordionFunc();
 
   /**
-   * Swiper Sliders
+   * Инициализация слайдера
    */
-  const slidesConfig = [
-    {
-      selector: '.catalog__slider',
-      options: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 20,
-        centeredSlides: false,
-        centeredSlidesBounds: true,
-        centerInsufficientSlides: true,
-        slidesOffsetBefore: 0,
-        slidesOffsetAfter: 0,
-        loop: false,
-        simulateTouch: true,
-        grabCursor: true,
-        speed: 600,
-        watchOverflow: true,
+  (function swiperWrapper() {
+    if (!document.querySelector('.swiper')) return;
 
-        direction: 'horizontal',
-        touchStartPreventDefault: true,
-        touchMoveStopPropagation: true,
-        threshold: 8,
-        touchAngle: 25,
+    const globalImpulseOptions = {
+      fastClickDelay: 200,
+      accelerationFactor: 0.23,
+      friction: 0.85,
+      maxExtraSteps: 2,
+      decayInterval: 40,
+    };
 
-        mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
-        freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
-        pagination: { el: ".catalog__slider .swiper-pagination", clickable: true },
-        navigation: { prevEl: ".catalog-button-prev", nextEl: ".catalog-button-next" },
-        breakpoints: { 835: { slidesPerView: 3, spaceBetween: 20, pagination: false } },
-      }
-    },
-    {
-      selector: '.opinion__slider',
-      options: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 20,
-        centeredSlides: false,
-        centeredSlidesBounds: true,
-        centerInsufficientSlides: true,
-        slidesOffsetBefore: 0,
-        slidesOffsetAfter: 0,
-        loop: false,
-        simulateTouch: true,
-        grabCursor: true,
-        speed: 600,
-        watchOverflow: true,
-
-        direction: 'horizontal',
-        touchStartPreventDefault: true,
-        touchMoveStopPropagation: true,
-        threshold: 8,
-        touchAngle: 25,
-
-        mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
-        freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
-        pagination: { el: ".opinion__slider .swiper-pagination", clickable: true },
-        navigation: { prevEl: ".opinion-button-prev", nextEl: ".opinion-button-next" },
-        breakpoints: { 835: { slidesPerView: 3, spaceBetween: 20, pagination: false } },
-      }
-    },
-    {
-      selector: '.personal__slider',
-      options: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 20,
-        grabCursor: true,
-        speed: 1000,
-        effect: "fade",
-        fadeEffect: {
-          crossFade: true
+    const slidersConfig = [
+      {
+        sliderSelector: '.catalog__slider',
+        prevSelector: '.catalog-button-prev',
+        nextSelector: '.catalog-button-next',
+        swiperOptions: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 20,
+          speed: 600,
+          loop: false,
+          grabCursor: true,
+          simulateTouch: true,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          centerInsufficientSlides: true,
+          slidesOffsetBefore: 0,
+          slidesOffsetAfter: 0,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          threshold: 8,
+          touchAngle: 25,
+          navigation: false,
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+          freeMode: {
+            enabled: false,
+            momentum: false,
+            momentumBounce: false,
+            sticky: true,
+          },
+          pagination: {
+            el: '.catalog__slider .swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            835: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+              pagination: false,
+            },
+          },
         },
-        // effect: "creative",
-        // creativeEffect: { prev: { translate: ["-20%", 0, -1] }, next: { translate: ["20%", 0, 0] } },
-        autoplay: { delay: 5000, disableOnInteraction: false },
-        mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
-        centeredSlides: false,
-        centeredSlidesBounds: true,
-        centerInsufficientSlides: true,
-        slidesOffsetBefore: 0,
-        slidesOffsetAfter: 0,
-        loop: false,
-        simulateTouch: true,
-        freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
-        navigation: { prevEl: ".personal-button-prev", nextEl: ".personal-button-next" },
+      },
+      {
+        sliderSelector: '.opinion__slider',
+        prevSelector: '.opinion-button-prev',
+        nextSelector: '.opinion-button-next',
+        swiperOptions: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 20,
+          speed: 600,
+          loop: false,
+          grabCursor: true,
+          simulateTouch: true,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          centerInsufficientSlides: true,
+          slidesOffsetBefore: 0,
+          slidesOffsetAfter: 0,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          threshold: 8,
+          touchAngle: 25,
+          navigation: false,
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+          freeMode: {
+            enabled: false,
+            momentum: false,
+            momentumBounce: false,
+            sticky: true,
+          },
+          pagination: {
+            el: '.opinion__slider .swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            835: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+              pagination: false,
+            },
+          },
+        },
+      },
+      {
+        sliderSelector: '.personal__slider',
+        swiperOptions: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 20,
+          speed: 1000,
+          loop: false,
+          grabCursor: true,
+          simulateTouch: true,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          centerInsufficientSlides: true,
+          slidesOffsetBefore: 0,
+          slidesOffsetAfter: 0,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          threshold: 8,
+          touchAngle: 25,
+          navigation: false,
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true,
+          },
+          // effect: 'creative',
+          // creativeEffect: {
+          //   prev: { translate: ['-20%', 0, -1] },
+          //   next: { translate: ['20%', 0, 0] },
+          // },
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+        },
+      },
+      {
+        sliderSelector: '.works__slider',
+        prevSelector: '.works-button-prev',
+        nextSelector: '.works-button-next',
+        swiperOptions: {
+          slidesPerView: 1.1,
+          slidesPerGroup: 1,
+          spaceBetween: 8,
+          speed: 600,
+          loop: false,
+          grabCursor: true,
+          simulateTouch: true,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          centerInsufficientSlides: true,
+          slidesOffsetBefore: 0,
+          slidesOffsetAfter: 0,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          threshold: 8,
+          touchAngle: 25,
+          navigation: false,
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+          freeMode: {
+            enabled: false,
+            momentum: false,
+            momentumBounce: false,
+            sticky: true,
+          },
+          pagination: {
+            el: '.works__slider .swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            835: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+              pagination: false,
+            },
+          },
+        },
+      },
 
-        direction: 'horizontal',
-        touchStartPreventDefault: true,
-        touchMoveStopPropagation: true,
-        threshold: 8,
-        touchAngle: 25,
+    ];
+
+    slidersConfig.forEach(({ sliderSelector, prevSelector, nextSelector, swiperOptions }) => {
+
+      if (!document.querySelector(sliderSelector)) {
+        // console.warn(`Swiper: элемент "\${sliderSelector}" не найден, пропускаем.`);
+        return;
       }
-    },
-    {
-      selector: '.works__slider',
-      options: {
-        slidesPerView: 1.1,
-        slidesPerGroup: 1,
-        spaceBetween: 8,
-        grabCursor: true,
-        speed: 600,
-        watchOverflow: true,
-        mousewheel: { forceToAxis: true, sensitivity: 1, releaseOnEdges: true },
-        pagination: { el: ".works__slider .swiper-pagination", clickable: true },
-        navigation: { prevEl: ".works-button-prev", nextEl: ".works-button-next" },
-        breakpoints: { 835: { slidesPerView: 3, spaceBetween: 20, pagination: false } },
-        centeredSlides: false,
-        centeredSlidesBounds: true,
-        centerInsufficientSlides: true,
-        slidesOffsetBefore: 0,
-        slidesOffsetAfter: 0,
-        loop: false,
-        simulateTouch: true,
-        freeMode: { enabled: false, momentum: false, momentumBounce: false, sticky: true },
 
-        direction: 'horizontal',
-        touchStartPreventDefault: true,
-        touchMoveStopPropagation: true,
-        threshold: 8,
-        touchAngle: 25,
+      // Ищем кнопки только если селекторы заданы
+      const prevEl = prevSelector ? document.querySelector(prevSelector) : null;
+      const nextEl = nextSelector ? document.querySelector(nextSelector) : null;
+
+      // Если селекторы заданы но элементы не найдены — предупреждаем
+      if (prevSelector && !prevEl) {
+        console.warn(`Swiper: кнопка "\${prevSelector}" не найдена.`);
       }
+      if (nextSelector && !nextEl) {
+        console.warn(`Swiper: кнопка "\${nextSelector}" не найдена.`);
+      }
+
+      const swiper = new Swiper(sliderSelector, swiperOptions);
+
+      // Подключаем навигацию только если обе кнопки доступны
+      if (prevEl && nextEl) {
+        createNavigation(swiper, prevEl, nextEl);
+      }
+    });
+
+    function createNavigation(swiper, prevEl, nextEl) {
+
+      const {
+        fastClickDelay = 200,
+        accelerationFactor = 0.23,
+        friction = 0.85,
+        maxExtraSteps = 2,
+        decayInterval = 40,
+      } = globalImpulseOptions;
+
+      let lastClickTime = 0;
+      let lastDirection = null;
+      let extraImpulse = 0;
+      let decayTimer = null;
+
+      function resetImpulse() {
+        extraImpulse = 0;
+        lastDirection = null;
+        if (decayTimer) clearInterval(decayTimer);
+        decayTimer = null;
+      }
+
+      function accumulateImpulse(direction) {
+        const now = Date.now();
+        const delta = now - lastClickTime;
+
+        if (lastDirection !== null && lastDirection !== direction) {
+          extraImpulse = 0;
+        }
+
+        extraImpulse = delta < fastClickDelay
+          ? Math.min(
+            extraImpulse + (fastClickDelay - delta) * accelerationFactor,
+            maxExtraSteps
+          )
+          : 0;
+
+        lastClickTime = now;
+        lastDirection = direction;
+
+        if (decayTimer) clearInterval(decayTimer);
+        decayTimer = setInterval(() => {
+          extraImpulse *= friction;
+          if (extraImpulse < 0.2) {
+            extraImpulse = 0;
+            clearInterval(decayTimer);
+            decayTimer = null;
+          }
+        }, decayInterval);
+      }
+
+      function updateDisabled() {
+        if (swiper.params.loop) return;
+
+        const isStart = swiper.isBeginning;
+        const isEnd = swiper.isEnd;
+
+        prevEl.classList.toggle('swiper-button-disabled', isStart);
+        nextEl.classList.toggle('swiper-button-disabled', isEnd);
+
+        prevEl.disabled = isStart;
+        nextEl.disabled = isEnd;
+      }
+
+      function handle(direction) {
+        accumulateImpulse(direction);
+        const steps = 1 + Math.round(extraImpulse);
+
+        if (swiper.params.loop) {
+          const total = swiper.slides.length - (swiper.loopedSlides ?? 0) * 2;
+          const curr = swiper.realIndex;
+          const target = direction === 'next'
+            ? (curr + steps) % total
+            : (curr - steps + total) % total;
+          swiper.slideToLoop(target);
+        } else {
+          const base = swiper.activeIndex;
+          const target = direction === 'next'
+            ? Math.min(base + steps, swiper.slides.length - 1)
+            : Math.max(base - steps, 0);
+          swiper.slideTo(target);
+        }
+
+        updateDisabled();
+      }
+
+      // Вешаем обработчики
+      nextEl.addEventListener('click', (e) => { e.preventDefault(); handle('next'); });
+      prevEl.addEventListener('click', (e) => { e.preventDefault(); handle('prev'); });
+
+      // Сброс импульса при ручном свайпе
+      swiper.on('touchStart', resetImpulse);
+
+      // Синхронизация кнопок при переходе и ресайзе
+      swiper.on('slideChange', updateDisabled);
+      swiper.on('resize', updateDisabled);
+
+      // Очистка при уничтожении слайдера
+      swiper.on('destroy', () => {
+        if (decayTimer) clearInterval(decayTimer);
+        decayTimer = null;
+      });
+
+      // Начальное состояние кнопок
+      updateDisabled();
     }
-  ];
 
-  slidesConfig.forEach(cfg => {
-    const container = document.querySelector(cfg.selector);
-    if (!container) return;
-
-    const swiper = new Swiper(cfg.selector, cfg.options);
-    initTempoNavigation(swiper);
-  });
-
-  function initTempoNavigation(swiper) {
-    let slideQueue = 0;
-    let lastNav = null;
-    const clickTimes = [];
-    const WINDOW_MS = 800;
-
-    function recordAndDecide() {
-      const now = Date.now();
-      while (clickTimes.length && now - clickTimes[0] > WINDOW_MS) clickTimes.shift();
-      clickTimes.push(now);
-      const clicks = clickTimes.length;
-      if (clicks >= 5) return { slides: Math.min(4, clicks - 1), speed: 180 };
-      if (clicks >= 3) return { slides: 2, speed: 260 };
-      if (clicks === 2) return { slides: 1, speed: 340 };
-      return { slides: 1, speed: 200 };
-    }
-
-    function processQueue() {
-      if (!lastNav || slideQueue <= 0) return;
-      slideQueue = Math.max(0, slideQueue - 1);
-      const { dir, speed } = lastNav;
-      dir === 'next' ? swiper.slideNext(speed) : swiper.slidePrev(speed);
-    }
-
-    function navHandler(dir) {
-      const { slides, speed } = recordAndDecide();
-      lastNav = { dir, speed };
-      slideQueue += slides;
-      processQueue();
-    }
-
-    const nextBtn = document.querySelector('.swiper-button-next');
-    const prevBtn = document.querySelector('.swiper-button-prev');
-
-    if (nextBtn) nextBtn.addEventListener('click', () => navHandler('next'));
-    if (prevBtn) prevBtn.addEventListener('click', () => navHandler('prev'));
-  }
+  })();
 
   // ==== Общие настройки ====
   gsap.defaults({ ease: "power2.out" });
@@ -1266,6 +1428,142 @@ document.addEventListener('DOMContentLoaded', () => {
         rangeItem.addEventListener('pointerdown', stop, { passive: true });
       });
     }
+  })();
+
+  /**
+   * Прелоадер
+   */
+  (function () {
+    document.body.classList.add('no-scroll');
+
+    var safetyTimer = setTimeout(function () {
+      var preloader = document.querySelector('.preloader');
+      if (preloader && preloader.style.display !== 'none') {
+        preloader.style.display = 'none';
+        restoreScroll();
+      }
+    }, 8000);
+
+    function restoreScroll() {
+      document.body.classList.remove('no-scroll');
+    }
+
+    var canvas = document.getElementById('logo-canvas');
+    var ctx = canvas.getContext('2d');
+
+    var logoWidth = 682;
+    var logoHeight = 367;
+
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width = logoWidth * dpr;
+    canvas.height = logoHeight * dpr;
+    ctx.scale(dpr, dpr);
+
+    var fillHeight = 0;
+
+    var logoWhite = new Image();
+    var logoCyan = new Image();
+    var loadedImages = 0;
+
+    function onImageLoaded() {
+      loadedImages++;
+      if (loadedImages === 2) {
+        startPreloader();
+      }
+    }
+
+    logoWhite.onload = onImageLoaded;
+    logoCyan.onload = onImageLoaded;
+    logoWhite.onerror = onImageLoaded;
+    logoCyan.onerror = onImageLoaded;
+
+    logoWhite.src = './images/temp/preloader-1.svg';
+    logoCyan.src = './images/temp/preloader-2.svg';
+
+    function draw() {
+      ctx.clearRect(0, 0, logoWidth, logoHeight);
+
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.drawImage(logoWhite, 0, 0, logoWidth, logoHeight);
+
+      ctx.globalCompositeOperation = 'source-atop';
+      ctx.fillStyle = '#6D85F4';
+
+      var rectY = logoHeight - fillHeight;
+      ctx.fillRect(0, rectY, logoWidth, fillHeight);
+
+      ctx.globalCompositeOperation = 'source-over';
+    }
+
+    function startPreloader() {
+      draw();
+
+      var progress = { val: 0 };
+
+      gsap.to(progress, {
+        val: 30,
+        duration: 0.4,
+        ease: 'power2.out',
+        onUpdate: function () {
+          fillHeight = (progress.val / 100) * logoHeight;
+          draw();
+        }
+      });
+
+      gsap.to(progress, {
+        val: 85,
+        duration: 2.5,
+        ease: 'power1.out',
+        delay: 0.4,
+        onUpdate: function () {
+          fillHeight = (progress.val / 100) * logoHeight;
+          draw();
+        }
+      });
+
+      window.addEventListener('load', function () {
+
+        gsap.killTweensOf(progress);
+
+        gsap.to(progress, {
+          val: 100,
+          duration: 0.4,
+          ease: 'power2.out',
+          onUpdate: function () {
+            fillHeight = (progress.val / 100) * logoHeight;
+            draw();
+          },
+          onComplete: function () {
+            setTimeout(hidePreloader, 600);
+          }
+        });
+      });
+    }
+
+    function hidePreloader() {
+      var preloader = document.querySelector('.preloader');
+
+      gsap.set(canvas, { opacity: 0 });
+
+      gsap.to(preloader, {
+        scaleY: 0,
+        duration: 0.7,
+        ease: 'power2.inOut',
+        transformOrigin: 'top center',
+        onComplete: function () {
+          preloader.style.display = 'none';
+          restoreScroll();
+        }
+      });
+
+      gsap.to(canvas, {
+        scaleY: 2,
+        duration: 0.7,
+        ease: 'power2.inOut',
+        transformOrigin: 'bottom center'
+      });
+    }
+
   })();
 
   /**

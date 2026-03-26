@@ -1,0 +1,31 @@
+@use './../mixins' as *;
+
+.preloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0C0F1B;
+  transform-origin: top center;
+
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+canvas {
+  display: block;
+  width: 68.2rem;
+  height: 36.7rem;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  @include md {
+    width: calc(100vw/(393/353));
+    height: calc(100vw/(393/190));
+  }
+
+  @include sm {
+    width: 33rem;
+    height: 17.7rem;
+  }
+}
