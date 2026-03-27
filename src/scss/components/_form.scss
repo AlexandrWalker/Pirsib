@@ -187,7 +187,7 @@
 
   &-btn {
     --border-radius: 10rem;
-    
+
     width: 100%;
     text-transform: none;
     transition: all 0.5s linear;
@@ -210,6 +210,10 @@
 
   &-checkbox {
     display: none;
+    visibility: hidden;
+    position: absolute;
+    top: -99999px;
+    left: -999999px;
 
     &:checked {
 
