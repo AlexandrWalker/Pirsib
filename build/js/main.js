@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  ScrollTrigger.defaults({ scroller: window });
+
   // прокрутка к якорю после загрузки
   window.addEventListener('load', () => {
     const hash = window.location.hash
@@ -479,15 +481,42 @@ document.addEventListener('DOMContentLoaded', () => {
           threshold: 8,
           touchAngle: 25,
           navigation: false,
-          effect: 'fade',
-          fadeEffect: {
-            crossFade: true,
-          },
+
+          // effect: 'fade',
+          // fadeEffect: {
+          //   crossFade: true,
+          // },
+
           // effect: 'creative',
           // creativeEffect: {
-          //   prev: { translate: ['-20%', 0, -1] },
-          //   next: { translate: ['20%', 0, 0] },
+          //   prev: { translate: ['-50%', 0, -1] },
+          //   next: { translate: ['50%', 0, 0] },
           // },
+
+          // effect: "coverflow",
+          // coverflowEffect: {
+          //   rotate: 50,
+          //   stretch: 0,
+          //   depth: 100,
+          //   modifier: 1,
+          // },
+
+          // effect: "flip",
+
+          // effect: "cards",
+
+          effect: "creative",
+          creativeEffect: {
+            prev: {
+              shadow: false,
+              translate: ["-20%", 0, -1],
+            },
+            next: {
+              shadow: false,
+              translate: ["100%", 0, 0],
+            },
+          },
+
           autoplay: {
             delay: 5000,
             disableOnInteraction: false,
@@ -699,7 +728,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: el,
         start: "top 95%",
         toggleActions: "play none none none", // play один раз, не повторять
-        once: true
+        invalidateOnRefresh: true
       },
       willChange: "opacity, transform"
     });
@@ -717,7 +746,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: title,
         start: "top 100%",
         toggleActions: "play none none none",
-        once: true
+        invalidateOnRefresh: true
       },
       willChange: "opacity, transform"
     });
@@ -738,7 +767,7 @@ document.addEventListener('DOMContentLoaded', () => {
           trigger: parent,
           start: "top 90%",
           toggleActions: "play none none none",
-          once: true
+          invalidateOnRefresh: true
         }
       });
     });
@@ -762,7 +791,7 @@ document.addEventListener('DOMContentLoaded', () => {
           trigger: el,
           start: "top 95%",
           toggleActions: "play none none none",
-          once: true
+          invalidateOnRefresh: true
         }
       });
     } else {
@@ -779,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
           trigger: el,
           start: "top 95%",
           toggleActions: "play none none none",
-          once: true
+          invalidateOnRefresh: true
         }
       });
     }
@@ -798,7 +827,7 @@ document.addEventListener('DOMContentLoaded', () => {
           trigger: el,
           start: "top 95%",
           toggleActions: "play none none none",
-          once: true
+          invalidateOnRefresh: true
         }
       });
     } else {
@@ -815,7 +844,7 @@ document.addEventListener('DOMContentLoaded', () => {
           trigger: el,
           start: "top 95%",
           toggleActions: "play none none none",
-          once: true
+          invalidateOnRefresh: true
         }
       });
     }
@@ -823,35 +852,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==== Parallax для изображений и блоков ====
   const animations = document.querySelectorAll('[data-animation="parallax-img"], [data-animation="parallax-img-scale"], [data-animation^="parallax-box"]');
-  if (!animations.length) return;
+  if (animations.length) {
+    animations.forEach(container => {
+      // Находим изображение внутри контейнера, если есть
+      const el = container.tagName.toLowerCase() === 'img' ? container : container.querySelector('img') || container;
 
-  animations.forEach(container => {
-    // Находим изображение внутри контейнера, если есть
-    const el = container.tagName.toLowerCase() === 'img' ? container : container.querySelector('img') || container;
+      const isScale = container.dataset.animation === "parallax-img-scale";
+      const yStart = container.dataset.animation === "parallax-box-2x" ? "20%" : "10%";
+      const yEnd = container.dataset.animation === "parallax-box-2x" ? "-20%" : "-10%";
 
-    const isScale = container.dataset.animation === "parallax-img-scale";
-    const yStart = container.dataset.animation === "parallax-box-2x" ? "20%" : "10%";
-    const yEnd = container.dataset.animation === "parallax-box-2x" ? "-20%" : "-10%";
+      const fromVars = { y: yStart };
+      if (isScale) fromVars.scale = 1, fromVars.y = 0;
 
-    const fromVars = { y: yStart };
-    if (isScale) fromVars.scale = 1, fromVars.y = 0;
+      const toVars = { y: yEnd };
+      if (isScale) toVars.scale = 1.2, fromVars.y = 0;
 
-    const toVars = { y: yEnd };
-    if (isScale) toVars.scale = 1.2, fromVars.y = 0;
-
-    gsap.fromTo(el, fromVars, {
-      ...toVars,
-      ease: "none",
-      force3D: true,
-      scrollTrigger: {
-        trigger: container,   // триггер по контейнеру
-        start: "top 90%",
-        end: "bottom top",
-        scrub: true
-      },
-      willChange: "transform"
+      gsap.fromTo(el, fromVars, {
+        ...toVars,
+        ease: "none",
+        force3D: true,
+        scrollTrigger: {
+          trigger: container,   // триггер по контейнеру
+          start: "top 90%",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true
+        },
+        willChange: "transform"
+      });
     });
-  });
+  }
 
   // Выявление заполненности поля формы для присваивания класса
   document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
@@ -862,11 +892,22 @@ document.addEventListener('DOMContentLoaded', () => {
    * Инициализация Fancybox
    */
   Fancybox.bind('[data-fancybox]', {
-    Panzoom: false,
     Html: {
       autoSize: false
     },
-    on: { 'Carousel.ready': () => lenis.stop(), destroy: () => lenis.start() }
+    on: {
+      'Carousel.ready': () => lenis.stop(), destroy: () => lenis.start(),
+    },
+    placeFocusBack: false,
+    Images: {
+      zoom: false,
+      Panzoom: {
+        maxScale: 1,
+        clickAction: "toggleAction",
+        wheelAction: false,
+        pinchToZoom: false,
+      },
+    },
   });
 
   /**
@@ -1553,6 +1594,7 @@ document.addEventListener('DOMContentLoaded', () => {
         onComplete: function () {
           preloader.style.display = 'none';
           restoreScroll();
+          ScrollTrigger.refresh(true);
         }
       });
 

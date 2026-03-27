@@ -59,7 +59,7 @@ section {
 }
 
 a {
-  cursor: pointer;
+  cursor: pointer !important;
   color: inherit;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -94,14 +94,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -118,14 +110,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -134,8 +118,24 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -711,10 +711,23 @@ a:hover .border::after {
   transform: rotate(-90deg);
 }
 
-.f-panzoom__wrapper {
+.fancybox__content {
   border-radius: var(--border-radius);
   overflow: hidden;
-  margin: 0 2rem;
+  margin: 2rem;
+}
+
+.is-compact .fancybox__content>.f-button.is-close-btn,
+.fancybox__content>.f-button.is-close-btn {
+  top: 3.4rem;
+  right: 3.4rem;
+  color: var(--pink-2);
+  background: none;
+}
+
+.f-button svg {
+  width: 3.2rem;
+  height: 3.2rem;
 }
 
 /* Reset and base styles  */
@@ -1246,8 +1259,8 @@ a:hover .btn .border::after,
   color: var(--white);
   -webkit-box-shadow: inset 0px 0px 1.14rem rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 1.14rem rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(0.635rem);
-  backdrop-filter: blur(0.635rem);
+  -webkit-backdrop-filter: blur(6.35px);
+  backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
@@ -1564,6 +1577,16 @@ a:hover .btn .border::after,
   height: 64.1rem;
   top: -0.5rem;
   right: 10.5rem;
+}
+
+.mask.mask--personal {
+  display: none;
+  background-image: url("./../images/mask/personal-mob-mask.png");
+  width: 16rem;
+  height: 24rem;
+  top: -17.5rem;
+  left: 0;
+  z-index: -1;
 }
 
 .mask.mask--find-us {
@@ -2515,14 +2538,20 @@ p {
 
 .menu__list {
   width: 100%;
-  padding: 8rem 0 0 12rem;
+  padding: 8rem 0 8rem 12rem;
   overflow: hidden;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), -webkit-gradient(linear, left bottom, left top, from(rgba(25, 18, 39, 0.9)), to(rgba(25, 18, 39, 0.9))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-  -webkit-backdrop-filter: blur(1.855rem);
-  backdrop-filter: blur(1.855rem);
+  -webkit-backdrop-filter: blur(18.55px);
+  backdrop-filter: blur(18.55px);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.menu__list::-webkit-scrollbar {
+  display: none;
 }
 
 .menu__list ul {
@@ -2560,8 +2589,8 @@ p {
   overflow: hidden;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), -webkit-gradient(linear, left bottom, left top, from(rgba(25, 18, 39, 0.9)), to(rgba(25, 18, 39, 0.9))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-  -webkit-backdrop-filter: blur(1.855rem);
-  backdrop-filter: blur(1.855rem);
+  -webkit-backdrop-filter: blur(18.55px);
+  backdrop-filter: blur(18.55px);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   position: relative;
@@ -2574,8 +2603,8 @@ p {
   background: var(--blue-dark-1);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(1.855rem);
-  backdrop-filter: blur(1.855rem);
+  -webkit-backdrop-filter: blur(18.55px);
+  backdrop-filter: blur(18.55px);
   position: absolute;
   top: 13rem;
   left: 0;
@@ -2589,8 +2618,8 @@ p {
   background: var(--blue-dark-1);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(1.855rem);
-  backdrop-filter: blur(1.855rem);
+  -webkit-backdrop-filter: blur(18.55px);
+  backdrop-filter: blur(18.55px);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -3227,6 +3256,7 @@ canvas {
 
 .piercing-page .decorations__item-content {
   gap: 1.5rem;
+  height: 100%;
 }
 
 .piercing-page .decorations__item-content p {
@@ -3235,6 +3265,7 @@ canvas {
 }
 
 .piercing-page .decorations__item-content span {
+  margin-top: auto;
   font-weight: 700;
   font-size: 2rem;
 }
@@ -3244,6 +3275,7 @@ canvas {
 }
 
 .piercing-page .catalog__item-btn {
+  margin-top: auto;
   margin-left: auto;
   position: static;
 }
@@ -3439,14 +3471,13 @@ html.out .biography__left {
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 6rem 6rem 8rem;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   -webkit-backdrop-filter: blur(6.35px);
   backdrop-filter: blur(6.35px);
   border-radius: 10rem;
   overflow: hidden;
+  background-color: rgb(8, 10, 18);
   position: relative;
 }
 
@@ -3502,6 +3533,23 @@ html.out .biography__left {
   top: 2rem;
   right: 7.6rem;
   overflow: visible;
+}
+
+.biography__block-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -13rem;
+  z-index: -1;
+  overflow: visible;
+}
+
+.biography__block-video video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .biography__block .btn--video {
@@ -4163,6 +4211,22 @@ html.out .biography__left {
   line-height: 100%;
 }
 
+.certificates__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .certificates__mask {
   width: 54.3rem;
   height: 61.4rem;
@@ -4202,6 +4266,7 @@ html.out .biography__left {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 1rem;
   width: 100%;
   text-align: center;
   position: relative;
@@ -4220,7 +4285,7 @@ html.out .biography__left {
 
 .certificates__item-title {
   max-width: 23rem;
-  margin-bottom: 5rem;
+  margin-bottom: auto;
 }
 
 .certificates__item-icon {
@@ -4239,10 +4304,10 @@ html.out .biography__left {
 
 .certificates__item .btn--inner {
   --border-radius: 10rem;
-  margin-top: auto;
+  margin-top: 9.6rem;
 }
 
-.certificates__item .btn--inner span::before {
+.certificates__item .btn--inner span:not(span.border)::before {
   content: attr(data-text);
 }
 
@@ -4440,7 +4505,7 @@ html.out .biography__left {
 .directions__item-img {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.3);
   -webkit-backdrop-filter: blur(6.35px);
   backdrop-filter: blur(6.35px);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
@@ -5271,6 +5336,8 @@ html.out .biography__left {
 .personal__slide {
   opacity: 0 !important;
   overflow: visible !important;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .personal__slide.swiper-slide-active {
@@ -5911,7 +5978,8 @@ html.out .biography__left {
   justify-content: space-between;
   width: 100%;
   min-height: 57.5rem;
-  padding: 5rem 5rem 6rem 5rem;
+  height: 100%;
+  padding: 5rem 5rem 16rem 5rem;
   background: -webkit-gradient(linear, left top, right top, from(rgba(12, 15, 27, 0.95)), to(rgba(13, 15, 27, 0)));
   background: linear-gradient(90deg, rgba(12, 15, 27, 0.95) 0%, rgba(13, 15, 27, 0) 100%);
   border-radius: var(--border-radius);
@@ -6294,7 +6362,7 @@ html.out .biography__left {
     font-size: 12.7226463104vw;
   }
 
-  .f-panzoom__wrapper {
+  .fancybox__content {
     margin: 0 3.8167938931vw;
   }
 
@@ -6459,6 +6527,10 @@ html.out .biography__left {
     right: -1.5267175573vw;
   }
 
+  .mask.mask--personal {
+    display: block;
+  }
+
   .range__item {
     height: 59.0330788804vw;
   }
@@ -6596,8 +6668,8 @@ html.out .biography__left {
     min-height: 100vh;
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), -webkit-gradient(linear, left bottom, left top, from(rgba(25, 18, 39, 0.9)), to(rgba(25, 18, 39, 0.9))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-    -webkit-backdrop-filter: blur(1.855rem);
-    backdrop-filter: blur(1.855rem);
+    -webkit-backdrop-filter: blur(18.55px);
+    backdrop-filter: blur(18.55px);
   }
 
   .menu--open .burger-menu__inner {
@@ -7212,6 +7284,10 @@ html.out .biography__left {
     right: unset;
   }
 
+  .biography__block-video {
+    right: 0;
+  }
+
   .biography__block--mob {
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
@@ -7563,6 +7639,10 @@ html.out .biography__left {
     margin-bottom: 5.0890585242vw;
   }
 
+  .certificates__btns {
+    display: none;
+  }
+
   .certificates__mask {
     display: none;
   }
@@ -7590,9 +7670,18 @@ html.out .biography__left {
   .certificates__item .btn--inner {
     --border-radius: calc(100vw/(393/100));
     width: 100%;
+    margin-top: 0;
   }
 
-  .certificates__item .btn--inner span::before {
+  .certificates__item .btn--inner span:not(span.border) {
+    max-width: calc(100% - 5.1rem);
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+
+  .certificates__item .btn--inner span:not(span.border)::before {
     content: attr(data-text-mob);
   }
 
@@ -8313,7 +8402,7 @@ html.out .biography__left {
     font-size: 5rem;
   }
 
-  .f-panzoom__wrapper {
+  .fancybox__content {
     margin: 0 1.5rem;
   }
 

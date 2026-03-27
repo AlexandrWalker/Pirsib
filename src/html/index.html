@@ -548,6 +548,7 @@
             </div>
           </div>
           <div class="mask mask--2" data-animation="parallax-box"></div>
+          <div class="mask mask--personal" data-animation="parallax-box"></div>
         </div>
       </section>
 
@@ -922,11 +923,25 @@
       <section class="certificates">
         <div class="container">
           <div class="certificates__inner">
-            <div class="general__head">
-              <div class="general__title" data-transform="titleFadeUp">
-                <h2 data-gradient-text>Cертификаты</h2>
+
+            <div class="certificates__head">
+              <div class="general__head">
+                <div class="general__title" data-transform="titleFadeUp">
+                  <h2 data-gradient-text>Cертификаты</h2>
+                </div>
+              </div>
+              <div class="certificates__btns">
+                <a class="btn btn--inner" href="/Pirsib/certificates.html">
+                  <span class="border"></span>
+                  Все документы
+                  <div class="btn btn--inner-icon">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                </a>
               </div>
             </div>
+
             <div class="certificates__items" data-animation="blur">
               @@loop('./elements/certificates-item.html', './data/certificates-items.json')
             </div>

@@ -169,10 +169,10 @@
   }
 }
 
-.f-panzoom__wrapper {
+.fancybox__content {
   border-radius: var(--border-radius);
   overflow: hidden;
-  margin: 0 2rem;
+  margin: 2rem;
 
   @include md {
     margin: 0 calc(100vw/(393/15));
@@ -181,4 +181,17 @@
   @include sm {
     margin: 0 1.5rem;
   }
+}
+
+.is-compact .fancybox__content>.f-button.is-close-btn,
+.fancybox__content>.f-button.is-close-btn {
+  top: 3.4rem;
+  right: 3.4rem;
+  color: var(--pink-2);
+  background: none;
+}
+
+.f-button svg {
+  width: 3.2rem;
+  height: 3.2rem;
 }

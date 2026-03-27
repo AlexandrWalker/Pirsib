@@ -57,6 +57,20 @@
     }
   }
 
+  &__head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__btns {
+
+    @include md {
+      display: none;
+    }
+  }
+
   &__mask {
     width: 54.3rem;
     height: 61.4rem;
@@ -97,6 +111,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
     width: 100%;
     text-align: center;
     position: relative;
@@ -127,7 +142,8 @@
 
     &-title {
       max-width: 23rem;
-      margin-bottom: 5rem;
+      // margin-bottom: 5rem;
+      margin-bottom: auto;
 
       @include md {
         display: none;
@@ -153,19 +169,29 @@
     .btn--inner {
       --border-radius: 10rem;
 
-      margin-top: auto;
+      // margin-top: auto;
+      margin-top: 9.6rem;
 
       @include md {
         --border-radius: calc(100vw/(393/100));
 
         width: 100%;
+        margin-top: 0;
       }
 
       @include sm {
         --border-radius: 10rem;
       }
 
-      span {
+      span:not(span.border) {
+
+        @include md {
+          max-width: calc(100% - 5.1rem);
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-align: left;
+        }
 
         &::before {
           content: attr(data-text);

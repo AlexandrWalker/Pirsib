@@ -4,12 +4,15 @@
 
   &__list {
     width: 100%;
-    padding: 8rem 0 0 12rem;
+    padding: 8rem 0 8rem 12rem;
     overflow: hidden;
 
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-    backdrop-filter: blur(1.855rem);
+    backdrop-filter: blur(18.55px);
     transition: all 0.5s ease;
+
+    height: 100%;
+    overflow-y: auto;
 
     @include md {
       padding: calc(100vw/(393/100)) calc(100vw/(393/20)) calc(100vw/(393/30)) calc(100vw/(393/20));
@@ -21,6 +24,10 @@
 
     @include sm {
       padding: 10rem 2rem 3rem 2rem;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
     }
 
     ul {
@@ -73,7 +80,7 @@
     overflow: hidden;
 
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-    backdrop-filter: blur(1.855rem);
+    backdrop-filter: blur(18.55px);
     transition: all 0.5s ease;
 
     position: relative;
@@ -97,7 +104,7 @@
       height: 0.1rem;
       background: var(--blue-dark-1);
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-      backdrop-filter: blur(1.855rem);
+      backdrop-filter: blur(18.55px);
 
       position: absolute;
       top: 13rem;
@@ -115,7 +122,7 @@
       height: 100%;
       background: var(--blue-dark-1);
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-      backdrop-filter: blur(1.855rem);
+      backdrop-filter: blur(18.55px);
 
       position: absolute;
       top: 0;

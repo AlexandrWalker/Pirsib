@@ -85,6 +85,7 @@
   &__slide {
     opacity: 0 !important;
     overflow: visible !important;
+    transition: all 0.5s ease;
 
     &.swiper-slide-active {
       opacity: 1 !important;

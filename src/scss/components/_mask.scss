@@ -33,6 +33,21 @@
     }
   }
 
+  &.mask--personal {
+    display: none;
+    background-image: url('./../../images/mask/personal-mob-mask.png');
+    width: 16rem;
+    height: 24rem;
+
+    top: -17.5rem;
+    left: 0;
+    z-index: -1;
+
+    @include md {
+      display: block;
+    }
+  }
+
   &.mask--find-us {
     width: 157.9rem;
     height: 151.3rem;
