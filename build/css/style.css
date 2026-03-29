@@ -86,14 +86,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
@@ -120,6 +112,14 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -190,16 +190,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -2976,6 +2976,7 @@ canvas {
   overflow: hidden;
   -webkit-box-shadow: none;
   box-shadow: none;
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
   will-change: transform;
 }
@@ -3439,6 +3440,11 @@ canvas {
   will-change: transform;
 }
 
+.certificates__page .certificates__item .btn--inner span:not(span.border) {
+  max-width: 100%;
+  text-align: center;
+}
+
 .certificates__page .certificates__item .btn--inner span::before {
   z-index: 1;
 }
@@ -3600,6 +3606,7 @@ html.out .biography__left {
   background: unset;
   -webkit-box-shadow: unset;
   box-shadow: unset;
+  -webkit-backdrop-filter: unset;
   backdrop-filter: unset;
   border-radius: unset;
   will-change: transform;
@@ -5050,6 +5057,7 @@ html.out .biography__left {
 .hero__request .form-input {
   -webkit-box-shadow: unset;
   box-shadow: unset;
+  -webkit-backdrop-filter: unset;
   backdrop-filter: unset;
 }
 
@@ -6932,6 +6940,7 @@ html.out .biography__left {
     height: 100%;
     overflow-y: unset;
     background: unset;
+    -webkit-backdrop-filter: unset;
     backdrop-filter: unset;
   }
 
@@ -6947,6 +6956,7 @@ html.out .biography__left {
     gap: 5.0890585242vw;
     padding: 7.6335877863vw 5.0890585242vw 20.3562340967vw 5.0890585242vw;
     background: unset;
+    -webkit-backdrop-filter: unset;
     backdrop-filter: unset;
   }
 
@@ -7300,8 +7310,16 @@ html.out .biography__left {
     height: 15.2671755725vw;
   }
 
+  .certificates__page .certificates__item .btn--inner-icon {
+    display: none;
+  }
+
+  .certificates__page .certificates__item .btn--inner .border {
+    --border-radius: calc(100vw/(393/100));
+  }
+
   .certificates__page .certificates__item .btn--inner span::before {
-    content: attr(data-text);
+    content: attr(data-text) !important;
     min-height: 1em;
   }
 
@@ -7676,6 +7694,7 @@ html.out .biography__left {
     background: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    -webkit-backdrop-filter: unset;
     backdrop-filter: unset;
     right: 5.0890585242vw;
     bottom: 5.0890585242vw;
@@ -8246,6 +8265,7 @@ html.out .biography__left {
   .quiz__inner {
     padding: 7.6335877863vw 14.5038167939vw 9.1603053435vw 5.0890585242vw;
     background-image: url(./../images/temp/quiz-bg-mob.webp);
+    -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
 
@@ -9019,11 +9039,12 @@ html.out .biography__left {
     justify-content: center;
   }
 
-  .certificates__page .certificates__item .btn--inner-icon {
-    display: none;
+  .certificates__page .certificates__item .btn--inner .border {
+    --border-radius: 10rem;
   }
 
   .certificates__page .certificates__item .btn--inner span::before {
+    content: attr(data-text) !important;
     font-size: 1.2rem;
   }
 

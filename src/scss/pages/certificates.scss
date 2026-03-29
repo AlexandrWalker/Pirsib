@@ -79,21 +79,41 @@
 
         &-icon {
 
-          @include sm {
+          @include md {
             display: none;
           }
         }
 
-        span::before {
-          z-index: 1;
+        .border {
 
           @include md {
-            content: attr(data-text);
-            min-height: 1em;
+            --border-radius: calc(100vw/(393/100));
           }
 
           @include sm {
-            font-size: 1.2rem;
+            --border-radius: 10rem;
+          }
+        }
+
+        span {
+
+          &:not(span.border) {
+            max-width: 100%;
+            text-align: center;
+          }
+
+          &::before {
+            z-index: 1;
+
+            @include md {
+              content: attr(data-text) !important;
+              min-height: 1em;
+            }
+
+            @include sm {
+              content: attr(data-text) !important;
+              font-size: 1.2rem;
+            }
           }
         }
       }
