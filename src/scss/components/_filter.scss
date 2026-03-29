@@ -27,6 +27,7 @@
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: all 0.5s ease;
+    will-change: transform;
 
     position: relative;
 

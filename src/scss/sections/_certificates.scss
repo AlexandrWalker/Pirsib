@@ -117,6 +117,7 @@
     position: relative;
     z-index: 1;
     transition: all 0.5s ease;
+    will-change: transform;
 
     @include domd {
       width: calc(25% - ((2rem*3)/4));
@@ -126,6 +127,19 @@
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
       backdrop-filter: blur(6.35px);
       border-radius: 10rem;
+      will-change: transform;
+    }
+
+
+    .border {
+
+      @include md {
+        --border-radius: calc(100vw / (393 / 100));;
+      }
+
+      @include sm {
+        --border-radius: 2.4rem;
+      }
     }
 
     &.awards__item {
@@ -174,30 +188,37 @@
 
       @include md {
         --border-radius: calc(100vw/(393/100));
+        --btn-height: auto;
 
         width: 100%;
         margin-top: 0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
       }
 
       @include sm {
-        --border-radius: 10rem;
+        --border-radius: 2.4rem;
       }
 
       span:not(span.border) {
+        min-height: 1em;
 
         @include md {
           max-width: calc(100% - 5.1rem);
           width: 100%;
-          overflow: hidden;
-          text-overflow: ellipsis;
+          // overflow: hidden;
+          // text-overflow: ellipsis;
+          // text-align: left;
           text-align: left;
         }
 
         &::before {
           content: attr(data-text);
 
+
           @include md {
             content: attr(data-text-mob);
+            white-space: normal;
           }
         }
       }

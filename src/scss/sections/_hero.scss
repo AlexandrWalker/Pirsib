@@ -122,8 +122,8 @@
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
     border-radius: var(--border-radius);
-
     border: calc(0.1rem / 2) solid var(--pink-50);
+    will-change: transform;
 
     @include md {
       padding: calc(100vw/(393/30)) calc(100vw/(393/30)) calc(100vw/(393/40)) calc(100vw/(393/30));
@@ -216,6 +216,7 @@
 
         a {
           text-decoration: underline;
+          text-decoration-skip-ink: none;
 
           &:hover {
             color: var(--pink);

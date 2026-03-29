@@ -92,6 +92,7 @@
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
       backdrop-filter: blur(6.35px);
       border-radius: 2.4rem;
+      will-change: transform;
 
       position: absolute;
       top: calc(100% + 0.5rem);
@@ -175,13 +176,13 @@
 
     @include md {
       min-height: unset;
-      padding: calc(100vw/(393/30));
+      padding: calc(100vw/(393/30)) calc(100vw/(393/30)) calc(100vw/(393/100)) calc(100vw/(393/30));
 
-      aspect-ratio: 353/371;
+      // aspect-ratio: 353/371;
     }
 
     @include sm {
-      padding: 3rem;
+      padding: 3rem 3rem 10rem 3rem;
     }
 
     &:hover {
@@ -256,12 +257,12 @@
     gap: 3rem;
 
     @include md {
-      max-width: calc(100vw/(393/200));
+      // max-width: calc(100vw/(393/200));
       gap: calc(100vw/(393/20));
     }
 
     @include sm {
-      max-width: 20rem;
+      // max-width: 20rem;
       gap: 2rem;
     }
 
@@ -274,10 +275,12 @@
 
       @include md {
         gap: calc(100vw/(393/10));
+        max-width: calc(100vw/(393/200));
       }
 
       @include sm {
         gap: 1rem;
+        max-width: 20rem;
       }
     }
 

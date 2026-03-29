@@ -220,6 +220,7 @@
       backdrop-filter: blur(6.35px);
       border-radius: 10rem;
       padding: 0 0 0 4rem;
+      will-change: transform;
 
       position: absolute;
       right: 3rem;

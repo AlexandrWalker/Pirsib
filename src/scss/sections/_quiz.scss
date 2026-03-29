@@ -11,14 +11,20 @@
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
     border-radius: var(--border-radius);
+    will-change: transform;
 
     @include md {
       padding: calc(100vw/(393/30)) calc(100vw/(393/57)) calc(100vw/(393/36)) calc(100vw/(393/20));
       background-image: url(./../images/temp/quiz-bg-mob.webp);
+      backdrop-filter: none;
     }
 
     @include sm {
       padding: 3rem 7rem 2.5rem 2rem;
+    }
+
+    @include xs {
+      padding: 3rem 2rem 2.5rem 2rem;
     }
   }
 

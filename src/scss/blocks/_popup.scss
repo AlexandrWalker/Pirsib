@@ -10,6 +10,7 @@
   border-radius: var(--border-radius);
   padding: 4rem 4rem 5rem;
   max-width: 41.2rem;
+  will-change: transform;
 
   color: var(--purple);
 
@@ -17,11 +18,13 @@
     --border-radius: calc(100vw/(393/24));
 
     padding: calc(100vw/(393/40)) calc(100vw/(393/40)) calc(100vw/(393/50));
-    max-width: calc(100vw/(393/412));
+    max-width: calc((100vw/(393/412)) - ((100vw/(393/15)) * 2));
   }
 
   @include sm {
     --border-radius: 2.4rem;
+
+    max-width: calc(100% - (1.5rem * 2));
   }
 
   .h5 {

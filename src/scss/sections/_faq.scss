@@ -49,12 +49,12 @@
     flex-direction: column;
     gap: 0;
     padding: 2.5rem 5rem 2.6rem;
-
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
     transition: all 0.5s ease;
     overflow: hidden;
     border-radius: 5rem;
+    will-change: transform;
 
     position: relative;
 

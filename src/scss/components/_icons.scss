@@ -5,6 +5,12 @@
 [class*=" icon-"] {
   font-size: var(--btn-height);
   transition: all 0.5s linear;
+
+
+  &::before {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .icon {

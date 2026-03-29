@@ -42,6 +42,7 @@
     backdrop-filter: blur(6.35px);
     border-radius: 10rem;
     overflow: hidden;
+    will-change: transform;
 
     background-color: rgb(8, 10, 18);
 
@@ -163,6 +164,7 @@
       box-shadow: unset;
       backdrop-filter: unset;
       border-radius: unset;
+      will-change: transform;
 
       @include md {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
@@ -217,7 +219,8 @@
         text-transform: uppercase;
 
         @include md {
-          max-width: calc(100vw/(393/245));
+          // max-width: calc(100vw/(393/245));
+          // padding: calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/60));
         }
 
         @include sm {
@@ -257,6 +260,7 @@
     backdrop-filter: blur(6.35px);
     border-radius: 10rem;
     padding: 6rem;
+    will-change: transform;
 
     h6,
     .h6 {

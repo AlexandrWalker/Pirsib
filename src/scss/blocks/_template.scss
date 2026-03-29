@@ -95,6 +95,7 @@
         overflow: hidden;
         box-shadow: none;
         backdrop-filter: none;
+        will-change: transform;
 
         @include md {
           padding: calc(100vw/(393/30)) calc(100vw/(393/20)) calc(100vw/(393/277));
@@ -218,7 +219,7 @@
     gap: 10.8rem;
     padding: 10rem 13.2rem 11.2rem;
     border-radius: var(--border-radius);
-
+    will-change: transform;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
@@ -285,7 +286,8 @@
           margin-left: calc(100vw/(393/10));
         }
 
-        .h6, h6 {
+        .h6,
+        h6 {
           font-family: var(--font-family);
           font-weight: 400;
           line-height: 120%;

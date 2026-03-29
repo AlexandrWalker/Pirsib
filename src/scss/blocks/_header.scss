@@ -47,6 +47,7 @@
     transition: all 0.5s ease;
     margin-left: auto;
     width: fit-content;
+    will-change: transform;
 
     position: relative;
     z-index: 201;
@@ -222,6 +223,7 @@
 
         p {
           text-decoration: underline;
+          text-decoration-skip-ink: none;
         }
       }
     }
@@ -256,7 +258,7 @@
       overflow: hidden;
       transition: all 0.5s ease;
       width: calc(100% + 1rem + 8.4rem);
-
+      will-change: transform;
       border-radius: 2.4rem;
       background: radial-gradient(39.27% 41.96% at 50% 53.43%, #e4e9ff12 0%, #ad32ae12 100%);
       box-shadow: inset 0px 0px 11.4px #020a5169;
@@ -341,6 +343,7 @@
       &:hover {
         color: var(--pink);
         text-decoration: underline;
+        text-decoration-skip-ink: none;
       }
     }
 

@@ -6,7 +6,7 @@
     width: 100%;
     padding: 8rem 0 8rem 12rem;
     overflow: hidden;
-
+    will-change: transform;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
     backdrop-filter: blur(18.55px);
     transition: all 0.5s ease;
@@ -17,6 +17,7 @@
     @include md {
       padding: calc(100vw/(393/100)) calc(100vw/(393/20)) calc(100vw/(393/30)) calc(100vw/(393/20));
       height: 100%;
+      overflow-y: unset;
 
       background: unset;
       backdrop-filter: unset;
@@ -78,7 +79,7 @@
     height: 100%;
     padding: 18rem 0 0 16rem;
     overflow: hidden;
-
+    will-change: transform;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
     backdrop-filter: blur(18.55px);
     transition: all 0.5s ease;
@@ -175,6 +176,7 @@
 
       @include md {
         font-size: calc(100vw/(393/24));
+        white-space: normal;
       }
 
       @include sm {

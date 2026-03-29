@@ -47,6 +47,7 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
+    will-change: transform;
 
     position: relative;
 
@@ -72,6 +73,7 @@
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
       backdrop-filter: blur(6.35px);
       aspect-ratio: 1/1;
+      will-change: transform;
 
       position: relative;
       z-index: 1;

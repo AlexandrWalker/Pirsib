@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
+  ScrollTrigger.config({
+    autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
+  });
+
   /**
    * Lenis Smooth Scroll
    */
@@ -386,6 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
           direction: 'horizontal',
           touchStartPreventDefault: true,
           touchMoveStopPropagation: true,
+          watchOverflow: true,
           threshold: 8,
           touchAngle: 25,
           navigation: false,
@@ -433,6 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
           direction: 'horizontal',
           touchStartPreventDefault: true,
           touchMoveStopPropagation: true,
+          watchOverflow: true,
           threshold: 8,
           touchAngle: 25,
           navigation: false,
@@ -478,6 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
           direction: 'horizontal',
           touchStartPreventDefault: true,
           touchMoveStopPropagation: true,
+          watchOverflow: true,
           threshold: 8,
           touchAngle: 25,
           navigation: false,
@@ -548,6 +555,7 @@ document.addEventListener('DOMContentLoaded', () => {
           direction: 'horizontal',
           touchStartPreventDefault: true,
           touchMoveStopPropagation: true,
+          watchOverflow: true,
           threshold: 8,
           touchAngle: 25,
           navigation: false,
@@ -727,10 +735,8 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: el,
         start: "top 95%",
-        toggleActions: "play none none none", // play один раз, не повторять
-        invalidateOnRefresh: true
+        once: true
       },
-      willChange: "opacity, transform"
     });
   });
 
@@ -745,10 +751,8 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: title,
         start: "top 100%",
-        toggleActions: "play none none none",
-        invalidateOnRefresh: true
+        once: true
       },
-      willChange: "opacity, transform"
     });
   });
 
@@ -766,8 +770,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
           trigger: parent,
           start: "top 90%",
-          toggleActions: "play none none none",
-          invalidateOnRefresh: true
+          once: true
         }
       });
     });
@@ -790,13 +793,12 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
           trigger: el,
           start: "top 95%",
-          toggleActions: "play none none none",
-          invalidateOnRefresh: true
+          once: true
         }
       });
     } else {
       // Для остальных — оригинальная blur-анимация
-      gsap.set(el, { opacity: 0, y: 50, filter: "blur(8px)", willChange: "opacity, filter" });
+      gsap.set(el, { opacity: 0, y: 50, filter: "blur(8px)", willChange: "transform, opacity, filter" });
       gsap.to(el, {
         opacity: 1,
         y: 0,
@@ -807,8 +809,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
           trigger: el,
           start: "top 95%",
-          toggleActions: "play none none none",
-          invalidateOnRefresh: true
+          once: true
         }
       });
     }
@@ -826,13 +827,12 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
           trigger: el,
           start: "top 95%",
-          toggleActions: "play none none none",
-          invalidateOnRefresh: true
+          once: true
         }
       });
     } else {
       // Для остальных — оригинальная blur-анимация
-      gsap.set(el, { opacity: 0, filter: "blur(8px)", willChange: "opacity, filter" });
+      gsap.set(el, { opacity: 0, filter: "blur(8px)", willChange: "transform, opacity, filter" });
       gsap.to(el, {
         opacity: 1,
         filter: "blur(0px)",
@@ -843,8 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
           trigger: el,
           start: "top 95%",
-          toggleActions: "play none none none",
-          invalidateOnRefresh: true
+          once: true
         }
       });
     }
@@ -876,7 +875,7 @@ document.addEventListener('DOMContentLoaded', () => {
           start: "top 90%",
           end: "bottom top",
           scrub: true,
-          invalidateOnRefresh: true
+          invalidateOnRefresh: true 
         },
         willChange: "transform"
       });
@@ -1450,6 +1449,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeline = TimelineScroll.create('#timelinePlaceholder');
   }
 
+  /**
+  * Функция смены изображений ползунком
+  */
   (function () {
     const rangeItems = document.querySelectorAll('.range__item');
     if (rangeItems.length > 0) {
@@ -1594,7 +1596,7 @@ document.addEventListener('DOMContentLoaded', () => {
         onComplete: function () {
           preloader.style.display = 'none';
           restoreScroll();
-          ScrollTrigger.refresh(true);
+          // ScrollTrigger.refresh();
         }
       });
 
@@ -1606,6 +1608,39 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+  })();
+
+  // === iOS-safe ScrollTrigger refresh handler ===
+  (function () {
+    let resizeTimer;
+    let lastWidth = window.innerWidth;
+    let lastHeight = window.innerHeight;
+
+    // Функция для стабильного пересчёта
+    const safeRefresh = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const currentWidth = window.innerWidth;
+        const currentHeight = window.innerHeight;
+
+        // Проверяем — реально ли изменился размер экрана
+        const widthChanged = Math.abs(currentWidth - lastWidth) > 50;
+        const heightChanged = Math.abs(currentHeight - lastHeight) > 150;
+
+        if (widthChanged || heightChanged) {
+          lastWidth = currentWidth;
+          lastHeight = currentHeight;
+        }
+      }, 250); // debounce 250ms — достаточно для всех платформ
+    };
+
+    // Реакция на изменение ориентации (особенно важно для iOS)
+    // window.addEventListener('orientationchange', () => {
+    //   setTimeout(() => ScrollTrigger.refresh(), 300);
+    // });
+
+    // Реакция на реальный resize, но фильтруем “мусорные” вызовы
+    window.addEventListener('resize', safeRefresh);
   })();
 
   /**

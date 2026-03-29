@@ -40,12 +40,12 @@
     z-index: 1;
 
     @include md {
-      margin-bottom: calc(-100vw/(393/7));
+      margin-bottom: calc(100vw/(393/20));
       z-index: 3;
     }
 
     @include sm {
-      margin-bottom: -0.7rem;
+      margin-bottom: 2rem;
     }
 
     .price-list__page & {
@@ -169,7 +169,7 @@
       background-color: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(6.35px);
       box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-
+      will-change: transform;
       position: absolute;
       top: 0;
       right: 0;

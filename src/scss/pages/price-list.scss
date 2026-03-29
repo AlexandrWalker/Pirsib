@@ -24,6 +24,7 @@
     backdrop-filter: blur(6.35px);
     border-radius: var(--border-radius);
     padding: 4rem 14rem;
+    will-change: transform;
 
     @include md {
       padding: calc(100vw/(393/30)) calc(100vw/(393/20));

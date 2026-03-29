@@ -102,6 +102,7 @@
     height: 5rem;
     padding: 2rem 2rem 2rem 5.4rem;
     background: transparent;
+    will-change: transform;
 
     font-family: var(--font-family);
     font-weight: 400;
@@ -315,6 +316,7 @@
 
     a {
       text-decoration: underline;
+      text-decoration-skip-ink: none;
 
       &:hover {
         color: var(--pink);

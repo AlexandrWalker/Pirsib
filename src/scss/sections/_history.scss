@@ -13,7 +13,7 @@
     line-height: 100%;
     text-transform: uppercase;
 
-    @include  doxxxl {
+    @include doxxxl {
       font-size: 32rem;
     }
 
@@ -103,7 +103,7 @@
     padding: 5.5rem 8rem 8.6rem 3.7rem;
     width: 40.5rem;
     height: 100%;
-
+    will-change: transform;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
@@ -126,7 +126,7 @@
       font-weight: 400;
       font-size: 10rem;
       line-height: 120%;
-      
+
       background: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

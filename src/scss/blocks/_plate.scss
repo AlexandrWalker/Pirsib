@@ -30,7 +30,7 @@
 
   &__inner {
     --border-radius: 10rem;
-    
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -52,6 +52,10 @@
       gap: 5rem;
       padding: 0.5rem 0.6rem 0.5rem 0.8rem;
       margin-bottom: 0.5rem;
+    }
+
+    @include xs {
+      gap: 2rem;
     }
   }
 
@@ -78,6 +82,10 @@
 
     @include sm {
       width: calc(100% - 5rem - 11rem);
+    }
+
+    @include xs {
+      width: calc(100% - 2rem - 11rem);
     }
   }
 }

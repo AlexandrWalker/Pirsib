@@ -13,6 +13,7 @@
   border-radius: var(--border-radius);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   backdrop-filter: blur(6.35px);
+  will-change: transform;
 
   position: relative;
 
@@ -155,7 +156,9 @@
   display: flex;
   justify-content: flex-end;
   width: 100vw;
+  width: 100dvw;
   height: 100vh;
+  height: 100dvh;
   pointer-events: none;
   transition: all 1s ease;
   overflow: hidden;
@@ -180,6 +183,7 @@
     width: 100%;
     height: 100%;
     transition: grid-template-columns 1s ease-in-out;
+    will-change: transform;
 
     @include md {
       display: flex;

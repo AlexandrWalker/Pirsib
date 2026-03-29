@@ -62,6 +62,7 @@
     a {
       font-weight: 700;
       text-decoration: underline;
+      text-decoration-skip-ink: none;
 
       &:hover {
         color: var(--pink);
