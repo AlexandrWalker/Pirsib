@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
           loop: false,
           grabCursor: true,
           simulateTouch: true,
-          centeredSlides: false,
+          centeredSlides: true,
           centeredSlidesBounds: true,
           centerInsufficientSlides: true,
           slidesOffsetBefore: 0,

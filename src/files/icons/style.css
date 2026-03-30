@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'PirsibIconFont';
-  src:  url('fonts/PirsibIconFont.eot?mbt4sr');
-  src:  url('fonts/PirsibIconFont.eot?mbt4sr#iefix') format('embedded-opentype'),
-    url('fonts/PirsibIconFont.ttf?mbt4sr') format('truetype'),
-    url('fonts/PirsibIconFont.woff?mbt4sr') format('woff'),
-    url('fonts/PirsibIconFont.svg?mbt4sr#PirsibIconFont') format('svg');
+  src:  url('fonts/PirsibIconFont.eot?fwun2g');
+  src:  url('fonts/PirsibIconFont.eot?fwun2g#iefix') format('embedded-opentype'),
+    url('fonts/PirsibIconFont.ttf?fwun2g') format('truetype'),
+    url('fonts/PirsibIconFont.woff?fwun2g') format('woff'),
+    url('fonts/PirsibIconFont.svg?fwun2g#PirsibIconFont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,69 +25,72 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-gis:before {
+.icon-yandex:before {
   content: "\e900";
 }
-.icon-book:before {
+.icon-plus:before {
   content: "\e901";
 }
-.icon-chevron:before {
+.icon-chevron-left:before {
   content: "\e902";
 }
-.icon-chevron-left:before {
+.icon-download:before {
   content: "\e903";
 }
-.icon-chevron-min:before {
+.icon-max:before {
   content: "\e904";
 }
-.icon-download:before {
+.icon-ozon:before {
   content: "\e905";
 }
-.icon-location:before {
+.icon-wb:before {
   content: "\e906";
 }
-.icon-mail:before {
+.icon-phone-min:before {
   content: "\e907";
 }
 .icon-mail-min:before {
   content: "\e908";
 }
-.icon-max:before {
+.icon-book:before {
   content: "\e909";
 }
-.icon-ozon:before {
+.icon-telegram-hover:before {
   content: "\e90a";
 }
-.icon-phone:before {
+.icon-whatsapp-hover:before {
   content: "\e90b";
 }
-.icon-phone-min:before {
+.icon-mail:before {
   content: "\e90c";
 }
-.icon-play:before {
+.icon-user:before {
   content: "\e90d";
 }
-.icon-plus:before {
+.icon-phone:before {
   content: "\e90e";
 }
-.icon-telegram:before {
+.icon-location:before {
   content: "\e90f";
 }
-.icon-telegram-hover:before {
+.icon-gis:before {
   content: "\e910";
 }
-.icon-user:before {
+.icon-chevron-min:before {
   content: "\e911";
 }
-.icon-vk:before {
+.icon-play:before {
   content: "\e912";
 }
-.icon-wb:before {
+.icon-vk:before {
   content: "\e913";
 }
-.icon-whatsapp:before {
+.icon-chevron:before {
   content: "\e914";
 }
-.icon-whatsapp-hover:before {
+.icon-telegram:before {
   content: "\e915";
+}
+.icon-whatsapp:before {
+  content: "\e916";
 }
