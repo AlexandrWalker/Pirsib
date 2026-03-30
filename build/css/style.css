@@ -1403,14 +1403,13 @@ a:hover .btn .border::after,
 }
 
 .form-checkbox {
-  display: none;
   visibility: hidden;
   position: absolute;
   top: -99999px;
   left: -999999px;
 }
 
-.form-checkbox:checked+.form-checkbox--item>.form-checkbox--icon::before {
+.form-checkbox:checked+.form-checkbox--item>.form-checkbox--icon {
   background-color: var(--pink-2);
 }
 
@@ -1432,29 +1431,13 @@ a:hover .btn .border::after,
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
-  background-color: var(--blue-dark-1);
+  border: 0.333rem solid var(--blue-dark-1);
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
   position: relative;
+  z-index: 2;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-}
-
-.form-checkbox--icon::before {
-  content: "";
-  width: 0.933rem;
-  height: 0.933rem;
-  border-radius: 50%;
-  background-color: var(--purple);
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
 .form-foot {
@@ -1506,12 +1489,6 @@ a:hover .btn .border::after,
   font-size: var(--btn-height);
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
-}
-
-[class^=icon-]::before,
-[class*=" icon-"]::before {
-  position: relative;
-  z-index: 1;
 }
 
 .btn:hover .icon-chevron {
@@ -1568,12 +1545,12 @@ a:hover .btn .border::after,
 
 .icon-wb {
   color: #AD32AE;
-  font-size: 1.2rem;
+  font-size: 9.25rem;
 }
 
 .icon-ozon {
   color: #02AEFF;
-  font-size: 1.2rem;
+  font-size: 5rem;
 }
 
 .mask {
@@ -2012,6 +1989,7 @@ p {
 
 .menu--open .burger-menu__inner {
   grid-template-columns: 34.7% 65.3%;
+  grid-template-columns: 27% 73%;
 }
 
 /* Blocks */
@@ -2596,7 +2574,7 @@ p {
 
 .menu__list a {
   font-weight: 700;
-  font-size: 5rem;
+  font-size: 3rem;
   line-height: 120%;
   text-transform: uppercase;
   color: var(--blue-dark-2);
@@ -2775,6 +2753,7 @@ p {
   padding: 4rem 4rem 5rem;
   max-width: 41.2rem;
   will-change: transform;
+  overflow-y: auto;
   color: var(--purple);
 }
 
@@ -3931,6 +3910,7 @@ html.out .biography__left {
 
 .reviews .opinion__item {
   width: calc(33.33333% - 1.3333333333rem);
+  height: auto;
 }
 
 /* Sections */
@@ -5353,6 +5333,14 @@ html.out .biography__left {
   height: 100%;
 }
 
+.opinion__item-body * {
+  margin-bottom: 2rem;
+}
+
+.opinion__item-body *:last-child {
+  margin-bottom: 0;
+}
+
 .opinion__item .btn--inner {
   margin-top: auto;
 }
@@ -6568,11 +6556,6 @@ html.out .biography__left {
   .form-checkbox--icon {
     width: 4.0712468193vw;
     height: 4.0712468193vw;
-  }
-
-  .form-checkbox--icon::before {
-    width: 2.3740458015vw;
-    height: 2.3740458015vw;
   }
 
   .form-foot {
@@ -8176,6 +8159,10 @@ html.out .biography__left {
     font-size: 2.5445292621vw;
   }
 
+  .opinion__item-body * {
+    margin-bottom: 3.8167938931vw;
+  }
+
   .opinion__item .btn--inner {
     font-size: 3.0534351145vw;
     height: -webkit-fit-content;
@@ -8618,11 +8605,6 @@ html.out .biography__left {
   .form-checkbox--icon {
     width: 1.6rem;
     height: 1.6rem;
-  }
-
-  .form-checkbox--icon::before {
-    width: 0.933rem;
-    height: 0.933rem;
   }
 
   .form-foot {
@@ -9535,6 +9517,10 @@ html.out .biography__left {
 
   .opinion__item-photo i {
     font-size: 1rem;
+  }
+
+  .opinion__item-body * {
+    margin-bottom: 1.5rem;
   }
 
   .opinion__item .btn--inner {

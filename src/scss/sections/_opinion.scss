@@ -186,6 +186,22 @@
 
     &-body {
       height: 100%;
+
+      * {
+        margin-bottom: 2rem;
+
+        @include md {
+          margin-bottom: calc(100vw/(393/15));
+        }
+
+        @include sm {
+          margin-bottom: 1.5rem;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
 
     .btn--inner {

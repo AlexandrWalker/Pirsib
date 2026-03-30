@@ -199,6 +199,7 @@
 
     .menu--open & {
       grid-template-columns: 34.7% 65.3%;
+      grid-template-columns: 27% 73%;
 
       @include md {
         clip-path: inset(0 0 0 0);

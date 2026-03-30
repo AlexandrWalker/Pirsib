@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page__inner">
+<html lang="ru" class="page__inner product-page">
 @@include('blocks/head.html', {"title": "Pirsib"})
 
 <body>
@@ -60,13 +60,36 @@
       <section id="decorations" class="decorations">
         <div class="container">
           <div class="decorations__inner">
-            <div class="general__head">
+            
+            <!-- <div class="general__head">
               <div class="general__title" data-transform="titleFadeUp">
                 <h2 data-gradient-text>
                   Украшения
                 </h2>
               </div>
+            </div> -->
+
+            <div class="general__head">
+              <div class="filter">
+                <div class="filter__items">
+                  <label class="filter__item filter__item--active" data-item="product">
+                    <span class="border"></span>
+                    <input type="radio" name="blog-filter" class="filter__input" checked="">
+                    <span>
+                      Украшения
+                    </span>
+                  </label>
+                  <label class="filter__item" data-item="cosmetics">
+                    <span class="border"></span>
+                    <input type="radio" name="blog-filter" class="filter__input" checked="">
+                    <span>
+                      Косметика
+                    </span>
+                  </label>
+                </div>
+              </div>
             </div>
+
             <div class="decorations__items" data-animation="blur">
               @@loop('./elements/decorations-item.html', './data/decorations-items.json')
             </div>
@@ -74,7 +97,7 @@
         </div>
       </section>
 
-      <section class="decorations">
+      <!-- <section class="decorations">
         <div class="container">
           <div class="decorations__inner">
             <div class="general__head">
@@ -89,7 +112,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
     </main>
 

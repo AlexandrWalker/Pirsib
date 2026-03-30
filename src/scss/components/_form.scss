@@ -210,7 +210,6 @@
   }
 
   &-checkbox {
-    display: none;
     visibility: hidden;
     position: absolute;
     top: -99999px;
@@ -219,10 +218,7 @@
     &:checked {
 
       &+.form-checkbox--item>.form-checkbox--icon {
-
-        &::before {
-          background-color: var(--pink-2);
-        }
+        background-color: var(--pink-2);
       }
     }
 
@@ -245,8 +241,10 @@
       width: 1.6rem;
       height: 1.6rem;
       border-radius: 50%;
-      background-color: var(--blue-dark-1);
+      border: 0.333rem solid var(--blue-dark-1);
+      transition: background-color 0.3s ease;
       position: relative;
+      z-index: 2;
       flex-shrink: 0;
 
       @include md {
@@ -257,32 +255,6 @@
       @include sm {
         width: 1.6rem;
         height: 1.6rem;
-      }
-
-      &::before {
-        content: "";
-        width: 0.933rem;
-        height: 0.933rem;
-        border-radius: 50%;
-        background-color: var(--purple);
-        flex-shrink: 0;
-        transition: all 0.3s ease;
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 1;
-        transform: translate(-50%, -50%);
-
-        @include md {
-          width: calc(100vw/(393/9.33));
-          height: calc(100vw/(393/9.33));
-        }
-
-        @include sm {
-          width: 0.933rem;
-          height: 0.933rem;
-        }
       }
     }
   }

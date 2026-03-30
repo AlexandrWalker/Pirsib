@@ -46,6 +46,7 @@
 
   .opinion__item {
     width: calc(33.33333% - (4rem/3));
+    height: auto;
 
     @include md {
       width: 100%;

@@ -148,50 +148,86 @@ document.addEventListener('DOMContentLoaded', () => {
   headerFunc();
 
   function stickyReveal() {
-    const items = Array.from(document.querySelectorAll('.sticky__item'));
-
-    const removeOffset = 31; // удаляем класс, если элемент ушёл ниже 50px
-
+    let scrollHandler = null;
+    let resizeHandler = null;
     let ticking = false;
+    let destroyed = false;
 
-    const checkItems = () => {
-      items.forEach((item, index) => {
-        // Пропускаем последний элемент
-        if (index === items.length - 1) return;
+    function init() {
+      const items = Array.from(document.querySelectorAll('.sticky__item'));
+      if (!items.length) return;
 
-        const rect = item.getBoundingClientRect();
-        const top = rect.top;
-        const isActive = item.classList.contains('sticky__item-active');
+      const removeOffset = 31;
 
-        // Добавляем класс, когда верх элемента коснулся верхней границы окна
-        if (!isActive && top <= 0) {
-          item.classList.add('sticky__item-active');
+      const checkItems = () => {
+        if (destroyed) return;
+
+        try {
+          items.forEach((item, index) => {
+            if (index === items.length - 1) return;
+
+            const rect = item.getBoundingClientRect();
+            const top = rect.top;
+            const isActive = item.classList.contains('sticky__item-active');
+
+            if (!isActive && top <= 0) {
+              item.classList.add('sticky__item-active');
+            }
+
+            if (isActive && top > removeOffset) {
+              item.classList.remove('sticky__item-active');
+            }
+          });
+        } catch (e) {
+          console.warn('stickyReveal checkItems error:', e);
+        } finally {
+          ticking = false;
         }
+      };
 
-        // Убираем класс, если элемент ушёл ниже removeOffset
-        if (isActive && top > removeOffset) {
-          item.classList.remove('sticky__item-active');
+      scrollHandler = () => {
+        if (!ticking) {
+          requestAnimationFrame(checkItems);
+          ticking = true;
         }
-      });
+      };
 
-      ticking = false;
-    };
+      resizeHandler = () => {
+        clearTimeout(resizeHandler._timer);
+        resizeHandler._timer = setTimeout(checkItems, 100);
+      };
 
-    const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(checkItems);
-        ticking = true;
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      window.addEventListener('resize', resizeHandler, { passive: true });
+
+      checkItems();
+    }
+
+    function destroy() {
+      destroyed = true;
+
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
       }
-    };
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', checkItems);
+      if (resizeHandler) {
+        clearTimeout(resizeHandler._timer);
+        window.removeEventListener('resize', resizeHandler);
+        resizeHandler = null;
+      }
 
-    // Проверка при загрузке страницы
-    checkItems();
+      document.querySelectorAll('.sticky__item-active').forEach(el => {
+        el.classList.remove('sticky__item-active');
+      });
+    }
+
+    init();
+
+    return { destroy, reinit: () => { destroy(); destroyed = false; init(); } };
   }
 
-  stickyReveal();
+  let globalStickyInstance = stickyReveal();
 
   /**
    * Анимация градиента заголовоков и наведения
@@ -875,7 +911,7 @@ document.addEventListener('DOMContentLoaded', () => {
           start: "top 90%",
           end: "bottom top",
           scrub: true,
-          invalidateOnRefresh: true 
+          invalidateOnRefresh: true
         },
         willChange: "transform"
       });
@@ -1608,6 +1644,77 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+  })();
+
+  /**
+   * Смена продукции через фильтр на странице каталога продукций
+   */
+  (function () {
+    const productPage = document.querySelector('.product-page');
+
+    if (productPage) {
+      const filter = productPage.querySelector('.filter');
+      if (!filter) return;
+
+      const btns = filter.querySelectorAll('.filter__item');
+      let isLoading = false;
+
+      let stickyInstance = globalStickyInstance;
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          if (isLoading) return;
+          if (this.classList.contains('filter__item--active')) return;
+
+          const attr = this.dataset.item;
+          if (!attr) return;
+
+          isLoading = true;
+
+          btns.forEach(b => b.classList.remove('filter__item--active'));
+          this.classList.add('filter__item--active');
+
+          const activeBtn = this;
+
+          fetch('./ajax/item-' + attr + '.html')
+            .then(response => {
+              if (!response.ok) throw new Error('HTTP ' + response.status);
+              return response.text();
+            })
+            .then(data => {
+              if (stickyInstance) stickyInstance.destroy();
+
+              const container = document.querySelector('.decorations__items');
+              if (container) {
+                container.innerHTML = data;
+                container.querySelectorAll('.decorations__item').forEach(el => {
+                  el.classList.add('decorations__item--' + attr);
+                });
+              }
+
+              stickyInstance = stickyReveal();
+            })
+            .catch(error => {
+              btns.forEach(b => b.classList.remove('filter__item--active'));
+              activeBtn.classList.remove('filter__item--active');
+              console.warn('Ошибка загрузки фильтра:', error);
+            })
+            .finally(() => {
+              isLoading = false;
+            });
+        });
+      });
+
+    } else {
+      const btns = document.querySelectorAll('.filter__item');
+      btns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          if (this.classList.contains('filter__item--active')) return;
+          btns.forEach(b => b.classList.remove('filter__item--active'));
+          this.classList.add('filter__item--active');
+        });
+      });
+    }
   })();
 
   // === iOS-safe ScrollTrigger refresh handler ===

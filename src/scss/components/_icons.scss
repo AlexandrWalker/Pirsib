@@ -7,10 +7,10 @@
   transition: all 0.5s linear;
 
 
-  &::before {
-    position: relative;
-    z-index: 1;
-  }
+  // &::before {
+  //   position: relative;
+  //   z-index: 1;
+  // }
 }
 
 .icon {
@@ -75,11 +75,13 @@
 
   &-wb {
     color: #AD32AE;
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
+    font-size: 9.25rem;
   }
 
   &-ozon {
     color: #02AEFF;
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
+    font-size: 5rem;
   }
 }
