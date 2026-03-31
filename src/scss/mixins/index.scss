@@ -12,6 +12,12 @@
   }
 }
 
+@mixin toxxl() {
+  @media (max-width: 1440px) and (min-width: 835px) {
+    @content;
+  }
+}
+
 @mixin xl() {
   @media (max-width: 1200px) {
     @content;

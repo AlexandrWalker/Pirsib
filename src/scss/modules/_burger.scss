@@ -19,6 +19,12 @@
 
   cursor: pointer;
 
+  @include toxxl {
+    gap: 0.36rem 0;
+    width: 10.08rem;
+    height: 6rem;
+  }
+
   @include md {
     gap: calc(100vw/(393/3)) 0;
     width: calc(100vw/(393/66));

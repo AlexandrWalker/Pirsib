@@ -52,6 +52,10 @@
     position: relative;
     z-index: 201;
 
+    @include toxxl {
+      gap: 1.2rem;
+    }
+
     @include md {
       justify-content: space-between;
       gap: calc(100vw/(393/10));
@@ -181,6 +185,21 @@
         justify-content: flex-end;
       }
     }
+
+    .btn {
+
+      @include toxxl {
+        --btn-height: 6rem;
+
+        gap: 0 1.2rem;
+        font-size: 1.68rem;
+
+        &--inner-icon {
+          --btn-width: 3.24rem;
+          --btn-height: 3.24rem;
+        }
+      }
+    }
   }
 
   &__location {
@@ -189,6 +208,11 @@
     align-items: center;
     gap: 1rem;
     padding-right: 2.3rem;
+
+    @include toxxl {
+      gap: 1.2rem;
+      padding-right: 2.76rem;
+    }
 
     @include md {
       display: none;
@@ -225,6 +249,23 @@
           text-decoration: underline;
           text-decoration-skip-ink: none;
         }
+      }
+    }
+
+    .btn {
+
+      @include toxxl {
+        --btn-height: 6rem;
+
+        gap: 0 1.2rem;
+        font-size: 1.68rem;
+      }
+    }
+
+    p {
+
+      @include toxxl {
+        font-size: 1.92rem;
       }
     }
   }
@@ -268,6 +309,10 @@
       top: calc(100% + 0.5rem);
       left: 0;
       z-index: 300;
+
+      @include toxxl {
+        width: calc(100% + 1.2rem + 10.08rem);
+      }
 
       .header__signup:hover & {
         grid-template-rows: 1fr;
@@ -340,6 +385,10 @@
       line-height: 100%;
       text-transform: none;
 
+      @include toxxl {
+        font-size: 1.68rem;
+      }
+
       &:hover {
         color: var(--pink);
         text-decoration: underline;
@@ -358,6 +407,10 @@
         font-weight: 400;
         font-size: 1.2rem;
         white-space: normal;
+
+        @include toxxl {
+          font-size: 1.44rem;
+        }
 
         &:first-child {
           font-weight: 700;
