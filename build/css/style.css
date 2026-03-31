@@ -3953,7 +3953,6 @@ html.out .biography__left {
   width: calc(33.33333% - 1.3333333333rem);
   min-height: 36.4rem;
   overflow: hidden;
-  pointer-events: none;
   position: relative;
 }
 
@@ -6933,29 +6932,12 @@ html.out .biography__left {
     backdrop-filter: unset;
   }
 
-  .menu__list {
-    padding: 25.4452926209vw 5.0890585242vw 7.6335877863vw 5.0890585242vw;
-    height: 100%;
-    overflow-y: unset;
-    background: unset;
-    -webkit-backdrop-filter: unset;
-    backdrop-filter: unset;
-  }
-
   .menu__list ul {
     gap: 5.0890585242vw;
   }
 
   .menu__list a {
     font-size: 6.106870229vw;
-  }
-
-  .menu__content {
-    gap: 5.0890585242vw;
-    padding: 7.6335877863vw 5.0890585242vw 20.3562340967vw 5.0890585242vw;
-    background: unset;
-    -webkit-backdrop-filter: unset;
-    backdrop-filter: unset;
   }
 
   .menu__content {
@@ -7562,7 +7544,11 @@ html.out .biography__left {
   }
 
   .advan__item-wrap {
-    gap: 10;
+    gap: 2.5445292621vw;
+  }
+
+  .advan__item-text {
+    gap: 2.5445292621vw;
   }
 
   .advan__item-text * {
@@ -9168,6 +9154,10 @@ html.out .biography__left {
     gap: 1rem;
   }
 
+  .advan__item-text {
+    gap: 1rem;
+  }
+
   .advan__item-text * {
     font-size: 1.2rem;
   }
@@ -9786,6 +9776,10 @@ html.out .biography__left {
   }
 
   .certificates__page .certificates__item {
+    width: 100%;
+  }
+
+  .advan__item {
     width: 100%;
   }
 
