@@ -6933,12 +6933,29 @@ html.out .biography__left {
     backdrop-filter: unset;
   }
 
+  .menu__list {
+    padding: 25.4452926209vw 5.0890585242vw 7.6335877863vw 5.0890585242vw;
+    height: 100%;
+    overflow-y: unset;
+    background: unset;
+    -webkit-backdrop-filter: unset;
+    backdrop-filter: unset;
+  }
+
   .menu__list ul {
     gap: 5.0890585242vw;
   }
 
   .menu__list a {
     font-size: 6.106870229vw;
+  }
+
+  .menu__content {
+    gap: 5.0890585242vw;
+    padding: 7.6335877863vw 5.0890585242vw 20.3562340967vw 5.0890585242vw;
+    background: unset;
+    -webkit-backdrop-filter: unset;
+    backdrop-filter: unset;
   }
 
   .menu__content {
@@ -9778,5 +9795,55 @@ html.out .biography__left {
 
   .command__feat-item {
     gap: 1rem;
+  }
+}
+
+@media (max-width: 1440px) and (min-width: 835px) {
+  .burger {
+    gap: 0.36rem 0;
+    width: 10.08rem;
+    height: 6rem;
+  }
+
+  .header__wrap {
+    gap: 1.2rem;
+  }
+
+  .header__btns .btn {
+    --btn-height: 6rem;
+    gap: 0 1.2rem;
+    font-size: 1.68rem;
+  }
+
+  .header__btns .btn--inner-icon {
+    --btn-width: 3.24rem;
+    --btn-height: 3.24rem;
+  }
+
+  .header__location {
+    gap: 1.2rem;
+    padding-right: 2.76rem;
+  }
+
+  .header__location .btn {
+    --btn-height: 6rem;
+    gap: 0 1.2rem;
+    font-size: 1.68rem;
+  }
+
+  .header__location p {
+    font-size: 1.92rem;
+  }
+
+  .header__signup-content {
+    width: calc(100% + 1.2rem + 10.08rem);
+  }
+
+  .header__signup-link {
+    font-size: 1.68rem;
+  }
+
+  .header__signup-wrap p {
+    font-size: 1.44rem;
   }
 }
