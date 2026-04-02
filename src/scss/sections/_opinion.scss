@@ -204,6 +204,21 @@
       }
     }
 
+    &-tags {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 140%;
+      color: var(--pink);
+
+      @include md {
+        font-size: calc(100vw/(393/12));
+      }
+
+      @include sm {
+        font-size: 1.2rem;
+      }
+    }
+
     .btn--inner {
       margin-top: auto;
 
