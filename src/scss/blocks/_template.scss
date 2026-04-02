@@ -49,7 +49,7 @@
       font-style: normal;
       font-weight: 700;
       font-size: 12rem;
-      line-height: 120%;
+      line-height: 100%;
       padding-bottom: 1rem;
 
       @include md {
@@ -96,6 +96,7 @@
         box-shadow: none;
         backdrop-filter: none;
         will-change: transform;
+        min-height: 58rem;
 
         @include md {
           padding: calc(100vw/(393/30)) calc(100vw/(393/20)) calc(100vw/(393/277));
@@ -104,10 +105,12 @@
           background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.64% at 50% 50.47%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
           box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
           backdrop-filter: blur(6.35px);
+          height: calc(100vw/(393/600));
         }
 
         @include sm {
           padding: 3rem 2rem 27.7rem;
+          min-height: 60rem;
         }
 
         .general {
@@ -241,15 +244,18 @@
     }
 
     .template--cover & {
+      min-height: 58rem;
 
       @include md {
         padding: calc(100vw/(393/30)) calc(100vw/(393/20)) 0;
         overflow: hidden;
         gap: 0;
+        min-height: calc(100vw/(393/600));
       }
 
       @include sm {
         padding: 3rem 2rem 0;
+        min-height: 60rem;
       }
     }
 
@@ -275,6 +281,10 @@
       &__title {
         max-width: none;
         overflow: visible;
+
+        * {
+          line-height: 100%;
+        }
       }
 
       &__text {

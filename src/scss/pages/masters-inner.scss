@@ -43,7 +43,7 @@
     border-radius: 10rem;
     overflow: hidden;
     will-change: transform;
-
+    min-height: 58.4rem;
     background-color: rgb(8, 10, 18);
 
     position: relative;
@@ -52,12 +52,13 @@
       padding: calc(100vw/(393/15));
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
       border-radius: 2.4rem;
-
+      min-height: calc(100vw/(393/368));
       aspect-ratio: 353/368;
     }
 
     @include sm {
       padding: 1.5rem;
+      min-height: 36.8rem;
     }
 
     &>.border {
