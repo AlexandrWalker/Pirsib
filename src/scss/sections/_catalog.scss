@@ -88,6 +88,8 @@
     position: relative;
 
     @include md {
+      --border-radius: calc(100vw/(393/24));
+      
       width: calc(50% - (100vw/(393/4)));
       // min-height: calc(100vw/(393/586));
       min-height: unset;
@@ -95,6 +97,8 @@
     }
 
     @include sm {
+      --border-radius: 2.4rem;
+      
       width: 100%;
       // min-height: 58.6rem;
     }

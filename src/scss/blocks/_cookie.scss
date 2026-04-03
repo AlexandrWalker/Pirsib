@@ -55,9 +55,15 @@
     .btn {
       text-transform: capitalize;
     }
+
+    &.block-bg::before {
+      z-index: 1;
+    }
   }
 
   &__text {
+    position: relative;
+    z-index: 2;
 
     a {
       font-weight: 700;
@@ -68,5 +74,10 @@
         color: var(--pink);
       }
     }
+  }
+
+  .btn {
+    position: relative;
+    z-index: 2;
   }
 }

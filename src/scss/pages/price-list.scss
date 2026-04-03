@@ -27,10 +27,12 @@
     will-change: transform;
 
     @include md {
+      --border-radius: calc(100vw/(393/24));
       padding: calc(100vw/(393/30)) calc(100vw/(393/20));
     }
 
     @include sm {
+      --border-radius: 2.4rem;
       padding: 3rem 2rem;
     }
   }

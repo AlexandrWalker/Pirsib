@@ -1,7 +1,7 @@
 @use './../mixins' as *;
 
 .plate {
-  display: flex;
+  display: none;
   align-items: flex-end;
   padding: 0 1rem;
   width: 100vw;
@@ -13,15 +13,13 @@
   pointer-events: none;
 
   position: fixed;
-  top: 100%;
+  top: 0;
   right: 0;
-  left: 0;
   z-index: 300;
 
   @include md {
+    display: flex;
     padding: 0 calc(100vw/(393/10));
-
-    top: 0;
   }
 
   @include sm {
@@ -57,12 +55,19 @@
     @include xs {
       gap: 2rem;
     }
+
+    &.block-bg::before {
+      z-index: 1;
+    }
   }
 
   &__social {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+
+    position: relative;
+    z-index: 2;
 
     @include md {
       gap: calc(100vw/(393/10));
@@ -75,6 +80,8 @@
 
   .btn--inner {
     width: calc(100% - 5rem - 11rem);
+
+    z-index: 2;
 
     @include md {
       width: calc(100vw/(393/200));

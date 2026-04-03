@@ -26,12 +26,13 @@
       @include md {
         width: calc(50% - calc(100vw/(393/4)));
         padding: calc(100vw/(393/20)) calc(100vw/(393/13));
-        border-radius: 2.4rem;
+        border-radius: calc(100vw/(393/24));
       }
 
       @include sm {
         width: calc(50% - 0.4rem);
         padding: 2rem 1.3rem;
+        border-radius: 2.4rem;
       }
 
       @include xxs {
