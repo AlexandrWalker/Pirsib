@@ -102,16 +102,16 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -2064,6 +2064,15 @@ p {
   text-transform: capitalize;
 }
 
+.cookie__inner.block-bg::before {
+  z-index: 1;
+}
+
+.cookie__text {
+  position: relative;
+  z-index: 2;
+}
+
 .cookie__text a {
   font-weight: 700;
   text-decoration: underline;
@@ -2073,6 +2082,11 @@ p {
 
 .cookie__text a:hover {
   color: var(--pink);
+}
+
+.cookie .btn {
+  position: relative;
+  z-index: 2;
 }
 
 .footer__inner {
@@ -2681,9 +2695,7 @@ p {
 }
 
 .plate {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
@@ -2697,9 +2709,8 @@ p {
   will-change: top;
   pointer-events: none;
   position: fixed;
-  top: 100%;
+  top: 0;
   right: 0;
-  left: 0;
   z-index: 300;
 }
 
@@ -2726,6 +2737,10 @@ p {
   border-radius: var(--border-radius);
 }
 
+.plate__inner.block-bg::before {
+  z-index: 1;
+}
+
 .plate__social {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2735,10 +2750,13 @@ p {
   -ms-flex-direction: row;
   flex-direction: row;
   gap: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .plate .btn--inner {
   width: calc(100% - 5rem - 11rem);
+  z-index: 2;
 }
 
 .popup {
@@ -6993,8 +7011,10 @@ html.out .biography__left {
   }
 
   .plate {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     padding: 0 2.5445292621vw;
-    top: 0;
   }
 
   .plate__inner {
@@ -7299,7 +7319,7 @@ html.out .biography__left {
   .certificates__page .certificates__item {
     width: calc(50% - 1.0178117048vw);
     padding: 5.0890585242vw 3.3078880407vw;
-    border-radius: 2.4rem;
+    border-radius: 6.106870229vw;
   }
 
   .certificates__page .certificates__item .border {
@@ -7509,6 +7529,7 @@ html.out .biography__left {
   }
 
   .price-list__block {
+    --border-radius: calc(100vw/(393/24));
     padding: 7.6335877863vw 5.0890585242vw;
   }
 
@@ -7676,6 +7697,7 @@ html.out .biography__left {
   }
 
   .catalog__item {
+    --border-radius: calc(100vw/(393/24));
     width: calc(50% - 1.0178117048vw);
     min-height: unset;
     aspect-ratio: unset;
@@ -9041,6 +9063,7 @@ html.out .biography__left {
   .certificates__page .certificates__item {
     width: calc(50% - 0.4rem);
     padding: 2rem 1.3rem;
+    border-radius: 2.4rem;
   }
 
   .certificates__page .certificates__item-icon {
@@ -9132,6 +9155,7 @@ html.out .biography__left {
   }
 
   .price-list__block {
+    --border-radius: 2.4rem;
     padding: 3rem 2rem;
   }
 
@@ -9253,6 +9277,7 @@ html.out .biography__left {
   }
 
   .catalog__item {
+    --border-radius: 2.4rem;
     width: 100%;
   }
 
