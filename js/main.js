@@ -420,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
           simulateTouch: true,
           centeredSlides: false,
           centeredSlidesBounds: true,
-          centerInsufficientSlides: true,
+          centerInsufficientSlides: false,
           slidesOffsetBefore: 0,
           slidesOffsetAfter: 0,
           direction: 'horizontal',
@@ -507,7 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
         swiperOptions: {
           slidesPerView: 1,
           slidesPerGroup: 1,
-          spaceBetween: 20,
+          spaceBetween: 0,
           speed: 1000,
           loop: false,
           grabCursor: true,
