@@ -104,6 +104,34 @@
       gap: 1rem;
     }
 
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 28.6rem;
+      margin-top: auto;
+
+      @include md {
+        display: none;
+      }
+
+      &--title {
+
+        p {
+          font-weight: 700;
+          line-height: 120%;
+        }
+      }
+
+      &--text {
+
+        p {
+          font-weight: 400;
+          line-height: 120%;
+        }
+      }
+    }
+
     &-img {
       width: 41.3rem;
       height: auto;
