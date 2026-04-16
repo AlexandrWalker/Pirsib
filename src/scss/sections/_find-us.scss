@@ -42,7 +42,7 @@
     max-width: 40rem;
     width: fit-content;
     padding: 5rem 3.6rem 3.8rem 5rem;
-    border-radius: 5rem;
+    border-radius: var(--border-radius);
     will-change: transform;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
@@ -52,7 +52,6 @@
       max-width: 100%;
       width: 100%;
       padding: calc(100vw/(393/30));
-      border-radius: calc(100vw/(393/24));
     }
 
     @include sm {
@@ -62,7 +61,6 @@
     }
 
     .border {
-      --border-radius: 5rem;
 
       @include md {
         --border-radius: calc(100vw/(393/24));

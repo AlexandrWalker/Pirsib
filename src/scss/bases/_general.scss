@@ -26,10 +26,14 @@
 
   &__cover {
     aspect-ratio: 1674/732;
-    border-radius: 5rem;
+    border-radius: var(--border-radius);
     overflow: hidden;
 
     @include md {
+      border-radius: calc(100vw/(393/16));
+    }
+
+    @include sm {
       border-radius: 1.6rem;
     }
 

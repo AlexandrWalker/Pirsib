@@ -61,8 +61,6 @@
   }
 
   &__cover {
-    --border-radius: 5rem;
-
     width: 54.5rem;
     height: 53.4rem;
     border-radius: var(--border-radius);
@@ -72,8 +70,6 @@
     grid-row: 1/5;
 
     @include md {
-      --border-radius: calc(100vw/(393/24));
-
       width: 100%;
       height: auto;
 

@@ -53,14 +53,13 @@
     backdrop-filter: blur(6.35px);
     transition: all 0.5s ease;
     overflow: hidden;
-    border-radius: 5rem;
+    border-radius: var(--border-radius);
     will-change: transform;
 
     position: relative;
 
     @include md {
       padding: calc(100vw/(393/17)) calc(100vw/(393/20)) calc(100vw/(393/19)) calc(100vw/(393/30));
-      border-radius: var(--border-radius);
     }
 
     @include sm {
@@ -84,19 +83,7 @@
         }
       }
     }
-
-    .border {
-      --border-radius: 5rem;
-
-      @include md {
-        --border-radius: calc(100vw/(393/24));
-      }
-
-      @include sm {
-        --border-radius: 2.4rem;
-      }
-    }
-
+    
     &.accordion-active {
       padding: 2.5rem 5rem 4rem;
 

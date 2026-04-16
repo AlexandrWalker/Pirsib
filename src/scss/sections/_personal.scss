@@ -118,43 +118,48 @@
   }
 
   &__btns {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    max-width: 100%;
+    width: 100%;
 
     grid-column: 2/3;
     grid-row: 2/3;
 
     @include md {
       gap: calc(100vw/(393/8));
+      overflow: visible;
 
       grid-column: 1/3;
+    }
+
+    @include sm {
+      gap: 0.8rem;
     }
   }
 
   &__btn {
     display: flex;
     flex-direction: column;
-    gap: 3.8rem;
-    width: calc(50% - 1rem);
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
     min-height: 35.4rem;
-    padding: 4rem 4rem 6rem 9rem;
+    padding: 3rem;
     border-radius: var(--border-radius);
     will-change: transform;
 
     position: relative;
 
     @include md {
-      justify-content: space-between;
-      width: calc(50% - calc(100vw/(393/4)));
-      min-height: unset;
+      min-height: calc(100vw/(393/187));
       padding: calc(100vw/(393/20)) calc(100vw/(393/20)) calc(100vw/(393/25));
     }
 
     @include sm {
+      min-height: 18.7rem;
       padding: 2rem 2rem 2.5rem;
-      max-height: unset;
-      aspect-ratio: 173/187;
     }
 
     &::before {
@@ -246,40 +251,42 @@
     }
 
     .btn {
-      --btn-width: 14.8rem;
-      --btn-height: 14.8rem;
+      --btn-width: 8rem;
+      --btn-height: 8rem;
 
-      margin: 0 0 0 auto;
       padding: 0;
 
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+
       @include md {
-        --btn-width: calc(100vw/(393/50));
-        --btn-height: calc(100vw/(393/50));
+        --btn-width: calc(100vw/(393/40));
+        --btn-height: calc(100vw/(393/40));
+
+        top: 2rem;
+        right: 2rem;
       }
 
       @include sm {
-        --btn-width: 5rem;
-        --btn-height: 5rem;
+        --btn-width: 4rem;
+        --btn-height: 4rem;
       }
     }
 
     &-img {
       width: auto;
-      height: 20rem;
-
-      position: absolute;
-      top: 0.9rem;
-      left: 5.3rem;
+      height: 17.2rem;
 
       @include md {
-        height: calc(100vw/(393/80));
+        height: calc(100vw/(393/55));
 
         top: calc(100vw/(393/10));
         left: calc(100vw/(393/10));
       }
 
       @include sm {
-        height: 8rem;
+        height: 5.5rem;
 
         top: 1rem;
         left: 1rem;
@@ -294,6 +301,8 @@
 
     &-title {
       max-width: 30rem;
+
+      line-height: 120%;
     }
   }
 }

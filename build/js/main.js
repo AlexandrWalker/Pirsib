@@ -152,22 +152,38 @@ document.addEventListener('DOMContentLoaded', () => {
     let resizeHandler = null;
     let ticking = false;
     let destroyed = false;
+    let items = [];
+    let offsets = []; // кеш абсолютных позиций
+
+    const removeOffset = 31;
+
+    // Вызывается один раз при init и при resize
+    // Все getBoundingClientRect читаются батчем — один reflow
+    function cacheOffsets() {
+      offsets = items.map(item => {
+        return item.getBoundingClientRect().top + window.scrollY;
+      });
+    }
 
     function init() {
-      const items = Array.from(document.querySelectorAll('.sticky__item'));
+      items = Array.from(document.querySelectorAll('.sticky__item'));
       if (!items.length) return;
 
-      const removeOffset = 31;
+      // Один reflow при старте
+      cacheOffsets();
 
       const checkItems = () => {
         if (destroyed) return;
+
+        // window.scrollY — не вызывает reflow
+        const scrollY = window.scrollY;
 
         try {
           items.forEach((item, index) => {
             if (index === items.length - 1) return;
 
-            const rect = item.getBoundingClientRect();
-            const top = rect.top;
+            // Вычисляем top без getBoundingClientRect
+            const top = offsets[index] - scrollY;
             const isActive = item.classList.contains('sticky__item-active');
 
             if (!isActive && top <= 0) {
@@ -194,7 +210,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       resizeHandler = () => {
         clearTimeout(resizeHandler._timer);
-        resizeHandler._timer = setTimeout(checkItems, 100);
+        resizeHandler._timer = setTimeout(() => {
+          // При ресайзе пересчитываем кеш — снова один reflow
+          cacheOffsets();
+          checkItems();
+        }, 100);
       };
 
       window.addEventListener('scroll', scrollHandler, { passive: true });
@@ -224,7 +244,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     init();
 
-    return { destroy, reinit: () => { destroy(); destroyed = false; init(); } };
+    return {
+      destroy,
+      reinit: () => { destroy(); destroyed = false; init(); }
+    };
   }
 
   let globalStickyInstance = stickyReveal();
@@ -568,6 +591,52 @@ document.addEventListener('DOMContentLoaded', () => {
             forceToAxis: true,
             sensitivity: 1,
             releaseOnEdges: true,
+          },
+        },
+      },
+      {
+        sliderSelector: '.personal__btns',
+        swiperOptions: {
+          slidesPerView: 2,
+          slidesPerGroup: 1,
+          spaceBetween: 8,
+          speed: 600,
+          loop: false,
+          grabCursor: true,
+          simulateTouch: true,
+          centeredSlides: false,
+          centeredSlidesBounds: true,
+          centerInsufficientSlides: false,
+          slidesOffsetBefore: 0,
+          slidesOffsetAfter: 0,
+          direction: 'horizontal',
+          touchStartPreventDefault: true,
+          touchMoveStopPropagation: true,
+          watchOverflow: true,
+          threshold: 8,
+          touchAngle: 25,
+          navigation: false,
+          mousewheel: {
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          },
+          freeMode: {
+            enabled: false,
+            momentum: false,
+            momentumBounce: false,
+            sticky: true,
+          },
+          pagination: {
+            el: '.personal__btns .swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            835: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+              pagination: false,
+            },
           },
         },
       },

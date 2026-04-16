@@ -39,8 +39,6 @@
   }
 
   &__item {
-    --border-radius: 5rem;
-
     display: flex;
     flex-direction: column;
     width: calc(25% - (6rem/4));
@@ -50,8 +48,6 @@
     position: relative;
 
     @include md {
-      --border-radius: calc(100vw/(393/24));
-
       width: 100%;
     }
 
