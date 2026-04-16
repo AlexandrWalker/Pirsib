@@ -110,22 +110,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -136,6 +120,14 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -156,10 +148,10 @@ a {
 }
 
 @font-face {
-  font-family: Outfit;
+  font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Outfit-Black.woff2") format("woff2"), url("../fonts/Outfit-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -174,8 +166,8 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Outfit-Black.woff2") format("woff2"), url("../fonts/Outfit-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -184,6 +176,14 @@ a {
   font-display: swap;
   src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
   font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  font-display: swap;
+  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -244,7 +244,7 @@ a {
 
 .general__cover {
   aspect-ratio: 1674/732;
-  border-radius: 5rem;
+  border-radius: var(--border-radius);
   overflow: hidden;
 }
 
@@ -890,7 +890,7 @@ body {
   --second-family: "Outfit", Arial, sans-serif;
   --container-padding: 12rem;
   --container-width: 168rem;
-  --border-radius: 10rem;
+  --border-radius: 5rem;
   --white: #ffffff;
   --pink: #AD32AE;
   --pink-10: rgba(173, 50, 174, 0.1);
@@ -2764,7 +2764,6 @@ p {
 }
 
 .popup {
-  --border-radius: 5rem;
   display: none;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), radial-gradient(38.6% 39.27% at 49.15% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), radial-gradient(38.6% 39.27% at 49.15% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
@@ -2933,7 +2932,7 @@ canvas {
   height: 32.5rem;
   -o-object-fit: cover;
   object-fit: cover;
-  border-radius: 5rem;
+  border-radius: var(--border-radius);
   float: left;
   margin: 1rem 4rem 1rem 0;
 }
@@ -3352,7 +3351,6 @@ canvas {
 }
 
 .decorations__item {
-  --border-radius: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3534,7 +3532,7 @@ html.out .biography__left {
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   -webkit-backdrop-filter: blur(6.35px);
   backdrop-filter: blur(6.35px);
-  border-radius: 10rem;
+  border-radius: var(--border-radius);
   overflow: hidden;
   will-change: transform;
   min-height: 58.4rem;
@@ -3685,7 +3683,7 @@ html.out .biography__left {
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   -webkit-backdrop-filter: blur(6.35px);
   backdrop-filter: blur(6.35px);
-  border-radius: 10rem;
+  border-radius: var(--border-radius);
   padding: 6rem;
   will-change: transform;
 }
@@ -3749,7 +3747,7 @@ html.out .biography__left {
   -ms-flex-direction: column;
   flex-direction: column;
   width: calc(25% - 1.5rem);
-  border-radius: 5rem;
+  border-radius: var(--border-radius);
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
@@ -3760,12 +3758,8 @@ html.out .biography__left {
   position: relative;
 }
 
-.masters__item .border {
-  --border-radius: 5rem;
-}
-
 .masters__item-head {
-  border-radius: 5rem;
+  border-radius: var(--border-radius);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   -webkit-backdrop-filter: blur(6.35px);
@@ -3890,7 +3884,6 @@ html.out .biography__left {
 }
 
 .price-list__block {
-  --border-radius: 5rem;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
@@ -4165,7 +4158,6 @@ html.out .biography__left {
 }
 
 .catalog__item {
-  --border-radius: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4662,7 +4654,6 @@ html.out .biography__left {
 }
 
 .explanation__cover {
-  --border-radius: 5rem;
   width: 54.5rem;
   height: 53.4rem;
   border-radius: var(--border-radius);
@@ -4738,13 +4729,9 @@ html.out .biography__left {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   overflow: hidden;
-  border-radius: 5rem;
+  border-radius: var(--border-radius);
   will-change: transform;
   position: relative;
-}
-
-.faq__item .border {
-  --border-radius: 5rem;
 }
 
 .faq__item.accordion-active {
@@ -4844,7 +4831,7 @@ html.out .biography__left {
   width: -moz-fit-content;
   width: fit-content;
   padding: 5rem 3.6rem 3.8rem 5rem;
-  border-radius: 5rem;
+  border-radius: var(--border-radius);
   will-change: transform;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
@@ -4852,10 +4839,6 @@ html.out .biography__left {
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   -webkit-backdrop-filter: blur(6.35px);
   backdrop-filter: blur(6.35px);
-}
-
-.find-us__content .border {
-  --border-radius: 5rem;
 }
 
 .find-us__items {
@@ -5489,14 +5472,11 @@ html.out .biography__left {
 }
 
 .personal__btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  max-width: 100%;
+  width: 100%;
   grid-column: 2/3;
   grid-row: 2/3;
 }
@@ -5509,10 +5489,13 @@ html.out .biography__left {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 3.8rem;
-  width: calc(50% - 1rem);
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
   min-height: 35.4rem;
-  padding: 4rem 4rem 6rem 9rem;
+  padding: 3rem;
   border-radius: var(--border-radius);
   will-change: transform;
   position: relative;
@@ -5589,18 +5572,17 @@ html.out .biography__left {
 }
 
 .personal__btn .btn {
-  --btn-width: 14.8rem;
-  --btn-height: 14.8rem;
-  margin: 0 0 0 auto;
+  --btn-width: 8rem;
+  --btn-height: 8rem;
   padding: 0;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
 }
 
 .personal__btn-img {
   width: auto;
-  height: 20rem;
-  position: absolute;
-  top: 0.9rem;
-  left: 5.3rem;
+  height: 17.2rem;
 }
 
 .personal__btn-img img {
@@ -5612,6 +5594,7 @@ html.out .biography__left {
 
 .personal__btn-title {
   max-width: 30rem;
+  line-height: 120%;
 }
 
 .privacy .h2,
@@ -6347,7 +6330,7 @@ html.out .biography__left {
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     -webkit-backdrop-filter: blur(6.35px);
     backdrop-filter: blur(6.35px);
-    border-radius: 10rem;
+    border-radius: var(--border-radius);
     will-change: transform;
   }
 
@@ -6421,7 +6404,7 @@ html.out .biography__left {
   }
 
   .general__cover {
-    border-radius: 1.6rem;
+    border-radius: 4.0712468193vw;
   }
 
   .breadcrumbs ul {
@@ -7059,7 +7042,6 @@ html.out .biography__left {
   }
 
   .popup {
-    --border-radius: calc(100vw/(393/24));
     padding: 10.1781170483vw 10.1781170483vw 12.7226463104vw;
     max-width: 97.2010178117vw;
   }
@@ -7122,7 +7104,6 @@ html.out .biography__left {
     object-fit: contain;
     margin: 0;
     margin-bottom: 3.8167938931vw;
-    border-radius: 2.4rem;
   }
 
   .template {
@@ -7314,7 +7295,6 @@ html.out .biography__left {
   }
 
   .decorations__item {
-    --border-radius: calc(100vw/(393/24));
     width: 100%;
   }
 
@@ -7398,7 +7378,6 @@ html.out .biography__left {
     padding: 3.8167938931vw;
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
-    border-radius: 2.4rem;
     min-height: 93.6386768448vw;
     aspect-ratio: 353/368;
   }
@@ -7487,15 +7466,6 @@ html.out .biography__left {
 
   .masters__item {
     width: calc(50% - 1rem);
-    border-radius: 2.4rem;
-  }
-
-  .masters__item .border {
-    --border-radius: 2.4rem;
-  }
-
-  .masters__item-head {
-    border-radius: 2.4rem;
   }
 
   .masters__item-content {
@@ -7560,7 +7530,6 @@ html.out .biography__left {
   }
 
   .price-list__block {
-    --border-radius: calc(100vw/(393/24));
     padding: 7.6335877863vw 5.0890585242vw;
   }
 
@@ -7728,7 +7697,6 @@ html.out .biography__left {
   }
 
   .catalog__item {
-    --border-radius: calc(100vw/(393/24));
     width: calc(50% - 1.0178117048vw);
     min-height: unset;
     aspect-ratio: unset;
@@ -7950,7 +7918,6 @@ html.out .biography__left {
   }
 
   .explanation__cover {
-    --border-radius: calc(100vw/(393/24));
     width: 100%;
     height: auto;
     -webkit-box-ordinal-group: 3;
@@ -7988,11 +7955,6 @@ html.out .biography__left {
 
   .faq__item {
     padding: 4.3256997455vw 5.0890585242vw 4.834605598vw 7.6335877863vw;
-    border-radius: var(--border-radius);
-  }
-
-  .faq__item .border {
-    --border-radius: calc(100vw/(393/24));
   }
 
   .faq__item.accordion-active {
@@ -8030,7 +7992,6 @@ html.out .biography__left {
     max-width: 100%;
     width: 100%;
     padding: 7.6335877863vw;
-    border-radius: 6.106870229vw;
   }
 
   .find-us__content .border {
@@ -8283,15 +8244,12 @@ html.out .biography__left {
 
   .personal__btns {
     gap: 2.0356234097vw;
+    overflow: visible;
     grid-column: 1/3;
   }
 
   .personal__btn {
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    width: calc(50% - 1.0178117048vw);
-    min-height: unset;
+    min-height: 47.582697201vw;
     padding: 5.0890585242vw 5.0890585242vw 6.3613231552vw;
   }
 
@@ -8306,12 +8264,14 @@ html.out .biography__left {
   }
 
   .personal__btn .btn {
-    --btn-width: calc(100vw/(393/50));
-    --btn-height: calc(100vw/(393/50));
+    --btn-width: calc(100vw/(393/40));
+    --btn-height: calc(100vw/(393/40));
+    top: 2rem;
+    right: 2rem;
   }
 
   .personal__btn-img {
-    height: 20.3562340967vw;
+    height: 13.9949109415vw;
     top: 2.5445292621vw;
     left: 2.5445292621vw;
   }
@@ -8499,6 +8459,10 @@ html.out .biography__left {
 
   .general__head {
     margin-bottom: 2rem;
+  }
+
+  .general__cover {
+    border-radius: 1.6rem;
   }
 
   .breadcrumbs ul {
@@ -8926,7 +8890,6 @@ html.out .biography__left {
   }
 
   .popup {
-    --border-radius: 2.4rem;
     max-width: calc(100% - 3rem);
   }
 
@@ -9186,7 +9149,6 @@ html.out .biography__left {
   }
 
   .price-list__block {
-    --border-radius: 2.4rem;
     padding: 3rem 2rem;
   }
 
@@ -9308,7 +9270,6 @@ html.out .biography__left {
   }
 
   .catalog__item {
-    --border-radius: 2.4rem;
     width: 100%;
   }
 
@@ -9448,10 +9409,6 @@ html.out .biography__left {
 
   .faq__item {
     padding: 1.7rem 2rem 1.9rem 3rem;
-  }
-
-  .faq__item .border {
-    --border-radius: 2.4rem;
   }
 
   .faq__item.accordion-active {
@@ -9641,10 +9598,13 @@ html.out .biography__left {
     gap: 3rem 0.8rem;
   }
 
+  .personal__btns {
+    gap: 0.8rem;
+  }
+
   .personal__btn {
+    min-height: 18.7rem;
     padding: 2rem 2rem 2.5rem;
-    max-height: unset;
-    aspect-ratio: 173/187;
   }
 
   .personal__btn:first-child img {
@@ -9658,12 +9618,12 @@ html.out .biography__left {
   }
 
   .personal__btn .btn {
-    --btn-width: 5rem;
-    --btn-height: 5rem;
+    --btn-width: 4rem;
+    --btn-height: 4rem;
   }
 
   .personal__btn-img {
-    height: 8rem;
+    height: 5.5rem;
     top: 1rem;
     left: 1rem;
   }
