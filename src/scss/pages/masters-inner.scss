@@ -193,6 +193,7 @@
       backdrop-filter: unset;
       border-radius: unset;
       will-change: transform;
+      min-height: unset;
 
       @include md {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);

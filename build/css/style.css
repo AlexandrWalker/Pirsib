@@ -110,6 +110,22 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -120,14 +136,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -148,10 +156,10 @@ a {
 }
 
 @font-face {
-  font-family: Montserrat;
+  font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Outfit-Black.woff2") format("woff2"), url("../fonts/Outfit-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -166,8 +174,8 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Black.woff2") format("woff2"), url("../fonts/Outfit-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -176,14 +184,6 @@ a {
   font-display: swap;
   src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Outfit;
-  font-display: swap;
-  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
-  font-weight: 800;
   font-style: normal;
 }
 
@@ -3364,6 +3364,12 @@ canvas {
   position: relative;
 }
 
+.catalog-page .decorations__item {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .decorations__item--piercing .decorations__item-head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3647,6 +3653,7 @@ html.out .biography__left {
   backdrop-filter: unset;
   border-radius: unset;
   will-change: transform;
+  min-height: unset;
 }
 
 .biography__block--mob .biography__block-head {
@@ -6123,6 +6130,19 @@ html.out .biography__left {
   z-index: -2;
 }
 
+.works__item-btn.btn {
+  --btn-height: 8rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 0 0 4rem;
+  gap: 3rem;
+  position: absolute;
+  bottom: 6rem;
+  left: 4.5rem;
+  font-size: 1.6rem;
+}
+
 .works__item-img::before {
   content: "";
   background: -webkit-gradient(linear, left top, right top, from(rgba(12, 15, 27, 0.95)), to(rgba(13, 15, 27, 0)));
@@ -8422,6 +8442,14 @@ html.out .biography__left {
     margin-left: 2.5445292621vw;
   }
 
+  .works__item-btn.btn {
+    --btn-height: calc(100vw/(393/50));
+    margin-left: 2.5445292621vw;
+    padding-left: 3.8167938931vw;
+    gap: 0.5089058524vw;
+    font-size: 3.5623409669vw;
+  }
+
   .works__content {
     gap: 5.0890585242vw;
   }
@@ -9782,6 +9810,17 @@ html.out .biography__left {
     --btn-width: 5rem;
     --btn-height: 5rem;
     margin-left: 1rem;
+    left: 3rem;
+    bottom: 3rem;
+  }
+
+  .works__item-btn.btn {
+    --btn-width: 5rem;
+    --btn-height: 5rem;
+    margin-left: 0;
+    padding-left: 1.5rem;
+    gap: 2rem;
+    font-size: 1.2rem;
     left: 3rem;
     bottom: 3rem;
   }

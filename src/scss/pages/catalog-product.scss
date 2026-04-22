@@ -51,6 +51,10 @@
       width: 100%;
     }
 
+    .catalog-page & {
+      height: fit-content;
+    }
+
     &--piercing {
 
       .decorations__item-head {
