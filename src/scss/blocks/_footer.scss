@@ -94,7 +94,7 @@
       }
 
       @include xxs {
-        font-size: 3rem;
+        font-size: 2.8rem;
       }
     }
 
@@ -114,15 +114,23 @@
   }
 
   &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
     grid-column: 1/2;
     grid-row: 2/3;
+
+    @include md {
+      flex-direction: row;
+    }
 
     ul {
       width: 100%;
 
       @include md {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: calc(100vw/(393/15));
       }
 

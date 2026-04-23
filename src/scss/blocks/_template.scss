@@ -58,7 +58,7 @@
       }
 
       @include sm {
-        font-size: 5rem;
+        // font-size: 5rem;
       }
     }
   }
@@ -229,6 +229,14 @@
 
     position: relative;
 
+    .product-page & {
+      padding: 6rem 13.2rem;
+
+      @include md {
+        justify-content: space-between;
+      }
+    }
+
     .template--bg & {
 
       @include md {
@@ -275,6 +283,10 @@
 
         @include sm {
           gap: 2.3rem;
+        }
+
+        .product-page & {
+          gap: 4rem;
         }
       }
 
@@ -365,6 +377,14 @@
       margin-top: -5.1rem;
 
       right: -0.7rem;
+    }
+
+    .product-page & {
+      width: 45rem;
+
+      @include md {
+        width: calc(100vw/(393/258));
+      }
     }
 
     img {
