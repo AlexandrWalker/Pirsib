@@ -94,6 +94,14 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -104,14 +112,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -456,8 +456,8 @@ a:hover .border::after {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.58% at 50% 50.4%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -478,8 +478,8 @@ a:hover .border::after {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.58% at 50% 50.4%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -512,8 +512,8 @@ a:hover .border::after {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
 }
 
 .sticky__item .over {
@@ -662,8 +662,8 @@ a:hover .border::after {
   background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--btn-border-radius);
   pointer-events: none;
   position: absolute;
@@ -685,8 +685,8 @@ a:hover .border::after {
   background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--btn-border-radius);
   pointer-events: none;
   position: absolute;
@@ -720,8 +720,8 @@ a:hover .border::after {
   margin: 2rem;
 }
 
-.is-compact .fancybox__content>.f-button.is-close-btn,
-.fancybox__content>.f-button.is-close-btn {
+.is-compact .fancybox__content > .f-button.is-close-btn,
+.fancybox__content > .f-button.is-close-btn {
   top: 3.4rem;
   right: 3.4rem;
   color: var(--pink-2);
@@ -988,8 +988,8 @@ a:hover .btn .border::after,
   background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--btn-border-radius);
   pointer-events: none;
   position: absolute;
@@ -1010,8 +1010,8 @@ a:hover .btn .border::after,
   background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--btn-border-radius);
   pointer-events: none;
   position: absolute;
@@ -1087,8 +1087,8 @@ a:hover .btn .border::after,
   background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--btn-border-radius);
   position: relative;
 }
@@ -1158,8 +1158,8 @@ a:hover .btn .border::after,
   background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--btn-border-radius);
   pointer-events: none;
   position: absolute;
@@ -1180,8 +1180,8 @@ a:hover .btn .border::after,
   background: radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--btn-border-radius);
   pointer-events: none;
   position: absolute;
@@ -1270,8 +1270,8 @@ a:hover .btn .border::after,
   color: var(--white);
   -webkit-box-shadow: inset 0px 0px 1.14rem rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 1.14rem rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
@@ -1335,35 +1335,19 @@ a:hover .btn .border::after,
   color: var(--pink-2);
 }
 
-.form-input.filled::-webkit-input-placeholder,
-.form-input:checked::-webkit-input-placeholder,
-.form-input:focus::-webkit-input-placeholder,
-.form-input:hover::-webkit-input-placeholder,
-.form-input:target::-webkit-input-placeholder {
+.form-input.filled::-webkit-input-placeholder, .form-input:checked::-webkit-input-placeholder, .form-input:focus::-webkit-input-placeholder, .form-input:hover::-webkit-input-placeholder, .form-input:target::-webkit-input-placeholder {
   color: var(--pink-2);
 }
 
-.form-input.filled::-moz-placeholder,
-.form-input:checked::-moz-placeholder,
-.form-input:focus::-moz-placeholder,
-.form-input:hover::-moz-placeholder,
-.form-input:target::-moz-placeholder {
+.form-input.filled::-moz-placeholder, .form-input:checked::-moz-placeholder, .form-input:focus::-moz-placeholder, .form-input:hover::-moz-placeholder, .form-input:target::-moz-placeholder {
   color: var(--pink-2);
 }
 
-.form-input.filled:-ms-input-placeholder,
-.form-input:checked:-ms-input-placeholder,
-.form-input:focus:-ms-input-placeholder,
-.form-input:hover:-ms-input-placeholder,
-.form-input:target:-ms-input-placeholder {
+.form-input.filled:-ms-input-placeholder, .form-input:checked:-ms-input-placeholder, .form-input:focus:-ms-input-placeholder, .form-input:hover:-ms-input-placeholder, .form-input:target:-ms-input-placeholder {
   color: var(--pink-2);
 }
 
-.form-input.filled::-ms-input-placeholder,
-.form-input:checked::-ms-input-placeholder,
-.form-input:focus::-ms-input-placeholder,
-.form-input:hover::-ms-input-placeholder,
-.form-input:target::-ms-input-placeholder {
+.form-input.filled::-ms-input-placeholder, .form-input:checked::-ms-input-placeholder, .form-input:focus::-ms-input-placeholder, .form-input:hover::-ms-input-placeholder, .form-input:target::-ms-input-placeholder {
   color: var(--pink-2);
 }
 
@@ -1375,27 +1359,27 @@ a:hover .btn .border::after,
   color: var(--pink-2);
 }
 
-.form-input.filled+i,
-.form-input:checked+i,
-.form-input:focus+i,
-.form-input:hover+i,
-.form-input:target+i {
+.form-input.filled + i,
+.form-input:checked + i,
+.form-input:focus + i,
+.form-input:hover + i,
+.form-input:target + i {
   color: var(--pink-2);
 }
 
-.form-input.filled+*+.border::before,
-.form-input:checked+*+.border::before,
-.form-input:focus+*+.border::before,
-.form-input:hover+*+.border::before,
-.form-input:target+*+.border::before {
+.form-input.filled + * + .border::before,
+.form-input:checked + * + .border::before,
+.form-input:focus + * + .border::before,
+.form-input:hover + * + .border::before,
+.form-input:target + * + .border::before {
   opacity: 0;
 }
 
-.form-input.filled+*+.border::after,
-.form-input:checked+*+.border::after,
-.form-input:focus+*+.border::after,
-.form-input:hover+*+.border::after,
-.form-input:target+*+.border::after {
+.form-input.filled + * + .border::after,
+.form-input:checked + * + .border::after,
+.form-input:focus + * + .border::after,
+.form-input:hover + * + .border::after,
+.form-input:target + * + .border::after {
   opacity: 1;
 }
 
@@ -1414,7 +1398,7 @@ a:hover .btn .border::after,
   left: -999999px;
 }
 
-.form-checkbox:checked+.form-checkbox--item>.form-checkbox--icon {
+.form-checkbox:checked + .form-checkbox--item > .form-checkbox--icon {
   background-color: var(--pink-2);
 }
 
@@ -1823,7 +1807,6 @@ p {
   --color1: #AD32AE;
   --color2: #3C49C2;
   color: transparent;
-  background: -webkit-gradient(linear, left top, right top, from(var(--color1)), color-stop(var(--color2)), to(var(--color1)));
   background: linear-gradient(90deg, var(--color1), var(--color2), var(--color1));
   background-size: 200% 100%;
   /* увеличиваем фон для бесшовного движения */
@@ -1866,8 +1849,8 @@ p {
   border-radius: var(--border-radius);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   will-change: transform;
   position: relative;
   cursor: pointer;
@@ -2004,7 +1987,7 @@ p {
 }
 
 .accordion-active .accordion-body,
-.accordion-active+.accordion-body {
+.accordion-active + .accordion-body {
   grid-template-rows: 1fr;
 }
 
@@ -2153,6 +2136,14 @@ p {
 }
 
 .footer__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
   grid-column: 1/2;
   grid-row: 2/3;
 }
@@ -2323,8 +2314,8 @@ p {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   pointer-events: none;
   opacity: 0;
@@ -2434,8 +2425,8 @@ p {
   background: radial-gradient(39.27% 41.96% at 50% 53.43%, rgba(228, 233, 255, 0.0705882353) 0%, rgba(173, 50, 174, 0.0705882353) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.4117647059);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.4117647059);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
@@ -2568,8 +2559,8 @@ p {
   will-change: transform;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), -webkit-gradient(linear, left bottom, left top, from(rgba(25, 18, 39, 0.9)), to(rgba(25, 18, 39, 0.9))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-  -webkit-backdrop-filter: blur(18.55px);
-  backdrop-filter: blur(18.55px);
+backdrop-filter: blur(18.55px);
+-webkit-backdrop-filter: blur(18.55px);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   height: 100%;
@@ -2616,8 +2607,8 @@ p {
   will-change: transform;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), -webkit-gradient(linear, left bottom, left top, from(rgba(25, 18, 39, 0.9)), to(rgba(25, 18, 39, 0.9))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-  -webkit-backdrop-filter: blur(18.55px);
-  backdrop-filter: blur(18.55px);
+backdrop-filter: blur(18.55px);
+-webkit-backdrop-filter: blur(18.55px);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   position: relative;
@@ -2630,8 +2621,8 @@ p {
   background: var(--blue-dark-1);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(18.55px);
-  backdrop-filter: blur(18.55px);
+backdrop-filter: blur(18.55px);
+-webkit-backdrop-filter: blur(18.55px);
   position: absolute;
   top: 13rem;
   left: 0;
@@ -2645,8 +2636,8 @@ p {
   background: var(--blue-dark-1);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(18.55px);
-  backdrop-filter: blur(18.55px);
+backdrop-filter: blur(18.55px);
+-webkit-backdrop-filter: blur(18.55px);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2769,8 +2760,8 @@ p {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), radial-gradient(38.6% 39.27% at 49.15% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   padding: 4rem 4rem 5rem;
   max-width: 41.2rem;
@@ -2981,8 +2972,8 @@ canvas {
   overflow: hidden;
   -webkit-box-shadow: none;
   box-shadow: none;
-  -webkit-backdrop-filter: unset;
-  backdrop-filter: unset;
+backdrop-filter: unset;
+-webkit-backdrop-filter: unset;
   will-change: transform;
   min-height: 58rem;
 }
@@ -3045,9 +3036,13 @@ canvas {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   position: relative;
+}
+
+.product-page .template__content {
+  padding: 6rem 13.2rem;
 }
 
 .template--cover .template__content {
@@ -3065,6 +3060,10 @@ canvas {
   gap: 5.2rem;
   margin-bottom: 0;
   max-width: 78.2rem;
+}
+
+.product-page .template__content .general__head {
+  gap: 4rem;
 }
 
 .template__content .general__title {
@@ -3122,6 +3121,10 @@ canvas {
   bottom: 0;
   right: 20.2rem;
   z-index: 6;
+}
+
+.product-page .template__cover {
+  width: 45rem;
 }
 
 .template__cover img {
@@ -3293,8 +3296,8 @@ canvas {
   background: #0C0F1B;
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   will-change: transform;
 }
 
@@ -3454,8 +3457,8 @@ canvas {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   will-change: transform;
 }
 
@@ -3536,8 +3539,8 @@ html.out .biography__left {
   padding: 6rem 6rem 8rem;
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   overflow: hidden;
   will-change: transform;
@@ -3649,8 +3652,8 @@ html.out .biography__left {
   background: unset;
   -webkit-box-shadow: unset;
   box-shadow: unset;
-  -webkit-backdrop-filter: unset;
-  backdrop-filter: unset;
+backdrop-filter: unset;
+-webkit-backdrop-filter: unset;
   border-radius: unset;
   will-change: transform;
   min-height: unset;
@@ -3688,8 +3691,8 @@ html.out .biography__left {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   padding: 6rem;
   will-change: transform;
@@ -3759,8 +3762,8 @@ html.out .biography__left {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.52% at 50% 50.32%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   will-change: transform;
   position: relative;
 }
@@ -3769,8 +3772,8 @@ html.out .biography__left {
   border-radius: var(--border-radius);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   aspect-ratio: 1/1;
   will-change: transform;
   position: relative;
@@ -3895,8 +3898,8 @@ html.out .biography__left {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   padding: 4rem 14rem;
   will-change: transform;
@@ -4250,8 +4253,8 @@ html.out .biography__left {
   background: radial-gradient(38.3% 39.27% at 51.23% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: 10rem;
   padding: 0 0 0 4rem;
   will-change: transform;
@@ -4600,8 +4603,8 @@ html.out .biography__left {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   will-change: transform;
@@ -4731,8 +4734,8 @@ html.out .biography__left {
   padding: 2.5rem 5rem 2.6rem;
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   overflow: hidden;
@@ -4844,8 +4847,8 @@ html.out .biography__left {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
 }
 
 .find-us__items {
@@ -5030,8 +5033,8 @@ html.out .biography__left {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   border: 0.05rem solid var(--pink-50);
   will-change: transform;
@@ -5086,8 +5089,8 @@ html.out .biography__left {
 .hero__request .form-input {
   -webkit-box-shadow: unset;
   box-shadow: unset;
-  -webkit-backdrop-filter: unset;
-  backdrop-filter: unset;
+backdrop-filter: unset;
+-webkit-backdrop-filter: unset;
 }
 
 .hero__request .form-wrap {
@@ -5212,8 +5215,8 @@ html.out .biography__left {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
 }
 
@@ -5313,7 +5316,7 @@ html.out .biography__left {
   position: relative;
 }
 
-.opinion__item>.border {
+.opinion__item > .border {
   border-radius: var(--border-radius);
 }
 
@@ -5516,8 +5519,8 @@ html.out .biography__left {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   opacity: 1;
   -webkit-transition: all 0.5s ease;
@@ -5538,8 +5541,8 @@ html.out .biography__left {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   opacity: 0;
   -webkit-transition: all 0.5s ease;
@@ -5680,8 +5683,8 @@ html.out .biography__left {
   background-size: 100% 100%;
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: var(--border-radius);
   will-change: transform;
 }
@@ -6010,8 +6013,8 @@ html.out .biography__left {
   background: radial-gradient(39.27% 41.96% at 50% 53.43%, rgba(228, 233, 255, 0.07) 0%, rgba(173, 50, 174, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-  backdrop-filter: blur(6.35px);
+backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
   border-radius: 2.4rem;
   will-change: transform;
   position: absolute;
@@ -6202,11 +6205,11 @@ html.out .biography__left {
     padding: 2rem 2rem 2rem 6.4rem;
   }
 
-  .form-input.filled+i,
-  .form-input:checked+i,
-  .form-input:focus+i,
-  .form-input:hover+i,
-  .form-input:target+i {
+  .form-input.filled + i,
+  .form-input:checked + i,
+  .form-input:focus + i,
+  .form-input:hover + i,
+  .form-input:target + i {
     left: 3rem;
   }
 
@@ -6348,8 +6351,9 @@ html.out .biography__left {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-    -webkit-backdrop-filter: blur(6.35px);
-    backdrop-filter: blur(6.35px);
+backdrop-filter: b
+-webkit-backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
     border-radius: var(--border-radius);
     will-change: transform;
   }
@@ -6717,7 +6721,7 @@ html.out .biography__left {
     animation: idleFlow 3s linear infinite;
   }
 
-  @-webkit-keyframes idleFlow {
+@-webkit-keyframes idleFlow {
     from {
       background-position: 0% 50%;
     }
@@ -6725,9 +6729,9 @@ html.out .biography__left {
     to {
       background-position: 200% 50%;
     }
-  }
+}
 
-  @keyframes idleFlow {
+@keyframes idleFlow {
     from {
       background-position: 0% 50%;
     }
@@ -6735,7 +6739,7 @@ html.out .biography__left {
     to {
       background-position: 200% 50%;
     }
-  }
+}
 
   .burger {
     gap: 0.7633587786vw 0;
@@ -6793,8 +6797,8 @@ html.out .biography__left {
     min-height: 100vh;
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), -webkit-gradient(linear, left bottom, left top, from(rgba(25, 18, 39, 0.9)), to(rgba(25, 18, 39, 0.9))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(25, 18, 39, 0.9), rgba(25, 18, 39, 0.9)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.03) 0%, rgba(80, 97, 255, 0.03) 100%);
-    -webkit-backdrop-filter: blur(18.55px);
-    backdrop-filter: blur(18.55px);
+  backdrop-filter: blur(18.55px);
+-webkit-backdrop-filter: blur(18.55px);
   }
 
   .menu--open .burger-menu__inner {
@@ -6852,9 +6856,16 @@ html.out .biography__left {
     font-size: 3.5623409669vw;
   }
 
+  .footer__menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
   .footer__menu ul {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 3.8167938931vw;
   }
 
@@ -6994,8 +7005,8 @@ html.out .biography__left {
     height: 100%;
     overflow-y: unset;
     background: unset;
-    -webkit-backdrop-filter: unset;
-    backdrop-filter: unset;
+  backdrop-filter: unset;
+-webkit-backdrop-filter: unset;
   }
 
   .menu__list ul {
@@ -7010,8 +7021,8 @@ html.out .biography__left {
     gap: 5.0890585242vw;
     padding: 7.6335877863vw 5.0890585242vw 20.3562340967vw 5.0890585242vw;
     background: unset;
-    -webkit-backdrop-filter: unset;
-    backdrop-filter: unset;
+  backdrop-filter: unset;
+-webkit-backdrop-filter: unset;
   }
 
   .menu__content::before {
@@ -7157,8 +7168,8 @@ html.out .biography__left {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.64% at 50% 50.47%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-    -webkit-backdrop-filter: blur(6.35px);
-    backdrop-filter: blur(6.35px);
+  backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
     height: 152.6717557252vw;
   }
 
@@ -7189,6 +7200,12 @@ html.out .biography__left {
 
   .template .general__title * {
     font-size: 7.6335877863vw;
+  }
+
+  .product-page .template__content {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 
   .template--bg .template__content {
@@ -7225,6 +7242,10 @@ html.out .biography__left {
     margin-left: auto;
     position: relative;
     right: -1.7811704835vw;
+  }
+
+  .product-page .template__cover {
+    width: 65.6488549618vw;
   }
 
   .timeline {
@@ -7402,7 +7423,7 @@ html.out .biography__left {
     aspect-ratio: 353/368;
   }
 
-  .biography__block>.border {
+  .biography__block > .border {
     --border-radius: 2.4rem;
   }
 
@@ -7434,8 +7455,9 @@ html.out .biography__left {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
     -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-    -webkit-backdrop-filter: blur(6.35px);
-    backdrop-filter: blur(6.35px);
+backdrop-filter: b
+-webkit-backdrop-filter: blur(6.35px);
+-webkit-backdrop-filter: blur(6.35px);
     padding: 7.6335877863vw;
     aspect-ratio: unset;
   }
@@ -7748,8 +7770,8 @@ html.out .biography__left {
     background: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    -webkit-backdrop-filter: unset;
-    backdrop-filter: unset;
+  backdrop-filter: unset;
+-webkit-backdrop-filter: unset;
     right: 5.0890585242vw;
     bottom: 5.0890585242vw;
   }
@@ -8319,8 +8341,8 @@ html.out .biography__left {
   .quiz__inner {
     padding: 7.6335877863vw 14.5038167939vw 9.1603053435vw 5.0890585242vw;
     background-image: url(./../images/temp/quiz-bg-mob.webp);
-    -webkit-backdrop-filter: unset;
-    backdrop-filter: unset;
+  backdrop-filter: unset;
+-webkit-backdrop-filter: unset;
   }
 
   .quiz__content {
@@ -8958,10 +8980,6 @@ html.out .biography__left {
   }
 
   .template.template--bg .general__title * {
-    font-size: 5rem;
-  }
-
-  .template.template--cover .general__title * {
     font-size: 5rem;
   }
 
@@ -9859,7 +9877,7 @@ html.out .biography__left {
 
 @media (max-width: 372px) {
   .footer__contact-link {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
   .certificates__page .certificates__item {
