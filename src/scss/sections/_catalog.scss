@@ -74,6 +74,10 @@
     @include sm {
       gap: 0.8rem;
     }
+
+    &--piercing {
+      margin-bottom: 2rem;
+    }
   }
 
   &__item {
@@ -86,8 +90,9 @@
     position: relative;
 
     @include md {
-      width: calc(50% - (100vw/(393/4)));
+      // width: calc(50% - (100vw/(393/4)));
       // min-height: calc(100vw/(393/586));
+      width: 100%;
       min-height: unset;
       aspect-ratio: unset;
     }

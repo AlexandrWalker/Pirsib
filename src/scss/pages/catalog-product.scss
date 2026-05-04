@@ -56,24 +56,124 @@
     }
 
     &--piercing {
+      --border-radius: 2.5rem;
 
-      .decorations__item-head {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 3.2rem;
+      @include md {
+        --border-radius: calc(100vw/(393/25));
+      }
 
-        @include md {
-          padding: 0 calc(100vw/(393/20));
+      @include sm {
+        --border-radius: 2.5rem;
+      }
+
+      .decorations__item {
+
+        &-head {
+          display: flex;
+          justify-content: flex-start;
+          aspect-ratio: unset;
+          padding: 2rem 2rem 0 2rem;
+          box-shadow: none;
+          background: none;
+          backdrop-filter: unset;
+
+          @include md {
+            padding: calc(100vw/(393/20)) calc(100vw/(393/20)) 0 calc(100vw/(393/20));
+          }
+
+          @include sm {
+            padding: 2rem 2rem 0 2rem;
+          }
         }
 
-        @include sm {
-          padding: 0 2rem;
+        &-img {
+          height: 10.4rem;
+
+          @include md {
+            height: calc(100vw/(393/104));
+          }
+
+          @include sm {
+            height: 10.4rem;
+          }
+
+          img {
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+          }
         }
 
-        img {
-          width: 100%;
-          height: auto;
+        &-body {
+          padding: 3rem 3rem 4rem 3rem;
+
+          @include md {
+            padding: calc(100vw/(393/30)) calc(100vw/(393/30)) calc(100vw/(393/40)) calc(100vw/(393/30));
+          }
+
+          @include sm {
+            padding: 3rem 3rem 4rem 3rem;
+          }
+        }
+
+        &-content {
+          display: flex;
+          flex-direction: column;
+          gap: 2.5rem;
+
+          @include md {
+            gap: calc(100vw/(393/25));
+          }
+
+          @include sm {
+            gap: 2.5rem;
+          }
+        }
+
+        &-title {
+          font-weight: 700;
+          font-size: 2.5rem;
+          line-height: 120%;
+          text-transform: uppercase;
+
+          @include md {
+            font-size: calc(100vw/(393/25));
+          }
+
+          @include sm {
+            font-size: 2.5rem;
+          }
+
+          &:hover {
+            color: var(--pink);
+          }
+        }
+
+        &-list {
+
+          li {
+            margin-bottom: 1.5rem;
+
+            @include md {
+              margin-bottom: calc(100vw/(393/15));
+            }
+
+            @include sm {
+              margin-bottom: 1.5rem;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          a {
+            color: var(--blue);
+
+            &:hover {
+              color: var(--pink);
+            }
+          }
         }
       }
     }

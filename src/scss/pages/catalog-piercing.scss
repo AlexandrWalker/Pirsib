@@ -48,11 +48,28 @@
   }
 
   .decorations__item-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3.2rem;
     aspect-ratio: 405/319;
     background: #0C0F1B;
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
     backdrop-filter: blur(6.35px);
     will-change: transform;
+
+    @include md {
+      padding: 0 calc(100vw/(393/20));
+    }
+
+    @include sm {
+      padding: 0 2rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .decorations__item-content {
@@ -62,18 +79,38 @@
     p {
       font-size: 1.4rem;
       opacity: 1;
+
+      @include md {
+        font-size: calc(100vw/(393/14));
+      }
+
+      @include sm {
+        font-size: 1.4rem;
+      }
     }
 
     span {
       margin-top: auto;
-      
+
       font-weight: 700;
       font-size: 2rem;
+
+      @include md {
+        font-size: calc(100vw/(393/20));
+      }
+
+      @include sm {
+        font-size: 2rem;
+      }
     }
   }
 
   .decorations__item-title {
     font-size: 3rem;
+
+    @include md {
+      font-size: calc(100vw/(393/24));
+    }
 
     @include sm {
       font-size: 2.4rem;

@@ -1,0 +1,232 @@
+@use './../mixins' as *;
+
+.piercing-inner {
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+
+    @include md {
+      flex-direction: column;
+      gap: calc(100vw/(393/20));
+    }
+
+    @include sm {
+      gap: 2rem;
+    }
+  }
+
+  &__img {
+    // width: 54.5rem;
+    width: auto;
+    height: 53.4rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    flex-shrink: 0;
+
+    @include md {
+      width: 100%;
+      height: auto;
+    }
+
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+
+      @include md {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include md {
+      gap: calc(100vw/(393/20));
+    }
+
+    @include sm {
+      gap: 2rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include md {
+      gap: calc(100vw/(393/20));
+    }
+
+    @include sm {
+      gap: 2rem;
+    }
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 120%;
+
+    background: radial-gradient(42.06% 481.38% at 15.28% 29.16%, #AD32AE 0%, #3C49C2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    @include md {
+      font-size: calc(100vw/(393/24));
+    }
+
+    @include sm {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 80rem;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    color: var(--blue);
+
+    @include md {
+      gap: calc(100vw/(393/10));
+    }
+
+    @include sm {
+      gap: 1rem;
+    }
+
+    &-title {}
+
+    &-price {
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 120%;
+      color: var(--blue);
+
+      @include md {
+        font-size: calc(100vw/(393/20));
+      }
+
+      @include sm {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__btn {
+    border-radius: 10rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 36.5rem;
+    width: 100%;
+    height: 8rem;
+    transition: all 0.5s ease;
+    background: radial-gradient(38.3% 39.27% at 51.23% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    backdrop-filter: blur(6.35px);
+    padding: 0 0 0 4rem;
+    will-change: transform;
+    position: relative;
+
+    @include md {
+      --border-radius: 10rem;
+
+      padding: 0 0 0 calc(100vw/(393/20));
+      height: calc(100vw/(393/50));
+    }
+
+    @include sm {
+      padding: 0 0 0 2rem;
+      height: 5rem;
+    }
+
+    &-text {
+      width: 100%;
+
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 120%;
+      color: var(--purple);
+
+      @include md {
+        font-size: calc(100vw/(393/14));
+      }
+
+      @include sm {
+        font-size: 1.4rem;
+      }
+    }
+
+    .btn {
+      --btn-width: 8rem;
+      --btn-height: 8rem;
+
+      padding: 0;
+
+      right: 0;
+      bottom: 0;
+
+      @include md {
+        --btn-width: calc(100vw/(393/50));
+        --btn-height: calc(100vw/(393/50));
+      }
+
+      @include sm {
+        --btn-width: 5rem;
+        --btn-height: 5rem;
+      }
+    }
+  }
+
+  &__page {
+
+    .price-list {
+
+      .general {
+
+        &__head {
+          margin-bottom: 2rem;
+        }
+
+        &__title {
+
+          h2 {
+            font-family: var(--font-family);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 5rem;
+            line-height: 120%;
+
+            @include md {
+              font-size: calc(100vw/(393/24));
+            }
+
+            @include sm {
+              font-size: 2.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
