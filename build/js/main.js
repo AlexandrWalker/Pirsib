@@ -108,33 +108,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const marker = 10;
     let lastScrollTop = 0;
     let ticking = false;
-    let isOut = false; // состояние класса .out
+    let isOut = false;
+
+    // Кешируем высоту первой секции — не вызываем offsetHeight на каждый кадр
+    let firstSectionHeight = firstSection.offsetHeight;
+
+    // Пересчитываем при ресайзе
+    window.addEventListener('resize', () => {
+      firstSectionHeight = firstSection.offsetHeight;
+    }, { passive: true });
 
     const scrollHandler = () => {
-      const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-      const scrollingDown = scrollPos > lastScrollTop && scrollPos > marker;
-      const scrollingUp = scrollPos < lastScrollTop;
-      const menuOpen = html.classList.contains('menu--open');
+      try {
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollingDown = scrollPos > lastScrollTop && scrollPos > marker;
+        const scrollingUp = scrollPos < lastScrollTop;
+        const aboveFirstSection = scrollPos < firstSectionHeight;
+        const belowFirstSection = scrollPos > firstSectionHeight;
 
-      // Добавляем .out только один раз при начале скролла вниз
-      if (scrollingDown && !isOut) {
-        header.classList.add('out');
-        document.documentElement.classList.add('out');
-        isOut = true;
+        // .show управляется независимо
+        header.classList.toggle('show', belowFirstSection);
+
+        // .out добавляем ТОЛЬКО когда .show уже есть
+        // то есть только когда проскроллили дальше первой секции
+        if (scrollingDown && !isOut && belowFirstSection) {
+          header.classList.add('out');
+          html.classList.add('out');
+          isOut = true;
+        }
+
+        // Убираем .out при скролле вверх или возврате к первой секции
+        if ((scrollingUp && isOut) || aboveFirstSection) {
+          header.classList.remove('out');
+          html.classList.remove('out');
+          isOut = false;
+        }
+
+        lastScrollTop = scrollPos <= 0 ? 0 : scrollPos;
+
+      } finally {
+        ticking = false;
       }
-
-      // Убираем .out только один раз при начале скролла вверх
-      if (scrollingUp && isOut || scrollPos < firstSection.offsetHeight) {
-        header.classList.remove('out');
-        document.documentElement.classList.remove('out');
-        isOut = false;
-      }
-
-      // Управление классом .show по высоте первой секции
-      header.classList.toggle('show', scrollPos > firstSection.offsetHeight);
-
-      lastScrollTop = scrollPos <= 0 ? 0 : scrollPos;
-      ticking = false;
     };
 
     window.addEventListener('scroll', () => {
@@ -142,7 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(scrollHandler);
         ticking = true;
       }
-    });
+    }, { passive: true });
+
+    // Проверка при загрузке
+    scrollHandler();
   }
 
   headerFunc();
