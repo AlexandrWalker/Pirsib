@@ -225,12 +225,12 @@
 }
 
 [data-animation="blur"] {
-  will-change: transform, filter;
+  // will-change: transform, filter;
 }
 
 .item-bg {
   overflow: hidden;
-  will-change: transform;
+  // will-change: transform;
 
   position: relative;
 
@@ -240,10 +240,12 @@
 
       &::before {
         opacity: 0;
+        backdrop-filter: unset;
       }
 
       &::after {
         opacity: 1;
+        backdrop-filter: blur(6.35px);
       }
     }
   }
@@ -252,10 +254,12 @@
 
     &::before {
       opacity: 0;
+      backdrop-filter: unset;
     }
 
     &::after {
       opacity: 1;
+      backdrop-filter: blur(6.35px);
     }
   }
 
@@ -286,8 +290,8 @@
     transition: all 0.5s ease;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.58% at 50% 50.4%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
     box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-    backdrop-filter: blur(6.35px);
     pointer-events: none;
+    backdrop-filter: unset;
 
     position: absolute;
     top: 0;
@@ -300,7 +304,7 @@
 
 .block-bg {
   position: relative;
-  will-change: transform;
+  // will-change: transform;
 
   &::before {
     content: "";
