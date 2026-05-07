@@ -5,6 +5,8 @@
   height: 7rem;
   transition: all 0.5s ease;
 
+  z-index: 2;
+
   @include md {
     display: flex;
     height: calc(100vw/(393/55));
