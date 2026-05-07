@@ -95,8 +95,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -111,8 +111,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -434,22 +434,21 @@ a:hover .border::after {
   overflow: hidden;
 }
 
-[data-animation=blur] {
-  will-change: transform, filter;
-}
-
 .item-bg {
   overflow: hidden;
-  will-change: transform;
   position: relative;
 }
 
 .item-bg.accordion-active::before {
   opacity: 0;
+  -webkit-backdrop-filter: unset;
+          backdrop-filter: unset;
 }
 
 .item-bg.accordion-active::after {
   opacity: 1;
+  -webkit-backdrop-filter: blur(6.35px);
+          backdrop-filter: blur(6.35px);
 }
 
 .item-bg::before {
@@ -489,9 +488,9 @@ a:hover .border::after {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.58% at 50% 50.4%, rgba(228, 233, 255, 0.07) 0%, rgba(254, 154, 255, 0.07) 100%);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(6.35px);
-          backdrop-filter: blur(6.35px);
   pointer-events: none;
+  -webkit-backdrop-filter: unset;
+          backdrop-filter: unset;
   position: absolute;
   top: 0;
   right: 0;
@@ -502,7 +501,6 @@ a:hover .border::after {
 
 .block-bg {
   position: relative;
-  will-change: transform;
 }
 
 .block-bg::before {
@@ -2432,6 +2430,7 @@ p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  will-change: transform;
   position: relative;
   z-index: 201;
 }
@@ -2557,7 +2556,6 @@ p {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   width: calc(100% + 1rem + 8.4rem);
-  will-change: transform;
   border-radius: 2.4rem;
   background: -o-radial-gradient(50% 53.43%, 39.27% 41.96%, rgba(228, 233, 255, 0.0705882353) 0%, rgba(173, 50, 174, 0.0705882353) 100%);
   background: radial-gradient(39.27% 41.96% at 50% 53.43%, rgba(228, 233, 255, 0.0705882353) 0%, rgba(173, 50, 174, 0.0705882353) 100%);
@@ -2768,8 +2766,6 @@ p {
   background: var(--blue-dark-1);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(18.55px);
-          backdrop-filter: blur(18.55px);
   position: absolute;
   top: 13rem;
   left: 0;
@@ -2783,8 +2779,6 @@ p {
   background: var(--blue-dark-1);
   -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
-  -webkit-backdrop-filter: blur(18.55px);
-          backdrop-filter: blur(18.55px);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -3500,6 +3494,7 @@ canvas {
 
 .piercing-page .catalog__item-btn .btn {
   padding: 0;
+  position: static;
 }
 
 .decorations .general__title h2 {
@@ -6652,10 +6647,14 @@ html.out .biography__left {
 @media (min-width: 835px) {
   .item-bg:hover::before {
     opacity: 0;
+    -webkit-backdrop-filter: unset;
+            backdrop-filter: unset;
   }
 
   .item-bg:hover::after {
     opacity: 1;
+    -webkit-backdrop-filter: blur(6.35px);
+            backdrop-filter: blur(6.35px);
   }
 
   .swiper-pagination {
