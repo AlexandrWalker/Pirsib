@@ -496,6 +496,102 @@
           },
         },
         {
+          sliderSelector: '.catalog-inner__slider',
+          prevSelector: '.catalog-inner-button-prev',
+          nextSelector: '.catalog-inner-button-next',
+          swiperOptions: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+            speed: 600,
+            loop: false,
+            grabCursor: true,
+            simulateTouch: true,
+            centeredSlides: false,
+            centeredSlidesBounds: true,
+            centerInsufficientSlides: false,
+            slidesOffsetBefore: 0,
+            slidesOffsetAfter: 0,
+            direction: 'horizontal',
+            touchStartPreventDefault: true,
+            touchMoveStopPropagation: true,
+            watchOverflow: true,
+            threshold: 8,
+            touchAngle: 25,
+            navigation: false,
+            mousewheel: {
+              forceToAxis: true,
+              sensitivity: 1,
+              releaseOnEdges: true,
+            },
+            freeMode: {
+              enabled: false,
+              momentum: false,
+              momentumBounce: false,
+              sticky: true,
+            },
+            pagination: {
+              el: '.catalog-inner__slider .swiper-pagination',
+              clickable: true,
+            },
+            breakpoints: {
+              835: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                pagination: false,
+              },
+            },
+          },
+        },
+        {
+          sliderSelector: '.catalog-type__slider',
+          prevSelector: '.catalog-type-button-prev',
+          nextSelector: '.catalog-type-button-next',
+          swiperOptions: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+            speed: 600,
+            loop: false,
+            grabCursor: true,
+            simulateTouch: true,
+            centeredSlides: false,
+            centeredSlidesBounds: true,
+            centerInsufficientSlides: false,
+            slidesOffsetBefore: 0,
+            slidesOffsetAfter: 0,
+            direction: 'horizontal',
+            touchStartPreventDefault: true,
+            touchMoveStopPropagation: true,
+            watchOverflow: true,
+            threshold: 8,
+            touchAngle: 25,
+            navigation: false,
+            mousewheel: {
+              forceToAxis: true,
+              sensitivity: 1,
+              releaseOnEdges: true,
+            },
+            freeMode: {
+              enabled: false,
+              momentum: false,
+              momentumBounce: false,
+              sticky: true,
+            },
+            pagination: {
+              el: '.catalog-type__slider .swiper-pagination',
+              clickable: true,
+            },
+            breakpoints: {
+              835: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                pagination: false,
+              },
+            },
+          },
+        },
+        {
           sliderSelector: '.opinion__slider',
           prevSelector: '.opinion-button-prev',
           nextSelector: '.opinion-button-next',
@@ -615,7 +711,7 @@
         {
           sliderSelector: '.personal__btns',
           swiperOptions: {
-            slidesPerView: 2,
+            slidesPerView: 2.1,
             slidesPerGroup: 1,
             spaceBetween: 8,
             speed: 600,
@@ -983,10 +1079,18 @@
 
     // ==== Parallax для изображений и блоков ====
     const animations = document.querySelectorAll('[data-animation="parallax-img"], [data-animation="parallax-img-scale"], [data-animation^="parallax-box"]');
+
     if (animations.length) {
+      const isMobile = window.innerWidth <= 834;
+
       animations.forEach(container => {
-        // Находим изображение внутри контейнера, если есть
-        const el = container.tagName.toLowerCase() === 'img' ? container : container.querySelector('img') || container;
+        // Проверяем нужно ли отключить на мобильных
+        const disableOnMobile = container.dataset.parallaxMobile === 'false';
+        if (disableOnMobile && isMobile) return; // пропускаем элемент
+
+        const el = container.tagName.toLowerCase() === 'img'
+          ? container
+          : container.querySelector('img') || container;
 
         const isScale = container.dataset.animation === "parallax-img-scale";
         const yStart = container.dataset.animation === "parallax-box-2x" ? "20%" : "10%";
@@ -998,25 +1102,28 @@
         const toVars = { y: yEnd };
         if (isScale) toVars.scale = 1.2, fromVars.y = 0;
 
-        gsap.fromTo(el, fromVars, {
+        const st = gsap.fromTo(el, fromVars, {
           ...toVars,
           ease: "none",
           force3D: true,
           scrollTrigger: {
-            trigger: container,   // триггер по контейнеру
+            trigger: container,
             start: "top 90%",
             end: "bottom top",
             scrub: true,
             invalidateOnRefresh: true
           },
-          willChange: "transform",
           onComplete: () => {
             el.style.willChange = 'auto'; // освобождаем слой
           },
         });
+
+        // Убираем will-change после того как элемент вышел из зоны скролла
+        // st.scrollTrigger?.addEventListener('onLeaveBack', () => {
+        //   el.style.willChange = 'auto';
+        // });
       });
     }
-
     // Выявление заполненности поля формы для присваивания класса
     document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
       input.addEventListener('input', () => input.classList.toggle('filled', input.value.trim() !== ''));

@@ -87,30 +87,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -119,16 +95,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -151,8 +119,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -161,6 +129,14 @@ a {
   font-display: swap;
   src: url("../fonts/Outfit-Black.woff2") format("woff2"), url("../fonts/Outfit-Black.woff") format("woff");
   font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -175,14 +151,6 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Outfit;
-  font-display: swap;
   src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
@@ -191,8 +159,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  font-display: swap;
+  src: url("../fonts/Outfit-Regular.woff2") format("woff2"), url("../fonts/Outfit-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -205,10 +181,18 @@ a {
 }
 
 @font-face {
-  font-family: Outfit;
+  font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Outfit-Regular.woff2") format("woff2"), url("../fonts/Outfit-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -225,6 +209,22 @@ a {
   font-display: swap;
   src: url("../fonts/Outfit-Thin.woff2") format("woff2"), url("../fonts/Outfit-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  font-display: swap;
+  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -558,6 +558,10 @@ a:hover .border::after {
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 4rem;
+}
+
+.page__inner .opinion__head .general__head {
+  margin-bottom: 0;
 }
 
 .page__inner .opinion__btns {
@@ -3533,6 +3537,11 @@ canvas {
   position: relative;
 }
 
+.decorations__slide .decorations__item {
+  width: 100%;
+  height: 100%;
+}
+
 .catalog-page .decorations__item {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -3948,6 +3957,10 @@ html.out .biography__left {
   margin-right: 2rem;
   margin-bottom: 0;
   float: left;
+}
+
+.biography__content .btn {
+  display: none;
 }
 
 .masters .general__title h2 {
@@ -4380,15 +4393,17 @@ html.out .biography__left {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   gap: 2rem;
   padding: 4rem 5rem 5rem 5rem;
   border-radius: var(--border-radius);
   width: calc(33.33333% - 1.3333333333rem);
   min-height: 36.4rem;
   overflow: hidden;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), -o-radial-gradient(50% 50%, 39.27% 39.27%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+  -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+  box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
   position: relative;
 }
 
@@ -4551,6 +4566,12 @@ html.out .biography__left {
   margin-bottom: 2rem;
 }
 
+.catalog__slide .item-bg::before,
+.catalog__slide .item-bg::after {
+  -webkit-backdrop-filter: unset;
+          backdrop-filter: unset;
+}
+
 .catalog__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4564,6 +4585,11 @@ html.out .biography__left {
   border-radius: var(--border-radius);
   overflow: hidden;
   position: relative;
+}
+
+.catalog__slide .catalog__item {
+  width: 100%;
+  height: 100%;
 }
 
 .catalog__item-img {
@@ -6792,6 +6818,14 @@ html.out .biography__left {
     padding-right: 2rem;
   }
 
+  .catalog__slide .catalog__item:hover .catalog__item-btn {
+    width: 100%;
+  }
+
+  .catalog__slide .catalog__item-content {
+    padding: 3rem;
+  }
+
   .catalog__item:hover::before {
     opacity: 0;
   }
@@ -7893,7 +7927,7 @@ html.out .biography__left {
 
   .certificates__page .certificates__item-title {
     display: block;
-    margin-bottom: 2rem;
+    margin-bottom: auto;
   }
 
   .certificates__page .certificates__item-icon {
@@ -7941,10 +7975,6 @@ html.out .biography__left {
     aspect-ratio: 353/368;
   }
 
-  .biography__block > .border {
-    --border-radius: 2.4rem;
-  }
-
   .biography__block-head {
     display: none;
   }
@@ -7978,6 +8008,8 @@ html.out .biography__left {
             backdrop-filter: blur(6.35px);
     padding: 7.6335877863vw;
     aspect-ratio: unset;
+    border-radius: var(--border-radius);
+    display: none;
   }
 
   .biography__block--mob .biography__block-head {
@@ -8012,8 +8044,48 @@ html.out .biography__left {
   }
 
   .biography__right {
-    display: none;
     width: 100%;
+  }
+
+  .biography__content {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), -o-radial-gradient(50% 56.25%, 39.27% 44.18%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+    -webkit-box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+    -webkit-backdrop-filter: unset;
+            backdrop-filter: unset;
+    padding: 7.6335877863vw;
+  }
+
+  .biography__content h6,
+  .biography__content .h6 {
+    font-size: 4.0712468193vw;
+    margin-bottom: 5.0890585242vw;
+  }
+
+  .biography__content p {
+    margin-bottom: 5.0890585242vw;
+  }
+
+  .biography__content-img {
+    margin-bottom: 5.0890585242vw;
+  }
+
+  .biography__content-img img {
+    height: auto !important;
+    margin-top: 0 !important;
+  }
+
+  .biography__content-img--row {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .biography__content .btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .masters .general__title h2 {
@@ -8922,6 +8994,7 @@ html.out .biography__left {
   .quiz__inner {
     padding: 7.6335877863vw 14.5038167939vw 9.1603053435vw 5.0890585242vw;
     background-image: url(./../images/temp/quiz-bg-mob.webp);
+    background-size: cover;
     -webkit-backdrop-filter: unset;
             backdrop-filter: unset;
   }
@@ -9574,6 +9647,8 @@ html.out .biography__left {
   .template--primary .template__content {
     padding: 3rem 2rem 27.7rem;
     min-height: 60rem;
+    min-height: unset;
+    height: auto;
   }
 
   .template--primary .template__content .general__head {
@@ -9762,6 +9837,7 @@ html.out .biography__left {
 
   .biography__block--mob {
     padding: 3rem;
+    display: none;
   }
 
   .biography__block--mob .biography__block-content {
@@ -9775,6 +9851,24 @@ html.out .biography__left {
     padding: 0 1rem 0 2rem;
     font-size: 1.4rem;
     text-transform: none;
+  }
+
+  .biography__content {
+    padding: 3rem;
+  }
+
+  .biography__content h6,
+  .biography__content .h6 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .biography__content p {
+    margin-bottom: 2rem;
+  }
+
+  .biography__content-img {
+    margin-bottom: 2rem;
   }
 
   .masters .general__title h2 {
@@ -10539,7 +10633,7 @@ html.out .biography__left {
   }
 }
 
-@media (max-width: 372px) {
+@media (max-width: 380px) {
   .footer__contact-link {
     font-size: 2.8rem;
   }
