@@ -167,7 +167,7 @@
             </div>
             <div class="advan__body">
               <div class="advan__items">
-                <div class="advan__item item-bg">
+                <div class="advan__item">
                   <div class="border"></div>
                   <div class="advan__item-count">
                     01
@@ -183,7 +183,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="advan__item item-bg">
+                <div class="advan__item">
                   <div class="border"></div>
                   <div class="advan__item-count">
                     02
@@ -199,7 +199,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="advan__item item-bg">
+                <div class="advan__item">
                   <div class="border"></div>
                   <div class="advan__item-count">
                     03
@@ -215,7 +215,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="advan__item item-bg">
+                <div class="advan__item">
                   <div class="border"></div>
                   <div class="advan__item-count">
                     04
@@ -231,7 +231,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="advan__item item-bg">
+                <div class="advan__item">
                   <div class="border"></div>
                   <div class="advan__item-count">
                     05
@@ -247,7 +247,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="advan__item item-bg">
+                <div class="advan__item">
                   <div class="border"></div>
                   <div class="advan__item-wrap advan__item--last">
                     <div class="advan__item-title h6">
@@ -281,7 +281,7 @@
         </div>
       </section>
 
-      <section id="catalog" class="catalog">
+      <section class="catalog">
         <div class="container">
           <div class="catalog__inner">
 
@@ -295,16 +295,16 @@
               @@loop('./elements/piercing-item.html', './data/piercing-items.json')
             </div>
 
-            <div class="catalog__items" data-transform="fadeUp">
+            <!-- <div class="catalog__items" data-transform="fadeUp">
               @@loop('./elements/piercing-type-item.html', './data/piercing-type-items.json')
-            </div>
+            </div> -->
 
           </div>
           <div class="mask mask--1" data-animation="parallax-box"></div>
         </div>
       </section>
 
-      <section class="catalog">
+      <!-- <section class="catalog">
         <div class="container">
           <div class="catalog__inner">
 
@@ -316,6 +316,44 @@
 
             <div class="catalog__items" data-transform="fadeUp">
               @@loop('./elements/catalog-piercing-item.html', './data/catalog-piercing-items.json')
+            </div>
+
+          </div>
+          <div class="mask mask--1" data-animation="parallax-box"></div>
+        </div>
+      </section> -->
+
+      <section class="catalog">
+        <div class="container">
+          <div class="catalog__inner">
+
+            <div class="catalog__head">
+              <div class="general__head">
+                <div class="general__title" data-transform="titleFadeUp">
+                  <h2 data-gradient-text>Портфолио работ</h2>
+                </div>
+              </div>
+              <div class="catalog__btns">
+                <div class="swiper__btns">
+                  <div class="swiper-button-prev catalog-inner-button-prev">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                  <div class="swiper-button-next catalog-inner-button-next">
+                    <span class="border"></span>
+                    <i class="icon-chevron"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog__body">
+              <div class="swiper catalog-inner__slider" data-transform="fadeUp">
+                <div class="swiper-wrapper">
+                  @@loop('./elements/catalog-piercing-slide-item.html', './data/catalog-piercing-items.json')
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
             </div>
 
           </div>

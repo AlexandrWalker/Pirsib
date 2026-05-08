@@ -80,6 +80,25 @@
     }
   }
 
+  &__slide {
+
+    @include domd {
+
+      .catalog__item:hover .catalog__item-btn {
+        width: 100%;
+      }
+
+      .catalog__item-content {
+        padding: 3rem;
+      }
+    }
+
+    .item-bg::before,
+    .item-bg::after {
+      backdrop-filter: unset;
+    }
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -100,6 +119,11 @@
     @include sm {
       width: 100%;
       // min-height: 58.6rem;
+    }
+
+    .catalog__slide & {
+      width: 100%;
+      height: 100%;
     }
 
     &:hover {

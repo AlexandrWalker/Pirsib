@@ -16,6 +16,7 @@
     @include md {
       padding: calc(100vw/(393/30)) calc(100vw/(393/57)) calc(100vw/(393/36)) calc(100vw/(393/20));
       background-image: url(./../images/temp/quiz-bg-mob.webp);
+      background-size: cover;
       backdrop-filter: unset;
     }
 

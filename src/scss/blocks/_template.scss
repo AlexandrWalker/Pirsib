@@ -111,6 +111,8 @@
         @include sm {
           padding: 3rem 2rem 27.7rem;
           min-height: 60rem;
+          min-height: unset;
+          height: auto;
         }
 
         .general {

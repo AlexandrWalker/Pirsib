@@ -63,7 +63,7 @@
     &>.border {
 
       @include md {
-        --border-radius: 2.4rem;
+        // --border-radius: 2.4rem;
       }
     }
 
@@ -201,10 +201,15 @@
         backdrop-filter: blur(6.35px);
         padding: calc(100vw/(393/30));
         aspect-ratio: unset;
+        border-radius: var(--border-radius);
+
+        display: none;
       }
 
       @include sm {
         padding: 3rem;
+
+        display: none;
       }
 
       .biography__block-head {
@@ -278,7 +283,7 @@
     width: calc(50% - 1rem);
 
     @include md {
-      display: none;
+      // display: none;
       width: 100%;
     }
   }
@@ -291,22 +296,64 @@
     padding: 6rem;
     will-change: transform;
 
+    @include md {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 44.18% at 50% 56.25%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
+      box-shadow: inset 0px 0px 11.4px rgba(2, 10, 81, 0.41);
+      backdrop-filter: unset;
+      padding: calc(100vw/(393/30));
+    }
+
+    @include sm {
+      padding: 3rem;
+    }
+
     h6,
     .h6 {
       margin-bottom: 3rem;
+
+      @include md {
+        font-size: calc(100vw/(393/16));
+        margin-bottom: calc(100vw/(393/20));
+      }
+
+      @include sm {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
     }
 
     p {
       margin-bottom: 3rem;
+
+      @include md {
+        margin-bottom: calc(100vw/(393/20));
+      }
+
+      @include sm {
+        margin-bottom: 2rem;
+      }
     }
 
     &-img {
       margin-bottom: 3rem;
 
+      @include md {
+        margin-bottom: calc(100vw/(393/20));
+      }
+
+      @include sm {
+        margin-bottom: 2rem;
+      }
+
       img {
         width: 100%;
         height: auto;
         object-fit: contain;
+
+        @include md {
+          height: auto !important;
+          margin-top: 0 !important;
+        }
       }
 
       &--row {
@@ -315,6 +362,19 @@
         margin-bottom: 0;
 
         float: left;
+
+        @include md {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .btn {
+      display: none;
+
+      @include md {
+        display: flex;
       }
     }
   }
