@@ -18,6 +18,13 @@
         transform: translateY(-18rem);
       }
     }
+
+    @include md {
+
+      .header__btns .btn {
+        transform: translateY(-10rem);
+      }
+    }
   }
 
   &.show {

@@ -54,42 +54,74 @@
      */
     function burgerNav() {
       const header = document.getElementById('header');
-
-      /* new */
       const firstSection = document.querySelector('section');
       let scrollPos = 0;
-      /* /new */
 
       const burgerBtn = document.getElementById('burger-btn');
       const burgerMenuInner = document.querySelector('.burger-menu');
 
+      // Обработчик скролла внутри меню
+      let menuScrollHandler = null;
+
+      const startMenuScroll = () => {
+        menuScrollHandler = () => {
+          const menuScrollTop = burgerMenuInner.scrollTop;
+
+          if (menuScrollTop > 1) {
+            header.classList.add('out');
+          } else {
+            header.classList.remove('out');
+          }
+        };
+
+        burgerMenuInner.addEventListener('scroll', menuScrollHandler, { passive: true });
+      };
+
+      const stopMenuScroll = () => {
+        if (menuScrollHandler) {
+          burgerMenuInner.removeEventListener('scroll', menuScrollHandler);
+          menuScrollHandler = null;
+        }
+
+        // Сбрасываем скролл меню в начало при закрытии
+        burgerMenuInner.scrollTop = 0;
+        header.classList.remove('out');
+      };
+
       const closeMenu = () => {
         burgerBtn.classList.remove('burger--open');
         document.documentElement.classList.remove('menu--open');
+        stopMenuScroll();
         lenis.start();
       };
 
       burgerBtn.addEventListener('click', () => {
         if (document.documentElement.classList.contains('menu--open')) {
+          // Закрываем меню
           lenis.start();
-          // header.classList.add('out');
 
-          /* new */
           scrollPos = window.pageYOffset || document.documentElement.scrollTop;
           if (scrollPos > firstSection.offsetHeight) {
             header.classList.add('out');
           }
-          /* /new */
+
+          stopMenuScroll();
 
         } else {
+          // Открываем меню
           lenis.stop();
+          startMenuScroll();
         }
+
         burgerBtn.classList.toggle('burger--open');
         document.documentElement.classList.toggle('menu--open');
         header.classList.toggle('show', document.documentElement.classList.contains('menu--open'));
       });
 
-      window.addEventListener('keydown', e => { if (e.key === "Escape") closeMenu(); });
+      window.addEventListener('keydown', e => {
+        if (e.key === "Escape") closeMenu();
+      });
+
       document.addEventListener('click', e => {
         if (!burgerMenuInner.contains(e.target) && !burgerBtn.contains(e.target)) closeMenu();
       });
@@ -162,7 +194,6 @@
       // Проверка при загрузке
       scrollHandler();
     }
-
     headerFunc();
 
     function stickyReveal() {
