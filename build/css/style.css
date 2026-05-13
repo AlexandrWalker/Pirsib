@@ -111,16 +111,16 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -175,16 +175,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
-  font-weight: 200;
+  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -207,16 +207,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-SemiBold.woff2") format("woff2"), url("../fonts/Outfit-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Outfit-Regular.woff2") format("woff2"), url("../fonts/Outfit-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Regular.woff2") format("woff2"), url("../fonts/Outfit-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Outfit-SemiBold.woff2") format("woff2"), url("../fonts/Outfit-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -3106,7 +3106,7 @@ canvas {
   font-style: normal;
   font-weight: 700;
   font-size: 12rem;
-  line-height: 100%;
+  line-height: 110%;
   padding-bottom: 1rem;
 }
 
@@ -3228,7 +3228,7 @@ canvas {
 }
 
 .template__content .general__title * {
-  line-height: 100%;
+  line-height: 110%;
 }
 
 .template__content .general__text {
@@ -7768,6 +7768,8 @@ html.out .biography__left {
 
   .product-page .template__cover {
     width: 65.6488549618vw;
+    margin-right: auto;
+    right: unset;
   }
 
   .timeline {
@@ -9706,6 +9708,10 @@ html.out .biography__left {
     width: 29rem;
     margin-top: -5.1rem;
     right: -0.7rem;
+  }
+
+  .product-page .template__cover {
+    right: unset;
   }
 
   .about-page .template {

@@ -49,7 +49,7 @@
       font-style: normal;
       font-weight: 700;
       font-size: 12rem;
-      line-height: 100%;
+      line-height: 110%;
       padding-bottom: 1rem;
 
       @include md {
@@ -297,7 +297,7 @@
         overflow: visible;
 
         * {
-          line-height: 100%;
+          line-height: 110%;
         }
       }
 
@@ -386,6 +386,13 @@
 
       @include md {
         width: calc(100vw/(393/258));
+        margin-right: auto;
+
+        right: unset;
+      }
+
+      @include sm {
+        right: unset;
       }
     }
 
