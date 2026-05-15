@@ -1,0 +1,50 @@
+[
+  {
+    "link": "/",
+    "gallery": "hidden-gallery-1",
+    "img": "./../../images/temp/piercing-1.png",
+    "title": "Название работы",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  },
+  {
+    "link": "/",
+    "gallery": "hidden-gallery-2",
+    "img": "./../../images/temp/piercing-2.png",
+    "title": "Название работы",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  },
+  {
+    "link": "/",
+    "gallery": "hidden-gallery-3",
+    "img": "./../../images/temp/piercing-3.png",
+    "title": "Название работы",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  },
+  {
+    "link": "/",
+    "gallery": "hidden-gallery-4",
+    "img": "./../../images/temp/piercing-4.png",
+    "title": "Название работы",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  },
+  {
+    "link": "/",
+    "gallery": "hidden-gallery-5",
+    "img": "./../../images/temp/piercing-5.png",
+    "title": "Название работы",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  },
+  {
+    "link": "/",
+    "gallery": "hidden-gallery-6",
+    "img": "./../../images/temp/piercing-6.png",
+    "title": "Название работы",
+    "price": "Стоимость работы",
+    "price-count": "12 000 руб."
+  }
+]

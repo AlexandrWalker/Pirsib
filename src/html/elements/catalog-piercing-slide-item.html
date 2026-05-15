@@ -1,11 +1,16 @@
 <div class="swiper-slide catalog__slide">
-  <a class="catalog__item item-bg" href="@@link">
+  <div class="catalog__item item-bg">
     <span class="border"></span>
-    <div class="catalog__item-img" data-animation="parallax-img">
+    <a class="catalog__item-img" data-animation="parallax-img" data-fancybox="@@gallery" href="@@img">
       <span class="border"></span>
       <img src="@@img" alt="">
+    </a>
+    <div style="display: none;">
+      <a href="@@img" data-fancybox="@@gallery"></a>
+      <a href="@@img" data-fancybox="@@gallery"></a>
+      <a href="@@img" data-fancybox="@@gallery"></a>
     </div>
-    <div class="catalog__item-content">
+    <a class="catalog__item-content" href="@@link">
       <div class="catalog__item-title h6">
         @@title
       </div>
@@ -27,6 +32,6 @@
           <i class="icon-chevron-min"></i>
         </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
 </div>

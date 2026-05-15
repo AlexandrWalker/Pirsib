@@ -1,10 +1,15 @@
-<a class="decorations__item sticky__item item-bg" href="@@link">
+<div class="decorations__item sticky__item item-bg">
   <div class="border"></div>
-  <div class="decorations__item-head" data-animation="parallax-img-scale">
+  <a class="decorations__item-head" data-animation="parallax-img-scale" data-fancybox="@@gallery" href="@@img">
     <div class="border"></div>
     <img src="@@img" alt="">
+  </a>
+  <div style="display: none;">
+    <a href="@@img" data-fancybox="@@gallery"></a>
+    <a href="@@img" data-fancybox="@@gallery"></a>
+    <a href="@@img" data-fancybox="@@gallery"></a>
   </div>
-  <div class="decorations__item-body">
+  <a class="decorations__item-body" href="@@link">
     <div class="decorations__item-content">
       <div class="decorations__item-title h6">
         @@title
@@ -23,5 +28,5 @@
         </div>
       </div>
     </div>
-  </div>
-</a>
+  </a>
+</div>
