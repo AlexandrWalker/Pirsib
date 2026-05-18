@@ -567,7 +567,7 @@
             },
             breakpoints: {
               835: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 20,
                 pagination: false,
               },

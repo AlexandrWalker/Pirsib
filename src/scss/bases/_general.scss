@@ -430,6 +430,14 @@
         margin: 0;
         bottom: 3rem;
         left: 4rem;
+
+        @include md {
+          left: calc(100vw/(393/30));
+        }
+
+        @include sm {
+          left: 3rem;
+        }
       }
     }
   }

@@ -147,6 +147,20 @@
     }
   }
 
+  &__slide {
+    position: relative;
+
+    &:hover {
+
+      @include domd {
+
+        .btn {
+          transform: translateX(0.5rem);
+        }
+      }
+    }
+  }
+
   &__items {
     display: flex;
     flex-direction: column;
@@ -185,10 +199,24 @@
       padding: 3rem 3rem 10rem 3rem;
     }
 
+    .catalog & {
+
+      @include md {
+        min-height: calc(100vw/(393/320));
+      }
+
+      @include sm {
+        min-height: 32rem;
+      }
+    }
+
     &:hover {
 
-      .btn {
-        transform: translateX(0.5rem);
+      @include domd {
+
+        .btn {
+          transform: translateX(0.5rem);
+        }
       }
     }
 
@@ -243,6 +271,7 @@
       position: absolute;
       bottom: 6rem;
       left: 4.5rem;
+      z-index: 1;
 
       font-size: 1.6rem;
 

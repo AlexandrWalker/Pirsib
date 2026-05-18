@@ -140,8 +140,9 @@
     height: 60.8rem;
 
     @include md {
-      width: 100%;
+      width: 120%;
       height: auto;
+      margin-left: -20%;
     }
 
     img {

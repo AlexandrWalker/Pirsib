@@ -111,6 +111,14 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -121,14 +129,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
   font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -6561,6 +6561,10 @@ html.out .biography__left {
   color: var(--purple);
 }
 
+.works__slide {
+  position: relative;
+}
+
 .works__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6596,12 +6600,6 @@ html.out .biography__left {
   position: relative;
 }
 
-.works__item:hover .btn {
-  -webkit-transform: translateX(0.5rem);
-  -ms-transform: translateX(0.5rem);
-  transform: translateX(0.5rem);
-}
-
 .works__item .btn {
   --btn-width: 8rem;
   --btn-height: 8rem;
@@ -6635,6 +6633,7 @@ html.out .biography__left {
   position: absolute;
   bottom: 6rem;
   left: 4.5rem;
+  z-index: 1;
   font-size: 1.6rem;
 }
 
@@ -6892,8 +6891,20 @@ html.out .biography__left {
     color: var(--pink);
   }
 
+  .works__slide:hover .btn {
+    -webkit-transform: translateX(0.5rem);
+    -ms-transform: translateX(0.5rem);
+    transform: translateX(0.5rem);
+  }
+
   .works__items {
     display: none;
+  }
+
+  .works__item:hover .btn {
+    -webkit-transform: translateX(0.5rem);
+    -ms-transform: translateX(0.5rem);
+    transform: translateX(0.5rem);
   }
 }
 
@@ -6958,6 +6969,10 @@ html.out .biography__left {
 
   .page__inner .opinion__head {
     margin-bottom: 6.106870229vw;
+  }
+
+  .page__inner .works__item .btn {
+    left: 7.6335877863vw;
   }
 
   .laser-removal-page .template--primary .template__cover {
@@ -8546,8 +8561,9 @@ html.out .biography__left {
   }
 
   .command__img {
-    width: 100%;
+    width: 120%;
     height: auto;
+    margin-left: -20%;
   }
 
   .command__img img {
@@ -8735,6 +8751,11 @@ html.out .biography__left {
 
   .find-us__social {
     gap: 2.5445292621vw;
+  }
+
+  .find-us__social .btn {
+    --btn-width: calc(100vw/(393/50));
+    --btn-height: calc(100vw/(393/50));
   }
 
   .find-us__mask {
@@ -9128,6 +9149,10 @@ html.out .biography__left {
     padding: 7.6335877863vw 7.6335877863vw 25.4452926209vw 7.6335877863vw;
   }
 
+  .catalog .works__item {
+    min-height: 81.4249363868vw;
+  }
+
   .works__item .btn {
     --btn-width: calc(100vw/(393/50));
     --btn-height: calc(100vw/(393/50));
@@ -9225,6 +9250,10 @@ html.out .biography__left {
 
   .page__inner .opinion__head {
     margin-bottom: 2.4rem;
+  }
+
+  .page__inner .works__item .btn {
+    left: 3rem;
   }
 
   .laser-removal-page .catalog p {
@@ -10292,6 +10321,11 @@ html.out .biography__left {
     gap: 1rem;
   }
 
+  .find-us__social .btn {
+    --btn-width: 5rem;
+    --btn-height: 5rem;
+  }
+
   .hero {
     margin-bottom: 3rem;
   }
@@ -10599,6 +10633,10 @@ html.out .biography__left {
 
   .works__item {
     padding: 3rem 3rem 10rem 3rem;
+  }
+
+  .catalog .works__item {
+    min-height: 32rem;
   }
 
   .works__item .btn {
