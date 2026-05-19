@@ -5,8 +5,8 @@
   &--open {
 
     body {
-      overflow-y: hidden !important;
-      height: 100vh !important;
+      overflow: hidden;
+      touch-action: none;
     }
   }
 

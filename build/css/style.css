@@ -2698,8 +2698,9 @@ p {
 }
 
 .menu--open body {
-  overflow-y: hidden !important;
-  height: 100vh !important;
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
 }
 
 .menu__list {
@@ -4275,6 +4276,10 @@ html.out .biography__left {
   line-height: 120%;
 }
 
+.price-list .general__head {
+  margin-bottom: 0;
+}
+
 .price-list__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4287,6 +4292,7 @@ html.out .biography__left {
 }
 
 .price-list__block {
+  display: none;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), -o-radial-gradient(50% 50%, 39.27% 39.27%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), radial-gradient(39.27% 39.27% at 50% 50%, rgba(228, 233, 255, 0.07) 0%, rgba(80, 97, 255, 0.07) 100%);
@@ -4297,6 +4303,10 @@ html.out .biography__left {
   border-radius: var(--border-radius);
   padding: 4rem 14rem;
   will-change: transform;
+}
+
+.price-list__block--active {
+  display: block;
 }
 
 .price-list__items {
@@ -7534,6 +7544,12 @@ html.out .biography__left {
 
   .logo:not(.page__inner .logo) {
     display: none;
+  }
+
+  .page__inner .header.out .logo {
+    -webkit-transform: translateY(-10rem);
+    -ms-transform: translateY(-10rem);
+    transform: translateY(-10rem);
   }
 
   .menu__list {

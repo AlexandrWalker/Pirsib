@@ -55,13 +55,21 @@
     function burgerNav() {
       const header = document.getElementById('header');
       const firstSection = document.querySelector('section');
-      let scrollPos = 0;
-
       const burgerBtn = document.getElementById('burger-btn');
       const burgerMenuInner = document.querySelector('.burger-menu');
 
-      // Обработчик скролла внутри меню
+      // Защита если элементы не найдены
+      if (!burgerBtn || !burgerMenuInner || !header) return;
+
       let menuScrollHandler = null;
+
+      // Кешируем высоту первой секции
+      let firstSectionHeight = firstSection ? firstSection.offsetHeight : 0;
+      window.addEventListener('resize', () => {
+        if (firstSection) firstSectionHeight = firstSection.offsetHeight;
+      }, { passive: true });
+
+      const isMenuOpen = () => document.documentElement.classList.contains('menu--open');
 
       const startMenuScroll = () => {
         menuScrollHandler = () => {
@@ -83,49 +91,60 @@
           menuScrollHandler = null;
         }
 
-        // Сбрасываем скролл меню в начало при закрытии
         burgerMenuInner.scrollTop = 0;
-        header.classList.remove('out');
+
+        // Восстанавливаем состояние .out по текущей позиции скролла страницы
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollPos > firstSectionHeight) {
+          header.classList.add('out');
+        } else {
+          header.classList.remove('out');
+        }
       };
 
       const closeMenu = () => {
+        // Защита от повторного вызова если меню уже закрыто
+        if (!isMenuOpen()) return;
+
         burgerBtn.classList.remove('burger--open');
         document.documentElement.classList.remove('menu--open');
+        header.classList.remove('show');
         stopMenuScroll();
         lenis.start();
       };
 
       burgerBtn.addEventListener('click', () => {
-        if (document.documentElement.classList.contains('menu--open')) {
+        if (isMenuOpen()) {
           // Закрываем меню
-          lenis.start();
-
-          scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-          if (scrollPos > firstSection.offsetHeight) {
-            header.classList.add('out');
-          }
-
+          burgerBtn.classList.remove('burger--open');
+          document.documentElement.classList.remove('menu--open');
+          header.classList.remove('show');
           stopMenuScroll();
+          lenis.start();
 
         } else {
           // Открываем меню
+          burgerBtn.classList.add('burger--open');
+          document.documentElement.classList.add('menu--open');
+          header.classList.add('show');
+          header.classList.remove('out');
           lenis.stop();
           startMenuScroll();
         }
-
-        burgerBtn.classList.toggle('burger--open');
-        document.documentElement.classList.toggle('menu--open');
-        header.classList.toggle('show', document.documentElement.classList.contains('menu--open'));
       });
 
       window.addEventListener('keydown', e => {
-        if (e.key === "Escape") closeMenu();
+        if (e.key === 'Escape') closeMenu();
       });
 
       document.addEventListener('click', e => {
-        if (!burgerMenuInner.contains(e.target) && !burgerBtn.contains(e.target)) closeMenu();
+        if (!isMenuOpen()) return; // ← защита от срабатывания при закрытом меню
+        if (!burgerMenuInner.contains(e.target) && !burgerBtn.contains(e.target)) {
+          closeMenu();
+        }
       });
     }
+
     burgerNav();
 
     /**
@@ -1888,6 +1907,7 @@
      */
     (function () {
       const productPage = document.querySelector('.product-page');
+      const filter = document.querySelector('.filter');
 
       if (productPage) {
         const filter = productPage.querySelector('.filter');
@@ -1942,8 +1962,8 @@
           });
         });
 
-      } else {
-        const btns = document.querySelectorAll('.filter__item');
+      } else if (filter) {
+        const btns = filter.querySelectorAll('.filter__item');
         btns.forEach(btn => {
           btn.addEventListener('click', function () {
             if (this.classList.contains('filter__item--active')) return;

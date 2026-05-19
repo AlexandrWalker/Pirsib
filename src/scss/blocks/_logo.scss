@@ -24,6 +24,13 @@
     }
   }
 
+  .page__inner .header.out & {
+
+    @include md {
+      transform: translateY(-10rem);
+    }
+  }
+
   img {
     width: auto;
     height: 100%;
