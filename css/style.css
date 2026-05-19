@@ -2818,8 +2818,17 @@ p {
   gap: 2rem;
 }
 
-.menu__item-text,
 .menu__item-link {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 3.4rem;
+  line-height: 100%;
+}
+
+.menu__item-text {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -7308,6 +7317,11 @@ html.out .biography__left {
 
   .menu--open .burger-menu {
     overflow-y: auto;
+    -ms-scroll-chaining: none;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .burger-menu__inner {
@@ -7593,10 +7607,18 @@ html.out .biography__left {
     gap: 2.5445292621vw;
   }
 
-  .menu__item-text,
   .menu__item-link {
     font-size: 6.106870229vw;
     white-space: normal;
+  }
+
+  .menu__item-text {
+    font-size: 4.0712468193vw;
+    white-space: normal;
+  }
+
+  .menu__item-text br {
+    display: none;
   }
 
   .menu__item-btns {
@@ -9628,7 +9650,6 @@ html.out .biography__left {
     gap: 1rem;
   }
 
-  .menu__item-text,
   .menu__item-link {
     font-size: 2.4rem;
   }
