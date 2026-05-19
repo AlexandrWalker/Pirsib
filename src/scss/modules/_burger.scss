@@ -179,6 +179,9 @@
 
     @include md {
       overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      transform: translateZ(0);
     }
   }
 
