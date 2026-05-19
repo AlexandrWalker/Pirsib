@@ -353,7 +353,8 @@
   }
 
   &__form {
-    padding: 12.2rem 14rem 7.5rem;
+    // padding: 12.2rem 14rem 7.5rem;
+    padding: 4rem 14rem 7.5rem;
     border-radius: var(--border-radius);
 
     @include md {

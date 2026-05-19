@@ -5,9 +5,8 @@
   &--open {
 
     body {
-      overflow-y: hidden;
-      height: 100vh;
-      height: 100dvh;
+      overflow-y: hidden !important;
+      height: 100vh !important;
     }
   }
 
