@@ -71,6 +71,10 @@
       width: 100%;
     }
 
+    @include sm {
+      padding: 3rem 0;
+    }
+
     &:not(.page__inner) & {
 
       @include md {
