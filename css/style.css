@@ -111,16 +111,16 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -183,16 +183,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
-  font-weight: 200;
+  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -4210,6 +4210,31 @@ html.out .biography__left {
   flex-direction: column;
   gap: 2rem;
   max-width: 80rem;
+}
+
+.piercing-inner__text h2 {
+  font-size: 3rem;
+}
+
+.piercing-inner__text li {
+  padding-left: 2.4rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.piercing-inner__text li:last-child {
+  margin-bottom: 0;
+}
+
+.piercing-inner__text li::before {
+  content: "";
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background-color: var(--purple);
+  position: absolute;
+  top: 0.75rem;
+  left: 1.05rem;
 }
 
 .piercing-inner__wrap {
@@ -8269,6 +8294,14 @@ html.out .biography__left {
     font-size: 6.106870229vw;
   }
 
+  .piercing-inner__text h2 {
+    font-size: 5.0890585242vw;
+  }
+
+  .piercing-inner__text li {
+    margin-bottom: 3.8167938931vw;
+  }
+
   .piercing-inner__wrap {
     gap: 2.5445292621vw;
   }
@@ -10021,6 +10054,14 @@ html.out .biography__left {
 
   .piercing-inner__title {
     font-size: 2.4rem;
+  }
+
+  .piercing-inner__text h2 {
+    font-size: 2rem;
+  }
+
+  .piercing-inner__text li {
+    margin-bottom: 1.5rem;
   }
 
   .piercing-inner__wrap {
