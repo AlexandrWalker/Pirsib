@@ -1742,8 +1742,8 @@
     }
 
     /**
-    * Функция смены изображений ползунком
-    */
+      * Функция смены изображений ползунком
+      */
     (function () {
       const rangeItems = document.querySelectorAll('.range__item');
       if (rangeItems.length > 0) {
@@ -1970,6 +1970,44 @@
             btns.forEach(b => b.classList.remove('filter__item--active'));
             this.classList.add('filter__item--active');
           });
+        });
+      }
+    })();
+
+    /**
+     * Ограничение текста
+     */
+    (function () {
+      // Выполняем только если экран меньше 600px
+      if (window.innerWidth > 600) return;
+
+      const TEXT_LIMIT = 1000;
+      const containers = document.querySelectorAll('.text-collapsed');
+
+      if (containers.length) {
+        containers.forEach(container => {
+          // Считаем только текстовые символы внутри всех вложенных тегов
+          const charCount = container.textContent.trim().length;
+
+          if (charCount > TEXT_LIMIT) {
+            container.classList.add('is-collapsed');
+
+            const btn = document.createElement('button');
+            btn.className = 'text-collapsed-btn';
+            btn.textContent = 'Подробнее';
+
+            // Вставляем кнопку сразу ПОСЛЕ контейнера, 
+            // чтобы на нее не действовала маска прозрачности
+            container.parentNode.insertBefore(btn, container.nextSibling);
+
+            btn.addEventListener('click', function () {
+              container.classList.remove('is-collapsed');
+              // Убираем маску через стиль, чтобы текст стал четким
+              container.style.webkitMaskImage = 'none';
+              container.style.maskImage = 'none';
+              this.remove(); // Удаляем кнопку
+            });
+          }
         });
       }
     })();
