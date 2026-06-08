@@ -109,6 +109,19 @@
       }
     }
 
+    ol {
+
+      li {
+        padding-left: 0;
+
+        list-style-position: inside;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
     li {
       padding-left: 2.4rem;
       margin-bottom: 2rem;
