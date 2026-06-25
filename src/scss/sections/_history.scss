@@ -34,41 +34,41 @@
       width: fit-content;
       position: relative;
 
-      &::before {
-        content: "";
+      // &::before {
+      //   content: "";
 
-        width: 3.9rem;
-        height: 0.5rem;
-        background: var(--blue-dark-1);
-        border-radius: 0.4rem;
+      //   width: 3.9rem;
+      //   height: 0.5rem;
+      //   background: var(--blue-dark-1);
+      //   border-radius: 0.4rem;
 
-        position: absolute;
-        top: 50%;
-        left: 2.2rem;
-        transform: translateY(-50%);
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 2.2rem;
+      //   transform: translateY(-50%);
 
-        @include sm {
-          display: none;
-        }
-      }
+      //   @include sm {
+      //     display: none;
+      //   }
+      // }
 
-      &::after {
-        content: "";
+      // &::after {
+      //   content: "";
 
-        width: 3.9rem;
-        height: 0.5rem;
-        background: var(--blue-dark-1);
-        border-radius: 0.4rem;
+      //   width: 3.9rem;
+      //   height: 0.5rem;
+      //   background: var(--blue-dark-1);
+      //   border-radius: 0.4rem;
 
-        position: absolute;
-        top: 50%;
-        right: 2.2rem;
-        transform: translateY(-50%);
+      //   position: absolute;
+      //   top: 50%;
+      //   right: 2.2rem;
+      //   transform: translateY(-50%);
 
-        @include sm {
-          display: none;
-        }
-      }
+      //   @include sm {
+      //     display: none;
+      //   }
+      // }
 
       .btn {
         --btn-width: 8rem;

@@ -285,3 +285,14 @@
     }
   }
 }
+
+.catalog-uslug-detail .template .general__title * {
+
+  @include md {
+    font-size: calc(100vw/(393/60));
+  }
+
+  @include sm {
+    font-size: 4rem;
+  }
+}
