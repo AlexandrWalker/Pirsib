@@ -3055,6 +3055,15 @@ canvas {
   max-width: 125.2rem;
 }
 
+.sample__inner h3,
+.sample__inner h4,
+.sample__inner h5,
+.sample__inner h6 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 140%;
+}
+
 .sample__content * {
   margin-bottom: 2rem;
 }
@@ -6903,6 +6912,31 @@ html.out .biography__left {
     padding-right: 2rem;
   }
 
+  .catalog__items--piercing {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+
+  .catalog__items--piercing .decorations__item--piercing {
+    width: 100%;
+    -ms-grid-column-span: 4;
+    grid-column: span 4;
+  }
+
+  .catalog__items--piercing .decorations__item--piercing:nth-child(n+4):nth-child(-n+7) {
+    -ms-grid-column-span: 3;
+    grid-column: span 3;
+  }
+
+  .catalog__items--piercing .decorations__item--piercing:nth-child(10) {
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 4;
+    grid-column: 9/span 4;
+  }
+
   .catalog__slide .catalog__item:hover .catalog__item-btn {
     width: 100%;
   }
@@ -7756,6 +7790,13 @@ html.out .biography__left {
 
   .sample__inner {
     gap: 5.0890585242vw;
+  }
+
+  .sample__inner h3,
+  .sample__inner h4,
+  .sample__inner h5,
+  .sample__inner h6 {
+    gap: 7.6335877863vw;
   }
 
   .sample__content * {
@@ -9777,6 +9818,13 @@ html.out .biography__left {
 
   .sample__inner {
     gap: 2rem;
+  }
+
+  .sample__inner h3,
+  .sample__inner h4,
+  .sample__inner h5,
+  .sample__inner h6 {
+    gap: 3rem;
   }
 
   .sample__content * {
