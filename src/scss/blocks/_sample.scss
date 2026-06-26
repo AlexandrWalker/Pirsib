@@ -20,6 +20,23 @@
     @include sm {
       gap: 2rem;
     }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 140%;
+
+      @include md {
+        gap: calc(100vw/(393/30));
+      }
+
+      @include sm {
+        gap: 3rem;
+      }
+    }
   }
 
   &__content {

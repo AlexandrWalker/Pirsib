@@ -77,6 +77,29 @@
 
     &--piercing {
       margin-bottom: 2rem;
+
+      @include domd {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+      }
+
+      .decorations__item--piercing {
+        
+        @include domd {
+          width: 100%;
+
+          grid-column: span 4;
+
+          &:nth-child(n+4):nth-child(-n+7) {
+            grid-column: span 3;
+          }
+
+          &:nth-child(10) {
+            grid-column: 9/ span 4;
+          }
+        }
+      }
     }
   }
 
