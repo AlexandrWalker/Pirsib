@@ -103,14 +103,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -119,8 +111,24 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
   src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -137,14 +145,6 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
   font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -191,16 +191,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -4851,6 +4851,18 @@ html.out .biography__left {
   position: relative;
 }
 
+.categories__item.item-bg:hover::before {
+  opacity: 1;
+  -webkit-backdrop-filter: blur(6.35px);
+          backdrop-filter: blur(6.35px);
+}
+
+.categories__item.item-bg:hover::after {
+  opacity: 0;
+  -webkit-backdrop-filter: unset;
+          backdrop-filter: unset;
+}
+
 .categories__item-img {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6656,6 +6668,24 @@ html.out .tatu-inner__img {
   position: relative;
 }
 
+.types__item.item-bg:hover::before {
+  opacity: 1;
+  -webkit-backdrop-filter: blur(6.35px);
+          backdrop-filter: blur(6.35px);
+}
+
+.types__item.item-bg:hover::after {
+  opacity: 0;
+  -webkit-backdrop-filter: unset;
+          backdrop-filter: unset;
+}
+
+.gallery__slider .types__item:hover .types__item-img {
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
+}
+
 .types__item-img {
   width: 100%;
   height: 100%;
@@ -6663,6 +6693,9 @@ html.out .tatu-inner__img {
   flex-shrink: 0;
   border-radius: var(--border-radius);
   overflow: hidden;
+  -webkit-transition: all 5s linear;
+  -o-transition: all 5s linear;
+  transition: all 5s linear;
   position: absolute;
   top: 0;
   right: 0;
@@ -6692,6 +6725,12 @@ html.out .tatu-inner__img {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.types__item-title {
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .values {
@@ -7277,23 +7316,8 @@ html.out .tatu-inner__img {
     color: var(--pink);
   }
 
-  .types__item:hover::before {
-    opacity: 0;
-  }
-
-  .types__item:hover::after {
-    opacity: 1;
-  }
-
-  .types__item:hover .types__item-btn {
-    width: calc(100% - 6rem);
-  }
-
-  .types__item:hover .types__item-btn--text {
-    opacity: 1;
-    -webkit-transition: all 0.5s ease, opacity 0.3s ease 0.2s;
-    -o-transition: all 0.5s ease, opacity 0.3s ease 0.2s;
-    transition: all 0.5s ease, opacity 0.3s ease 0.2s;
+  .types__item:hover .types__item-title {
+    color: var(--pink);
   }
 
   .works__slide:hover .btn {

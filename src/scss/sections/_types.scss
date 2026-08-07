@@ -56,25 +56,30 @@
       height: 100%;
     }
 
+    &.item-bg:hover::before {
+      opacity: 1;
+      backdrop-filter: blur(6.35px);
+    }
+
+    &.item-bg:hover::after {
+      opacity: 0;
+      backdrop-filter: unset;
+    }
+
+    
     &:hover {
 
-      @include domd {
-
-        &::before {
-          opacity: 0;
+      .gallery__slider & {
+        
+        .types__item-img {
+          transform: scale(1.4);
         }
+      }
 
-        &::after {
-          opacity: 1;
-        }
+      .types__item-title {
 
-        .types__item-btn {
-          width: calc(100% - (3rem * 2));
-
-          &--text {
-            opacity: 1;
-            transition: all 0.5s ease, opacity 0.3s ease 0.2s;
-          }
+        @include domd {
+          color: var(--pink);
         }
       }
     }
@@ -85,6 +90,7 @@
       flex-shrink: 0;
       border-radius: var(--border-radius);
       overflow: hidden;
+      transition: all 5s linear;
 
       position: absolute;
       top: 0;
@@ -126,6 +132,7 @@
     }
 
     &-title {
+      transition: color 0.3s ease;
 
       @include md {
         font-size: calc(100vw/(393/12));

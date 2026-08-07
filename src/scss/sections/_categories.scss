@@ -57,6 +57,16 @@
 
     @include sm {}
 
+    &.item-bg:hover::before {
+      opacity: 1;
+      backdrop-filter: blur(6.35px);
+    }
+
+    &.item-bg:hover::after {
+      opacity: 0;
+      backdrop-filter: unset;
+    }
+
     &:hover {
 
       @include domd {
