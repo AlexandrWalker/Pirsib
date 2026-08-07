@@ -1,0 +1,151 @@
+@use './../mixins' as *;
+
+.tatu-inner {
+
+  &__page {
+
+    .general__title {
+      max-width: 100%;
+
+      * {
+        font-family: var(--second-family);
+      }
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @include md {
+      grid-template-columns: repeat(1, 1fr);
+      gap: calc(100vw/(393/10));
+    }
+
+    @include sm {
+      gap: 1rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: fit-content;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all 0.5s ease;
+
+    position: sticky;
+    top: 17.7rem;
+
+    html.out & {
+      top: 2rem;
+    }
+
+    @include md {
+      width: 100%;
+      position: static;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__body {}
+
+  &__content {
+    width: 100%;
+    padding: 6rem;
+    border-radius: var(--border-radius);
+
+    @include md {
+      padding: calc(100vw/(393/30));
+    }
+
+    @include sm {
+      padding: 3rem;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding-top: 1rem;
+      margin-bottom: 3rem;
+
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 120%;
+
+      @include md {
+        padding-top: 0;
+        margin-bottom: calc(100vw/(393/20));
+
+        font-size: calc(100vw/(393/16));
+      }
+
+      @include sm {
+        margin-bottom: 2rem;
+
+        font-size: 1.6rem;
+      }
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      margin-bottom: 2rem;
+    }
+
+    ol {
+      margin-bottom: 2rem;
+
+      li {
+        padding-left: 0;
+
+        list-style-position: inside;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    li {
+      padding-left: 2.4rem;
+      margin-bottom: 2rem;
+      position: relative;
+
+      @include md {
+        margin-bottom: calc(100vw/(393/15));
+      }
+
+      @include sm {
+        margin-bottom: 1.5rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        width: 0.25rem;
+        height: 0.25rem;
+        border-radius: 50%;
+        background-color: var(--purple);
+
+        position: absolute;
+        top: 0.75rem;
+        left: 1.05rem;
+      }
+    }
+  }
+}

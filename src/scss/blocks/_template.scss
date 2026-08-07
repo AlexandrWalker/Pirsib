@@ -302,7 +302,8 @@
       }
 
       &__text {
-        max-width: 46.2rem;
+        // max-width: 46.2rem;
+        max-width: 65.4rem;
         margin-left: 1rem;
 
         @include md {

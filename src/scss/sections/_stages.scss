@@ -14,11 +14,15 @@
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
-    @include sm {
+    @include md {
       grid-template-columns: repeat(1, 1fr);
+      gap: calc(100vw/(393/8));
+    }
+
+    @include sm {
       gap: 0.8rem;
     }
   }
@@ -26,28 +30,50 @@
   &__item {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding: 4.4rem 5rem 4.4rem 8.9rem;
-    border-radius: 10rem;
+    padding: 5.4rem 4.3rem 5.4rem 3rem;
+    border-radius: var(--border-radius);
     overflow: hidden;
     position: relative;
 
     @include sm {
       padding: 1.5rem 1.5rem 1.5rem 2rem;
-      border-radius: 7.4rem;
+      // border-radius: 7.4rem;
     }
 
     .border {
-      --border-radius: 10rem;
+      // --border-radius: 10rem;
+
+      // @include sm {
+      //   --border-radius: 7.4rem;
+      // }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
 
       @include sm {
-        --border-radius: 7.4rem;
+        gap: 2rem;
+      }
+    }
+
+    &-title {
+      font-family: var(--second-family);
+      line-height: 100%;
+    }
+
+    &-text {
+
+      p {
+        line-height: 100%;
       }
     }
 
     &-count {
-      font-family: var(--font-family);
+      font-family: var(--second-family);
       font-weight: 300;
       font-size: 10rem;
       line-height: 100%;
@@ -59,17 +85,6 @@
 
       @include sm {
         font-size: 5rem;
-      }
-    }
-
-    &-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 1.5rem;
-
-      @include sm {
-        gap: 2rem;
       }
     }
 
@@ -120,7 +135,7 @@
     }
 
     .form__head {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
 
       @include md {
         margin-bottom: calc(100vw/(393/5));
@@ -129,6 +144,10 @@
       @include sm {
         margin-bottom: 0.5rem;
       }
+    }
+
+    .form__title {
+      font-family: var(--second-family);
     }
 
     .form__body {
