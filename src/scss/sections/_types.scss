@@ -66,20 +66,23 @@
       backdrop-filter: unset;
     }
 
-    
+
     &:hover {
 
-      .gallery__slider & {
-        
-        .types__item-img {
-          transform: scale(1.4);
+      @include domd {
+
+        .gallery__slider & {
+
+          .types__item-img {
+            transform: scale(1.4);
+          }
         }
-      }
 
-      .types__item-title {
+        .types__item-title {
 
-        @include domd {
-          color: var(--pink);
+          @include domd {
+            color: var(--pink);
+          }
         }
       }
     }

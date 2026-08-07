@@ -103,14 +103,6 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
@@ -119,8 +111,8 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -137,6 +129,14 @@ a {
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -6680,12 +6680,6 @@ html.out .tatu-inner__img {
           backdrop-filter: unset;
 }
 
-.gallery__slider .types__item:hover .types__item-img {
-  -webkit-transform: scale(1.4);
-  -ms-transform: scale(1.4);
-  transform: scale(1.4);
-}
-
 .types__item-img {
   width: 100%;
   height: 100%;
@@ -7316,8 +7310,10 @@ html.out .tatu-inner__img {
     color: var(--pink);
   }
 
-  .types__item:hover .types__item-title {
-    color: var(--pink);
+  .gallery__slider .types__item:hover .types__item-img {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
   }
 
   .works__slide:hover .btn {
@@ -7334,6 +7330,12 @@ html.out .tatu-inner__img {
     -webkit-transform: translateX(0.5rem);
     -ms-transform: translateX(0.5rem);
     transform: translateX(0.5rem);
+  }
+}
+
+@media (min-width: 835px) and (min-width: 835px) {
+  .types__item:hover .types__item-title {
+    color: var(--pink);
   }
 }
 
