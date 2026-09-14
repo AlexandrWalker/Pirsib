@@ -4,6 +4,64 @@
 
   &-page {
 
+    .directions {
+
+      .general {
+
+        &__head {
+          margin-bottom: 4rem;
+
+          @include md {
+            margin-bottom: calc(-100vw/(393/4));
+          }
+
+          @include sm {
+            max-width: 29rem;
+          }
+        }
+
+        &__title {
+
+          h2 {
+            font-size: 5rem;
+
+            @include md {
+              font-size: calc(100vw/(393/30));
+            }
+
+            @include sm {
+              font-size: 3rem;
+            }
+          }
+        }
+      }
+
+      &__item {
+
+        @include domd {
+          height: 41.9rem;
+          padding: 7rem 4rem 4rem 4rem;
+        }
+
+        &-title {
+
+          @include domd {
+            max-width: 32rem;
+
+            font-size: 2.4rem;
+            line-height: 120%;
+          }
+
+          br {
+
+            @include md {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
     .decorations {
 
       &__item {
@@ -38,29 +96,67 @@
   .decorations {
 
     &__item {
+      --border-radius: 2.5rem;
+
+      width: calc(33.33333% - (4rem / 3));
+      height: auto;
+
 
       @include md {
+        --border-radius: calc(100vw/(393/16));
+
         width: calc(50% - calc(100vw/(393/4)));
       }
 
       @include sm {
+        --border-radius: 1.6rem;
+
         width: calc(50% - 0.4rem);
       }
 
+      &-head {
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+
+        @include domd {
+          height: 40.5rem;
+        }
+
+        .border {
+          --border-radius: 2.5rem;
+
+          @include md {
+            --border-radius: calc(100vw/(393/16));
+          }
+
+          @include sm {
+            --border-radius: 1.6rem;
+          }
+
+          &::before,
+          &::after {
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+          }
+        }
+      }
+
       &-body {
+        justify-content: flex-start;
+        gap: 2rem;
+        padding: 3rem 5.5rem 3rem 3rem;
 
         @include md {
-          gap: calc(100vw/(393/30));
-          padding: calc(100vw/(393/20)) calc(100vw/(393/10));
+          gap: calc(100vw/(393/10));
+          padding: calc(100vw/(393/15)) calc(100vw/(393/10)) calc(100vw/(393/18));
         }
 
         @include sm {
-          gap: 3rem;
-          padding: 2rem 1rem;
+          gap: 1rem;
+          padding: 1.5rem 1rem 1.8rem;
         }
       }
 
       &-content {
+        gap: 1.5rem;
 
         @include md {
           gap: calc(100vw/(393/10));
@@ -69,28 +165,78 @@
         @include sm {
           gap: 1rem;
         }
+      }
 
-        &-title {
-          font-size: 1.6rem;
+      &-date {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 100%;
+        color: var(--purple-50);
 
-          @include md {
-            font-size: calc(100vw/(393/12));
-          }
-
-          @include sm {
-            font-size: 1.2rem;
-          }
+        @include md {
+          font-size: calc(100vw/(393/10));
         }
 
-        p {
+        @include sm {
+          font-size: 1rem;
+        }
+      }
 
-          @include md {
-            font-size: calc(100vw/(393/10));
-          }
+      &-time {
+        margin-top: auto;
 
-          @include sm {
-            font-size: 1rem;
-          }
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 120%;
+        color: var(--purple-50);
+
+        @include md {
+          font-size: calc(100vw/(393/10));
+        }
+
+        @include sm {
+          font-size: 1rem;
+        }
+      }
+
+      &-title {
+        max-width: 44rem;
+
+        font-size: 1.6rem;
+
+        @include md {
+          font-size: calc(100vw/(393/10));
+        }
+
+        @include sm {
+          font-size: 1rem;
+        }
+      }
+
+      &-text {
+        display: -moz-box;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        text-overflow: ellipsis;
+        -moz-box-orient: vertical;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+        overflow: hidden;
+
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 120%;
+
+        @include md {
+          font-size: calc(100vw/(393/10));
+
+          -webkit-line-clamp: 4;
+          line-clamp: 4;
+        }
+
+        @include sm {
+          font-size: 1rem;
         }
       }
     }

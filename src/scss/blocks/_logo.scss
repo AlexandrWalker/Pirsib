@@ -27,6 +27,10 @@
   .page__inner .header.out & {
 
     @include md {
+      transform: translateY(calc(-100vw/(393/100)));
+    }
+
+    @include sm {
       transform: translateY(-10rem);
     }
   }
