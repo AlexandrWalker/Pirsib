@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'PirsibIconFont';
-  src:  url('fonts/PirsibIconFont.eot?fwun2g');
-  src:  url('fonts/PirsibIconFont.eot?fwun2g#iefix') format('embedded-opentype'),
-    url('fonts/PirsibIconFont.ttf?fwun2g') format('truetype'),
-    url('fonts/PirsibIconFont.woff?fwun2g') format('woff'),
-    url('fonts/PirsibIconFont.svg?fwun2g#PirsibIconFont') format('svg');
+  src:  url('fonts/PirsibIconFont.eot?t90sju');
+  src:  url('fonts/PirsibIconFont.eot?t90sju#iefix') format('embedded-opentype'),
+    url('fonts/PirsibIconFont.ttf?t90sju') format('truetype'),
+    url('fonts/PirsibIconFont.woff?t90sju') format('woff'),
+    url('fonts/PirsibIconFont.svg?t90sju#PirsibIconFont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,72 +25,78 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-yandex:before {
+.icon-logo:before {
   content: "\e900";
 }
-.icon-plus:before {
+.icon-lightning:before {
   content: "\e901";
 }
-.icon-chevron-left:before {
+.icon-yandex:before {
   content: "\e902";
 }
-.icon-download:before {
+.icon-plus:before {
   content: "\e903";
 }
-.icon-max:before {
+.icon-chevron-left:before {
   content: "\e904";
 }
-.icon-ozon:before {
+.icon-download:before {
   content: "\e905";
 }
-.icon-wb:before {
+.icon-max:before {
   content: "\e906";
 }
-.icon-phone-min:before {
+.icon-ozon:before {
   content: "\e907";
 }
-.icon-mail-min:before {
+.icon-wb:before {
   content: "\e908";
 }
-.icon-book:before {
+.icon-phone-min:before {
   content: "\e909";
 }
-.icon-telegram-hover:before {
+.icon-mail-min:before {
   content: "\e90a";
 }
-.icon-whatsapp-hover:before {
+.icon-book:before {
   content: "\e90b";
 }
-.icon-mail:before {
+.icon-telegram-hover:before {
   content: "\e90c";
 }
-.icon-user:before {
+.icon-whatsapp-hover:before {
   content: "\e90d";
 }
-.icon-phone:before {
+.icon-mail:before {
   content: "\e90e";
 }
-.icon-location:before {
+.icon-user:before {
   content: "\e90f";
 }
-.icon-gis:before {
+.icon-phone:before {
   content: "\e910";
 }
-.icon-chevron-min:before {
+.icon-location:before {
   content: "\e911";
 }
-.icon-play:before {
+.icon-gis:before {
   content: "\e912";
 }
-.icon-vk:before {
+.icon-chevron-min:before {
   content: "\e913";
 }
-.icon-chevron:before {
+.icon-play:before {
   content: "\e914";
 }
-.icon-telegram:before {
+.icon-vk:before {
   content: "\e915";
 }
-.icon-whatsapp:before {
+.icon-chevron:before {
   content: "\e916";
+}
+.icon-telegram:before {
+  content: "\e917";
+}
+.icon-whatsapp:before {
+  content: "\e918";
 }
