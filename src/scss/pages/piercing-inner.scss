@@ -128,10 +128,12 @@
       position: relative;
 
       @include md {
+        padding-left: calc(100vw/(393/24));
         margin-bottom: calc(100vw/(393/15));
       }
 
       @include sm {
+        padding-left: 2.4rem;
         margin-bottom: 1.5rem;
       }
 
@@ -149,6 +151,22 @@
         position: absolute;
         top: 0.75rem;
         left: 1.05rem;
+
+        @include md {
+          width: calc(100vw/(393/2.5));
+          height: calc(100vw/(393/2.5));
+
+          top: calc(100vw/(393/7.5));
+          left: calc(100vw/(393/10.5));
+        }
+
+        @include sm {
+          width: 0.25rem;
+          height: 0.25rem;
+
+          top: 0.75rem;
+          left: 1.05rem;
+        }
       }
     }
   }

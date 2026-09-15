@@ -96,7 +96,7 @@
   .decorations {
 
     &__item {
-      --border-radius: 2.5rem;
+      --border-radius: 2.4rem;
 
       width: calc(33.33333% - (4rem / 3));
       height: auto;
@@ -122,7 +122,7 @@
         }
 
         .border {
-          --border-radius: 2.5rem;
+          --border-radius: 2.4rem;
 
           @include md {
             --border-radius: calc(100vw/(393/16));

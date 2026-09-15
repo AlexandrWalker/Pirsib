@@ -109,8 +109,10 @@
     flex-direction: column;
     justify-content: space-between;
     width: calc(25% - ((2rem * 3) / 4));
-    height: 57.7rem;
-    padding: 24rem 6rem 6rem 6rem;
+    // height: 57.7rem;
+    height: 41.9rem;
+    // padding: 24rem 6rem 6rem 6rem;
+    padding: 7rem 4rem 4rem 4rem;
     overflow: hidden;
     border-radius: var(--border-radius);
 
@@ -143,6 +145,8 @@
 
     &-title {
       transition: all 0.5s ease;
+
+      line-height: 120%;
     }
 
     .btn {

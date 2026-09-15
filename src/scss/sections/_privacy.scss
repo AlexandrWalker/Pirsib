@@ -67,10 +67,12 @@
     position: relative;
 
     @include md {
+      padding-left: calc(100vw/(393/20));
       margin-bottom: calc(100vw/(393/15));
     }
 
     @include sm {
+      padding-left: 2rem;
       margin-bottom: 1.5rem;
     }
 
@@ -89,6 +91,20 @@
       position: absolute;
       top: 0.75rem;
       left: 0;
+
+      @include md {
+        width: calc(100vw/(393/5));
+        height: calc(100vw/(393/5));
+
+        top: calc(100vw/(393/7.5));
+      }
+
+      @include sm {
+        width: 0.5rem;
+        height: 0.5rem;
+
+        top: 0.75rem;
+      }
     }
   }
 
