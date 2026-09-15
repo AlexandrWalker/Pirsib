@@ -14,11 +14,12 @@
   color: var(--purple);
 
   @include md {
-    padding: calc(100vw/(393/40)) calc(100vw/(393/40)) calc(100vw/(393/50));
+    padding: calc(100vw/(393/30)) calc(100vw/(393/20));
     max-width: calc((100vw/(393/412)) - ((100vw/(393/15)) * 2));
   }
 
   @include sm {
+    padding: 3rem 2rem;
     max-width: calc(100% - (1.5rem * 2));
   }
 

@@ -190,13 +190,37 @@
   right: 3.4rem;
   color: var(--pink-2);
   background: none;
+
+  @include md {
+    top: calc(100vw/(393/30));
+    right: calc(100vw/(393/20));
+  }
+
+  @include sm {
+    top: 3rem;
+    right: 2rem;
+  }
 }
 
 .f-button svg {
   width: 3.2rem;
   height: 3.2rem;
+
+  @include md {
+    width: calc(100vw/(393/32));
+    height: calc(100vw/(393/32));
+  }
+
+  @include sm {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
 }
 
 .f-html {
   padding: 0;
+}
+
+.fancybox__container:not(.is-compact) .fancybox__slide.has-close-btn {
+  padding-bottom: 40px;
 }

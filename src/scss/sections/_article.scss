@@ -39,6 +39,110 @@
     }
   }
 
+  ul {
+    margin-bottom: 3rem;
+
+    @include md {
+      margin-bottom: calc(100vw/(393/15));
+    }
+
+    @include sm {
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      padding-left: 2.4rem;
+      margin-bottom: 2rem;
+      position: relative;
+
+      @include md {
+        padding-left: calc(100vw/(393/24));
+        margin-bottom: calc(100vw/(393/15));
+      }
+
+      @include sm {
+        padding-left: 2.4rem;
+        margin-bottom: 1.5rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        width: 0.25rem;
+        height: 0.25rem;
+        border-radius: 50%;
+        background-color: var(--purple);
+
+        position: absolute;
+        top: 0.75rem;
+        left: 1.05rem;
+
+        @include md {
+          width: calc(100vw/(393/2.5));
+          height: calc(100vw/(393/2.5));
+
+          top: calc(100vw/(393/7.5));
+          left: calc(100vw/(393/10.5));
+        }
+
+        @include sm {
+          width: 0.25rem;
+          height: 0.25rem;
+
+          top: 0.75rem;
+          left: 1.05rem;
+        }
+      }
+
+      a {
+        text-decoration: dotted;
+        text-decoration-line: underline;
+        text-decoration-skip-ink: none;
+
+        &:hover {
+
+          @include domd {
+            color: var(--pink);
+          }
+        }
+      }
+    }
+  }
+
+  ol {
+    padding-left: 2.4rem;
+    margin-bottom: 3rem;
+
+    @include md {
+      padding-left: calc(100vw/(393/24));
+      margin-bottom: calc(100vw/(393/15));
+    }
+
+    @include sm {
+      padding-left: 2.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 2rem;
+
+      @include md {
+        margin-bottom: calc(100vw/(393/15));
+      }
+
+      @include sm {
+        margin-bottom: 1.5rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -211,11 +315,7 @@
       }
     }
 
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h2 {
       margin-bottom: 2rem;
 
       font-weight: 700;
@@ -234,6 +334,31 @@
         margin-bottom: 1.5rem;
 
         font-size: 2.4rem;
+      }
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 2rem;
+
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 120%;
+
+      @include md {
+        padding-top: calc(100vw/(393/15));
+        margin-bottom: calc(100vw/(393/15));
+
+        font-size: calc(100vw/(393/16));
+      }
+
+      @include sm {
+        padding-top: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        font-size: 1.6rem;
       }
     }
   }
@@ -483,6 +608,11 @@
         height: calc(100vw/(393/48));
       }
 
+      @include sm {
+        width: 4.8rem;
+        height: 4.8rem;
+      }
+
       i {
         --btn-height: 3rem;
 
@@ -721,6 +851,10 @@
     @include sm {
       gap: 2rem;
     }
+
+    ul {
+      margin-bottom: 0 !important;
+    }
   }
 
   &__nav {
@@ -788,72 +922,7 @@
       }
     }
 
-    &-list {
-
-      ul {
-
-        li {
-          padding-left: 2.4rem;
-          margin-bottom: 2rem;
-          position: relative;
-
-          @include md {
-            padding-left: calc(100vw/(393/24));
-            margin-bottom: calc(100vw/(393/15));
-          }
-
-          @include sm {
-            padding-left: 2.4rem;
-            margin-bottom: 1.5rem;
-          }
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-
-          &::before {
-            content: "";
-            width: 0.25rem;
-            height: 0.25rem;
-            border-radius: 50%;
-            background-color: var(--purple);
-
-            position: absolute;
-            top: 0.75rem;
-            left: 1.05rem;
-
-            @include md {
-              width: calc(100vw/(393/2.5));
-              height: calc(100vw/(393/2.5));
-
-              top: calc(100vw/(393/7.5));
-              left: calc(100vw/(393/10.5));
-            }
-
-            @include sm {
-              width: 0.25rem;
-              height: 0.25rem;
-
-              top: 0.75rem;
-              left: 1.05rem;
-            }
-          }
-
-          a {
-            text-decoration: dotted;
-            text-decoration-line: underline;
-            text-decoration-skip-ink: none;
-
-            &:hover {
-
-              @include domd {
-                color: var(--pink);
-              }
-            }
-          }
-        }
-      }
-    }
+    &-list {}
   }
 
   &__info {

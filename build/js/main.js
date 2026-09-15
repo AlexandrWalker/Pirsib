@@ -469,16 +469,40 @@
      * Accordion
      */
     function accordionFunc() {
-      const accordions = document.querySelectorAll('.accordion');
-      let activeAccordion = null;
-      accordions.forEach(acc => acc.addEventListener('click', e => {
+      const container = document.body;
+      const activeClass = 'accordion-active';
+
+      let activeAccordion = document.querySelector(`.accordion.${activeClass}`);
+
+      container.addEventListener('click', (e) => {
+        const acc = e.target.closest('.accordion');
+        if (!acc) {
+          if (activeAccordion && !e.target.closest('.accordion')) {
+            activeAccordion.classList.remove(activeClass);
+            activeAccordion = null;
+          }
+          return;
+        }
+
+        if (e.target.closest('a') || e.target.closest('button')) return;
+
         e.stopPropagation();
-        if (activeAccordion && activeAccordion !== acc) activeAccordion.classList.remove('accordion-active');
-        acc.classList.toggle('accordion-active');
-        activeAccordion = acc.classList.contains('accordion-active') ? acc : null;
-      }));
-      window.addEventListener('keydown', e => { if (e.key === "Escape" && activeAccordion) activeAccordion.classList.remove('accordion-active'); });
-      document.addEventListener('click', e => { if (activeAccordion && !activeAccordion.contains(e.target)) activeAccordion.classList.remove('accordion-active'); activeAccordion = null; });
+
+        if (activeAccordion && activeAccordion !== acc) {
+          activeAccordion.classList.remove(activeClass);
+        }
+
+        const isCurrentActive = acc.classList.contains(activeClass);
+        acc.classList.toggle(activeClass);
+        activeAccordion = !isCurrentActive ? acc : null;
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === "Escape" && activeAccordion) {
+          activeAccordion.classList.remove(activeClass);
+          activeAccordion = null;
+        }
+      });
     }
     accordionFunc();
 
