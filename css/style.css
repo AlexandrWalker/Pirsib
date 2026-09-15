@@ -111,16 +111,16 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -135,16 +135,16 @@ a {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -159,14 +159,6 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Black.woff2") format("woff2"), url("../fonts/Outfit-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Outfit;
-  font-display: swap;
   src: url("../fonts/Outfit-Bold.woff2") format("woff2"), url("../fonts/Outfit-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -175,8 +167,8 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Outfit-Black.woff2") format("woff2"), url("../fonts/Outfit-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -191,16 +183,16 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -215,8 +207,8 @@ a {
 @font-face {
   font-family: Outfit;
   font-display: swap;
-  src: url("../fonts/Outfit-SemiBold.woff2") format("woff2"), url("../fonts/Outfit-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -225,6 +217,14 @@ a {
   font-display: swap;
   src: url("../fonts/Outfit-Thin.woff2") format("woff2"), url("../fonts/Outfit-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  font-display: swap;
+  src: url("../fonts/Outfit-SemiBold.woff2") format("woff2"), url("../fonts/Outfit-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -798,6 +798,10 @@ a:hover .border::after {
 
 .f-html {
   padding: 0;
+}
+
+.fancybox__container:not(.is-compact) .fancybox__slide.has-close-btn {
+  padding-bottom: 40px;
 }
 
 /* Reset and base styles  */
@@ -4626,6 +4630,53 @@ html.out .biography__left {
   font-size: 5rem;
 }
 
+.article ul {
+  margin-bottom: 3rem;
+}
+
+.article ul li {
+  padding-left: 2.4rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.article ul li:last-child {
+  margin-bottom: 0;
+}
+
+.article ul li::before {
+  content: "";
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background-color: var(--purple);
+  position: absolute;
+  top: 0.75rem;
+  left: 1.05rem;
+}
+
+.article ul li a {
+  -webkit-text-decoration: dotted;
+  text-decoration: dotted;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
+}
+
+.article ol {
+  padding-left: 2.4rem;
+  margin-bottom: 3rem;
+}
+
+.article ol li {
+  margin-bottom: 2rem;
+}
+
+.article ol li:last-child {
+  margin-bottom: 0;
+}
+
 .article__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4742,14 +4793,20 @@ html.out .biography__left {
   line-height: 140%;
 }
 
-.article__content h2,
+.article__content h2 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 120%;
+}
+
 .article__content h3,
 .article__content h4,
 .article__content h5,
 .article__content h6 {
   margin-bottom: 2rem;
   font-weight: 700;
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   line-height: 120%;
 }
 
@@ -5017,6 +5074,10 @@ html.out .biography__left {
   transition: all 0.5s ease;
 }
 
+.article__side ul {
+  margin-bottom: 0 !important;
+}
+
 .article__nav {
   --border-radius: 2.4rem;
   display: -webkit-box;
@@ -5056,36 +5117,6 @@ html.out .biography__left {
 
 .article__nav-title {
   line-height: 120%;
-}
-
-.article__nav-list ul li {
-  padding-left: 2.4rem;
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-.article__nav-list ul li:last-child {
-  margin-bottom: 0;
-}
-
-.article__nav-list ul li::before {
-  content: "";
-  width: 0.25rem;
-  height: 0.25rem;
-  border-radius: 50%;
-  background-color: var(--purple);
-  position: absolute;
-  top: 0.75rem;
-  left: 1.05rem;
-}
-
-.article__nav-list ul li a {
-  -webkit-text-decoration: dotted;
-  text-decoration: dotted;
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
-  -webkit-text-decoration-skip-ink: none;
-  text-decoration-skip-ink: none;
 }
 
 .article__info {
@@ -7806,6 +7837,10 @@ html.out .tatu-inner__img {
     padding-right: 2rem;
   }
 
+  .article ul li a:hover {
+    color: var(--pink);
+  }
+
   .article__content {
     -ms-grid-column: 1;
     -ms-grid-column-span: 8;
@@ -7835,10 +7870,6 @@ html.out .tatu-inner__img {
     padding: 4rem 10rem 5rem 4rem;
     overflow: hidden;
     position: relative;
-  }
-
-  .article__nav-list ul li a:hover {
-    color: var(--pink);
   }
 
   .article__info-btn:hover {
@@ -8100,6 +8131,17 @@ html.out .tatu-inner__img {
 
   .fancybox__content {
     margin: 0 3.8167938931vw;
+  }
+
+  .is-compact .fancybox__content > .f-button.is-close-btn,
+  .fancybox__content > .f-button.is-close-btn {
+    top: 7.6335877863vw;
+    right: 5.0890585242vw;
+  }
+
+  .f-button svg {
+    width: 8.1424936387vw;
+    height: 8.1424936387vw;
   }
 
   :root {
@@ -8720,7 +8762,7 @@ html.out .tatu-inner__img {
   }
 
   .popup {
-    padding: 10.1781170483vw 10.1781170483vw 12.7226463104vw;
+    padding: 7.6335877863vw 5.0890585242vw;
     max-width: 97.2010178117vw;
   }
 
@@ -9481,6 +9523,31 @@ html.out .tatu-inner__img {
     font-size: 7.6335877863vw;
   }
 
+  .article ul {
+    margin-bottom: 3.8167938931vw;
+  }
+
+  .article ul li {
+    padding-left: 6.106870229vw;
+    margin-bottom: 3.8167938931vw;
+  }
+
+  .article ul li::before {
+    width: 0.6361323155vw;
+    height: 0.6361323155vw;
+    top: 1.9083969466vw;
+    left: 2.6717557252vw;
+  }
+
+  .article ol {
+    padding-left: 6.106870229vw;
+    margin-bottom: 3.8167938931vw;
+  }
+
+  .article ol li {
+    margin-bottom: 3.8167938931vw;
+  }
+
   .article__inner {
     gap: 5.0890585242vw;
   }
@@ -9532,14 +9599,19 @@ html.out .tatu-inner__img {
     font-size: 3.5623409669vw;
   }
 
-  .article__content h2,
+  .article__content h2 {
+    padding-top: 3.8167938931vw;
+    margin-bottom: 3.8167938931vw;
+    font-size: 6.106870229vw;
+  }
+
   .article__content h3,
   .article__content h4,
   .article__content h5,
   .article__content h6 {
     padding-top: 3.8167938931vw;
     margin-bottom: 3.8167938931vw;
-    font-size: 6.106870229vw;
+    font-size: 4.0712468193vw;
   }
 
   .article__quote {
@@ -9680,18 +9752,6 @@ html.out .tatu-inner__img {
 
   .article__nav-title {
     font-size: 6.106870229vw;
-  }
-
-  .article__nav-list ul li {
-    padding-left: 6.106870229vw;
-    margin-bottom: 3.8167938931vw;
-  }
-
-  .article__nav-list ul li::before {
-    width: 0.6361323155vw;
-    height: 0.6361323155vw;
-    top: 1.9083969466vw;
-    left: 2.6717557252vw;
   }
 
   .article__info {
@@ -10808,6 +10868,17 @@ html.out .tatu-inner__img {
     margin: 0 1.5rem;
   }
 
+  .is-compact .fancybox__content > .f-button.is-close-btn,
+  .fancybox__content > .f-button.is-close-btn {
+    top: 3rem;
+    right: 2rem;
+  }
+
+  .f-button svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
   :root {
     --container-padding: 2rem;
     --container-width: 168rem;
@@ -11181,6 +11252,7 @@ html.out .tatu-inner__img {
   }
 
   .popup {
+    padding: 3rem 2rem;
     max-width: calc(100% - 3rem);
   }
 
@@ -11652,6 +11724,31 @@ html.out .tatu-inner__img {
     font-size: 3rem;
   }
 
+  .article ul {
+    margin-bottom: 1.5rem;
+  }
+
+  .article ul li {
+    padding-left: 2.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .article ul li::before {
+    width: 0.25rem;
+    height: 0.25rem;
+    top: 0.75rem;
+    left: 1.05rem;
+  }
+
+  .article ol {
+    padding-left: 2.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .article ol li {
+    margin-bottom: 1.5rem;
+  }
+
   .article__inner {
     gap: 2rem;
   }
@@ -11689,14 +11786,19 @@ html.out .tatu-inner__img {
     font-size: 1.4rem;
   }
 
-  .article__content h2,
+  .article__content h2 {
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 2.4rem;
+  }
+
   .article__content h3,
   .article__content h4,
   .article__content h5,
   .article__content h6 {
     padding-top: 1.5rem;
     margin-bottom: 1.5rem;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
   }
 
   .article__quote {
@@ -11736,6 +11838,11 @@ html.out .tatu-inner__img {
   .article__author {
     gap: 1.5rem;
     padding: 1.5rem 3rem 2rem 1.5rem;
+  }
+
+  .article__author-icon {
+    width: 4.8rem;
+    height: 4.8rem;
   }
 
   .article__author-icon i {
@@ -11805,18 +11912,6 @@ html.out .tatu-inner__img {
 
   .article__nav-title {
     font-size: 2.4rem;
-  }
-
-  .article__nav-list ul li {
-    padding-left: 2.4rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .article__nav-list ul li::before {
-    width: 0.25rem;
-    height: 0.25rem;
-    top: 0.75rem;
-    left: 1.05rem;
   }
 
   .article__info {
